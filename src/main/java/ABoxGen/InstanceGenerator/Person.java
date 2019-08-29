@@ -1,0 +1,79 @@
+package ABoxGen.InstanceGenerator;
+
+
+import org.apache.tools.ant.types.resources.First;
+
+public class Person {
+    Generator gen;
+    int gender;
+    //assign man or woman
+    //assign student/faculty/staff
+    public Person(Student student, String instance) {
+        this.gen=student.gen;
+        if(!student.womenStudents){
+            gender = GetRandomNo.getRandomFromRange(0,1);
+            if(gender==0)
+                gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
+            else
+                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
+        }
+        else {
+            gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
+        }
+        //String firstName=GetRandomName.getRandomFirstName();
+        //String lastName= GetRandomName.getRandomLastName();
+        //String name= firstName+ " " + lastName;
+        //System.out.println("name"+ name);
+
+        gen.dataPropertyAssertion(gen.getDataProperty("hasFirstName"),gen.getNamedIndividual(instance),gen.getLiteral("firstName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasLastName"),gen.getNamedIndividual(instance),gen.getLiteral("lastName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(instance),gen.getLiteral("name"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasEmailAddress"),gen.getNamedIndividual(instance),gen.getLiteral(instance + "@bench.com"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasTelephone"),gen.getNamedIndividual(instance),gen.getLiteral("xxxxxxxxxx"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasID"),gen.getNamedIndividual(instance),gen.getLiteral(instance));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasAge"),gen.getNamedIndividual(instance),gen.getLiteral("x"));
+    }
+
+    public Person(Employee employee, String instance) {
+        this.gen=employee.gen;
+
+            gender = GetRandomNo.getRandomFromRange(0,1);
+            if(gender==0)
+                gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
+            else
+                gen.classAssertion(gen.getClass(
+                        "Man"),gen.getNamedIndividual(instance));
+
+       // String firstName=GetRandomName.getRandomFirstName();
+        //String lastName= GetRandomName.getRandomLastName();
+        //String name= firstName+ " " + lastName;
+
+        gen.dataPropertyAssertion(gen.getDataProperty("hasFirstName"),gen.getNamedIndividual(instance),gen.getLiteral("firstName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasLastName"),gen.getNamedIndividual(instance),gen.getLiteral("lastName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(instance),gen.getLiteral("name"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasEmailAddress"),gen.getNamedIndividual(instance),gen.getLiteral(instance + "@bench.com"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasTelephone"),gen.getNamedIndividual(instance),gen.getLiteral("xxxxxxxxxx"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasID"),gen.getNamedIndividual(instance),gen.getLiteral(instance));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasAge"),gen.getNamedIndividual(instance),gen.getLiteral("x"));
+    }
+    public Person(ResearchGroup researchGroup, String instance) {
+        this.gen=researchGroup.gen;
+
+        gender = GetRandomNo.getRandomFromRange(0,1);
+        if(gender==0)
+            gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
+        else
+            gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
+
+
+        gen.dataPropertyAssertion(gen.getDataProperty("hasFirstName"),gen.getNamedIndividual(instance),gen.getLiteral("firstName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasLastName"),gen.getNamedIndividual(instance),gen.getLiteral("lastName"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(instance),gen.getLiteral("name"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasEmailAddress"),gen.getNamedIndividual(instance),gen.getLiteral(instance + "@bench.com"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasTelephone"),gen.getNamedIndividual(instance),gen.getLiteral("xxxxxxxxxx"));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasID"),gen.getNamedIndividual(instance),gen.getLiteral(instance));
+        gen.dataPropertyAssertion(gen.getDataProperty("hasAge"),gen.getNamedIndividual(instance),gen.getLiteral("x"));
+    }
+}
+
+//add random likes for games//crazy about //fan etc instances
