@@ -38,8 +38,8 @@ public class AssignCourse {
                 while (l.hasNext()) {
                     gen.objectPropertyAssertion(gen.getObjectProperty("takesCourse"),gen.getNamedIndividual(dept.ugStudents[j].studentInstance),gen.getNamedIndividual(l.next()));
                 }
-                numOfElectives = GetRandomNo.getRandomFromRange(configFile.numOfElectives_Min,configFile.numOfElectives_Max);
-                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(configFile.numOfElectivesOutsideDept_Min,numOfElectives);
+                numOfElectives = GetRandomNo.getRandomFromRange(gen.numOfElectives_Min,gen.numOfElectives_Max);
+                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(gen.numOfElectivesOutsideDept_Min,numOfElectives);
                 numOfElectivesWithInDept = numOfElectives - numOfElectivesOutsideDept;
 
 
@@ -73,8 +73,8 @@ public class AssignCourse {
             for (int j = 0; j < dept.pgStudentNum; ++j) {
                 hash2=new HashSet();
                 hash3=new HashSet();
-                numOfElectives = GetRandomNo.getRandomFromRange(configFile.numOfElectives_Min,configFile.numOfElectives_Max);
-                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(configFile.numOfElectivesOutsideDept_Min,numOfElectives);
+                numOfElectives = GetRandomNo.getRandomFromRange(gen.numOfElectives_Min,gen.numOfElectives_Max);
+                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(gen.numOfElectivesOutsideDept_Min,numOfElectives);
                 numOfElectivesWithInDept = numOfElectives - numOfElectivesOutsideDept;
                 if (numOfElectivesWithInDept != 0) {
                     while (hash2.size() != numOfElectivesWithInDept) {
@@ -115,8 +115,8 @@ public class AssignCourse {
             for (int j = 0; j < dept.phdStudentNum; ++j) {
                 hash2=new HashSet();
                 hash3=new HashSet();
-                numOfElectives = GetRandomNo.getRandomFromRange(configFile.numOfElectives_Min,configFile.numOfElectives_Max);
-                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(configFile.numOfElectivesOutsideDept_Min,numOfElectives);
+                numOfElectives = GetRandomNo.getRandomFromRange(gen.numOfElectives_Min,gen.numOfElectives_Max);
+                numOfElectivesOutsideDept = GetRandomNo.getRandomFromRange(gen.numOfElectivesOutsideDept_Min,numOfElectives);
                 numOfElectivesWithInDept = numOfElectives - numOfElectivesOutsideDept;
                 if (numOfElectivesWithInDept != 0) {
                     while (hash2.size() != numOfElectivesWithInDept) {

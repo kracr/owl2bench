@@ -1,77 +1,66 @@
 package ABoxGen.InstanceGenerator;
 
 public class ConfigFile {
-    int publicationNum_Min=300; //per university
-    int publicationNum_Max=500; //per university
-    int researchGroupNum_Min=10;
-    int researchGroupNum_Max=20;
-    int collegeNum_Min=15;
-    int collegeNum_Max=25;
-    int womenCollegeNum_Min=2;
-    int womenCollegeNum_Max=4;
-    int deptNum_Min=6;
-    int deptNum_Max=10;
-    int RANum_Min=5;
-    int RANum_Max=10;
-    int progNum_Min=1;
-    int progNum_Max=3;
-    int ugStudentNum_Min=60;
-    int ugStudentNum_Max=100;
-    int pgStudentNum_Min=20;
-    int pgStudentNum_Max=40;
-    int phdStudentNum_Min=2;
-    int phdStudentNum_Max=10;
-    int ugCourseNum_Min=20;
-    int ugCourseNum_Max=35;
-    int electiveCourseNum_Min=25;
-    int electiveCourseNum_Max=35;
-    int assistantProfessorNum_Min=15;
-    int assistantProfessorNum_Max=20;
-    int associateProfessorNum_Min=8;
-    int associateProfessorNum_Max=15;
-    int fullProfessorNum_Min=5;
-    int fullProfessorNum_Max=10;
-    int visitingProfessorNum_Min=2;
-    int visitingProfessorNum_Max=5;
-    int lecturerNum_Min=5;
-    int lecturerNum_Max=10;
-    int postDocNum_Min=2;
-    int postDocNum_Max=7;
-    int systemStaffNum_Min=2;
-    int systemStaffNum_Max=5;
-    int clericalStaffNum_Min=2;
-    int clericalStaffNum_Max=8;
-    int otherStaffNum_Min=15;
-    int otherStaffNum_Max=25;
-    int internalAdvisorNum_Min=1;
-    int internalAdvisorNum_Max=2;
-    int externalAdvisorNum_Min=0;
-    int externalAdvisorNum_Max=2;
-    int numOfElectives_Min=1;
-    int numOfElectives_Max=4;
-    int numOfElectivesOutsideDept_Min=1;
-    int sameHomeTownNum_Min=0;
-    int sameHomeTownNum_Max=3;
-    int isFriendOfNum_Min=1;
-    int isFriendOfNum_Max=4;
-    int likesNum_Min=1;
-    int likesNum_Max=3;
-    int lovesNum_Min =0;
-    int lovesNum_Max=2;
-    int isCrazyAboutNum_Min=0;
-    int isCrazyAboutNum_Max=1;
-    int dislikesNum_Min=0;
-    int dislikesNum_Max=1;
-
-
-    String[] TOKEN_CollegeDiscipline= new String[]{"Engineering", "FineArts", "HumanitiesAndSocial","Management", "Science"};
-    String[] TOKEN_Engineering = new String[]{"AeronauticalEngineering","BiomedicalEngineering","ChemicalEngineering","CivilEngineering","ComputerEngineering","ElectricalEngineering","IndustryEngineering","MaterialScienceEngineering","MechanicalEngineering","PetroleumEngineering"};
-    String[] TOKEN_Management = new String[]{"DesignManagement", "FinancialAndAccountingManagement", "HumanResourceManagement", "MarketingManagement", "OperationsManagement", "ProjectManagement", "PublicRelationsManagement", "SalesManagement", "SupplyChainManagement", "RiskManagement"};
-    String[] TOKEN_FineArts= new String[]{"Architecture", "AsianArts", "Drama", "LatinArts", "MediaArtsAndSciences", "MedievalArts", "ModernArts"," MusicsClass", "PerformingArts", "TheatreAndDance"};
-    String[] TOKEN_Science=new String[]{"Astronomy", "Biology", "Chemistry", "ComputerScience", "GeoScience", "MarineScience", "MaterialScience", "Mathematics", "Physics", "Statistics"};
-    String[] TOKEN_HumanitiesAndSocial=new String[]{"Anthropology", "Economics", "English", "History", "Humanities", "Linguistics", "ModernLanguages", "Philosophy", "Psychology", "Religions"};
-
-
-
+    Integer publicationNum_Min=null;   // default 300 per university
+    Integer publicationNum_Max=null;   //;   //500;
+    Integer researchGroupNum_Min=null;    //10;
+    Integer researchGroupNum_Max=null;//=20;
+    Integer collegeNum_Min=null;//=15;
+    Integer collegeNum_Max=null;//=25;
+    Integer womenCollegeNum_Min=null;//=2;
+    Integer womenCollegeNum_Max=null;//=4;
+    Integer deptNum_Min=null;//=6;
+    Integer deptNum_Max=null;//=10;
+    Integer RANum_Min=null;//=5;
+    Integer RANum_Max=null;//=10;
+    Integer progNum_Min=null;//=1;
+    Integer progNum_Max=null;//=3;
+    Integer ugStudentNum_Min=null;//=60;
+    Integer ugStudentNum_Max=null;//=100;
+    Integer pgStudentNum_Min=null;//=20;
+    Integer pgStudentNum_Max=null;//=40;
+    Integer phdStudentNum_Min=null;//=2;
+    Integer phdStudentNum_Max=null;//=10;
+    Integer ugCourseNum_Min=null;//=20;
+    Integer ugCourseNum_Max=null;//=35;
+    Integer electiveCourseNum_Min=null;//=25;
+    Integer electiveCourseNum_Max=null;//=35;
+    Integer assistantProfessorNum_Min=null;//=15;
+    Integer assistantProfessorNum_Max=null;//=20;
+    Integer associateProfessorNum_Min=null;//=8;
+    Integer associateProfessorNum_Max=null;//=15;
+    Integer fullProfessorNum_Min=null;//=5;
+    Integer fullProfessorNum_Max=null;//=10;
+    Integer visitingProfessorNum_Min=null;//=2;
+    Integer visitingProfessorNum_Max=null;//=5;
+    Integer lecturerNum_Min=null;//=5;
+    Integer lecturerNum_Max=null;//=10;
+    Integer postDocNum_Min=null;//=2;
+    Integer postDocNum_Max=null;//=7;
+    Integer systemStaffNum_Min=null;//=2;
+    Integer systemStaffNum_Max=null;//=5;
+    Integer clericalStaffNum_Min=null;//=2;
+    Integer clericalStaffNum_Max=null;//=8;
+    Integer otherStaffNum_Min=null;//=15;
+    Integer otherStaffNum_Max=null;//=25;
+    Integer internalAdvisorNum_Min=null;//=1;
+    Integer internalAdvisorNum_Max=null;//=2;
+    Integer externalAdvisorNum_Min=null;//=0;
+    Integer externalAdvisorNum_Max=null;//=2;
+    Integer numOfElectives_Min=null;//=1;
+    Integer numOfElectives_Max=null;//=4;
+    Integer numOfElectivesOutsideDept_Min=null;//=1;
+    Integer sameHomeTownNum_Min=null;//=0;
+    Integer sameHomeTownNum_Max=null;//=3;
+    Integer isFriendOfNum_Min=null;//=1;
+    Integer isFriendOfNum_Max=null;//=4;
+    Integer likesNum_Min=null;//=1;
+    Integer likesNum_Max=null;//=3;
+    Integer lovesNum_Min =null;//=0;
+    Integer lovesNum_Max=null;//=2;
+    Integer isCrazyAboutNum_Min=null;//=0;
+    Integer isCrazyAboutNum_Max=null;//=1;
+    Integer dislikesNum_Min=null;//=0;
+    Integer dislikesNum_Max=null;//=1;
 
 }

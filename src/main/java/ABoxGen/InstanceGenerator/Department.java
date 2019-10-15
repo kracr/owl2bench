@@ -30,23 +30,23 @@ public class Department {
         configFile=new ConfigFile();
 
         //employee count
-        this.assistantProfessorNum = GetRandomNo.getRandomFromRange(configFile.assistantProfessorNum_Min,configFile.assistantProfessorNum_Max);
-        this.associateProfessorNum = GetRandomNo.getRandomFromRange(configFile.associateProfessorNum_Min,configFile.associateProfessorNum_Max);
-        this.fullProfessorNum = GetRandomNo.getRandomFromRange(configFile.fullProfessorNum_Min,configFile.fullProfessorNum_Max);
-        this.visitingProfessorNum = GetRandomNo.getRandomFromRange(configFile.visitingProfessorNum_Max,configFile.visitingProfessorNum_Max);
-        this.lecturerNum = GetRandomNo.getRandomFromRange(configFile.lecturerNum_Max,configFile.lecturerNum_Max);
-        this.postDocNum = GetRandomNo.getRandomFromRange(configFile.postDocNum_Min,configFile.postDocNum_Max);
+        this.assistantProfessorNum = GetRandomNo.getRandomFromRange(gen.assistantProfessorNum_Min,gen.assistantProfessorNum_Max);
+        this.associateProfessorNum = GetRandomNo.getRandomFromRange(gen.associateProfessorNum_Min,gen.associateProfessorNum_Max);
+        this.fullProfessorNum = GetRandomNo.getRandomFromRange(gen.fullProfessorNum_Min,gen.fullProfessorNum_Max);
+        this.visitingProfessorNum = GetRandomNo.getRandomFromRange(gen.visitingProfessorNum_Min,gen.visitingProfessorNum_Max);
+        this.lecturerNum = GetRandomNo.getRandomFromRange(gen.lecturerNum_Min,gen.lecturerNum_Max);
+        this.postDocNum = GetRandomNo.getRandomFromRange(gen.postDocNum_Min,gen.postDocNum_Max);
         this.totalFacultyNum = assistantProfessorNum + associateProfessorNum + fullProfessorNum + visitingProfessorNum + lecturerNum;
-        this.systemStaffNum = GetRandomNo.getRandomFromRange(configFile.systemStaffNum_Min,configFile.systemStaffNum_Max);
-        this.clericalStaffNum = GetRandomNo.getRandomFromRange(configFile.clericalStaffNum_Min,configFile.clericalStaffNum_Max);
-        this.otherStaffNum = GetRandomNo.getRandomFromRange(configFile.otherStaffNum_Min,configFile.otherStaffNum_Max);
+        this.systemStaffNum = GetRandomNo.getRandomFromRange(gen.systemStaffNum_Min,gen.systemStaffNum_Max);
+        this.clericalStaffNum = GetRandomNo.getRandomFromRange(gen.clericalStaffNum_Min,gen.clericalStaffNum_Max);
+        this.otherStaffNum = GetRandomNo.getRandomFromRange(gen.otherStaffNum_Min,gen.otherStaffNum_Max);
         //students count
 
         //number of courses
-        this.ugCourseNum = GetRandomNo.getRandomFromRange(configFile.ugCourseNum_Min,configFile.ugCourseNum_Max); //ug students take 4 ug courses
-        this.electiveCourseNum = GetRandomNo.getRandomFromRange(configFile.electiveCourseNum_Min,configFile.electiveCourseNum_Max); //ug students any 2 elective
+        this.ugCourseNum = GetRandomNo.getRandomFromRange(gen.ugCourseNum_Min,gen.ugCourseNum_Max); //ug students take 4 ug courses
+        this.electiveCourseNum = GetRandomNo.getRandomFromRange(gen.electiveCourseNum_Min,gen.electiveCourseNum_Max); //ug students any 2 elective
         //number of programs in the deptt
-        this.progNum = GetRandomNo.getRandomFromRange(configFile.progNum_Min,configFile.progNum_Max);
+        this.progNum = GetRandomNo.getRandomFromRange(gen.progNum_Min,gen.progNum_Max);
         //may be added to employee later
         deptName = assignDepartmentName(collegeDiscipline);
 
@@ -77,7 +77,8 @@ public class Department {
 
         if (progNum == 1) {
             this.ugProgram= new Program(this,"UG");
-            this.ugStudentNum = GetRandomNo.getRandomFromRange(configFile.ugStudentNum_Min,configFile.ugStudentNum_Max); //change numbers later
+            //this.programInstance=this.ugProgram.programInstance;
+            this.ugStudentNum = GetRandomNo.getRandomFromRange(gen.ugStudentNum_Min,gen.ugStudentNum_Max); //change numbers later
             this.ugStudents = new Student[this.ugStudentNum];
             for (int i = 0; i < this.ugStudentNum; ++i) {
                 this.ugStudents[i] = new Student(this , i,"UG");
@@ -86,8 +87,9 @@ public class Department {
 
         else if (progNum == 2) {
             this.ugProgram= new Program(this,"UG");
-            this.ugStudentNum = GetRandomNo.getRandomFromRange(configFile.ugStudentNum_Min,configFile.ugStudentNum_Max); //change numbers later
-            this.pgStudentNum = GetRandomNo.getRandomFromRange(configFile.pgStudentNum_Min,configFile.pgStudentNum_Max);
+            //this.programInstance=this.ugProgram.programInstance;
+            this.ugStudentNum = GetRandomNo.getRandomFromRange(gen.ugStudentNum_Min,gen.ugStudentNum_Max); //change numbers later
+            this.pgStudentNum = GetRandomNo.getRandomFromRange(gen.pgStudentNum_Min,gen.pgStudentNum_Max);
             this.ugStudents = new Student[this.ugStudentNum];
             this.pgStudents = new Student[this.pgStudentNum];
 
@@ -96,15 +98,17 @@ public class Department {
             }
 
             this.pgProgram= new Program(this,"PG");
+            //this.programInstance=this.pgProgram.programInstance;
             for (int i = 0; i < this.pgStudentNum; ++i) {
                 this.pgStudents[i] = new Student(this,i,"PG");
             }
         }
         else if (progNum == 3) {
             this.ugProgram= new Program(this,"UG");
-            this.ugStudentNum = GetRandomNo.getRandomFromRange(configFile.ugStudentNum_Min,configFile.ugStudentNum_Max); //change numbers later
-            this.pgStudentNum = GetRandomNo.getRandomFromRange(configFile.pgStudentNum_Min,configFile.pgStudentNum_Max);
-            this.phdStudentNum = GetRandomNo.getRandomFromRange(configFile.phdStudentNum_Min,configFile.phdStudentNum_Max);
+            //this.programInstance=this.ugProgram.programInstance;
+            this.ugStudentNum = GetRandomNo.getRandomFromRange(gen.ugStudentNum_Min,gen.ugStudentNum_Max); //change numbers later
+            this.pgStudentNum = GetRandomNo.getRandomFromRange(gen.pgStudentNum_Min,gen.pgStudentNum_Max);
+            this.phdStudentNum = GetRandomNo.getRandomFromRange(gen.phdStudentNum_Min,gen.phdStudentNum_Max);
             this.ugStudents = new Student[this.ugStudentNum];
             this.pgStudents = new Student[this.pgStudentNum];
             this.phdStudents = new Student[this.phdStudentNum];
@@ -113,10 +117,12 @@ public class Department {
             }
 
             this.pgProgram= new Program(this,"PG");
+            //this.programInstance=this.pgProgram.programInstance;
             for (int i = 0; i < this.pgStudentNum; ++i) {
                 this.pgStudents[i] = new Student(this,i,"PG");
             }
             this.phdProgram= new Program(this,"PhD");
+            //this.programInstance=this.phdProgram.programInstance;
             for (int i = 0; i < this.phdStudentNum; ++i) {
                 this.phdStudents[i] = new Student(this,i,"PhD");
             }
@@ -177,19 +183,19 @@ public class Department {
 
     public String assignDepartmentName(String collegeDiscipline) {
         if (collegeDiscipline == "Engineering") {
-            return configFile.TOKEN_Engineering[GetRandomNo.getRandomFromRange(0,9)];
+            return gen.TOKEN_Engineering[GetRandomNo.getRandomFromRange(0,9)];
         }
         else if (collegeDiscipline == "Management") {
-            return configFile.TOKEN_Management[GetRandomNo.getRandomFromRange(0,9)];
+            return gen.TOKEN_Management[GetRandomNo.getRandomFromRange(0,9)];
         }
         else if (collegeDiscipline == "FineArts") {
-            return configFile.TOKEN_FineArts[GetRandomNo.getRandomFromRange(0,9)];
+            return gen.TOKEN_FineArts[GetRandomNo.getRandomFromRange(0,9)];
         }
         else if (collegeDiscipline == "Science") {
-            return configFile.TOKEN_Science[GetRandomNo.getRandomFromRange(0,9)];
+            return gen.TOKEN_Science[GetRandomNo.getRandomFromRange(0,9)];
         }
         else if (collegeDiscipline == "HumanitiesAndSocial") {
-           return configFile.TOKEN_HumanitiesAndSocial[GetRandomNo.getRandomFromRange(0,9)];
+           return gen.TOKEN_HumanitiesAndSocial[GetRandomNo.getRandomFromRange(0,9)];
         }
         else
             return "Dept";

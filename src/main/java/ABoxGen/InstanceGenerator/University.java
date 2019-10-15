@@ -23,7 +23,7 @@ public class University {
         this.univCode= "U"+univIndex;
         this.universityName=gen.universityName;
         do {
-            this.cityName = GetRandomName.getRandomCityName();
+            this.cityName =gen.map3.get(GetRandomNo.getRandomFromRange(0,37000));
            //System.out.println("cityname"+ cityName);
         }while(universityName.contains(cityName));
         universityName.add(cityName);
@@ -33,9 +33,9 @@ public class University {
         gen.classAssertion(gen.getClass("University"),gen.getNamedIndividual(univInstance) );
         gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(univInstance),gen.getLiteral(univName));
         gen.dataPropertyAssertion(gen.getDataProperty("hasCode"),gen.getNamedIndividual(univInstance),gen.getLiteral(univCode));
-        this.researchGroupNum= GetRandomNo.getRandomFromRange(configFile.researchGroupNum_Min,configFile.researchGroupNum_Max);
-        this.collegeNum = GetRandomNo.getRandomFromRange(configFile.collegeNum_Min,configFile.collegeNum_Max);
-        this.womenCollegeNum = GetRandomNo.getRandomFromRange(configFile.womenCollegeNum_Min, configFile.womenCollegeNum_Max);
+        this.researchGroupNum= GetRandomNo.getRandomFromRange(gen.researchGroupNum_Min,gen.researchGroupNum_Max);
+        this.collegeNum = GetRandomNo.getRandomFromRange(gen.collegeNum_Min,gen.collegeNum_Max);
+        this.womenCollegeNum = GetRandomNo.getRandomFromRange(gen.womenCollegeNum_Min, gen.womenCollegeNum_Max);
         this.coEdCollegeNum = collegeNum- womenCollegeNum ;
         this.coEdColleges = new College[this.coEdCollegeNum];
         this.womenColleges = new College[this.womenCollegeNum];

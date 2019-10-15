@@ -24,7 +24,7 @@ public class College {
         this.collegeIndex = collegeIndex;
         this.gen = university.gen;
         this.isWomanCollege = isWomanCollege;
-        this.collegeDiscipline= configFile.TOKEN_CollegeDiscipline[GetRandomNo.getRandomFromRange(0, 4)];
+        this.collegeDiscipline= gen.TOKEN_CollegeDiscipline[GetRandomNo.getRandomFromRange(0, 4)];
         getRandomPerson=new GetRandomPerson();
 
         if (this.isWomanCollege) {
@@ -33,7 +33,7 @@ public class College {
             gen.classAssertion(gen.getClass("College"), gen.getNamedIndividual(collegeInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasWomenCollege"), gen.getNamedIndividual(university.univInstance), gen.getNamedIndividual(collegeInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasCollegeDiscipline"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(collegeDiscipline));
-            this.deptNum = GetRandomNo.getRandomFromRange(configFile.deptNum_Min, configFile.deptNum_Max);
+            this.deptNum = GetRandomNo.getRandomFromRange(gen.deptNum_Min, gen.deptNum_Max);
             this.depts = new Department[this.deptNum];
 
             for (int i = 0; i < this.deptNum; ++i) {
@@ -52,7 +52,7 @@ public class College {
             this.collegeCode = "U" + this.univIndex + "C" + this.collegeIndex;
             gen.classAssertion(gen.getClass("College"), gen.getNamedIndividual(collegeInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasCollege"), gen.getNamedIndividual(university.univInstance), gen.getNamedIndividual(collegeInstance));
-            this.deptNum = GetRandomNo.getRandomFromRange(configFile.deptNum_Min, configFile.deptNum_Max);
+            this.deptNum = GetRandomNo.getRandomFromRange(gen.deptNum_Min, gen.deptNum_Max);
             this.depts = new Department[this.deptNum];
 
             for (int i = 0; i < this.deptNum; ++i) {

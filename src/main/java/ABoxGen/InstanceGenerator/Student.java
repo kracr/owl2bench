@@ -17,25 +17,37 @@ public class Student {
         this.gen = department.gen;
         this.deptName = department.deptName;
 
-        if (womenStudents) {
-            this.studentInstance = departmentInstance  + "womenStudent" + studentIndex;
-        }
-        else
-        {
-            this.studentInstance = departmentInstance  + "student" + studentIndex;
-        }
+        
             department.personPerUniversity.add(studentInstance);
             if (program == "UG"){
-            gen.classAssertion(gen.getClass("UGStudent"),gen.getNamedIndividual(studentInstance));
+            	
+            	if (womenStudents) {
+                    this.studentInstance = departmentInstance  + "UGwomenStudent" + studentIndex;
+                }
+                else
+                {
+                    this.studentInstance = departmentInstance  + "UGstudent" + studentIndex;
+                }
+            //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
             this.person=new Person(this, studentInstance);
+            this.programInstance = department.ugProgram.programInstance;
             gen.objectPropertyAssertion(gen.getObjectProperty("enrollIn"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(departmentInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasMajor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(deptName));
             gen.objectPropertyAssertion(gen.getObjectProperty("enrollFor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(programInstance));
         }
             else if (program == "PG")
             {
-                gen.classAssertion(gen.getClass("PGStudent"),gen.getNamedIndividual(studentInstance));
+            	
+            	if (womenStudents) {
+                    this.studentInstance = departmentInstance  + "PGwomenStudent" + studentIndex;
+                }
+                else
+                {
+                    this.studentInstance = departmentInstance  + "PGstudent" + studentIndex;
+                }
+                //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
                 this.person=new Person(this, studentInstance);
+                this.programInstance = department.pgProgram.programInstance;
                 gen.objectPropertyAssertion(gen.getObjectProperty("enrollIn"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(departmentInstance));
                 gen.objectPropertyAssertion(gen.getObjectProperty("hasMajor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(deptName));
                 gen.objectPropertyAssertion(gen.getObjectProperty("enrollFor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(programInstance));
@@ -43,8 +55,17 @@ public class Student {
             }
             else if (program == "PhD")
             {
-                gen.classAssertion(gen.getClass("PhDStudent"),gen.getNamedIndividual(studentInstance));
+            	
+            	if (womenStudents) {
+                    this.studentInstance = departmentInstance  + "PhDwomenStudent" + studentIndex;
+                }
+                else
+                {
+                    this.studentInstance = departmentInstance  + "PhDstudent" + studentIndex;
+                }
+                //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
                 this.person=new Person(this, studentInstance);
+                this.programInstance = department.phdProgram.programInstance;
                 gen.objectPropertyAssertion(gen.getObjectProperty("enrollIn"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(departmentInstance));
                 gen.objectPropertyAssertion(gen.getObjectProperty("hasMajor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(deptName));
                 gen.objectPropertyAssertion(gen.getObjectProperty("enrollFor"),gen.getNamedIndividual(studentInstance),gen.getNamedIndividual(programInstance));

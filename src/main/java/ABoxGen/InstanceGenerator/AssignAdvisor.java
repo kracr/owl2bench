@@ -31,8 +31,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.ugStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {
@@ -58,8 +58,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.pgStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {
@@ -86,8 +86,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.phdStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {
@@ -120,8 +120,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.ugStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {
@@ -148,8 +148,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.pgStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {
@@ -176,8 +176,8 @@ public class AssignAdvisor {
                     for (int l = 0; l < dept.phdStudentNum; ++l) {
                         hash1 = new HashSet();
                         hash2 = new HashSet();
-                        internalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.internalAdvisorNum_Min,configFile.internalAdvisorNum_Max);
-                        externalAdvisorNum = GetRandomNo.getRandomFromRange(configFile.externalAdvisorNum_Min,configFile.externalAdvisorNum_Max);
+                        internalAdvisorNum = GetRandomNo.getRandomFromRange(gen.internalAdvisorNum_Min,gen.internalAdvisorNum_Max);
+                        externalAdvisorNum = GetRandomNo.getRandomFromRange(gen.externalAdvisorNum_Min,gen.externalAdvisorNum_Max);
                         for (int m = 0; m < internalAdvisorNum; ++m) {
                             advisor = getRandomPerson.getRandomInternalProfessor(dept);
                             if (advisor != null) {

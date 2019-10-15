@@ -38,7 +38,7 @@ public class EvaluationCommittee {
                         }
                         Iterator<String> n = hash1.iterator();
                         while (n.hasNext()) {
-                            gen.objectPropertyAssertion(gen.getObjectProperty("hasMember"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(n.next()));
+                            gen.objectPropertyAssertion(gen.getObjectProperty("hasCommitteeMembers"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(n.next()));
                         }
 
                     for (int m = 0; m < 3; ++m) {
@@ -49,7 +49,7 @@ public class EvaluationCommittee {
                     }
                     Iterator<String> o = hash2.iterator();
                     while (o.hasNext()) {
-                        gen.objectPropertyAssertion(gen.getObjectProperty("hasMember"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(o.next()));
+                        gen.objectPropertyAssertion(gen.getObjectProperty("hasCommitteeMembers"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(o.next()));
                     }
                     }
             }
@@ -70,7 +70,7 @@ public class EvaluationCommittee {
                     }
                     Iterator<String> n = hash1.iterator();
                     while (n.hasNext()) {
-                        gen.objectPropertyAssertion(gen.getObjectProperty("hasMember"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(n.next()));
+                        gen.objectPropertyAssertion(gen.getObjectProperty("hasCommitteeMembers"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(n.next()));
                     }
 
                     for (int m = 0; m < 3; ++m) {
@@ -81,7 +81,7 @@ public class EvaluationCommittee {
                     }
                     Iterator<String> o = hash2.iterator();
                     while (o.hasNext()) {
-                        gen.objectPropertyAssertion(gen.getObjectProperty("hasMember"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(o.next()));
+                        gen.objectPropertyAssertion(gen.getObjectProperty("hasCommitteeMembers"),gen.getNamedIndividual(dept.departmentInstance + "thesisEC"),gen.getNamedIndividual(o.next()));
                     }
                 }
             }

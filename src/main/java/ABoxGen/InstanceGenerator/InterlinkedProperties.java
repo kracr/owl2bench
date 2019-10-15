@@ -35,12 +35,12 @@ public class InterlinkedProperties {
             //}
             while(j.hasNext()) {
                 String person1=j.next();
-                sameHomeTownNum = GetRandomNo.getRandomFromRange(configFile.sameHomeTownNum_Min,configFile.sameHomeTownNum_Max);
-                isFriendOfNum = GetRandomNo.getRandomFromRange(configFile.isFriendOfNum_Min,configFile.isFriendOfNum_Max);
-                likesNum=GetRandomNo.getRandomFromRange(configFile.likesNum_Min,configFile.likesNum_Max);
-                lovesNum=GetRandomNo.getRandomFromRange(configFile.lovesNum_Min,configFile.lovesNum_Max);
-                isCrazyAboutNum=GetRandomNo.getRandomFromRange(configFile.isCrazyAboutNum_Min,configFile.isCrazyAboutNum_Max);
-                dislikesNum=GetRandomNo.getRandomFromRange(configFile.dislikesNum_Min,configFile.dislikesNum_Max);
+                sameHomeTownNum = GetRandomNo.getRandomFromRange(gen.sameHomeTownNum_Min,gen.sameHomeTownNum_Max);
+                isFriendOfNum = GetRandomNo.getRandomFromRange(gen.isFriendOfNum_Min,gen.isFriendOfNum_Max);
+                likesNum=GetRandomNo.getRandomFromRange(gen.likesNum_Min,gen.likesNum_Max);
+                lovesNum=GetRandomNo.getRandomFromRange(gen.lovesNum_Min,gen.lovesNum_Max);
+                isCrazyAboutNum=GetRandomNo.getRandomFromRange(gen.isCrazyAboutNum_Min,gen.isCrazyAboutNum_Max);
+                dislikesNum=GetRandomNo.getRandomFromRange(gen.dislikesNum_Min,gen.dislikesNum_Max);
 
                 hash1=new HashSet();
                 for (int a = 0; a < sameHomeTownNum; ++a) {

@@ -10,7 +10,7 @@ public class Employee {
         this.departmentInstance=department.departmentInstance;
         this.employeeInstance=departmentInstance+ employeeType + empIndex;
         department.personPerUniversity.add(employeeInstance);
-        gen.classAssertion(gen.getClass(employeeType),gen.getNamedIndividual(employeeInstance));
+        //gen.classAssertion(gen.getClass(employeeType),gen.getNamedIndividual(employeeInstance));
         this.person=new Person(this , employeeInstance);
         gen.objectPropertyAssertion(gen.getObjectProperty("is" + employeeType+ "Of"),gen.getNamedIndividual(employeeInstance),gen.getNamedIndividual(departmentInstance));
         if(employeeType==("FullProfessor || AssistantProfessor || AssociateProfessor || VisitingProfessor || PostDoc || Lecturer " ))

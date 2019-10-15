@@ -194,11 +194,6 @@
         </dependency>
         <dependency>
             <groupId>jexcelapi</groupId>
-            <artifactId>jexcelapi</artifactId>
-            <version>2.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6</version>
         </dependency>
@@ -262,8 +257,7 @@
             <artifactId>poi-excelant</artifactId>
             <version>4.1.0</version>
         </dependency>
-
-
+        
     </dependencies>
 
     <dependencyManagement>
