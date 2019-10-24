@@ -2,13 +2,14 @@ package ABoxGen.InstanceGenerator;
 
 
 public class ResearchGroup {
-    String researchGroupInstance,researchProjectInstance,RAInstance;
+    String researchGroupInstance,researchProjectInstance,RAInstance,profile;
     Generator gen;
     Person person;
     int RANum;
     ConfigFile configFile;
     public ResearchGroup(University university,int index) {
         configFile=new ConfigFile();
+        this.profile=university.profile;
         this.researchGroupInstance = university.univInstance + "ResearchGroup" + index;
         this.researchProjectInstance =  researchGroupInstance+ "ResearchProject";
         this.gen=university.gen;

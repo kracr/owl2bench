@@ -13,7 +13,7 @@ public class Department {
     Generator gen;
     Boolean womenStudents;
     String departmentInstance, programInstance;
-    String collegeDiscipline;
+    String collegeDiscipline,profile;
     String deptName;
     Program ugProgram,pgProgram,phdProgram;
     HashSet<String> personPerUniversity;
@@ -21,6 +21,7 @@ public class Department {
     ConfigFile configFile;
 
     public Department(College college,int deptIndex,Boolean womenStudents) {
+    	this.profile=college.profile;
         this.personPerUniversity=college.personPerUniversity;
         this.collegeIndex = college.collegeIndex;
         this.deptIndex = deptIndex;
@@ -53,12 +54,12 @@ public class Department {
         if (this.womenStudents) {
             this.departmentInstance = college.collegeInstance + "DeptOf" + deptName + this.deptIndex;
             gen.classAssertion(gen.getClass("Department"),gen.getNamedIndividual(departmentInstance));
-            gen.objectPropertyAssertion(gen.getObjectProperty("hasDepartment"),gen.getNamedIndividual(college.collegeInstance),gen.getNamedIndividual(departmentInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isDepartmentOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
             generateStudents(womenStudents,progNum);
         } else {
             this.departmentInstance = college.collegeInstance + "DeptOf" + deptName + this.deptIndex;
             gen.classAssertion(gen.getClass("Department"),gen.getNamedIndividual(departmentInstance));
-            gen.objectPropertyAssertion(gen.getObjectProperty("hasDepartment"),gen.getNamedIndividual(college.collegeInstance),gen.getNamedIndividual(departmentInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isDepartmentOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
             generateStudents(womenStudents,progNum);
         }
 
