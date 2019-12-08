@@ -12,7 +12,7 @@ public class InterlinkedProperties {
     University universities[];
     ConfigFile configFile;
     Generator gen;
-    String crazyAbout,profile;
+    String crazyAbout;
    // int univNum;
     HashSet<String> hash1,hash2,hash3,hash4,hash5;
     int sameHomeTownNum,isFriendOfNum,likesNum,lovesNum,isCrazyAboutNum,dislikesNum;
@@ -21,7 +21,6 @@ public class InterlinkedProperties {
 
     public InterlinkedProperties(Generator gen,University universities[]){
         this.gen=gen;
-        this.profile=gen.profile;
         //this.univNum=gen.univNum;
         this.universities=universities;
         getRandomInterest=new GetRandomInterest();
@@ -79,7 +78,6 @@ public class InterlinkedProperties {
                     }
                 }
                 hash4= new HashSet();
-                if ((profile.matches("DL")) || (profile.matches("RL"))|| (profile.matches("EL"))) {
                 for (int a = 0; a < lovesNum; ++a) {
                     String interest = getRandomInterest.getInterest();
                     if ((interest != null) && (!hash3.contains(interest))) {
@@ -90,24 +88,21 @@ public class InterlinkedProperties {
                         gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
                     }
                 }
-                }
                 //isCrazyAbout just one
                 if(isCrazyAboutNum!=0) {
                     crazyAbout=getRandomInterest.getInterest();
                     gen.objectPropertyAssertion(gen.getObjectProperty("isCrazyAbout"),gen.getNamedIndividual(person1),gen.getNamedIndividual(crazyAbout));
                 }
-                if ((profile.matches("DL")) || (profile.matches("RL"))|| (profile.matches("QL"))) {
                 hash5= new HashSet();
                 for (int a = 0; a < dislikesNum; ++a) {
                     String interest = getRandomInterest.getInterest();
-                    if ((interest != null) && (crazyAbout!=interest) && (!hash3.contains(interest)) && (!hash4.contains(interest))) {
-                        hash5.add(interest);
+                    if ((interest != null) && (crazyAbout!=interest)&&(!hash3.contains(interest))&&(!hash4.contains(interest))) {
+                        hash4.add(interest);
                     }
-                    Iterator<String> k = hash5.iterator();
+                    Iterator<String> k = hash4.iterator();
                     while (k.hasNext()) {
                         gen.objectPropertyAssertion(gen.getObjectProperty("dislikes"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
                     }
-                }
                 }
             }
         }

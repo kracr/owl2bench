@@ -17,14 +17,12 @@ public class Person {
         
         if(!student.womenStudents){
         	
-        	if ((profile.matches("DL")) || (profile.matches("RL"))) {
-        		//System.out.println("manwoamn1");
+        	if (profile=="DL" || profile=="RL") {
             gender = GetRandomNo.getRandomFromRange(0,1);
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
             else
-                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-            }
+                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));}
         	else 
         		gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
         }
@@ -48,17 +46,12 @@ public class Person {
     public Person(Employee employee, String instance) {
         this.gen=employee.gen;
         this.profile=employee.profile;
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
-        	//System.out.println("manwoamn2");
             gender = GetRandomNo.getRandomFromRange(0,1);
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
             else
-                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-        }
-        else
-        	 gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
-        	
+                gen.classAssertion(gen.getClass(
+                        "Man"),gen.getNamedIndividual(instance));
 
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));
@@ -76,17 +69,16 @@ public class Person {
         this.gen=researchGroup.gen;
         this.profile=researchGroup.profile;
 
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
-        	//System.out.println("manwoamn3");
-            gender = GetRandomNo.getRandomFromRange(0,1);
-            if(gender==0)
-                gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
-            else
-                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-        }
+        gender = GetRandomNo.getRandomFromRange(0,1);
+        if(gender==0)
+        {
+            gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
+        	//System.out.println(instance);
+            }
         else
-        	 gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
-        	
+            {gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
+        	//System.out.println(instance);
+            }
 
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));

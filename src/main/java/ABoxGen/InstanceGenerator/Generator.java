@@ -16,6 +16,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 public class Generator {
 
@@ -83,7 +86,7 @@ public class Generator {
     String[] TOKEN_CollegeDiscipline= new String[]{"Engineering", "FineArts", "HumanitiesAndSocial","Management", "Science"};
     String[] TOKEN_Engineering = new String[]{"AeronauticalEngineering","BiomedicalEngineering","ChemicalEngineering","CivilEngineering","ComputerEngineering","ElectricalEngineering","IndustryEngineering","MaterialScienceEngineering","MechanicalEngineering","PetroleumEngineering"};
     String[] TOKEN_Management = new String[]{"DesignManagement", "FinancialAndAccountingManagement", "HumanResourceManagement", "MarketingManagement", "OperationsManagement", "ProjectManagement", "PublicRelationsManagement", "SalesManagement", "SupplyChainManagement", "RiskManagement"};
-    String[] TOKEN_FineArts= new String[]{"Architecture", "AsianArts", "Drama", "LatinArts", "MediaArtsAndSciences", "MedievalArts", "ModernArts","MusicsClass", "PerformingArts", "TheatreAndDance"};
+    String[] TOKEN_FineArts= new String[]{"Architecture", "AsianArts", "Drama", "LatinArts", "MediaArtsAndSciences", "MedievalArts", "ModernArts"," MusicsClass", "PerformingArts", "TheatreAndDance"};
     String[] TOKEN_Science=new String[]{"Astronomy", "Biology", "Chemistry", "ComputerScience", "GeoScience", "MarineScience", "MaterialScience", "Mathematics", "Physics", "Statistics"};
     String[] TOKEN_HumanitiesAndSocial=new String[]{"Anthropology", "Economics", "English", "History", "Humanities", "Linguistics", "ModernLanguages", "Philosophy", "Psychology", "Religions"};
 
@@ -116,58 +119,48 @@ public class Generator {
     }
 
     public static void main(String[] args) {
-        int univNum=10;
-        int seed = 950;
-        String profile= "RL";
-        //System.out.println(args[2]);
-        if(args.length==3)
+        int univNum=1;
+        int seed = 350;
+        String profile= "DL";
+        if(args.length==2)
+        {
+            univNum=Integer.parseInt(args[0]);
+            seed=Integer.parseInt(args[1]);
+        }
+        else if (args.length==3)
         {
             univNum=Integer.parseInt(args[0]);
             seed=Integer.parseInt(args[1]);
             profile= args[2];
         }
-        else if (args.length==2)
-        {
-            univNum=Integer.parseInt(args[0]);
-            seed=Integer.parseInt(args[1]);
-           
-        }
         else if (args.length==1)
         {
             univNum=Integer.parseInt(args[0]);
         }
-        //System.out.println(profile);
+
         new Generator().start(univNum, seed, profile);
     }
 
 
     public void start(int univNum, int seed, String profile) {
-    	//System.out.println(profile);
-    	this.profile=profile;
-    	//System.out.println(".." + profile);
+        //profile= new OWL2Profile();
     	
-    	 if(profile.matches("EL")){
-    		 System.out.println("EL");
-    		 file2 = new File("UNIV-BENCH-OWL2EL.owl");
+    	 file2 = new File("univ-bench-2dl-rdfxmlformat.owl");
+    	 if (profile=="EL"){
+    		 file2 = new File("univ-bench-2el-rdfxmlformat.owl");
     	 }
-    	 else if (profile.matches("QL")) {
-
-    		 System.out.println("QL");
-    		 file2 = new File("UNIV-BENCH-OWL2QL.owl");
+    	 else if (profile=="QL") {
+    		 file2 = new File("univ-bench-2ql-rdfxmlformat.owl");
     	 }
-    	 else if (profile.matches("RL")) {
-
-    		 System.out.println("RL");
-    		 file2 = new File("UNIV-BENCH-OWL2RL.owl");
+    	 else if (profile=="RL") {
+    		 file2 = new File("univ-bench-2rl-rdfxmlformat.owl");
     	 }
-    	 else if (profile.matches("DL"))
-    	 {
-    		 System.out.println("DL");
-    		 file2 = new File("UNIV-BENCH-OWL2DL.owl");
-    	 }
-    	OWLOntology o = loadOWLOntology(file2);
+    	  OWLOntology o = loadOWLOntology(file2);
         OWLDocumentFormat format = manager.getOntologyFormat(o);
+        //System.out.println("Counts..."+ format);
+        //OWLReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(o);
 
+       // System.out.println(o);
         this.univNum = univNum;
         GetRandomNo.setSeed((long) seed);
         this.configFile=new ConfigFile();
@@ -220,7 +213,14 @@ public class Generator {
         {
             this.sameHomeTownNum_Max=configFile.sameHomeTownNum_Max;
         }
-
+        if(configFile.isFriendOfNum_Min!=null)
+        {
+            this.isFriendOfNum_Min=configFile.isFriendOfNum_Min;
+        }
+        if(configFile.isFriendOfNum_Max!=null)
+        {
+            this.isFriendOfNum_Max=configFile.isFriendOfNum_Max;
+        }
         if(configFile.isCrazyAboutNum_Min!=null)
         {
             this.isCrazyAboutNum_Min=configFile.isCrazyAboutNum_Min;
@@ -361,7 +361,6 @@ public class Generator {
         if(configFile.otherStaffNum_Max!=null){
             this.otherStaffNum_Max=configFile.otherStaffNum_Max;
         }
-        /*
         if(configFile.ugCourseNum_Min!=null){
             this.ugCourseNum_Min=configFile.ugCourseNum_Min;
         }
@@ -374,7 +373,6 @@ public class Generator {
         if(configFile.electiveCourseNum_Max!=null){
             this.electiveCourseNum_Max=configFile.electiveCourseNum_Max;
         }
-        */
         if(configFile.progNum_Min!=null){
             this.progNum_Min=configFile.progNum_Min;
         }
@@ -435,7 +433,6 @@ public class Generator {
 
         for (int i = 0; i < this.univNum; ++i) {
             this.universities[i] = new University(this, i);
-            System.out.println(i);
         }
         //Generate publications
         //create links across universities using Publication 'hasAuthor' some Person. 1 publication can have authors from different universities
@@ -451,38 +448,29 @@ public class Generator {
         //assign internal and external professors as advisor
         this.assignAdvisor=new AssignAdvisor(this,universities);
         // hasUnderGraduateDegreeFrom,hasMastersDegreeFrom,hasDoctoralDegreeFrom
-        
+        if (profile!="EL") {
         this.assignDegree=new AssignDegree(this,universities);
-        
+        }
         //every deptt has evaluation committee
         this.evaluationCommittee=new EvaluationCommittee(this,universities);
        // ontology.axioms().forEach(System.out::println);
         //System.out.println("Counts..."+ ontology.getLogicalAxiomCount() + "   "+ontology.getAxiomCount());
-        
-        OWLDocumentFormat format = manager.getOntologyFormat(o);
-        System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
-       
+
         try  {
-            File file = new File(System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl");
+            File file = new File(System.getProperty("user.dir")+ "\\output1.owl");
            // File file = new File("C:\\Users\\Gunjan\\Desktop\\owlbenchmarkingreferences\\OntoBench-master\\UnivBench2DL\\output1.owl");
            // File file = new File("D:\\output1.owl");
 
             if (!file.exists()) {
                 file.mkdir();
             }
-        
-           
-            //OWLDocumentFormat format = manager.getOntologyFormat(o);
-
-           // System.out.println("Counts..."+ format+ "...."+ o.getAxiomCount());
-            System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
+            OWLDocumentFormat format = manager.getOntologyFormat(o);
             //System.out.println("Counts..."+ format+ "...."+ o.getAxiomCount());
             manager.saveOntology(o,format,IRI.create(file.toURI()));
-            System.out.println("Done");
+            System.out.println("Counts..."+ format+ "...."+ o.getAxiomCount());
         } catch (OWLOntologyStorageException e) {
             e.printStackTrace();
         }
-        
     }
 
     public OWLOntology createOWLOntology(PrefixManager pm) {
@@ -546,9 +534,10 @@ public class Generator {
     }
 
     public void addAxiomToOntology(OWLAxiom axiom) {
+        //System.out.println(axiom);
 
+        //ontology.getOWLOntologyManager().addAxiom(ontology, axiom);
        o.getOWLOntologyManager().addAxiom(o, axiom);
-       //add here 
     }
 
     public void classAssertion(OWLClassExpression classExpression, OWLIndividual individual) {
@@ -563,6 +552,7 @@ public class Generator {
     public void objectPropertyAssertion(OWLObjectProperty property, OWLIndividual subject, OWLIndividual object) {
         addAxiomToOntology(factory.getOWLObjectPropertyAssertionAxiom( property, subject,  object));
     }
+
 
 }
 

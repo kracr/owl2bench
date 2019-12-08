@@ -4,11 +4,11 @@ import java.util.HashSet;
 
 public class Department {
 
-    int deptIndex,count=0,count2=0;
-    int collegeIndex, progNum, ugStudentNum, pgStudentNum, phdStudentNum,courseNum, ugCourseNum, electiveCourseNum;
+    int deptIndex;
+    int collegeIndex, progNum, ugStudentNum, pgStudentNum, phdStudentNum, ugCourseNum, electiveCourseNum;
     int totalFacultyNum, assistantProfessorNum, associateProfessorNum, fullProfessorNum, visitingProfessorNum, lecturerNum, postDocNum, systemStaffNum, clericalStaffNum, otherStaffNum;
     Student[] ugStudents, pgStudents, phdStudents;
-    Employee[] faculty,assistantProfessors, associateProfessors, fullProfessors, visitingProfessors, lecturers, postDocs, systemStaffs, clericalStaffs, otherStaffs;
+    Employee[] assistantProfessors, associateProfessors, fullProfessors, visitingProfessors, lecturers, postDocs, systemStaffs, clericalStaffs, otherStaffs;
     Course[] ugCourses,electiveCourses;
     Generator gen;
     Boolean womenStudents;
@@ -42,11 +42,10 @@ public class Department {
         this.clericalStaffNum = GetRandomNo.getRandomFromRange(gen.clericalStaffNum_Min,gen.clericalStaffNum_Max);
         this.otherStaffNum = GetRandomNo.getRandomFromRange(gen.otherStaffNum_Min,gen.otherStaffNum_Max);
         //students count
-        this.courseNum=totalFacultyNum+postDocNum;
+
         //number of courses
-        this.ugCourseNum = GetRandomNo.getRandomFromRange((courseNum/2),2*(courseNum/3)); //ug students take 4 ug courses
-        this.electiveCourseNum = courseNum-ugCourseNum;
-        // GetRandomNo.//getRandomFromRange(gen.electiveCourseNum_Min,gen.electiveCourseNum_Max); ug students any 2 elective
+        this.ugCourseNum = GetRandomNo.getRandomFromRange(gen.ugCourseNum_Min,gen.ugCourseNum_Max); //ug students take 4 ug courses
+        this.electiveCourseNum = GetRandomNo.getRandomFromRange(gen.electiveCourseNum_Min,gen.electiveCourseNum_Max); //ug students any 2 elective
         //number of programs in the deptt
         this.progNum = GetRandomNo.getRandomFromRange(gen.progNum_Min,gen.progNum_Max);
         //may be added to employee later
@@ -68,7 +67,7 @@ public class Department {
         generateCourses();
         //department chair
         chair=fullProfessors[GetRandomNo.getRandomFromRange(0,fullProfessorNum-1)].employeeInstance;
-        gen.objectPropertyAssertion(gen.getObjectProperty("isHeadOf"),gen.getNamedIndividual(chair),gen.getNamedIndividual(departmentInstance));
+        gen.objectPropertyAssertion(gen.getObjectProperty("hasHead"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(chair));
 
 
     }
@@ -141,36 +140,23 @@ public class Department {
         this.clericalStaffs = new Employee[this.clericalStaffNum];
         this.otherStaffs= new Employee[this.otherStaffNum];
         this.postDocs= new Employee[this.postDocNum];
-        this.faculty=new Employee[this.courseNum];
         for (int i = 0; i < this.assistantProfessorNum; ++i) {
             this.assistantProfessors[i] = new Employee(this,i,"AssistantProfessor");
-            faculty[count]=assistantProfessors[i];
-            count=count+1;
         }
         for (int i = 0; i < this.associateProfessorNum; ++i) {
             this.associateProfessors[i] = new Employee(this,i,"AssociateProfessor");
-            faculty[count]=associateProfessors[i];
-            count=count+1;
         }
         for (int i = 0; i < this.fullProfessorNum; ++i) {
             this.fullProfessors[i] = new Employee(this,i,"FullProfessor");
-            faculty[count]=fullProfessors[i];
-            count=count+1;
         }
         for (int i = 0; i < this.visitingProfessorNum; ++i) {
             this.visitingProfessors[i] = new Employee(this,i,"VisitingProfessor");
-            faculty[count]=visitingProfessors[i];
-            count=count+1;
         }
         for (int i = 0; i < this.lecturerNum; ++i) {
             this.lecturers[i] = new Employee(this,i,"Lecturer");
-            faculty[count]=lecturers[i];
-            count=count+1;
         }
         for (int i = 0; i < this.postDocNum; ++i) {
             this.postDocs[i] = new Employee(this,i,"PostDoc");
-            faculty[count]=postDocs[i];
-            count=count+1;
         }
         for (int i = 0; i < this.systemStaffNum; ++i) {
             this.systemStaffs[i] = new Employee(this,i,"SystemStaff");
@@ -188,12 +174,10 @@ public class Department {
         this.ugCourses= new Course[this.ugCourseNum];
         this.electiveCourses= new Course[this.electiveCourseNum];
         for (int i = 0; i < this.ugCourseNum; ++i) {
-            this.ugCourses[i] = new Course(this,i,"UGCourse");
-            count2=count2+1;
+            this.ugCourses[i] = new Course(this,i,"UGCourse_");
         }
         for (int i = 0; i < this.electiveCourseNum; ++i) {
-            this.electiveCourses[i] = new Course(this, count2,"ElectiveCourse");
-            count2=count2+1;
+            this.electiveCourses[i] = new Course(this, i,"ElectiveCourse_");
         }
 
     }

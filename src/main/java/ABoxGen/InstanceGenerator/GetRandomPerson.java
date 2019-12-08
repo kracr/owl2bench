@@ -4,9 +4,9 @@ package ABoxGen.InstanceGenerator;
 import org.apache.commons.collections4.Get;
 
 public class GetRandomPerson {
-    String person,personCategory,advisor,profile;
+    String person,personCategory,advisor;
     Generator gen;
-    int univNum,randomUnivNum,womenCollegeNum,collegeNum,randomWomenCollegeNum,coEdCollegeNum,randomCollegeNum,randomCoEdCollegeNum,deptNum,randomDeptNum,personNum,randomPersonNum;
+    int univNum,randomUnivNum,womenCollegeNum,randomWomenCollegeNum,coEdCollegeNum,randomCoEdCollegeNum,deptNum,randomDeptNum,personNum,randomPersonNum;
     University univ,otherUniv;
     College clg;
     Department dept;
@@ -20,12 +20,11 @@ public class GetRandomPerson {
     public String getRandomStudentOrFaculty(Generator gen, University universities[]) //across universities for publications
     {
         this.gen=gen;
-        this.profile=gen.profile;
         this.univNum=gen.univNum;
         this.randomUnivNum=GetRandomNo.getRandomFromRange(0,univNum-1);
 
         this.univ=universities[randomUnivNum];
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+
         if(GetRandomNo.getRandomFromRange(0,10)==0) {
             this.womenCollegeNum = univ.womenCollegeNum;
             this.randomWomenCollegeNum = GetRandomNo.getRandomFromRange(0,womenCollegeNum - 1);
@@ -33,16 +32,8 @@ public class GetRandomPerson {
         }
         else {
             this.coEdCollegeNum = univ.coEdCollegeNum;
-            //System.out.println(coEdCollegeNum);
             this.randomCoEdCollegeNum = GetRandomNo.getRandomFromRange(0,coEdCollegeNum - 1);
             this.clg=univ.coEdColleges[randomCoEdCollegeNum];
-        }
-        }
-        else
-        {
-        	this.collegeNum=univ.collegeNum;
-            this.randomCollegeNum = GetRandomNo.getRandomFromRange(0,collegeNum - 1);
-            this.clg=univ.colleges[randomCollegeNum];   	
         }
         this.deptNum=clg.deptNum;
         this.randomDeptNum=GetRandomNo.getRandomFromRange(0,deptNum-1);
@@ -159,11 +150,10 @@ public class GetRandomPerson {
     {
         this.gen=gen;
         this.univNum=gen.univNum;
-        this.profile=gen.profile;
         this.randomUnivNum=GetRandomNo.getRandomFromRange(0,univNum-1);
 
         this.univ=universities[randomUnivNum];
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+
         if(GetRandomNo.getRandomFromRange(0,10)==0) {
             this.womenCollegeNum = univ.womenCollegeNum;
             this.randomWomenCollegeNum = GetRandomNo.getRandomFromRange(0,womenCollegeNum - 1);
@@ -173,13 +163,6 @@ public class GetRandomPerson {
             this.coEdCollegeNum = univ.coEdCollegeNum;
             this.randomCoEdCollegeNum = GetRandomNo.getRandomFromRange(0,coEdCollegeNum - 1);
             this.clg=univ.coEdColleges[randomCoEdCollegeNum];
-        }
-        }
-        else
-        {
-        	this.collegeNum=univ.collegeNum;
-            this.randomCollegeNum = GetRandomNo.getRandomFromRange(0,collegeNum - 1);
-            this.clg=univ.colleges[randomCollegeNum];   	
         }
         this.deptNum=clg.deptNum;
         this.randomDeptNum=GetRandomNo.getRandomFromRange(0,deptNum-1);
