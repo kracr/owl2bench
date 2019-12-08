@@ -30,7 +30,7 @@ public class University {
         }while(universityName.contains(cityName));
         universityName.add(cityName);
         this.univName= "University of " + cityName;//from data dictionary
-        System.out.println("univname"+ univName);
+        //System.out.println( univName);
         this.configFile=new ConfigFile();
         gen.classAssertion(gen.getClass("University"),gen.getNamedIndividual(univInstance) );
         gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(univInstance),gen.getLiteral(univName));
@@ -38,13 +38,14 @@ public class University {
         this.researchGroupNum= GetRandomNo.getRandomFromRange(gen.researchGroupNum_Min,gen.researchGroupNum_Max);
         this.researchGroups = new ResearchGroup[this.researchGroupNum];
         this.collegeNum = GetRandomNo.getRandomFromRange(gen.collegeNum_Min,gen.collegeNum_Max);
-        
-        if (profile=="DL" || profile=="RL") {
-        
+        //System.out.println("univ" + profile);
+        if (profile.matches("DL") || profile.matches("RL")) {
+        //System.out.println("herenowcl");
         this.womenCollegeNum = GetRandomNo.getRandomFromRange(gen.womenCollegeNum_Min, gen.womenCollegeNum_Max);
         this.coEdCollegeNum = collegeNum- womenCollegeNum ;
         this.coEdColleges = new College[this.coEdCollegeNum];
         this.womenColleges = new College[this.womenCollegeNum];
+        
 
         if (this.womenCollegeNum != 0) {
             for(i = 0; i < this.womenCollegeNum; ++i) {
@@ -58,6 +59,7 @@ public class University {
         }
         else
         {
+        	this.colleges=new College[this.collegeNum];
         	for(i = 0; i < this.collegeNum; ++i) {
                 this.colleges[i] = new College(this, i,false);
             }

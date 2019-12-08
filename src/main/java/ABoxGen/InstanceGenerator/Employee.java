@@ -14,11 +14,10 @@ public class Employee {
         //gen.classAssertion(gen.getClass(employeeType),gen.getNamedIndividual(employeeInstance));
         this.person=new Person(this , employeeInstance);
         gen.objectPropertyAssertion(gen.getObjectProperty("is" + employeeType+ "Of"),gen.getNamedIndividual(employeeInstance),gen.getNamedIndividual(departmentInstance));
-        if(employeeType==("FullProfessor || AssistantProfessor || AssociateProfessor || VisitingProfessor || PostDoc || Lecturer " ))
+        if(employeeType=="FullProfessor" || employeeType=="AssistantProfessor" || employeeType=="AssociateProfessor" || employeeType=="VisitingProfessor" || employeeType=="PostDoc" || employeeType=="Lecturer" )
         {
             gen.dataPropertyAssertion(gen.getDataProperty("hasResearchInterest"),gen.getNamedIndividual(employeeInstance),gen.getLiteral("SomeResearchTopic"));
         }
-
     }
 }
 

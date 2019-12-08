@@ -32,8 +32,9 @@ public class College {
             this.collegeInstance = university.univInstance + "WomenClgOf" + collegeDiscipline + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "WC" + this.collegeIndex;
             gen.classAssertion(gen.getClass("College"), gen.getNamedIndividual(collegeInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isAffiliatedOrganizationOf"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(university.univInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("isWomenCollegeOf"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(university.univInstance));
-            gen.objectPropertyAssertion(gen.getObjectProperty("isCollegeOfDiscipline"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(collegeDiscipline));
+            gen.objectPropertyAssertion(gen.getObjectProperty("hasCollegeDiscipline"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(collegeDiscipline));
             this.deptNum = GetRandomNo.getRandomFromRange(gen.deptNum_Min, gen.deptNum_Max);
             this.depts = new Department[this.deptNum];
 
@@ -43,16 +44,20 @@ public class College {
 
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
+            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-
+            }
         }
 
         else {
             this.collegeInstance = university.univInstance + "ClgOf" + collegeDiscipline + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "C" + this.collegeIndex;
             gen.classAssertion(gen.getClass("College"), gen.getNamedIndividual(collegeInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isAffiliatedOrganizationOf"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(university.univInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("isCollegeOf"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(university.univInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("hasCollegeDiscipline"), gen.getNamedIndividual(collegeInstance), gen.getNamedIndividual(collegeDiscipline));
+      
             this.deptNum = GetRandomNo.getRandomFromRange(gen.deptNum_Min, gen.deptNum_Max);
             this.depts = new Department[this.deptNum];
 
@@ -61,9 +66,10 @@ public class College {
             }
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
+            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-
+            }
         }
     }
 }

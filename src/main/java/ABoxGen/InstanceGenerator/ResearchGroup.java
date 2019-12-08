@@ -20,7 +20,7 @@ public class ResearchGroup {
         gen.objectPropertyAssertion(gen.getObjectProperty("hasResearchProject"), gen.getNamedIndividual(researchGroupInstance), gen.getNamedIndividual(researchProjectInstance));
         this.RANum = GetRandomNo.getRandomFromRange(gen.RANum_Min,gen.RANum_Max);
         for (int i = 0; i < this.RANum; ++i) {
-            this.RAInstance =  researchGroupInstance+ "ResearchAssistant" + i;
+            this.RAInstance =  researchGroupInstance+ "RA" + i;
             //System.out.print(RAInstance);
             //gen.classAssertion(gen.getClass("ResearchAssistant"), gen.getNamedIndividual(RAInstance));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasResearchAssistant"), gen.getNamedIndividual(researchGroupInstance),gen.getNamedIndividual(RAInstance));
