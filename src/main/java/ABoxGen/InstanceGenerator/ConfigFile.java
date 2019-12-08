@@ -21,10 +21,10 @@ public class ConfigFile {
     Integer pgStudentNum_Max=null;//=40;
     Integer phdStudentNum_Min=null;//=2;
     Integer phdStudentNum_Max=null;//=10;
-    Integer ugCourseNum_Min=null;//=20;
-    Integer ugCourseNum_Max=null;//=35;
-    Integer electiveCourseNum_Min=null;//=25;
-    Integer electiveCourseNum_Max=null;//=35;
+    //Integer ugCourseNum_Min=null;//=20;
+    //Integer ugCourseNum_Max=null;//=35;
+    //Integer electiveCourseNum_Min=null;//=25;
+    //Integer electiveCourseNum_Max=null;//=35;
     Integer assistantProfessorNum_Min=null;//=15;
     Integer assistantProfessorNum_Max=null;//=20;
     Integer associateProfessorNum_Min=null;//=8;
