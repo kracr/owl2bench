@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -92,17 +93,14 @@ public class Generator {
 
 
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-    PrefixManager pm = new DefaultPrefixManager("http://benchmark/univ-bench-owl2");
+    PrefixManager pm = new DefaultPrefixManager("http://benchmark/univ-bench-2dl");
     IRI ontologyIRI = IRI.create(pm.getDefaultPrefix());
     OWLOntology ontology = createOWLOntology(pm);
-    //File file2 = new File("univ-bench-2dl-rdfxmlformat.owl");
-    //OWLOntology o = loadOWLOntology(file2);
-    File file2;
-    OWLOntology o;
+    File file2 = new File("univ-bench-2dl-rdfxmlformat.owl");
+    OWLOntology o = loadOWLOntology(file2);
     OWLDataFactory factory = manager.getOWLDataFactory();
     OWLOntology ontology1;
     int univNum,publicationNum;
-    String profile;
     University[] universities;
     Publication[] publications;
     InterlinkedProperties interlinks;
@@ -121,41 +119,22 @@ public class Generator {
     public static void main(String[] args) {
         int univNum=1;
         int seed = 350;
-        String profile= "DL";
         if(args.length==2)
         {
             univNum=Integer.parseInt(args[0]);
             seed=Integer.parseInt(args[1]);
-        }
-        else if (args.length==3)
-        {
-            univNum=Integer.parseInt(args[0]);
-            seed=Integer.parseInt(args[1]);
-            profile= args[2];
         }
         else if (args.length==1)
         {
             univNum=Integer.parseInt(args[0]);
         }
 
-        new Generator().start(univNum, seed, profile);
+        new Generator().start(univNum, seed);
     }
 
 
-    public void start(int univNum, int seed, String profile) {
+    public void start(int univNum, int seed) {
         //profile= new OWL2Profile();
-    	
-    	 file2 = new File("univ-bench-2dl-rdfxmlformat.owl");
-    	 if (profile=="EL"){
-    		 file2 = new File("univ-bench-2el-rdfxmlformat.owl");
-    	 }
-    	 else if (profile=="QL") {
-    		 file2 = new File("univ-bench-2ql-rdfxmlformat.owl");
-    	 }
-    	 else if (profile=="RL") {
-    		 file2 = new File("univ-bench-2rl-rdfxmlformat.owl");
-    	 }
-    	  OWLOntology o = loadOWLOntology(file2);
         OWLDocumentFormat format = manager.getOntologyFormat(o);
         //System.out.println("Counts..."+ format);
         //OWLReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(o);
@@ -448,10 +427,8 @@ public class Generator {
         //assign internal and external professors as advisor
         this.assignAdvisor=new AssignAdvisor(this,universities);
         // hasUnderGraduateDegreeFrom,hasMastersDegreeFrom,hasDoctoralDegreeFrom
-        if (profile!="EL") {
         this.assignDegree=new AssignDegree(this,universities);
-        }
-        //every deptt has evaluation committee
+        //every deptt has evaluation committe
         this.evaluationCommittee=new EvaluationCommittee(this,universities);
        // ontology.axioms().forEach(System.out::println);
         //System.out.println("Counts..."+ ontology.getLogicalAxiomCount() + "   "+ontology.getAxiomCount());

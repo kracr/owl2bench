@@ -53,7 +53,6 @@ public class InterlinkedProperties {
                         gen.objectPropertyAssertion(gen.getObjectProperty("hasSameHomeTownWith"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
                     }
                 }
-                /*
                 hash2= new HashSet();
                 for (int a = 0; a < isFriendOfNum; ++a) {
                     String person = getRandomPerson.getRandomStudentFacultyOrStaff(gen,universities);
@@ -65,7 +64,6 @@ public class InterlinkedProperties {
                         gen.objectPropertyAssertion(gen.getObjectProperty("isFriendOf"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
                     }
                 }
-                */
                 hash3= new HashSet();
                 for (int a = 0; a < likesNum; ++a) {
                     String interest = getRandomInterest.getInterest();

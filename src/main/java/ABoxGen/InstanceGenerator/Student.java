@@ -5,12 +5,12 @@ public class Student {
 
     Boolean womenStudents;
     String departmentInstance, studentInstance, programInstance;
-    String deptName,profile;
+    String deptName;
     Generator gen;
     Person person;
 
     public Student(Department department,int studentIndex,String program) {
-    	this.profile=department.profile;
+
         this.womenStudents = department.womenStudents; //if !women student, also assign male or female
         this.departmentInstance = department.departmentInstance;
         this.programInstance = department.programInstance;

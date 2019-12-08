@@ -19,7 +19,6 @@ public class Publication {
     public Publication(Generator gen,University universities[],int publicationIndex) {
         this.gen=gen;
         this.universities=universities;
-        ///add about organization has publicatn
         this.university=universities[univIndex];
         this.publicationIndex=publicationIndex;
         this.publicationInstance="publication"+ publicationIndex;
@@ -45,8 +44,7 @@ public class Publication {
         Iterator<String> i=hash.iterator();
 
         while(i.hasNext())
-        {   //gen.dataPropertyAssertion(gen.getDataProperty("hasPublication"),gen.getNamedIndividual(publicationInstance),gen.getLiteral("xx/xx/xx"));
-        
+        {
             gen.dataPropertyAssertion(gen.getDataProperty("hasPublicationDate"),gen.getNamedIndividual(publicationInstance),gen.getLiteral("xx/xx/xx"));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasAuthor"),gen.getNamedIndividual(publicationInstance ),gen.getNamedIndividual(i.next()));
         }

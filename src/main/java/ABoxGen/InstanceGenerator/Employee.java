@@ -3,11 +3,10 @@ package ABoxGen.InstanceGenerator;
 public class Employee {
     Generator gen;
     Person person;
-    String employeeInstance,departmentInstance,profile ;
+    String employeeInstance,departmentInstance ;
 
     public Employee(Department department,int empIndex, String employeeType) {
         this.gen=department.gen;
-        this.profile=department.profile;
         this.departmentInstance=department.departmentInstance;
         this.employeeInstance=departmentInstance+ employeeType + empIndex;
         department.personPerUniversity.add(employeeInstance);
