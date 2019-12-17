@@ -1,0 +1,66 @@
+package ABoxGen.InstanceGenerator;
+
+public class ConfigFile {
+    Integer publicationNum_Min=null;   // default 300 per university
+    Integer publicationNum_Max=null;   //;   //500;
+    Integer researchGroupNum_Min=null;    //10;
+    Integer researchGroupNum_Max=null;//=20;
+    Integer collegeNum_Min=null;//=15;
+    Integer collegeNum_Max=null;//=25;
+    Integer womenCollegeNum_Min=null;//=2;
+    Integer womenCollegeNum_Max=null;//=4;
+    Integer deptNum_Min=null;//=6;
+    Integer deptNum_Max=null;//=10;
+    Integer RANum_Min=null;//=5;
+    Integer RANum_Max=null;//=10;
+    Integer progNum_Min=null;//=1;
+    Integer progNum_Max=null;//=3;
+    Integer ugStudentNum_Min=null;//=60;
+    Integer ugStudentNum_Max=null;//=100;
+    Integer pgStudentNum_Min=null;//=20;
+    Integer pgStudentNum_Max=null;//=40;
+    Integer phdStudentNum_Min=null;//=2;
+    Integer phdStudentNum_Max=null;//=10;
+    //Integer ugCourseNum_Min=null;//=20;
+    //Integer ugCourseNum_Max=null;//=35;
+    //Integer electiveCourseNum_Min=null;//=25;
+    //Integer electiveCourseNum_Max=null;//=35;
+    Integer assistantProfessorNum_Min=null;//=15;
+    Integer assistantProfessorNum_Max=null;//=20;
+    Integer associateProfessorNum_Min=null;//=8;
+    Integer associateProfessorNum_Max=null;//=15;
+    Integer fullProfessorNum_Min=null;//=5;
+    Integer fullProfessorNum_Max=null;//=10;
+    Integer visitingProfessorNum_Min=null;//=2;
+    Integer visitingProfessorNum_Max=null;//=5;
+    Integer lecturerNum_Min=null;//=5;
+    Integer lecturerNum_Max=null;//=10;
+    Integer postDocNum_Min=null;//=2;
+    Integer postDocNum_Max=null;//=7;
+    Integer systemStaffNum_Min=null;//=2;
+    Integer systemStaffNum_Max=null;//=5;
+    Integer clericalStaffNum_Min=null;//=2;
+    Integer clericalStaffNum_Max=null;//=8;
+    Integer otherStaffNum_Min=null;//=15;
+    Integer otherStaffNum_Max=null;//=25;
+    Integer internalAdvisorNum_Min=null;//=1;
+    Integer internalAdvisorNum_Max=null;//=2;
+    Integer externalAdvisorNum_Min=null;//=0;
+    Integer externalAdvisorNum_Max=null;//=2;
+    Integer numOfElectives_Min=null;//=1;
+    Integer numOfElectives_Max=null;//=4;
+    Integer numOfElectivesOutsideDept_Min=null;//=1;
+    Integer sameHomeTownNum_Min=null;//=0;
+    Integer sameHomeTownNum_Max=null;//=3;
+    Integer isFriendOfNum_Min=null;//=1;
+    Integer isFriendOfNum_Max=null;//=4;
+    Integer likesNum_Min=null;//=1;
+    Integer likesNum_Max=null;//=3;
+    Integer lovesNum_Min =null;//=0;
+    Integer lovesNum_Max=null;//=2;
+    Integer isCrazyAboutNum_Min=null;//=0;
+    Integer isCrazyAboutNum_Max=null;//=1;
+    Integer dislikesNum_Min=null;//=0;
+    Integer dislikesNum_Max=null;//=1;
+
+}

@@ -1,0 +1,3336 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://benchmark/univ-bench-2dl#"
+     xml:base="http://benchmark/univ-bench-2dl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:benchmark-dl="http://semantics.crl.ibm.com/univ-bench-dl.owl#">
+    <owl:Ontology rdf:about="http://benchmark/univ-bench-2dl">
+        <rdfs:comment>An university ontology for benchmark tests. Language Level: OWL-DL SHIN(D).
+   This ontology are built on basis of Lehigh Benchmark Ontology, 
+   http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl</rdfs:comment>
+        <rdfs:label>Univ-benchmark Ontology</rdfs:label>
+        <owl:versionInfo>benchmark-lite.owl, ver April 15, 2005</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#dislikes -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#dislikes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+        <owl:propertyDisjointWith rdf:resource="http://benchmark/univ-bench-2dl#likes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#enrollFor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#enrollFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#enrollIn -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#enrollIn">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isStudentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#evaluatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#evaluates"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#evaluates -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#evaluates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasAlumnus -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasAlumnus">
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#hasDegreeFrom"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasAssistantProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasAssistantProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProfessor"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isAssistantProfessorOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#AssistantProfessor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasAssociateProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasAssociateProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProfessor"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isAssociateProfessorOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#AssociateProfessor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasAuthor">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:comment>publication has author</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasClericalStaff -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasClericalStaff">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSupportingStaff"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#ClericalStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasCollaborationWith -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasCollaborationWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasCollege -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasCollege">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSubOrganization"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isCollegeOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasCollegeDiscipline -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasCollegeDiscipline">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:propertyDisjointWith rdf:resource="http://benchmark/univ-bench-2dl#hasMajor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasCommitteeMembers -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasCommitteeMembers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasDean -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasDean">
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isDeanOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasDegreeFrom">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasDepartment -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasDepartment">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSubOrganization"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isDepartmentOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasDoctoralDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasDoctoralDegreeFrom">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasDegreeFrom"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasEmployee -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasEmployee">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasMember"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#worksFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasEmployeeEvaluationCommittee -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasEmployeeEvaluationCommittee">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasEvaluationCommittee"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#EmployeeEvaluationCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasEvaluationCommittee -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasEvaluationCommittee">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasFaculty -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasFaculty">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasEmployee"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isFacultyOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasFullProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasFullProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProfessor"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isFullProfessorOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#FullProfessor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasHead -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasHead">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasFullProfessor"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isHeadOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasLecturer -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasLecturer">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasFaculty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isLecturerOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Lecturer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasMajor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasMajor">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Engineering"/>
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#FineArts"/>
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Management"/>
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Science"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasMasterDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasMasterDegreeFrom">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasDegreeFrom"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasMember">
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasOtherStaff -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasOtherStaff">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSupportingStaff"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#OtherStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasPGProgram -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasPGProgram">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProgram"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#PGProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasPart">
+        <owl:equivalentProperty rdf:resource="http://benchmark/univ-bench-2dl#hasSubOrganization"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasPhDProgram -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasPhDProgram">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProgram"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#PhDProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasPostDoc -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasPostDoc">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasFaculty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isPostDocOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#PostDoc"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasFaculty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isProfessorOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasProgram -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasProgram">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasResearchAssistant -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasResearchAssistant">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasEmployee"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isResearchAssistantOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#ResearchGroup"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#ResearchAssistant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasResearchGroup -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasResearchGroup">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSubOrganization"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isResearchGroupOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#ResearchGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasResearchProject -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasResearchProject">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasWork"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#ResearchGroup"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#ResearchProject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasSameHomeTownWith -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasSameHomeTownWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasStudent -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasStudent">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasMember"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isStudentOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasStudentEvaluationCommittee -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasStudentEvaluationCommittee">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasEvaluationCommittee"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#StudentEvaluationCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasSubOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasSubOrganization">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasSupportingStaff -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasSupportingStaff">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasEmployee"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#SupportingStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasSystemStaff -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasSystemStaff">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasSupportingStaff"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#SystemStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasThesisEvaluationCommittee -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasThesisEvaluationCommittee">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasStudentEvaluationCommittee"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#ThesisEvaluationCommittee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasUGProgram -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasUGProgram">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProgram"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#UGProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasUndergraduateDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasUndergraduateDegreeFrom">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasDegreeFrom"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasVisitingProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasVisitingProfessor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasProfessor"/>
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#isVisitingProfessorOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#VisitingProfessor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasWomenCollege -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasWomenCollege">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasCollege"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasWork -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#hasWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Employee"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Work"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isAdvisedBy -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isAdvisedBy">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isAffiliateOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isAffiliateOf"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isAffiliatedOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isAffiliatedOrganizationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isAssistantProfessorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isAssistantProfessorOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isProfessorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isAssociateProfessorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isAssociateProfessorOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isProfessorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isClericalStaffOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isClericalStaffOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSupportingStaffOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isCollegeOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isCollegeOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isCrazyAbout -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isCrazyAbout">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#loves"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isDeanOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isDeanOf">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isDepartmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isDepartmentOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isFacultyOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isFacultyOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#worksFor"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isFriendOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isFriendOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isFullProfessorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isFullProfessorOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isProfessorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isHeadOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isHeadOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isFullProfessorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isLecturerOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isLecturerOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isFacultyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isMemberOf">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#enrollIn"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#isPartOf"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#worksFor"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#isPartOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isOtherStaffOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isOtherStaffOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSupportingStaffOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isPartOf">
+        <owl:equivalentProperty rdf:resource="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isPostDocOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isPostDocOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isFacultyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isProfessorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isProfessorOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isFacultyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isResearchAssistantOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isResearchAssistantOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#worksFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isResearchGroupOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isResearchGroupOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#ResearchGroup"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isStudentOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isStudentOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#enrollIn"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isSubOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isSubOrganizationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isSupportingStaffOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isSupportingStaffOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#worksFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isSystemStaffOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isSystemStaffOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isSupportingStaffOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isTaughtBy">
+        <owl:inverseOf rdf:resource="http://benchmark/univ-bench-2dl#teachesCourse"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isTeachingAssistantOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isTeachingAssistantOf">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#TeachingAssistant"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#isVisitingProfessorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#isVisitingProfessorOf">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isProfessorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#likes -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#likes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#loves -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#loves">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#likes"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#offerCourse -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#offerCourse">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#orgPublication -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#orgPublication">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+        <rdfs:comment>publishes</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#publicationResearch -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#publicationResearch">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+        <rdfs:comment>is about</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#r -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#r">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#softwareDocumentation -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#softwareDocumentation">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Software"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#softwareVersion -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#softwareVersion">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Software"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#takesCourse -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#takesCourse">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#teachesCourse -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#teachesCourse">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#hasWork"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#tenured -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#tenured">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#worksFor -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/univ-bench-2dl#worksFor">
+        <rdfs:subPropertyOf rdf:resource="http://benchmark/univ-bench-2dl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Employee"/>
+        <rdfs:range rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#worksFor"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#isSubOrganizationOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasAge">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasCode -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasCode">
+        <owl:equivalentProperty rdf:resource="http://benchmark/univ-bench-2dl#hasID"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasEmailAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasEmailAddress">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasFirstName">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasLastName">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasName">
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasOfficeNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasOfficeNumber"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasPublicationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasPublicationDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasResearchInterest -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasResearchInterest">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasTelephone -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasTelephone">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/univ-bench-2dl#hasTitle">
+        <rdfs:domain rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AeronauticalEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#AeronauticalEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Anthropology -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Anthropology">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Architecture -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Architecture">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Article -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Article">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ConferencePaper"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#JournalArticle"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#TechnicalReport"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AsianArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#AsianArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AssistantProfessor -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#AssistantProfessor">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AssociateProfessor -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#AssociateProfessor">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Astronomy -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Astronomy">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Badminton -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Badminton">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BasketBall -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#BasketBall">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BasketBallFan -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#BasketBallFan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isCrazyAbout"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#BasketBall"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BasketBallLover -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#BasketBallLover">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#loves"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#BasketBall"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Biology -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Biology">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BiomedicalEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#BiomedicalEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Book -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Book">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Chair -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Chair">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isHeadOf"/>
+                <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FullProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ChemicalEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ChemicalEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Chemistry -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Chemistry">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CivilEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#CivilEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ClericalStaff -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ClericalStaff">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#SupportingStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CoEdCollege -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#CoEdCollege">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#College -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#College">
+        <owl:equivalentClass rdf:resource="http://benchmark/univ-bench-2dl#School"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CollegeDiscipline -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#CollegeDiscipline">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Engineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#FineArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Management"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Science"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ComputerEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ComputerEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ComputerScience -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ComputerScience">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ConferencePaper -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ConferencePaper">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Article"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Course -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Course">
+        <owl:equivalentClass rdf:resource="http://benchmark/univ-bench-2dl#TeachingCourse"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ElectiveCourse"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#UGCourse"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>courses offered in a department. student takes course and faculty teaches some course</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Cricket -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Cricket">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CricketFan -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#CricketFan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isCrazyAbout"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Cricket"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CricketLover -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#CricketLover">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#loves"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Cricket"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Dean -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Dean">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isHeadOf"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FullProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Department -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Department">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#DesignManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#DesignManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Director -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Director">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isHeadOf"/>
+                <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FullProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Drama -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Drama">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Economics -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Economics">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ElectiveCourse -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ElectiveCourse">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+        <owl:disjointWith rdf:resource="http://benchmark/univ-bench-2dl#UGCourse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ElectricalEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ElectricalEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Employee -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Employee">
+        <owl:equivalentClass rdf:resource="http://semantics.crl.ibm.com/univ-bench-dl.owl#R2"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#worksFor"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <rdfs:label>Employee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#EmployeeEvaluationCommittee -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#EmployeeEvaluationCommittee">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+        <owl:disjointWith rdf:resource="http://benchmark/univ-bench-2dl#StudentEvaluationCommittee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Engineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Engineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#AeronauticalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#BiomedicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ChemicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#CivilEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ComputerEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ElectricalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#IndustryEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MaterialScienceEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MechanicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PetroleumlEngineering"/>
+        </owl:disjointUnionOf>
+        <rdfs:label>Engineering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#English -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#English">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#EvaluationCommittee -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Faculty -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Faculty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Employee"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#teachesCourse"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#FinancialAndAccountingManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#FinancialAndAccountingManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#FineArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#FineArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Architecture"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#AsianArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Drama"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#LatinArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MediaArtsAndSciences"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MedievalArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ModernArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MusicsClass"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PerformingArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#TheatreAndDance"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Football -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Football">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#FullProfessor -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#FullProfessor">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Game -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Game">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Geosciences -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Geosciences">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#History -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#History">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#HumanResourceManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#HumanResourceManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Humanities -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Humanities">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#HumanitiesAndSocial -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#HumanitiesAndSocial">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Anthropology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Economics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#English"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#History"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Humanities"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Linguistics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ModernLanguages"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Philosophy"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Psychology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Religions"/>
+        </owl:disjointUnionOf>
+        <rdfs:label>HumanitiesAndSocial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#IndustryEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#IndustryEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Institute -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Institute">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Interest -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Interest"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#JournalArticle -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#JournalArticle">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Article"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#LatinArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#LatinArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Lecturer -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Lecturer">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#LeisureStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#LeisureStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#takesCourse"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Linguistics -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Linguistics">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Man -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Man">
+        <owl:disjointWith rdf:resource="http://benchmark/univ-bench-2dl#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Management -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Management">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#DesignManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#FinancialAndAccountingManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#HumanResourceManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MarketingManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#OperationsManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ProjectManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PublicRelationsManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#RiskManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#SalesManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#SupplyChainManagement"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Manual -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Manual">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MarineScience -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MarineScience">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MarketingManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MarketingManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MaterialScienceEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MaterialScienceEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MaterialsScience -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MaterialsScience">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Mathematics -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Mathematics">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MechanicalEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MechanicalEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MediaArtsAndSciences -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MediaArtsAndSciences">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MedievalArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MedievalArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ModernArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ModernArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ModernLanguages -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ModernLanguages">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Movie -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Movie">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Music -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Music">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MusicsClass -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#MusicsClass">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#NonScienceStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#NonScienceStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasMajor"/>
+                                <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#OperationsManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#OperationsManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Organization -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Organization">
+        <owl:disjointWith rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#OtherStaff -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#OtherStaff">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#SupportingStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PGProgram -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PGProgram">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PGStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PGStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#enrollFor"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#PGProgram"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Painting -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Painting">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PeopleWithHobby -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PeopleWithHobby">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#likes"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PeopleWithManyHobbies -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PeopleWithManyHobbies">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#likes"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PerformingArts -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PerformingArts">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Person -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Person">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Man"/>
+                            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Woman"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasTitle"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasID"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasEmailAddress"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://benchmark/univ-bench-2dl#ResearchGroup"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PetroleumlEngineering -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PetroleumlEngineering">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Engineering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PhDProgram -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PhDProgram">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PhDStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PhDStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#enrollFor"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#PhDProgram"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Philosophy -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Philosophy">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Physics -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Physics">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PostDoc -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PostDoc">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Professor -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Professor">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Program -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Program"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ProjectManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ProjectManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Psychology -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Psychology">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PublicRelationsManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#PublicRelationsManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Publication -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Publication">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasAuthor"/>
+                <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Article"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Book"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Manual"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Software"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Specification"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#UnofficialPublication"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Reading -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Reading">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Religions -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Religions">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ResearchAssistant -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ResearchAssistant">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isResearchAssistantOf"/>
+                <owl:someValuesFrom rdf:resource="http://semantics.crl.ibm.com/univ-bench-dl.owl#R1"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ResearchGroup -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ResearchGroup">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ResearchProject -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ResearchProject">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#RiskManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#RiskManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SalesManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SalesManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#School -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#School">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Science -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Science">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Astronomy"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Biology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Chemistry"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ComputerScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Geosciences"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MarineScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MaterialsScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Mathematics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Physics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Statistics"/>
+        </owl:disjointUnionOf>
+        <rdfs:label>Science</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ScienceStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ScienceStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasMajor"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Soccer -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Soccer">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Software -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Software">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Specification -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Specification">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Sports -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Sports">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SportsFan -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SportsFan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isCrazyAbout"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SportsLover -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SportsLover">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#likes"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Statistics -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Statistics">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Student -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Student">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#enrollFor"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#enrollIn"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#Department"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#hasID"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#StudentEvaluationCommittee -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#StudentEvaluationCommittee">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#EvaluationCommittee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SupplyChainManagement -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SupplyChainManagement">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SupportingStaff -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SupportingStaff">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Swimming -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Swimming">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#SystemStaff -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#SystemStaff">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#SupportingStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TeachingAssistant -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#TeachingAssistant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isTeachingAssistantOf"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TeachingCourse -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#TeachingCourse">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TechnicalReport -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#TechnicalReport">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Article"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Tennis -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Tennis">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Sports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TennisFan -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#TennisFan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#isCrazyAbout"/>
+                        <owl:someValuesFrom rdf:resource="http://benchmark/univ-bench-2dl#Tennis"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TheatreAndDance -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#TheatreAndDance">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#FineArts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ThesisEvaluationCommittee -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#ThesisEvaluationCommittee">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#StudentEvaluationCommittee"/>
+        <rdfs:comment>Evaluates PhD students</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Travelling -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Travelling">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#UGCourse -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#UGCourse">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Course"/>
+        <rdfs:comment>Mandatory courses for all UG students</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#UGProgram -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#UGProgram">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#UGStudent -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#UGStudent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#enrollFor"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://benchmark/univ-bench-2dl#UGProgram"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#University -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#University">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#UnofficialPublication -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#UnofficialPublication">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#VisitingProfessor -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#VisitingProfessor">
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Woman -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Woman"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#WomanCollege -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#WomanCollege">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#College"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/univ-bench-2dl#hasStudent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://benchmark/univ-bench-2dl#Man"/>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-2dl#College"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Work -->
+
+    <owl:Class rdf:about="http://benchmark/univ-bench-2dl#Work">
+        <rdfs:label>Work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://semantics.crl.ibm.com/univ-bench-dl.owl#R1 -->
+
+    <owl:Class rdf:about="http://semantics.crl.ibm.com/univ-bench-dl.owl#R1"/>
+    
+
+
+    <!-- http://semantics.crl.ibm.com/univ-bench-dl.owl#R2 -->
+
+    <owl:Class rdf:about="http://semantics.crl.ibm.com/univ-bench-dl.owl#R2"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AbstractPainting -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#AbstractPainting">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Painting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ActionMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ActionMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AeronauticalEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#AeronauticalEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#AeronauticalEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Anthropology -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Anthropology">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Anthropology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Architecture -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Architecture">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Architecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Article -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Article">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Reading"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#AsianArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#AsianArts">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#AsianArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Astronomy -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Astronomy">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Astronomy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BackStroke -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#BackStroke"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Badminton -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Badminton">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Badminton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BasketBall -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#BasketBall">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#BasketBall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Biology -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Biology">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Biology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#BiomedicalEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#BiomedicalEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#BiomedicalEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Book -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Book">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Reading"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ChemicalEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ChemicalEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ChemicalEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Chemistry -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Chemistry">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Chemistry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#CivilEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#CivilEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#CivilEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ClassicalMusic -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ClassicalMusic">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ComedyMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ComedyMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ComputerEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ComputerEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ComputerEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ComputerScience -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ComputerScience">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ComputerScience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Cricket -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Cricket">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Cricket"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#DocumentaryMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#DocumentaryMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Drama -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Drama">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Drama"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Economics -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Economics">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Economics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ElectricalEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ElectricalEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ElectricalEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#English -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#English">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#English"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#FictionMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#FictionMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Football -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Football">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Football"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#FrontCrawl -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#FrontCrawl"/>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Geosciences -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Geosciences">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Geosciences"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#History -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#History">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#History"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#HorrorMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#HorrorMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Humanities -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Humanities">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Humanities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#IndustryEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#IndustryEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#IndustryEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#LatinArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#LatinArts">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#LatinArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Linguistics -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Linguistics">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Linguistics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MarineScience -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MarineScience">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MarineScience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MaterialScienceEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MaterialScienceEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MaterialScienceEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MaterialsScience -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MaterialsScience">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MaterialsScience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Mathematics -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Mathematics">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Mathematics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MechanicalEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MechanicalEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MechanicalEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MediaArtsAndSiences -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MediaArtsAndSiences">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MediaArtsAndSciences"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MedievalArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MedievalArts">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MedievalArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ModernArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ModernArts">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ModernArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ModernLanguages -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ModernLanguages">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#ModernLanguages"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#MusicsClass -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#MusicsClass">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#MusicsClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Newspaper -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Newspaper">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Reading"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#OilPainting -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#OilPainting">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Painting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PCGame -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#PCGame">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PerformingArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#PerformingArts">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#PerformingArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PetroleumEngineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#PetroleumEngineering">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#PetroleumlEngineering"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Philosophy -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Philosophy">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Philosophy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Physics -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Physics">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Physics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#PopMusic -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#PopMusic">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Psychology -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Psychology">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Psychology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Religions -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Religions">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Religions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#RockandRollMusic -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#RockandRollMusic">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#RomanticMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#RomanticMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Shopping -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Shopping">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Soccer -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Soccer">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Soccer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#StampCollecting -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#StampCollecting">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Interest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Statistics -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Statistics">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Statistics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Swimming -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Swimming">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Swimming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#T20Cricket -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#T20Cricket">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Cricket"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Tennis -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Tennis">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Tennis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#TheatreAndDance -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#TheatreAndDance">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#TheatreAndDance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#ThrillerMovie -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#ThrillerMovie">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Movie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#Travelling -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#Travelling">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Travelling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/univ-bench-2dl#VideoGame -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/univ-bench-2dl#VideoGame">
+        <rdf:type rdf:resource="http://benchmark/univ-bench-2dl#Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Soccer">
+        <rdfs:label>Soccer</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Swimming">
+        <rdfs:label>Swimming</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#AmericanFootball">
+        <rdfs:label>AmericanFootball</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#Baseball">
+        <rdfs:label>Baseball</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#Kickboxing">
+        <rdfs:label>Kickboxing</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#AeronauticalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#BiomedicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ChemicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#CivilEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ComputerEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ElectricalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#IndustryEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MaterialScienceEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MechanicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PetroleumlEngineering"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Anthropology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Economics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#English"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#History"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Humanities"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Linguistics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ModernLanguages"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Philosophy"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Psychology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Religions"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Architecture"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#AsianArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Drama"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#LatinArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MediaArtsAndSciences"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MedievalArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ModernArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Music"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PerformingArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#TheatreAndDance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Astronomy"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Biology"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Chemistry"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ComputerScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Geosciences"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MarineScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MaterialsScience"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Mathematics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Physics"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Statistics"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Badminton"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#BasketBall"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Cricket"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Football"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Soccer"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Swimming"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Tennis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#CollegeDiscipline"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Course"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Interest"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Organization"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Person"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#DesignManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#FinancialAndAccountingManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#HumanResourceManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#MarketingManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#OperationsManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#ProjectManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PublicRelationsManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#RiskManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#SalesManagement"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#SupplyChainManagement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Engineering"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#FineArts"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#HumanitiesAndSocial"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Management"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Science"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Game"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Movie"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Music"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Painting"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Reading"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Sports"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#Travelling"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PGProgram"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#PhDProgram"/>
+            <rdf:Description rdf:about="http://benchmark/univ-bench-2dl#UGProgram"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
