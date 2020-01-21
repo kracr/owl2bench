@@ -1,3 +1,6 @@
+/* Main Class that takes as input University Number, Seed and OWL 2 Profile.*/
+/* Generates instances according to the specified number of universities.   */
+
 package ABoxGen.InstanceGenerator;
 
 import java.io.File;
@@ -116,9 +119,10 @@ public class Generator {
     }
 
     public static void main(String[] args) {
-        int univNum=10;
-        int seed = 950;
-        String profile= "RL";
+    	//input 
+        int univNum=1;
+        int seed = 3;
+        String profile= "EL";
         //System.out.println(args[2]);
         if(args.length==3)
         {
@@ -145,7 +149,7 @@ public class Generator {
     	//System.out.println(profile);
     	this.profile=profile;
     	//System.out.println(".." + profile);
-    	
+    	//use TBox corresponing to user input
     	 if(profile.matches("EL")){
     		 System.out.println("EL");
     		 file2 = new File("UNIV-BENCH-OWL2EL.owl");
@@ -171,6 +175,8 @@ public class Generator {
         this.univNum = univNum;
         GetRandomNo.setSeed((long) seed);
         this.configFile=new ConfigFile();
+        //configurations
+        //If user wants to modify the min-max parameters, they can change the null value in ConfigFile. 
         if(configFile.publicationNum_Min!=null)
         {
             this.publicationNum_Min=configFile.publicationNum_Min;
@@ -388,6 +394,7 @@ public class Generator {
     private void generate() {
 
         try {
+        	//excel file used to generate real world names for person and universities
             FileInputStream fileInputStream =new FileInputStream("RandomNames.xlsx"); 
             //C:\\Users\\Gunjan\\Desktop\\owlbenchmarkingreferences\\OntoBench-master\\UnivBench2DL\\RandomNames.xlsx
             // new FileInputStream("C:\\Users\\Gunjan\\Desktop\\RandomNames.xlsx");
@@ -432,7 +439,7 @@ public class Generator {
 
         this.universities = new University[this.univNum];
         this.configFile=new ConfigFile();
-
+        //generates university instances 
         for (int i = 0; i < this.univNum; ++i) {
             this.universities[i] = new University(this, i);
             System.out.println(i);
@@ -442,6 +449,7 @@ public class Generator {
         //also authors of 1 publication are interlinked using 'hasCollaboration' Property.
         this.publicationNum=GetRandomNo.getRandomFromRange(publicationNum_Min*univNum,publicationNum_Max*univNum);
         this.publications= new Publication[this.publicationNum];
+        //generates publications for each university
         for (int i = 0; i < this.publicationNum; ++i) {
             this.publications[i] = new Publication(this,universities,i);
         }
