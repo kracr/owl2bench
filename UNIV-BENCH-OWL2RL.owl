@@ -1300,7 +1300,6 @@
 
     <owl:Class rdf:about="http://benchmark/univ-bench-owl2#Employee">
         <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-owl2#Person"/>
-        <rdfs:label>Employee</rdfs:label>
     </owl:Class>
     
 

@@ -30,7 +30,7 @@ public class Profile {
 
         int i = verbose ? 1 : 0;
 
-        OWLOntology ontology = OWLManager.createOWLOntologyManager().loadOntologyFromOntologyDocument(new File("C:\\Users\\Gunjan\\Documents\\GitHub\\owl2dl-benchmark\\OWL2QL-1-output.owl"));
+        OWLOntology ontology = OWLManager.createOWLOntologyManager().loadOntologyFromOntologyDocument(new File("C:\\Users\\Gunjan\\Documents\\GitHub\\owl2dl-benchmark\\OWL2DL-1-output.owl"));
         Map<String, Object> metrics = new LinkedHashMap<>();
         Stream.of(new OWL2DLProfile(), new OWL2RLProfile(), new OWL2ELProfile(), new OWL2QLProfile())
                 .forEach(profile -> {

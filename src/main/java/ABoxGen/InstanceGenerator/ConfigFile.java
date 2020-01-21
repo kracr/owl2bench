@@ -1,26 +1,91 @@
 package ABoxGen.InstanceGenerator;
 
 public class ConfigFile {
-    Integer publicationNum_Min=null;   // default 300 per university
-    Integer publicationNum_Max=null;   //;   //500;
+	
+	
+	 Integer publicationNum_Min=5;   // default 300 per university
+	    Integer publicationNum_Max=10;   //;   //500;
+	    Integer researchGroupNum_Min=null;    //10;
+	    Integer researchGroupNum_Max=null;//=20;
+	    Integer collegeNum_Min=3;//15;
+	    Integer collegeNum_Max=4;//=25;
+	    Integer womenCollegeNum_Min=1;//=2;
+	    Integer womenCollegeNum_Max=2;//=4;
+	    Integer deptNum_Min=2;//=6;
+	    Integer deptNum_Max=3;//=10;
+	    Integer RANum_Min=null;//=5;
+	    Integer RANum_Max=null;//=10;
+	    Integer progNum_Min=null;//=1;
+	    Integer progNum_Max=null;//=3;
+	    Integer ugStudentNum_Min=5;//=60;
+	    Integer ugStudentNum_Max=6;//=100;
+	    Integer pgStudentNum_Min=5;//=20;
+	    Integer pgStudentNum_Max=6;//=40;
+	    Integer phdStudentNum_Min=null;//=2;
+	    Integer phdStudentNum_Max=3;//=10;
+	    //Integer ugCourseNum_Min=null;//=20;
+	    //Integer ugCourseNum_Max=null;//=35;
+	    //Integer electiveCourseNum_Min=null;//=25;
+	    //Integer electiveCourseNum_Max=null;//=35;
+	    Integer assistantProfessorNum_Min=1;//=15;
+	    Integer assistantProfessorNum_Max=3;//=20;
+	    Integer associateProfessorNum_Min=1;//=8;
+	    Integer associateProfessorNum_Max=3;//=15;
+	    Integer fullProfessorNum_Min=2;//=5;
+	    Integer fullProfessorNum_Max=3;//=10;
+	    Integer visitingProfessorNum_Min=1;//=2;
+	    Integer visitingProfessorNum_Max=3;//=5;
+	    Integer lecturerNum_Min=1;//=5;
+	    Integer lecturerNum_Max=2;//=10;
+	    Integer postDocNum_Min=null;//=2;
+	    Integer postDocNum_Max=3;//=7;
+	    Integer systemStaffNum_Min=null;//=2;
+	    Integer systemStaffNum_Max=3;//=5;
+	    Integer clericalStaffNum_Min=null;//=2;
+	    Integer clericalStaffNum_Max=3;//=8;
+	    Integer otherStaffNum_Min=1;//=15;
+	    Integer otherStaffNum_Max=2;//=25;
+	    Integer internalAdvisorNum_Min=null;//=1;
+	    Integer internalAdvisorNum_Max=null;//=2;
+	    Integer externalAdvisorNum_Min=null;//=0;
+	    Integer externalAdvisorNum_Max=1;//=2;
+	    Integer numOfElectives_Min=null;//=1;
+	    Integer numOfElectives_Max=2;//=4;
+	    Integer numOfElectivesOutsideDept_Min=null;//=1;
+	    Integer sameHomeTownNum_Min=null;//=0;
+	    Integer sameHomeTownNum_Max=1;//=3;
+	    Integer isFriendOfNum_Min=null;//=1;
+	    Integer isFriendOfNum_Max=2;//=4;
+	    Integer likesNum_Min=null;//=1;
+	    Integer likesNum_Max=2;//=3;
+	    Integer lovesNum_Min =null;//=0;
+	    Integer lovesNum_Max=1;//=2;
+	    Integer isCrazyAboutNum_Min=null;//=0;
+	    Integer isCrazyAboutNum_Max=null;//=1;
+	    Integer dislikesNum_Min=null;//=0;
+	    Integer dislikesNum_Max=null;//=1;
+	
+	/*
+    Integer publicationNum_Min=50;   // default 300 per university
+    Integer publicationNum_Max=100;   //;   //500;
     Integer researchGroupNum_Min=null;    //10;
     Integer researchGroupNum_Max=null;//=20;
-    Integer collegeNum_Min=null;//=15;
-    Integer collegeNum_Max=null;//=25;
-    Integer womenCollegeNum_Min=null;//=2;
-    Integer womenCollegeNum_Max=null;//=4;
-    Integer deptNum_Min=null;//=6;
-    Integer deptNum_Max=null;//=10;
+    Integer collegeNum_Min=2;//15;
+    Integer collegeNum_Max=3;//=25;
+    Integer womenCollegeNum_Min=0;//=2;
+    Integer womenCollegeNum_Max=1;//=4;
+    Integer deptNum_Min=2;//=6;
+    Integer deptNum_Max=3;//=10;
     Integer RANum_Min=null;//=5;
     Integer RANum_Max=null;//=10;
     Integer progNum_Min=null;//=1;
     Integer progNum_Max=null;//=3;
-    Integer ugStudentNum_Min=null;//=60;
-    Integer ugStudentNum_Max=null;//=100;
-    Integer pgStudentNum_Min=null;//=20;
-    Integer pgStudentNum_Max=null;//=40;
+    Integer ugStudentNum_Min=5;//=60;
+    Integer ugStudentNum_Max=10;//=100;
+    Integer pgStudentNum_Min=5;//=20;
+    Integer pgStudentNum_Max=10;//=40;
     Integer phdStudentNum_Min=null;//=2;
-    Integer phdStudentNum_Max=null;//=10;
+    Integer phdStudentNum_Max=5;//=10;
     //Integer ugCourseNum_Min=null;//=20;
     //Integer ugCourseNum_Max=null;//=35;
     //Integer electiveCourseNum_Min=null;//=25;
@@ -62,5 +127,5 @@ public class ConfigFile {
     Integer isCrazyAboutNum_Max=null;//=1;
     Integer dislikesNum_Min=null;//=0;
     Integer dislikesNum_Max=null;//=1;
-
+*/
 }

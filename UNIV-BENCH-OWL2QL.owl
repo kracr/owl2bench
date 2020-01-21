@@ -1341,7 +1341,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:label>Employee</rdfs:label>
     </owl:Class>
     
 

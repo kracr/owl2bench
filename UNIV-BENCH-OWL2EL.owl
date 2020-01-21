@@ -1029,7 +1029,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://benchmark/univ-bench-owl2#Person"/>
-        <rdfs:label>Employee</rdfs:label>
     </owl:Class>
     
 
