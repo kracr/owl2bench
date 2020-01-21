@@ -1,3 +1,5 @@
+/*Each department has a certain number of Student, Faculties and courses.range is specified in generator.java */
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;
@@ -51,7 +53,7 @@ public class Department {
         this.progNum = GetRandomNo.getRandomFromRange(gen.progNum_Min,gen.progNum_Max);
         //may be added to employee later
         deptName = assignDepartmentName(collegeDiscipline);
-
+        //if department belongs to women college , implies all women students
         if (this.womenStudents) {
             this.departmentInstance = college.collegeInstance + "DeptOf" + deptName + this.deptIndex;
             gen.classAssertion(gen.getClass("Department"),gen.getNamedIndividual(departmentInstance));
@@ -76,7 +78,7 @@ public class Department {
     public void generateStudents(Boolean womenStudents,int progNum) {
         this.womenStudents = womenStudents;
 
-
+        //if department has just one progarm, that means UG program. So, generate ug students
         if (progNum == 1) {
             this.ugProgram= new Program(this,"UG");
             //this.programInstance=this.ugProgram.programInstance;
@@ -86,7 +88,7 @@ public class Department {
                 this.ugStudents[i] = new Student(this , i,"UG");
             }
         }
-
+        //if 2 programs, means ug and pg program. So generate both ug and pg students
         else if (progNum == 2) {
             this.ugProgram= new Program(this,"UG");
             //this.programInstance=this.ugProgram.programInstance;
@@ -105,6 +107,7 @@ public class Department {
                 this.pgStudents[i] = new Student(this,i,"PG");
             }
         }
+        //if dept has 3 programs, generate ug, pg and phd students
         else if (progNum == 3) {
             this.ugProgram= new Program(this,"UG");
             //this.programInstance=this.ugProgram.programInstance;
@@ -130,7 +133,7 @@ public class Department {
             }
         }
     }
-
+    //generate different types of employees
     public void generateEmployees() {
         this.assistantProfessors = new Employee[this.assistantProfessorNum];
         this.associateProfessors = new Employee[this.associateProfessorNum];
@@ -183,7 +186,7 @@ public class Department {
         }
 
     }
-
+    //generate courses (UG mandatory courses and electives
     public void generateCourses() {
         this.ugCourses= new Course[this.ugCourseNum];
         this.electiveCourses= new Course[this.electiveCourseNum];
@@ -197,7 +200,7 @@ public class Department {
         }
 
     }
-
+    //give names to dept , like Department of Mechanical Engineering
     public String assignDepartmentName(String collegeDiscipline) {
         if (collegeDiscipline == "Engineering") {
             return gen.TOKEN_Engineering[GetRandomNo.getRandomFromRange(0,9)];
