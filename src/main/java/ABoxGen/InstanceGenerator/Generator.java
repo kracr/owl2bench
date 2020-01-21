@@ -1,5 +1,5 @@
-/* Main Class that takes as input University Number, Seed and OWL 2 Profile.*/
-/* Generates instances according to the specified number of universities.   */
+/* Main Class that takes as input University Number, Seed and OWL 2 Profile (EL,QL,RL,DL).*/
+/* Generates instances according to the specified number of universities.    */
 
 package ABoxGen.InstanceGenerator;
 
