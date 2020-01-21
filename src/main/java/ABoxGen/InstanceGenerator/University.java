@@ -1,3 +1,5 @@
+/* Each University has a number of Colleges (Both women and co-ed) and research groups. the number of colleges and research groups is based on a random number whose default range is specied in generator.java */ 
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;

@@ -1,3 +1,5 @@
+/* Each College has a number of Departments. the number of departments is based on a random number whose default range is specified in generator.java */
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;
@@ -27,7 +29,7 @@ public class College {
         this.isWomanCollege = isWomanCollege;
         this.collegeDiscipline= gen.TOKEN_CollegeDiscipline[GetRandomNo.getRandomFromRange(0, 4)];
         getRandomPerson=new GetRandomPerson();
-
+        // if college is women's college
         if (this.isWomanCollege) {
             this.collegeInstance = university.univInstance + "WomenClgOf" + collegeDiscipline + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "WC" + this.collegeIndex;
