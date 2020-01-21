@@ -15,5 +15,9 @@ OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 
 We have provided an executable jar file where user can specify the <number of universities> <seed> <profile>. 
            
-For eg. : java -jar OWL2Bench.jar 1 950 DL 
+For eg. : 
+java -jar OWL2Bench.jar 1 950 DL , 
+java -jar OWL2Bench.jar 5 69 QL ,
+java -jar OWL2Bench.jar 10 67 EL
+java -jar OWL2Bench.jar 100 950 RL
            
