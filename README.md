@@ -29,5 +29,5 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
-Also, to execute OWL2Bench.jar TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and RandomNames.xlxs should be in the same folder as the jar file.
+Also, to execute OWL2Bench.jar TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and RandomNames.xlsx should be in the same folder as the jar file.
            
