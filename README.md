@@ -41,7 +41,7 @@ The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.
 
 eg. OWL2EL-1-output.owl, OWL2EL-5-output.owl . (Sample files already present in the directory)
 
-In the case of File Not Found exception, please create owl files (not directory) of type OWL2EL-1-output.owl (if you run it for 1 university and EL profile) in the same folder.
+In the case of File Not Found exception, please create owl files (not directory) of type OWL2DL-1-output.owl (let's say you run it for 1 university and DL profile) in the same folder.
 
 
            
