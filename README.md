@@ -31,7 +31,7 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
-We are also providing the java code (if user wants to change the configurations/density of each node). User can download and import the maven project. User can change the min-max variables in ConfigFile.java and execute Generator.java (with arguments <Number of Universities> <Seed> <Required OWL 2 Profile>)
+We are also providing the java code (if user wants to change the configurations/density of each node). User can download and import the maven project. User can change the min-max variables in ConfigFile.java and run Generator.java with arguments <Number of Universities> <Seed> <Required OWL 2 Profile> (same as above)
            
 Note: 
 
