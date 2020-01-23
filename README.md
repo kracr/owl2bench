@@ -15,9 +15,11 @@ OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 
 # Usage
 
-We have provided an executable jar file where user can specify the <Number of Universities> <Seed> <Required OWL 2 Profile>. 
+We have provided an executable jar file (with configurations that were used to perform the experiments) where user can specify the <Number of Universities> <Seed> <Required OWL 2 Profile>. 
            
 Number of universities makes the ABox scalable. For 1 university number varies from approx 400K triples to 800K triples depending on the seed value. OWl 2 Profile could be any one of EL, QL, RL and DL.         
+
+To execute OWL2Bench.jar TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and RandomNames.xlsx should be in the same folder as the jar file.
 
 For eg. : 
 
@@ -29,5 +31,7 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
-Also, to execute OWL2Bench.jar TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and RandomNames.xlsx should be in the same folder as the jar file.
+We are also providing the code (if user wants to change the configurations/density of each node). User can change the min-max variables in ConfigFile.java and executing Generator.java (with arguments <Number of Universities> <Seed> <Required OWL 2 Profile>)
+
+
            
