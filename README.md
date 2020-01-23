@@ -3,7 +3,7 @@ An OWL 2 benchmark that can generate ABox axioms for fixed TBox to test the scal
 
 Project repository consists of:
 
-Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files, and an executable jar file.
+Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files (OWL2EL-1-output.owl, OWL2EL-5-output.owl), maven pom.xml, and an executable jar file (OWL2Bench.jar). 
 
 # TBox Details
 
@@ -21,8 +21,6 @@ We have provided an executable jar file (with configurations that were used to p
            
 Number of universities makes the ABox scalable. For 1 university number varies from approx 400K triples to 800K triples depending on the seed value. OWl 2 Profile could be any one of EL, QL, RL and DL.         
 
-To execute OWL2Bench.jar TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and RandomNames.xlsx should be in the same folder as the jar file.
-
 For eg. : 
 
 java -jar OWL2Bench.jar 1 950 DL (where 1 is the number of universities, 950 is the seed value and DL is OWL 2 profile)
@@ -32,6 +30,8 @@ java -jar OWL2Bench.jar 5 69 QL
 java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
+
+To execute OWL2Bench.jar we do not need to enter the full path for the required files as argument, that is, TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl), RandomNames.xlsx and pre-created output files should be in the same directory as the jar file. So, for now , I have kept it in the project directory itself. If user wants to execute it from some where else, make sure all the TBoxes, RandomNames.xlsx and pre-created output files are present in the same directory as OWL2Bench.jar.
 
 # Usage 2
 
