@@ -35,7 +35,7 @@ To execute OWL2Bench.jar we do not need to enter the full path for the required 
 
 # Usage 2
 
-We are also providing the java code (if user wants to change the configurations/density of each node). User can download the project repository. After downloading user just need to import this maven project and then user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : Number of Universities, Seed and Required OWL 2 Profile (same as above)
+We are also providing the java code (if user wants to change the configurations/density of each node). User can download the project repository. After downloading user just need to import this maven project and then user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : Number of Universities, Seed and Required OWL 2 Profile (same as above). Required files are already present in the project directory. 
            
 # Note: 
 
