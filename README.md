@@ -1,7 +1,9 @@
 # OWL2Bench
 An OWL 2 benchmark that can generate ABox axioms for fixed TBox to test the scalability and performance of OWL 2 Reasoners.
 
-Project consists of four different TBox for all the OWL 2 Profiles (OWL 2 EL, OWL 2 QL, OWL 2 RL, OWL 2 DL) and java code for generating ABox for the selected profile. 
+Project repository consists of:
+
+Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files.
 
 # TBox Details
 
@@ -31,7 +33,7 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
-We are also providing the java code (if user wants to change the configurations/density of each node). User can download and import the maven project. User can change the min-max variables in ConfigFile.java and run Generator.java with arguments : Number of Universities, Seed and Required OWL 2 Profile (same as above)
+We are also providing the java code (if user wants to change the configurations/density of each node). User can download the project repository. After importing the maven project user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : Number of Universities, Seed and Required OWL 2 Profile (same as above)
            
 Note: 
 
