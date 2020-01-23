@@ -1,3 +1,5 @@
+//Code that checks the profile(EL, QL, RL, DL) of a given Ontology. Nothing to do with the benchmark
+
 package ABoxGen.InstanceGenerator;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;

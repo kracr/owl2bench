@@ -1,3 +1,10 @@
+/*every department has a list of courses, some mandatory courses for ug stduents and some departmental electives for ug,pg and phd students)
+//students can take electives of the same department as well as outside the department (within the college)
+ //faculties can teach courses within the department or outside the department.
+ */
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;
@@ -8,7 +15,7 @@ public class GetRandomCourse {
     College college;
     Department dept;
     int otherDept;
-
+  //students can take electives of the same department as well as outside the department (within the college)
     public String getRandomUGCourse(College college,int deptIndex) {
         this.gen = college.gen;
         this.college = college;
@@ -45,6 +52,8 @@ public class GetRandomCourse {
         course = dept.electiveCourses[GetRandomNo.getRandomFromRange(0,dept.electiveCourseNum-1)].courseInstance;
         return course;
     }
+    
+    //faculty can teach a course within the department or any course outside the department
     public String getRandomCourseOutsideDept(College college, int deptIndex) {
         this.gen = college.gen;
         this.college = college;

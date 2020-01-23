@@ -1,4 +1,6 @@
 /* Each College has a number of Departments. the number of departments is based on a random number whose default range is specified in generator.java */
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -11,7 +13,7 @@ public class College {
     String collegeCode,dean;
     Department[] depts;
     Generator gen;
-    boolean isWomanCollege;
+    boolean isWomanCollege;     
     String  collegeInstance,profile;
     String collegeDiscipline;
     HashSet<String> personPerUniversity;

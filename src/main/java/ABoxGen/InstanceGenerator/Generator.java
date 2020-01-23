@@ -1,5 +1,7 @@
 /* Main Class that takes as input University Number, Seed and OWL 2 Profile (EL,QL,RL,DL).*/
-/* Generates instances according to the specified number of universities.    */
+/* Generates instances according to the specified number of universities. */
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -144,7 +146,8 @@ public class Generator {
         new Generator().start(univNum, seed, profile);
     }
 
-
+//TBox
+    
     public void start(int univNum, int seed, String profile) {
     	//System.out.println(profile);
     	this.profile=profile;
@@ -449,6 +452,7 @@ public class Generator {
         //also authors of 1 publication are interlinked using 'hasCollaboration' Property.
         this.publicationNum=GetRandomNo.getRandomFromRange(publicationNum_Min*univNum,publicationNum_Max*univNum);
         this.publications= new Publication[this.publicationNum];
+        
         //generates publications for each university
         for (int i = 0; i < this.publicationNum; ++i) {
             this.publications[i] = new Publication(this,universities,i);
@@ -456,15 +460,16 @@ public class Generator {
 
         //links across universities using friendOf, sameHomeTownWith, likes, loves, isCrazyAbout, dislikes
         this.interlinks=new InterlinkedProperties(this,universities);
+        
         //assign internal and external professors as advisor
         this.assignAdvisor=new AssignAdvisor(this,universities);
-        // hasUnderGraduateDegreeFrom,hasMastersDegreeFrom,hasDoctoralDegreeFrom
         
+        // hasUnderGraduateDegreeFrom,hasMastersDegreeFrom,hasDoctoralDegreeFrom
         this.assignDegree=new AssignDegree(this,universities);
         
-        //every deptt has evaluation committee
+        //every department has evaluation committee
         this.evaluationCommittee=new EvaluationCommittee(this,universities);
-       // ontology.axioms().forEach(System.out::println);
+        // ontology.axioms().forEach(System.out::println);
         //System.out.println("Counts..."+ ontology.getLogicalAxiomCount() + "   "+ontology.getAxiomCount());
         
         OWLDocumentFormat format = manager.getOntologyFormat(o);
@@ -472,19 +477,13 @@ public class Generator {
        
         try  {
             File file = new File(System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl");
-           // File file = new File("C:\\Users\\Gunjan\\Desktop\\owlbenchmarkingreferences\\OntoBench-master\\UnivBench2DL\\output1.owl");
-           // File file = new File("D:\\output1.owl");
 
             if (!file.exists()) {
                 file.mkdir();
             }
         
            
-            //OWLDocumentFormat format = manager.getOntologyFormat(o);
-
-           // System.out.println("Counts..."+ format+ "...."+ o.getAxiomCount());
             System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
-            //System.out.println("Counts..."+ format+ "...."+ o.getAxiomCount());
             manager.saveOntology(o,format,IRI.create(file.toURI()));
             System.out.println("Done");
         } catch (OWLOntologyStorageException e) {
@@ -556,7 +555,7 @@ public class Generator {
     public void addAxiomToOntology(OWLAxiom axiom) {
 
        o.getOWLOntologyManager().addAxiom(o, axiom);
-       //add here 
+       //we keep appending all the assertion axioms to TBox file.
     }
 
     public void classAssertion(OWLClassExpression classExpression, OWLIndividual individual) {

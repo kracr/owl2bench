@@ -1,3 +1,7 @@
+/*Generates random number of publications (300-500) for each university.
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+
 package ABoxGen.InstanceGenerator;
 
 //also covers hasCollaborationWith Property
@@ -39,6 +43,8 @@ public class Publication {
         Object[] arrayItem = hash.toArray();
         int j=1;
         for(int i = 0; i < (hash.size()-1);++i){
+        	
+        	//authors with same publications means they collaborate.
             gen.objectPropertyAssertion(gen.getObjectProperty("hasCollaborationWith"),gen.getNamedIndividual(arrayItem[i].toString() ),gen.getNamedIndividual(arrayItem[j].toString()));
             j=j+1;
         }
@@ -46,7 +52,9 @@ public class Publication {
 
         while(i.hasNext())
         {   //gen.dataPropertyAssertion(gen.getDataProperty("hasPublication"),gen.getNamedIndividual(publicationInstance),gen.getLiteral("xx/xx/xx"));
-        
+            //every publication has a publication date and a list of authors.
+        	
+        	
             gen.dataPropertyAssertion(gen.getDataProperty("hasPublicationDate"),gen.getNamedIndividual(publicationInstance),gen.getLiteral("xx/xx/xx"));
             gen.objectPropertyAssertion(gen.getObjectProperty("hasAuthor"),gen.getNamedIndividual(publicationInstance ),gen.getNamedIndividual(i.next()));
         }

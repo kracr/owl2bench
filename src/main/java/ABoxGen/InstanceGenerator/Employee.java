@@ -1,5 +1,8 @@
-package ABoxGen.InstanceGenerator;
+//adds axioms 'isEmployeeOf' and 'hasResearchInterest' for employees
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
 
+package ABoxGen.InstanceGenerator;
 public class Employee {
     Generator gen;
     Person person;
@@ -16,6 +19,7 @@ public class Employee {
         gen.objectPropertyAssertion(gen.getObjectProperty("is" + employeeType+ "Of"),gen.getNamedIndividual(employeeInstance),gen.getNamedIndividual(departmentInstance));
         if(employeeType=="FullProfessor" || employeeType=="AssistantProfessor" || employeeType=="AssociateProfessor" || employeeType=="VisitingProfessor" || employeeType=="PostDoc" || employeeType=="Lecturer" )
         {
+        	//research interest for each faculty
             gen.dataPropertyAssertion(gen.getDataProperty("hasResearchInterest"),gen.getNamedIndividual(employeeInstance),gen.getLiteral("SomeResearchTopic"));
         }
     }

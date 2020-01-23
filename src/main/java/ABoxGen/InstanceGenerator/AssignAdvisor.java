@@ -1,3 +1,10 @@
+/* Assigns Advisor to each student. Advisor could be an internal advisor (from the same department as student) or 
+  external advisor( from a different department within the same college or from different college with in the same university or from 
+  another university ). */
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;

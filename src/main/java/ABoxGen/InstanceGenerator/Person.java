@@ -1,3 +1,7 @@
+/*adds different object and data property assertion axioms for each category of  person ( student, employee( faculty and staff) and RA) */
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+
 package ABoxGen.InstanceGenerator;
 
 
@@ -9,6 +13,7 @@ public class Person {
     String profile;
     //assign man or woman
     //assign student/faculty/staff
+  //Add axioms related to Students (gender, name age etc)
     public Person(Student student, String instance) {
         this.gen=student.gen;
         this.profile=student.profile;
@@ -16,10 +21,10 @@ public class Person {
        
         
         if(!student.womenStudents){
-        	
         	if ((profile.matches("DL")) || (profile.matches("RL"))) {
-        		//System.out.println("manwoamn1");
+        		
             gender = GetRandomNo.getRandomFromRange(0,1);
+            //Assign man or woman to a person instance . Person is Man or Woman ( for DL and RL only)
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
             else
@@ -34,8 +39,8 @@ public class Person {
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));
         String name= firstName+ " " + lastName;
-        //System.out.println("name"+ name);
-
+        
+        //object and data property assertion axioms for each person
         gen.dataPropertyAssertion(gen.getDataProperty("hasFirstName"),gen.getNamedIndividual(instance),gen.getLiteral(firstName));
         gen.dataPropertyAssertion(gen.getDataProperty("hasLastName"),gen.getNamedIndividual(instance),gen.getLiteral(lastName));
         gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(instance),gen.getLiteral(name));
@@ -44,12 +49,11 @@ public class Person {
         gen.dataPropertyAssertion(gen.getDataProperty("hasID"),gen.getNamedIndividual(instance),gen.getLiteral(instance));
         gen.dataPropertyAssertion(gen.getDataProperty("hasAge"),gen.getNamedIndividual(instance),gen.getLiteral("x"));
     }
-
+  //Add axioms related to Employees (gender, name age etc)
     public Person(Employee employee, String instance) {
         this.gen=employee.gen;
         this.profile=employee.profile;
         if ((profile.matches("DL")) || (profile.matches("RL"))) {
-        	//System.out.println("manwoamn2");
             gender = GetRandomNo.getRandomFromRange(0,1);
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
@@ -72,6 +76,8 @@ public class Person {
         gen.dataPropertyAssertion(gen.getDataProperty("hasID"),gen.getNamedIndividual(instance),gen.getLiteral(instance));
         gen.dataPropertyAssertion(gen.getDataProperty("hasAge"),gen.getNamedIndividual(instance),gen.getLiteral("x"));
     }
+    
+    //Add axioms related to Research Assistants (gender, name age etc)
     public Person(ResearchGroup researchGroup, String instance) {
         this.gen=researchGroup.gen;
         this.profile=researchGroup.profile;

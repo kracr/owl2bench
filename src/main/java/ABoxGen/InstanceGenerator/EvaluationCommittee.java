@@ -1,3 +1,12 @@
+//Every department has an evaluation committee for faculties/employee/student/thesis
+//code generates axioms for thesis evaluation committee .
+//Thesis Evaulation Committee has members who are professors
+//committee members may belong to same department or across universities
+//generated axioms create links across universities
+ 
+/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
+ In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+
 package ABoxGen.InstanceGenerator;
 
 import java.util.HashSet;
