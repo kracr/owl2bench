@@ -35,7 +35,9 @@ We are also providing the code (if user wants to change the configurations/densi
            
 Note: 
 
-The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . eg. OWL2EL-1-output.owl, OWL2EL-5-output.owl . 
+The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . 
+
+eg. OWL2EL-1-output.owl, OWL2EL-5-output.owl . (Sample files already present in the directory)
 
 In the case of File Not Found exception, please create owl files of type OWL2EL-1-output.owl (if you run it for 1 university and EL profile) in the same folder.
 
