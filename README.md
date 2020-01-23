@@ -3,7 +3,7 @@ An OWL 2 benchmark that can generate ABox axioms for fixed TBox to test the scal
 
 Project repository consists of:
 
-Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files.
+Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files, and an executable jar file.
 
 # TBox Details
 
@@ -15,7 +15,7 @@ OWL 2 QL : UNIV-BENCH-OWL2QL.owl
 
 OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 
-# Usage
+# Usage 1
 
 We have provided an executable jar file (with configurations that were used to perform the experiments) where user can specify the Number of Universities, Seed and Required OWL 2 Profile (in the same order). 
            
@@ -33,9 +33,11 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
+# Usage 2
+
 We are also providing the java code (if user wants to change the configurations/density of each node). User can download the project repository. After downloading user just need to import this maven project and then user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : Number of Universities, Seed and Required OWL 2 Profile (same as above)
            
-Note: 
+# Note: 
 
 The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . 
 
