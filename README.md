@@ -33,7 +33,11 @@ java -jar OWL2Bench.jar 100 950 RL
 
 We are also providing the code (if user wants to change the configurations/density of each node). User can change the min-max variables in ConfigFile.java and executing Generator.java (with arguments <Number of Universities> <Seed> <Required OWL 2 Profile>)
            
-Note: The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . eg. OWL2DL-1-output.owl. In the case of File Not Found exception, please create owl files of type OWL2DL-1-output.owl in the same folder.
+Note: 
+
+The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . eg. OWL2EL-1-output.owl, OWL2EL-10-output.owl . 
+
+In the case of File Not Found exception, please create owl files of type OWL2EL-1-output.owl (if you run it for 1 university and EL profile) in the same folder.
 
 
            
