@@ -154,22 +154,22 @@ public class Generator {
     	//System.out.println(".." + profile);
     	//use TBox corresponing to user input
     	 if(profile.matches("EL")){
-    		 System.out.println("EL");
+    		 System.out.println("Profile is EL");
     		 file2 = new File("UNIV-BENCH-OWL2EL.owl");
     	 }
     	 else if (profile.matches("QL")) {
 
-    		 System.out.println("QL");
+    		 System.out.println("Profile is QL");
     		 file2 = new File("UNIV-BENCH-OWL2QL.owl");
     	 }
     	 else if (profile.matches("RL")) {
 
-    		 System.out.println("RL");
+    		 System.out.println("Profile is RL");
     		 file2 = new File("UNIV-BENCH-OWL2RL.owl");
     	 }
     	 else if (profile.matches("DL"))
     	 {
-    		 System.out.println("DL");
+    		 System.out.println("Profile is DL");
     		 file2 = new File("UNIV-BENCH-OWL2DL.owl");
     	 }
     	OWLOntology o = loadOWLOntology(file2);
@@ -445,7 +445,7 @@ public class Generator {
         //generates university instances 
         for (int i = 0; i < this.univNum; ++i) {
             this.universities[i] = new University(this, i);
-            System.out.println(i);
+            System.out.println("University = " + (i+1));
         }
         //Generate publications
         //create links across universities using Publication 'hasAuthor' some Person. 1 publication can have authors from different universities
@@ -473,19 +473,22 @@ public class Generator {
         //System.out.println("Counts..."+ ontology.getLogicalAxiomCount() + "   "+ontology.getAxiomCount());
         
         OWLDocumentFormat format = manager.getOntologyFormat(o);
-        System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
+        //System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
        
         try  {
             File file = new File(System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl");
-
+try {
             if (!file.exists()) {
-                file.mkdir();
-            }
-        
+                //file.mkdir();
+            	file.createNewFile();
+            } }catch (IOException e) {
+   		System.out.println("Exception Occurred:");
+	        e.printStackTrace();
+	  }
            
-            System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
+            System.out.println("Total Logical Axiom Count..."+ format+ "...."+ o.getLogicalAxiomCount());
             manager.saveOntology(o,format,IRI.create(file.toURI()));
-            System.out.println("Done");
+            System.out.println("Finished Writing to file");
         } catch (OWLOntologyStorageException e) {
             e.printStackTrace();
         }
