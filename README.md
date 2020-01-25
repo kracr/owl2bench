@@ -1,9 +1,12 @@
-# OWL2Bench
-An OWL 2 benchmark that can generate ABox axioms for fixed TBox to test the scalability and performance of OWL 2 Reasoners.
+# OWL2Bench Documentation
+This document provides documentation for the first version of our benchmark OWL2Bench. OWL2Benchv1.0 can generate ABox axioms for fixed TBox to test the scalability and performance of OWL 2 Reasoners (in terms of three reasoning tasks: Consistency Check, Classification Time, Realization Time) and SPARQL Query Engines (in terms of Load Time and Query Response Time).
 
-**Project repository consists of:**
+## Introduction
+OWL 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL2 EL, OWL 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several reasoners such as HermiT, Openllet, JFact, ELK that  support  different  OWL  2  profiles. Some of the querying engines such as Stardog, GraphDB, Virtuoso etc are also backed by the reasoners so as to help answer the queries that involve reasoning. But there is no benchmark that can test reasoners for all OWL 2 profiles in terms of coverage of supported constructs, scalability and reasoning performance. In this work,  we  describe  our  ongoing  efforts  to  address  this  shortcoming  by developing a standard benchmark for complete evaluation of reasonersthat support OWL 2 profiles. Our benchmark is an extension of the well-known University Ontology Benchmark (UOBM). It includes an ontology for each profile covering the set of constructs supported by that profile,generation of synthetic data scalable to arbitrary size and a separate setof SPARQL queries for each profile. We use our benchmark to evaluatethe performance of several reasoners and SPARQL query engines.
 
-Four different TBox for all the OWL 2 Profiles: UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl, all the java files for generating ABox for the selected profile (Generator.java is the main class), one excel file (RandomNames.xlsx for real like names of universities and person), 2 empty sample output files (OWL2EL-1-output.owl, OWL2EL-5-output.owl), maven pom.xml, and an executable jar file (OWL2Bench.jar). 
+
+## About the Repository
+Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory, Experiments consists of java codes used to evaluate different reasoners (HermiT, Openllet, JFact and ELK) and a pdf file consisting of SPARQL queries for all the profiles used to evaluate Stardog and GraphDB, Four different **TBox** for all the OWL 2 Profiles: **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, one excel file **RandomNames.xlsx** used to give real like names of University and Person instances, and an executable jar file : **OWL2Bench.jar**. 
 
 ## TBox Details 
 
@@ -15,7 +18,9 @@ OWL 2 QL : UNIV-BENCH-OWL2QL.owl
 
 OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 
-## Usage 1
+## Usage
+
+### i. Direct execution using executable jar (with default configurations) :
 
 We have provided an executable jar file (with configurations that were used to perform the experiments) where user can specify the *Number of Universities, Seed and Required OWL 2 Profile* (in the same order). 
            
@@ -31,19 +36,16 @@ java -jar OWL2Bench.jar 10 67 EL
 
 java -jar OWL2Bench.jar 100 950 RL
 
-To execute OWL2Bench.jar we do not need to enter the full path for the required files as argument, that is, TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl), RandomNames.xlsx and pre-created output files should be in the same directory as the jar file. So, for now , I have kept it in the project directory itself. If user wants to execute it from some where else, make sure all the TBoxes, RandomNames.xlsx and pre-created output files are present in the same directory as OWL2Bench.jar.
+To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. 
 
-## Usage 2
+## ii. Using Source Code (with or without default configurations) :
 
-We are also providing the java code (if user wants to change the configurations/density of each node). User can download the project repository. After downloading user just need to import this maven project and then user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : *Number of Universities, Seed and Required OWL 2 Profile* (same as above). Required files are already present in the project directory. 
+We are also providing the java code (if user wants to change the configurations/density of each node) for ABox generation. User can download the project repository OWL2Bench. After downloading user just need to import this maven project and then user can change the min-max variables in ConfigFile.java and run Generator.java with arguments : *Number of Universities, Seed and Required OWL 2 Profile* (same as above). Required files are already present in the project directory. 
            
 **Note:** 
 
-The output files are stored in files "OWL2"+ profile + "-" + univNum + "-output.owl" . 
+The output files are stored in files with names such as "OWL2"+ Profile + "-" + Number of Universities + "-output.owl" . 
 
-eg. OWL2EL-1-output.owl, OWL2EL-5-output.owl . (Sample files already present in the directory)
-
-In the case of File Not Found exception, please create owl files (not directory) of type *OWL2DL-1-output.owl* (let's say you run it for 1 university and DL profile) in the same folder.
-
+For example. On executing using the arguments given in examples above, output files would be OWL2DL-1-output.owl, OWL2QL-1-output.owl, OWL2EL-10-output.owl, OWL2RL-100-output.owl. 
 
            
