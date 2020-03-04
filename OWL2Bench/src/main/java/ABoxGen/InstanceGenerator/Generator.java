@@ -3,8 +3,8 @@
 /* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
  In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
 
-package ABoxGen.InstanceGenerator;
 
+package ABoxGen.InstanceGenerator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,9 +28,9 @@ public class Generator {
     int publicationNum_Max=500; //per university
     int researchGroupNum_Min=10;
     int researchGroupNum_Max=20;
-    int collegeNum_Min=15;
-    int collegeNum_Max=25;
-    int womenCollegeNum_Min=2;
+    int collegeNum_Min=10;
+    int collegeNum_Max=20;
+    int womenCollegeNum_Min=1;
     int womenCollegeNum_Max=4;
     int deptNum_Min=6;
     int deptNum_Max=10;
@@ -38,16 +38,16 @@ public class Generator {
     int RANum_Max=10;
     int progNum_Min=1;
     int progNum_Max=3;
-    int ugStudentNum_Min=60;
-    int ugStudentNum_Max=100;
+    int ugStudentNum_Min=45;
+    int ugStudentNum_Max=60;
     int pgStudentNum_Min=20;
     int pgStudentNum_Max=40;
     int phdStudentNum_Min=2;
     int phdStudentNum_Max=10;
-    int ugCourseNum_Min=20;
-    int ugCourseNum_Max=35;
-    int electiveCourseNum_Min=25;
-    int electiveCourseNum_Max=35;
+    int ugCourseNum_Min=10;
+    int ugCourseNum_Max=15;
+    int electiveCourseNum_Min=15;
+    int electiveCourseNum_Max=25;
     int assistantProfessorNum_Min=15;
     int assistantProfessorNum_Max=20;
     int associateProfessorNum_Min=8;
@@ -122,9 +122,9 @@ public class Generator {
 
     public static void main(String[] args) {
     	//input 
-        int univNum=1;
-        int seed = 3;
-        String profile= "EL";
+        int univNum=2;
+        int seed = 200;
+        String profile= "QL";
         //System.out.println(args[2]);
         if(args.length==3)
         {

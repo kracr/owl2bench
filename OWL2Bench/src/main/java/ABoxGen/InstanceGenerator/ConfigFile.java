@@ -1,8 +1,8 @@
 /* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
  In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
 
-
 package ABoxGen.InstanceGenerator;
+
 
 public class ConfigFile {
 	
@@ -12,9 +12,9 @@ public class ConfigFile {
 	    Integer publicationNum_Max=null;   		// default=500;
 	    Integer researchGroupNum_Min=null;    	// default=10;
 	    Integer researchGroupNum_Max=null;		// default=20;
-	    Integer collegeNum_Min=null;			// default=15;
-	    Integer collegeNum_Max=null;			// default=25;
-	    Integer womenCollegeNum_Min=null;		// default=2;
+	    Integer collegeNum_Min=null;			// default=10;
+	    Integer collegeNum_Max=null;			// default=20;
+	    Integer womenCollegeNum_Min=null;		// default=1;
 	    Integer womenCollegeNum_Max=null;		// default=4;
 	    Integer deptNum_Min=null;				// default=6;
 	    Integer deptNum_Max=null;				// default=10;
@@ -22,12 +22,16 @@ public class ConfigFile {
 	    Integer RANum_Max=null;					// default=10;
 	    Integer progNum_Min=null;				// default=1;
 	    Integer progNum_Max=null;				// default=3;
-	    Integer ugStudentNum_Min=null;			// default=60;
-	    Integer ugStudentNum_Max=null;			// default=100;
+	    Integer ugStudentNum_Min=null;			// default=45;
+	    Integer ugStudentNum_Max=null;			// default=60;
 	    Integer pgStudentNum_Min=null;			// default=20;
 	    Integer pgStudentNum_Max=null;			// default=40;
 	    Integer phdStudentNum_Min=null;			// default=2;
 	    Integer phdStudentNum_Max=null;			// default=10;
+	    Integer ugCourseNum_Min=null;           // default=10;
+	    Integer ugCourseNum_Max=null;           // default=15;
+	    Integer electiveCourseNum_Min=null;     // default=15;
+	    Integer electiveCourseNum_Max=null;     // default=25;
 	    Integer assistantProfessorNum_Min=null; // default=15;
 	    Integer assistantProfessorNum_Max=null; // default=20;
 	    Integer associateProfessorNum_Min=null; // default=8;
