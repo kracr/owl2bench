@@ -24,34 +24,34 @@ import org.semanticweb.owlapi.model.*;
 
 public class Generator {
 
-    int publicationNum_Min=300; //per university
-    int publicationNum_Max=500; //per university
-    int researchGroupNum_Min=10;
-    int researchGroupNum_Max=20;
-    int collegeNum_Min=10;
-    int collegeNum_Max=20;
+    int publicationNum_Min=150; //per university
+    int publicationNum_Max=200; //per university
+    int researchGroupNum_Min=6;
+    int researchGroupNum_Max=10;
+    int collegeNum_Min=8;
+    int collegeNum_Max=12;
     int womenCollegeNum_Min=1;
-    int womenCollegeNum_Max=4;
-    int deptNum_Min=6;
-    int deptNum_Max=10;
-    int RANum_Min=5;
-    int RANum_Max=10;
+    int womenCollegeNum_Max=2;
+    int deptNum_Min=5;
+    int deptNum_Max=7;
+    int RANum_Min=6;
+    int RANum_Max=8;
     int progNum_Min=1;
     int progNum_Max=3;
-    int ugStudentNum_Min=45;
-    int ugStudentNum_Max=60;
-    int pgStudentNum_Min=20;
-    int pgStudentNum_Max=40;
+    int ugStudentNum_Min=30;
+    int ugStudentNum_Max=45;
+    int pgStudentNum_Min=15;
+    int pgStudentNum_Max=20;
     int phdStudentNum_Min=2;
-    int phdStudentNum_Max=10;
+    int phdStudentNum_Max=5;
     int ugCourseNum_Min=10;
     int ugCourseNum_Max=15;
-    int electiveCourseNum_Min=15;
-    int electiveCourseNum_Max=25;
-    int assistantProfessorNum_Min=15;
-    int assistantProfessorNum_Max=20;
-    int associateProfessorNum_Min=8;
-    int associateProfessorNum_Max=15;
+    int electiveCourseNum_Min=10;
+    int electiveCourseNum_Max=15;
+    int assistantProfessorNum_Min=8;
+    int assistantProfessorNum_Max=12;
+    int associateProfessorNum_Min=5;
+    int associateProfessorNum_Max=10;
     int fullProfessorNum_Min=5;
     int fullProfessorNum_Max=10;
     int visitingProfessorNum_Min=2;
@@ -75,8 +75,8 @@ public class Generator {
     int numOfElectivesOutsideDept_Min=1;
     int sameHomeTownNum_Min=0;
     int sameHomeTownNum_Max=3;
-    int isFriendOfNum_Min=1;
-    int isFriendOfNum_Max=4;
+    //int isFriendOfNum_Min=1;
+    //int isFriendOfNum_Max=4;
     int likesNum_Min=1;
     int likesNum_Max=3;
     int lovesNum_Min =0;
@@ -94,7 +94,7 @@ public class Generator {
 
 
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-    PrefixManager pm = new DefaultPrefixManager("http://benchmark/univ-bench-owl2");
+    PrefixManager pm = new DefaultPrefixManager("http://benchmark/OWL2Bench");
     IRI ontologyIRI = IRI.create(pm.getDefaultPrefix());
     OWLOntology ontology = createOWLOntology(pm);
     //File file2 = new File("univ-bench-2dl-rdfxmlformat.owl");
@@ -122,25 +122,31 @@ public class Generator {
 
     public static void main(String[] args) {
     	//input 
-        int univNum=2;
-        int seed = 200;
-        String profile= "QL";
-        //System.out.println(args[2]);
+        int univNum=1;
+        int seed =848;
+
+        //For about 50K triple Seed value: EL=2 (52K), QL=1 (51K), DL/RL=3 (48K)
+        //For about 100K triple Seed value: EL=2 (99423), QL=8 (99142), DL/RL=848 (102)
+        //For about 300K triple Seed value: EL=2 (52K), QL=1 (51K), DL/RL=3 (48K)
+        //DL RL3 84K 13 240K 19 162K 1 110K 31 100K 37 83K
+        //EL1 110 2 135 3 102 4 166 5 128 13 191 10 153 18 151 3 102
+        //QL 3 80K 24 95K 14 211K 31 108K 37 99K
+        //DL&RL    //EL           //QL
+        //23-299    //20 301        //17 303
+        //21 602          //28 605              //29 612 		      
+        String profile= "RL";
+       
         if(args.length==3)
         {
             univNum=Integer.parseInt(args[0]);
-            seed=Integer.parseInt(args[1]);
-            profile= args[2];
+            profile= args[1];
+            seed=Integer.parseInt(args[2]);
         }
-        else if (args.length==2)
+        else
         {
-            univNum=Integer.parseInt(args[0]);
-            seed=Integer.parseInt(args[1]);
-           
-        }
-        else if (args.length==1)
-        {
-            univNum=Integer.parseInt(args[0]);
+     
+            System.out.println("Please give arguments in the following order: No. of Universities (int), OWL 2 Profile (EL/QL/RL/DL), Seed value (int)");
+            System.out.println("For example: 1 DL 3 , 10 QL 1 , 2 RL 3 , 5 EL 2");
         }
         //System.out.println(profile);
         new Generator().start(univNum, seed, profile);
@@ -154,22 +160,22 @@ public class Generator {
     	//System.out.println(".." + profile);
     	//use TBox corresponing to user input
     	 if(profile.matches("EL")){
-    		 System.out.println("Profile is EL");
+    		 System.out.println("Loading TBox UNIV-BENCH-OWL2EL.owl");
     		 file2 = new File("UNIV-BENCH-OWL2EL.owl");
     	 }
     	 else if (profile.matches("QL")) {
 
-    		 System.out.println("Profile is QL");
+    		 System.out.println("Loading TBox UNIV-BENCH-OWL2QL.owl");
     		 file2 = new File("UNIV-BENCH-OWL2QL.owl");
     	 }
     	 else if (profile.matches("RL")) {
 
-    		 System.out.println("Profile is RL");
+    		 System.out.println("Loading TBox UNIV-BENCH-OWL2RL.owl");
     		 file2 = new File("UNIV-BENCH-OWL2RL.owl");
     	 }
     	 else if (profile.matches("DL"))
     	 {
-    		 System.out.println("Profile is DL");
+    		 System.out.println("Loading TBox UNIV-BENCH-OWL2DL.owl");
     		 file2 = new File("UNIV-BENCH-OWL2DL.owl");
     	 }
     	OWLOntology o = loadOWLOntology(file2);
@@ -445,7 +451,7 @@ public class Generator {
         //generates university instances 
         for (int i = 0; i < this.univNum; ++i) {
             this.universities[i] = new University(this, i);
-            System.out.println("University = " + (i+1));
+            //System.out.println("University = " + (i+1));
         }
         //Generate publications
         //create links across universities using Publication 'hasAuthor' some Person. 1 publication can have authors from different universities
@@ -486,9 +492,10 @@ try {
 	        e.printStackTrace();
 	  }
            
-            System.out.println("Total Logical Axiom Count..."+ format+ "...."+ o.getLogicalAxiomCount());
+            System.out.println("Ontology Format="+ format);
+            System.out.println("Total Logical Axiom Count="+ o.getLogicalAxiomCount());
             manager.saveOntology(o,format,IRI.create(file.toURI()));
-            System.out.println("Finished Writing to file");
+            System.out.println("Finished Writing to file "+ System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl" );
         } catch (OWLOntologyStorageException e) {
             e.printStackTrace();
         }

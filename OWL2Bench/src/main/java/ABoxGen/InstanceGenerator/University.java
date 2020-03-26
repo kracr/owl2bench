@@ -33,8 +33,8 @@ public class University {
            
         }while(universityName.contains(cityName));
         universityName.add(cityName);
-        this.univName= "University of " + cityName;//from data dictionary eg. University of London
-        //System.out.println( univName);
+        this.univName= "U" + univIndex + " University of " + cityName;//from data dictionary eg. University of London
+        System.out.println( univName);
         this.configFile=new ConfigFile();
         //:U0 rdf:type :University
         gen.classAssertion(gen.getClass("University"),gen.getNamedIndividual(univInstance) );

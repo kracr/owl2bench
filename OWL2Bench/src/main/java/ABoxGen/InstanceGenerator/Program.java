@@ -16,7 +16,7 @@ public class Program {
 
         this.departmentInstance = department.departmentInstance;
         this.gen = department.gen;
-        this.programInstance= departmentInstance +  type + "prog";
+        this.programInstance= departmentInstance +  type;
         gen.classAssertion(gen.getClass(type+"Program"),gen.getNamedIndividual(programInstance));
         gen.objectPropertyAssertion(gen.getObjectProperty("hasProgram"),gen.getNamedIndividual(departmentInstance ),gen.getNamedIndividual(programInstance));
 

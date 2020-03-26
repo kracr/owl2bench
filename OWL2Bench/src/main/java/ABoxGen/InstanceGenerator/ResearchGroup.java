@@ -14,8 +14,8 @@ public class ResearchGroup {
     public ResearchGroup(University university,int index) {
         configFile=new ConfigFile();
         this.profile=university.profile;
-        this.researchGroupInstance = university.univInstance + "ResearchGroup" + index;
-        this.researchProjectInstance =  researchGroupInstance+ "ResearchProject";
+        this.researchGroupInstance = university.univInstance + "RG" + index;
+        this.researchProjectInstance =  researchGroupInstance+ "RP";
         this.gen=university.gen;
         gen.classAssertion(gen.getClass("ResearchGroup"),gen.getNamedIndividual(researchGroupInstance) );
         //gen.classAssertion(gen.getClass("ResearchGroup"), gen.getNamedIndividual(researchGroupInstance));

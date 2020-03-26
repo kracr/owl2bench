@@ -16,7 +16,7 @@ public class Department {
     Course[] ugCourses,electiveCourses;
     Generator gen;
     Boolean womenStudents;
-    String departmentInstance, programInstance;
+    String departmentInstance, programInstance, departmentName;
     String collegeDiscipline,profile;
     String deptName;
     Program ugProgram,pgProgram,phdProgram;
@@ -55,16 +55,19 @@ public class Department {
         this.progNum = GetRandomNo.getRandomFromRange(gen.progNum_Min,gen.progNum_Max);
         //may be added to employee later
         deptName = assignDepartmentName(collegeDiscipline);
+        departmentName= "Department of "+ deptName;
         //if department belongs to women college , implies all women students
         if (this.womenStudents) {
-            this.departmentInstance = college.collegeInstance + "DeptOf" + deptName + this.deptIndex;
+            this.departmentInstance = college.collegeInstance + "D" + this.deptIndex;
+            gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(departmentInstance),gen.getLiteral(departmentName));
             gen.classAssertion(gen.getClass("Department"),gen.getNamedIndividual(departmentInstance));
-            gen.objectPropertyAssertion(gen.getObjectProperty("isDepartmentOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isPartOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
             generateStudents(womenStudents,progNum);
         } else {
-            this.departmentInstance = college.collegeInstance + "DeptOf" + deptName + this.deptIndex;
+        	this.departmentInstance = college.collegeInstance + "D" + this.deptIndex;
+        	gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(departmentInstance),gen.getLiteral(departmentName));
             gen.classAssertion(gen.getClass("Department"),gen.getNamedIndividual(departmentInstance));
-            gen.objectPropertyAssertion(gen.getObjectProperty("isDepartmentOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
+            gen.objectPropertyAssertion(gen.getObjectProperty("isPartOf"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(college.collegeInstance));
             generateStudents(womenStudents,progNum);
         }
 
@@ -148,43 +151,43 @@ public class Department {
         this.postDocs= new Employee[this.postDocNum];
         this.faculty=new Employee[this.courseNum];
         for (int i = 0; i < this.assistantProfessorNum; ++i) {
-            this.assistantProfessors[i] = new Employee(this,i,"AssistantProfessor");
+            this.assistantProfessors[i] = new Employee(this,i,"AssistantProfessor","AP");
             faculty[count]=assistantProfessors[i];
             count=count+1;
         }
         for (int i = 0; i < this.associateProfessorNum; ++i) {
-            this.associateProfessors[i] = new Employee(this,i,"AssociateProfessor");
+            this.associateProfessors[i] = new Employee(this,i,"AssociateProfessor","AssocP");
             faculty[count]=associateProfessors[i];
             count=count+1;
         }
         for (int i = 0; i < this.fullProfessorNum; ++i) {
-            this.fullProfessors[i] = new Employee(this,i,"FullProfessor");
+            this.fullProfessors[i] = new Employee(this,i,"FullProfessor","FP");
             faculty[count]=fullProfessors[i];
             count=count+1;
         }
         for (int i = 0; i < this.visitingProfessorNum; ++i) {
-            this.visitingProfessors[i] = new Employee(this,i,"VisitingProfessor");
+            this.visitingProfessors[i] = new Employee(this,i,"VisitingProfessor","VP");
             faculty[count]=visitingProfessors[i];
             count=count+1;
         }
         for (int i = 0; i < this.lecturerNum; ++i) {
-            this.lecturers[i] = new Employee(this,i,"Lecturer");
+            this.lecturers[i] = new Employee(this,i,"Lecturer","L");
             faculty[count]=lecturers[i];
             count=count+1;
         }
         for (int i = 0; i < this.postDocNum; ++i) {
-            this.postDocs[i] = new Employee(this,i,"PostDoc");
+            this.postDocs[i] = new Employee(this,i,"PostDoc","PD");
             faculty[count]=postDocs[i];
             count=count+1;
         }
         for (int i = 0; i < this.systemStaffNum; ++i) {
-            this.systemStaffs[i] = new Employee(this,i,"SystemStaff");
+            this.systemStaffs[i] = new Employee(this,i,"SystemStaff","SS");
         }
         for (int i = 0; i < this.clericalStaffNum; ++i) {
-            this.clericalStaffs[i] = new Employee(this,i,"ClericalStaff");
+            this.clericalStaffs[i] = new Employee(this,i,"ClericalStaff","CS");
         }
         for (int i = 0; i < this.otherStaffNum; ++i) {
-            this.otherStaffs[i] = new Employee(this,i,"OtherStaff");
+            this.otherStaffs[i] = new Employee(this,i,"OtherStaff","OS");
         }
 
     }

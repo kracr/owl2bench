@@ -24,13 +24,14 @@ public class Student {
         
             department.personPerUniversity.add(studentInstance);
             if (program == "UG"){
-            	
+            	//UGWS for UG Women Student
             	if (womenStudents) {
-                    this.studentInstance = departmentInstance  + "UGwomenStudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "UGWS" + studentIndex;
                 }
                 else
+                	//UGS for UG Student
                 {
-                    this.studentInstance = departmentInstance  + "UGstudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "UGS" + studentIndex;
                 }
             //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
             this.person=new Person(this, studentInstance);
@@ -43,11 +44,11 @@ public class Student {
             {
             	
             	if (womenStudents) {
-                    this.studentInstance = departmentInstance  + "PGwomenStudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "PGWS" + studentIndex;
                 }
                 else
                 {
-                    this.studentInstance = departmentInstance  + "PGstudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "PGS" + studentIndex;
                 }
                 //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
                 this.person=new Person(this, studentInstance);
@@ -61,11 +62,11 @@ public class Student {
             {
             	
             	if (womenStudents) {
-                    this.studentInstance = departmentInstance  + "PhDwomenStudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "PhDWS" + studentIndex;
                 }
                 else
                 {
-                    this.studentInstance = departmentInstance  + "PhDstudent" + studentIndex;
+                    this.studentInstance = departmentInstance  + "PhDS" + studentIndex;
                 }
                 //gen.classAssertion(gen.getClass("Student"),gen.getNamedIndividual(studentInstance));
                 this.person=new Person(this, studentInstance);

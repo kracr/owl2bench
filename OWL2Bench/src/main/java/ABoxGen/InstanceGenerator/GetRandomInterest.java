@@ -6,9 +6,15 @@ package ABoxGen.InstanceGenerator;
 
 public class GetRandomInterest {
     String interest;
-    String TOKEN[]={"Shopping","StampCollecting","PCGame","VideoGame","ActionMovie","ComedyMovie","FictionMovie","HorrorMovie","ThrillerMovie","RomanticMovie","DocumentaryMovie","ClassicalMusic","RockAndRollMusic","PopMusic","AbstractPainting","OilPainting","BookReading","ArticleReading","NewspaperReading","Badminton","Basketball","Cricket","T20Cricket","Football","Soccer","Tennis","Swimming","Travelling"};
-    public String getInterest(){
-        interest=TOKEN[GetRandomNo.getRandomFromRange(0,27)];
+    String TOKEN1[]={"VideoGame","ActionMovie","ComedyMovie","HorrorMovie","ThrillerMovie","RomanticMovie","DocumentaryMovie","ClassicalMusic","RockAndRollMusic","PopMusic","AbstractPainting","OilPainting","BookReading","ArticleReading","BadmintonSingles","Basketball","T20Cricket","Football","TableTennis","LawnTennis","BackStroke","SoloTravelling"};
+    String TOKEN2[]={"Shopping","StampCollecting","PCGame","FictionMovie","NewspaperReading","FrontCrawl"};
+    
+    public String getInterestLikes(){
+        interest=TOKEN1[GetRandomNo.getRandomFromRange(0,21)];
+        return interest;
+    }
+    public String getInterestDislikes(){
+        interest=TOKEN2[GetRandomNo.getRandomFromRange(0,5)];
         return interest;
     }
 }

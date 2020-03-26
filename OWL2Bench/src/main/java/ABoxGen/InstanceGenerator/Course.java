@@ -8,14 +8,21 @@ package ABoxGen.InstanceGenerator;
 public class Course {
 Generator gen;
 Employee[] faculty;
-String departmentInstance,courseInstance,facultyInstance;
+String departmentInstance,courseInstance,facultyInstance,category,type;
 
     public Course(Department department,int courseIndex, String category){
 
         this.gen=department.gen;
         this.faculty=department.faculty;
         this.departmentInstance=department.departmentInstance;
-        this.courseInstance=departmentInstance + category + department.deptName + courseIndex;
+        if(category=="UGCourse") {
+        	this.type="UGC";
+        }
+        else if (category=="ElectiveCourse")
+        {
+        this.type="EC";	
+        }
+        this.courseInstance=departmentInstance + this.type + courseIndex;
         facultyInstance=faculty[courseIndex].employeeInstance;
         gen.classAssertion(gen.getClass(category),gen.getNamedIndividual(courseInstance));
         gen.objectPropertyAssertion(gen.getObjectProperty("offerCourse"),gen.getNamedIndividual(departmentInstance),gen.getNamedIndividual(courseInstance));

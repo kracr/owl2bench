@@ -26,7 +26,7 @@ public class Publication {
         ///add about organization has publicatn
         this.university=universities[univIndex];
         this.publicationIndex=publicationIndex;
-        this.publicationInstance="publication"+ publicationIndex;
+        this.publicationInstance="P"+ publicationIndex;
         this.publicationType=TOKEN[GetRandomNo.getRandomFromRange(0,9)];
         gen.classAssertion(gen.getClass(publicationType),gen.getNamedIndividual(publicationInstance));
         this.authorNum=GetRandomNo.getRandomFromRange(1,5);

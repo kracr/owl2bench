@@ -8,11 +8,11 @@ public class Employee {
     Person person;
     String employeeInstance,departmentInstance,profile ;
 
-    public Employee(Department department,int empIndex, String employeeType) {
+    public Employee(Department department,int empIndex, String employeeType, String type) {
         this.gen=department.gen;
         this.profile=department.profile;
         this.departmentInstance=department.departmentInstance;
-        this.employeeInstance=departmentInstance+ employeeType + empIndex;
+        this.employeeInstance=departmentInstance+ type + empIndex;
         department.personPerUniversity.add(employeeInstance);
         //gen.classAssertion(gen.getClass(employeeType),gen.getNamedIndividual(employeeInstance));
         this.person=new Person(this , employeeInstance);
