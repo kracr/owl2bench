@@ -49,7 +49,7 @@ public class University {
         this.collegeNum = GetRandomNo.getRandomFromRange(gen.collegeNum_Min,gen.collegeNum_Max);
         
         //since WomenCollege class belongs to only RL and DL TBox and not EL and QL
-        if (profile.matches("DL") || profile.matches("RL")) {
+        //if (profile.matches("DL") || profile.matches("RL")) {
         
         //random women college number between 2 and 4 (default range)
         this.womenCollegeNum = GetRandomNo.getRandomFromRange(gen.womenCollegeNum_Min, gen.womenCollegeNum_Max);
@@ -68,14 +68,14 @@ public class University {
                 this.coEdColleges[i] = new College(this, i,false);
             }
             
-        }
-        else
+        //}
+       /* else
         {
         	this.colleges=new College[this.collegeNum];
         	for(i = 0; i < this.collegeNum; ++i) {
                 this.colleges[i] = new College(this, i,false);
             }
-        }
+        }*/
         	
         for(i = 0; i < this.researchGroupNum; ++i) {
             this.researchGroups[i] = new ResearchGroup(this, i);

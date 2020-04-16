@@ -17,12 +17,13 @@ public class InterlinkedProperties {
     ConfigFile configFile;
     Generator gen;
     String crazyAbout,profile;
-    int sameHomeTownNum,isFriendOfNum,likesNum,lovesNum,isCrazyAboutNum,dislikesNum;
+    int sameHomeTownNum,knowsNum,likesNum,lovesNum,isCrazyAboutNum,dislikesNum;
     HashSet<String> hash1;
     HashSet<String> hash2;
     HashSet<String> hash3;
     HashSet<String> hash4;
     HashSet<String> hash5;
+    HashSet<String> hash6;
     
 
     public InterlinkedProperties(Generator gen,University universities[]){
@@ -41,7 +42,7 @@ public class InterlinkedProperties {
             while(j.hasNext()) {
                 String person1=j.next();
                 sameHomeTownNum = GetRandomNo.getRandomFromRange(gen.sameHomeTownNum_Min,gen.sameHomeTownNum_Max); //between 0 and 3
-                // isFriendOfNum = GetRandomNo.getRandomFromRange(gen.isFriendOfNum_Min,gen.isFriendOfNum_Max);
+                knowsNum = GetRandomNo.getRandomFromRange(gen.knowsNum_Min,gen.knowsNum_Max);
                 likesNum=GetRandomNo.getRandomFromRange(gen.likesNum_Min,gen.likesNum_Max); // between 1 and 3
                 lovesNum=GetRandomNo.getRandomFromRange(gen.lovesNum_Min,gen.lovesNum_Max); //between 0 and 2
                 isCrazyAboutNum=GetRandomNo.getRandomFromRange(gen.isCrazyAboutNum_Min,gen.isCrazyAboutNum_Max); // between 0 and 1
@@ -52,6 +53,7 @@ public class InterlinkedProperties {
                 hash3=new HashSet();
                 hash4=new HashSet();
                 hash5=new HashSet();
+                hash6=new HashSet();
                 for (int a = 0; a < sameHomeTownNum; ++a) {
                     String person = getRandomPerson.getRandomStudentFacultyOrStaff(gen,universities);
                     if (person != null) {
@@ -65,7 +67,17 @@ public class InterlinkedProperties {
                     }
                 }
 
-               
+                hash2= new HashSet();
+                for (int a = 0; a < knowsNum; ++a) {
+                    String person = getRandomPerson.getRandomStudentFacultyOrStaff(gen,universities);
+                    if (person != null) {
+                        hash6.add(person);
+                    }
+                    Iterator<String> k = hash6.iterator();
+                    while (k.hasNext()) {
+                        gen.objectPropertyAssertion(gen.getObjectProperty("knows"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
+                    }
+                }
                 for (int a = 0; a < likesNum; ++a) {
                     String interest = getRandomInterest.getInterestLikes();
                     if (interest != null) {
@@ -105,7 +117,7 @@ public class InterlinkedProperties {
                 
     
                 //only DL, Ql, Rl support disjoint object properties. So, dislikes doesnt belong to EL TBox
-                if ((profile.matches("DL")) || (profile.matches("RL"))|| (profile.matches("QL"))) {
+                //if ((profile.matches("DL")) || (profile.matches("RL"))|| (profile.matches("QL"))) {
                
                 for (int a = 0; a < dislikesNum; ++a) {
                     String interest = getRandomInterest.getInterestDislikes();
@@ -120,8 +132,9 @@ public class InterlinkedProperties {
                         gen.objectPropertyAssertion(gen.getObjectProperty("dislikes"),gen.getNamedIndividual(person1),gen.getNamedIndividual(p.next()));
                     }
                 }
-                }
                 
+                
+               
             }
         }
     }
@@ -129,14 +142,14 @@ public class InterlinkedProperties {
 
 /*
 hash2= new HashSet();
-for (int a = 0; a < isFriendOfNum; ++a) {
+for (int a = 0; a < knowsNum; ++a) {
     String person = getRandomPerson.getRandomStudentFacultyOrStaff(gen,universities);
     if (person != null) {
         hash2.add(person);
     }
     Iterator<String> k = hash2.iterator();
     while (k.hasNext()) {
-        gen.objectPropertyAssertion(gen.getObjectProperty("isFriendOf"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
+        gen.objectPropertyAssertion(gen.getObjectProperty("knows"),gen.getNamedIndividual(person1),gen.getNamedIndividual(k.next()));
     }
 }
 */

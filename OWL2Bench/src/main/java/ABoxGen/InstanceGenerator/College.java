@@ -13,7 +13,7 @@ public class College {
     String collegeCode,dean;
     Department[] depts;
     Generator gen;
-    boolean isWomanCollege;     
+    boolean isWomenCollege;     
     String  collegeInstance,profile,collegeName;
     String collegeDiscipline;
     HashSet<String> personPerUniversity;
@@ -21,18 +21,18 @@ public class College {
     GetRandomPerson getRandomPerson;
     ConfigFile configFile;
 
-    public College(University university, int collegeIndex, Boolean isWomanCollege) {
+    public College(University university, int collegeIndex, Boolean isWomenCollege) {
         this.personPerUniversity=university.personPerUniversity;
         this.profile=university.profile;
         this.configFile=new ConfigFile();
         this.univIndex = university.univIndex;
         this.collegeIndex = collegeIndex;
         this.gen = university.gen;
-        this.isWomanCollege = isWomanCollege;
+        this.isWomenCollege = isWomenCollege;
         this.collegeDiscipline= gen.TOKEN_CollegeDiscipline[GetRandomNo.getRandomFromRange(0, 4)];
         getRandomPerson=new GetRandomPerson();
         // if college is women's college
-        if (this.isWomanCollege) {
+        if (this.isWomenCollege) {
             this.collegeName = "Women College of " + collegeDiscipline;
             this.collegeInstance = "U" + this.univIndex + "WC" + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "WC" + this.collegeIndex;
@@ -50,10 +50,10 @@ public class College {
 
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
-            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
+            //if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-            }
+            //}
         }
 
         else {
@@ -73,10 +73,10 @@ public class College {
             }
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
-            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
+            //if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-            }
+            //}
         }
     }
 }

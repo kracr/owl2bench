@@ -31,6 +31,7 @@ public class AssignAdvisor {
         configFile=new ConfigFile();
         for (i = 0; i < gen.univNum; ++i) {
             this.university = universities[i];
+            //if (gen.profile.matches("DL") || gen.profile.matches("RL")) {
             for (int j = 0; j < university.coEdCollegeNum; ++j) {
                 this.clg = university.coEdColleges[j];
                 for (int k = 0; k < clg.deptNum; ++k) {
@@ -48,6 +49,7 @@ public class AssignAdvisor {
                         }
                         Iterator<String> n = hash1.iterator();
                         while (n.hasNext()) {
+                      
                             gen.objectPropertyAssertion(gen.getObjectProperty("isAdvisedBy"),gen.getNamedIndividual(dept.ugStudents[l].studentInstance),gen.getNamedIndividual(n.next()));
                         }
 
@@ -121,6 +123,7 @@ public class AssignAdvisor {
                 }
             }
             for (int j = 0; j < university.womenCollegeNum; ++j) {
+             	
                 this.clg = university.womenColleges[j];
                 for (int k = 0; k < clg.deptNum; ++k) {
                     this.dept = clg.depts[k];
@@ -211,6 +214,8 @@ public class AssignAdvisor {
                 }
 
             }
+        
+           
         }
 
     }

@@ -21,21 +21,24 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.formats.*;
+//import org.semanticweb.owlapi.io.StringDocumentTarget;
+import org.semanticweb.owlapi.model.OWLDocumentFormat;
 
 public class Generator {
-
+    String ontologyFormat;
     int publicationNum_Min=150; //per university
     int publicationNum_Max=200; //per university
-    int researchGroupNum_Min=6;
-    int researchGroupNum_Max=10;
-    int collegeNum_Min=8;
-    int collegeNum_Max=12;
+    int researchGroupNum_Min=4;
+    int researchGroupNum_Max=8;
+    int collegeNum_Min=5;
+    int collegeNum_Max=10;
     int womenCollegeNum_Min=1;
     int womenCollegeNum_Max=2;
-    int deptNum_Min=5;
-    int deptNum_Max=7;
-    int RANum_Min=6;
-    int RANum_Max=8;
+    int deptNum_Min=3;
+    int deptNum_Max=5;
+    int RANum_Min=4;
+    int RANum_Max=6;
     int progNum_Min=1;
     int progNum_Max=3;
     int ugStudentNum_Min=30;
@@ -74,13 +77,13 @@ public class Generator {
     int numOfElectives_Max=4;
     int numOfElectivesOutsideDept_Min=1;
     int sameHomeTownNum_Min=0;
-    int sameHomeTownNum_Max=3;
-    //int isFriendOfNum_Min=1;
-    //int isFriendOfNum_Max=4;
-    int likesNum_Min=1;
-    int likesNum_Max=3;
+    int sameHomeTownNum_Max=2;
+    int knowsNum_Min=0;
+    int knowsNum_Max=2;
+    int likesNum_Min=0;
+    int likesNum_Max=4;
     int lovesNum_Min =0;
-    int lovesNum_Max=2;
+    int lovesNum_Max=1;
     int isCrazyAboutNum_Min=0;
     int isCrazyAboutNum_Max=1;
     int dislikesNum_Min=0;
@@ -91,7 +94,7 @@ public class Generator {
     String[] TOKEN_FineArts= new String[]{"Architecture", "AsianArts", "Drama", "LatinArts", "MediaArtsAndSciences", "MedievalArts", "ModernArts","MusicsClass", "PerformingArts", "TheatreAndDance"};
     String[] TOKEN_Science=new String[]{"Astronomy", "Biology", "Chemistry", "ComputerScience", "GeoScience", "MarineScience", "MaterialScience", "Mathematics", "Physics", "Statistics"};
     String[] TOKEN_HumanitiesAndSocial=new String[]{"Anthropology", "Economics", "English", "History", "Humanities", "Linguistics", "ModernLanguages", "Philosophy", "Psychology", "Religions"};
-
+    //org.slf4j.simplelogger.defaultLogLevel=error;
 
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
     PrefixManager pm = new DefaultPrefixManager("http://benchmark/OWL2Bench");
@@ -110,7 +113,6 @@ public class Generator {
     InterlinkedProperties interlinks;
     AssignAdvisor assignAdvisor;
     AssignDegree assignDegree;
-    EvaluationCommittee evaluationCommittee;
     ConfigFile configFile;
     HashSet<String> universityName = new HashSet();
     HashMap<Integer,String> map1 = new HashMap<>();
@@ -123,30 +125,26 @@ public class Generator {
     public static void main(String[] args) {
     	//input 
         int univNum=1;
-        int seed =848;
-
-        //For about 50K triple Seed value: EL=2 (52K), QL=1 (51K), DL/RL=3 (48K)
-        //For about 100K triple Seed value: EL=2 (99423), QL=8 (99142), DL/RL=848 (102)
-        //For about 300K triple Seed value: EL=2 (52K), QL=1 (51K), DL/RL=3 (48K)
-        //DL RL3 84K 13 240K 19 162K 1 110K 31 100K 37 83K
-        //EL1 110 2 135 3 102 4 166 5 128 13 191 10 153 18 151 3 102
-        //QL 3 80K 24 95K 14 211K 31 108K 37 99K
-        //DL&RL    //EL           //QL
-        //23-299    //20 301        //17 303
-        //21 602          //28 605              //29 612 		      
-        String profile= "RL";
-       
+        int seed =1; //For about 50K triple Seed value: QL=1 (51K), EL=2 (52K),  DL/RL=3 (48K)		      
+        String profile= "EL";
+        
         if(args.length==3)
         {
             univNum=Integer.parseInt(args[0]);
             profile= args[1];
             seed=Integer.parseInt(args[2]);
         }
+        else if(args.length==2)
+        {
+            univNum=Integer.parseInt(args[0]);
+            profile= args[1];
+            System.out.println("Default Seed value is 1");
+        }
         else
         {
      
             System.out.println("Please give arguments in the following order: No. of Universities (int), OWL 2 Profile (EL/QL/RL/DL), Seed value (int)");
-            System.out.println("For example: 1 DL 3 , 10 QL 1 , 2 RL 3 , 5 EL 2");
+            System.out.println("For example: 1 DL 1");
         }
         //System.out.println(profile);
         new Generator().start(univNum, seed, profile);
@@ -184,6 +182,10 @@ public class Generator {
         this.univNum = univNum;
         GetRandomNo.setSeed((long) seed);
         this.configFile=new ConfigFile();
+        if(configFile.ontologyFormat!=null)
+        {
+            this.ontologyFormat=configFile.ontologyFormat;
+        }
         //configurations
         //If user wants to modify the min-max parameters, they can change the null value in ConfigFile. 
         if(configFile.publicationNum_Min!=null)
@@ -235,7 +237,14 @@ public class Generator {
         {
             this.sameHomeTownNum_Max=configFile.sameHomeTownNum_Max;
         }
-
+        if(configFile.knowsNum_Min!=null)
+        {
+            this.knowsNum_Min=configFile.knowsNum_Min;
+        }
+        if(configFile.knowsNum_Max!=null)
+        {
+            this.knowsNum_Max=configFile.knowsNum_Max;
+        }
         if(configFile.isCrazyAboutNum_Min!=null)
         {
             this.isCrazyAboutNum_Min=configFile.isCrazyAboutNum_Min;
@@ -376,20 +385,6 @@ public class Generator {
         if(configFile.otherStaffNum_Max!=null){
             this.otherStaffNum_Max=configFile.otherStaffNum_Max;
         }
-        /*
-        if(configFile.ugCourseNum_Min!=null){
-            this.ugCourseNum_Min=configFile.ugCourseNum_Min;
-        }
-        if(configFile.ugCourseNum_Max!=null){
-            this.ugCourseNum_Max=configFile.ugCourseNum_Max;
-        }
-        if(configFile.electiveCourseNum_Min!=null){
-            this.electiveCourseNum_Min=configFile.electiveCourseNum_Min;
-        }
-        if(configFile.electiveCourseNum_Max!=null){
-            this.electiveCourseNum_Max=configFile.electiveCourseNum_Max;
-        }
-        */
         if(configFile.progNum_Min!=null){
             this.progNum_Min=configFile.progNum_Min;
         }
@@ -468,17 +463,21 @@ public class Generator {
         this.interlinks=new InterlinkedProperties(this,universities);
         
         //assign internal and external professors as advisor
+        //more interlinks
         this.assignAdvisor=new AssignAdvisor(this,universities);
         
         // hasUnderGraduateDegreeFrom,hasMastersDegreeFrom,hasDoctoralDegreeFrom
         this.assignDegree=new AssignDegree(this,universities);
         
-        //every department has evaluation committee
-        this.evaluationCommittee=new EvaluationCommittee(this,universities);
-        // ontology.axioms().forEach(System.out::println);
-        //System.out.println("Counts..."+ ontology.getLogicalAxiomCount() + "   "+ontology.getAxiomCount());
+   
+        OWLXMLDocumentFormat owx = new OWLXMLDocumentFormat();
+        TurtleDocumentFormat ttl=new TurtleDocumentFormat();
+        //RDfXMLSyntaxDocumentFormat rdf= new  RDfXMLDocumentFormat();
+        FunctionalSyntaxDocumentFormat ofn = new FunctionalSyntaxDocumentFormat();
+        ManchesterSyntaxDocumentFormat omn = new ManchesterSyntaxDocumentFormat();
         
-        OWLDocumentFormat format = manager.getOntologyFormat(o);
+        
+        
         //System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
        
         try  {
@@ -491,11 +490,34 @@ try {
    		System.out.println("Exception Occurred:");
 	        e.printStackTrace();
 	  }
-           
-            System.out.println("Ontology Format="+ format);
+			
+            
+            System.out.println("Total Axiom Count="+ o.getAxiomCount());
             System.out.println("Total Logical Axiom Count="+ o.getLogicalAxiomCount());
+            if(this.ontologyFormat.matches("owx")) {
+            	manager.saveOntology(o,owx,IRI.create(file.toURI()));
+            	System.out.println("Saved Ontology Format is OWL/XML");
+            }
+            else if(this.ontologyFormat.matches("ttl")) {
+            	manager.saveOntology(o,ttl,IRI.create(file.toURI()));
+            	System.out.println("Saved Ontology Format is Turtle");
+            }
+            else if(this.ontologyFormat.matches("ofn")) {
+            	manager.saveOntology(o,ofn,IRI.create(file.toURI()));
+            	System.out.println("Saved Ontology Format is OWL Functional");
+            }
+            else if(this.ontologyFormat.matches("omn")) {
+            	manager.saveOntology(o,omn,IRI.create(file.toURI()));
+            	System.out.println("Saved Ontology Format is Manchester");
+            }
+            else {
+            OWLDocumentFormat format = manager.getOntologyFormat(o);
             manager.saveOntology(o,format,IRI.create(file.toURI()));
-            System.out.println("Finished Writing to file "+ System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl" );
+            System.out.println("Saved Ontology Format is RDF/XML");
+            }
+            //OWLDocumentFormat format = manager.getOntologyFormat(o);
+            //System.out.println("Ontology Format="+ format);
+            System.out.println("Finished Writing to file "+ System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + ".owl" );
         } catch (OWLOntologyStorageException e) {
             e.printStackTrace();
         }

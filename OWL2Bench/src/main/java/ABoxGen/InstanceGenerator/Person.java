@@ -9,7 +9,7 @@ import org.apache.tools.ant.types.resources.First;
 
 public class Person {
     Generator gen;
-    int gender;
+    int gender,narcissism;
     String profile;
     //assign man or woman
     //assign student/faculty/staff
@@ -17,21 +17,24 @@ public class Person {
     public Person(Student student, String instance) {
         this.gen=student.gen;
         this.profile=student.profile;
+        //if ((profile.matches("DL")) || (profile.matches("EL"))) {
+        narcissism = GetRandomNo.getRandomFromRange(0,10000);
+        if (narcissism==555) {
+        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        }
         
-       
         
         if(!student.womenStudents){
-        	if ((profile.matches("DL")) || (profile.matches("RL"))) {
         		
             gender = GetRandomNo.getRandomFromRange(0,1);
             //Assign man or woman to a person instance . Person is Man or Woman ( for DL and RL only)
-            if(gender==0)
+            if(gender==0) {
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
-            else
-                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-            }
-        	else 
-        		gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
+                
+                }
+            else {
+                gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));}
+             
         }
         else {
             gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
@@ -53,16 +56,21 @@ public class Person {
     public Person(Employee employee, String instance) {
         this.gen=employee.gen;
         this.profile=employee.profile;
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+     
+       // if ((profile.matches("DL")) || (profile.matches("EL"))) {
+        narcissism = GetRandomNo.getRandomFromRange(0,10000);
+        if (narcissism==555) {
+        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        }
+        
+       
+  
             gender = GetRandomNo.getRandomFromRange(0,1);
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
             else
                 gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-        }
-        else
-        	 gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
-        	
+    
 
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));
@@ -81,18 +89,20 @@ public class Person {
     public Person(ResearchGroup researchGroup, String instance) {
         this.gen=researchGroup.gen;
         this.profile=researchGroup.profile;
-
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+       // if ((profile.matches("DL")) || (profile.matches("EL"))) {
+        narcissism = GetRandomNo.getRandomFromRange(0,10000);
+        if (narcissism==555) {
+        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        }
+        
+       
+      
         	//System.out.println("manwoamn3");
             gender = GetRandomNo.getRandomFromRange(0,1);
             if(gender==0)
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
             else
                 gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));
-        }
-        else
-        	 gen.classAssertion(gen.getClass("Person"),gen.getNamedIndividual(instance));
-        	
 
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));

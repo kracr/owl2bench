@@ -7,7 +7,8 @@ package ABoxGen.InstanceGenerator;
 public class ConfigFile {
 	
 		//Commented lines after null represent default values used for min and max
-	
+	String ontologyFormat="ofn"; //format of generated default RDF-XML
+	//owx for OWL_XML, ofn for OWL_Functional, omn for OWL_Manchester, ttl for Turtle , rdf for RDF_XML,
 	Integer publicationNum_Min=null;   		// default=300 per university
     Integer publicationNum_Max=null;   		// default=500;
     Integer researchGroupNum_Min=null;    	// default=10;
@@ -59,8 +60,8 @@ public class ConfigFile {
     Integer numOfElectivesOutsideDept_Min=null;// default=1;
     Integer sameHomeTownNum_Min=null;		// default=0;
     Integer sameHomeTownNum_Max=null;		// default=3;
-    Integer isFriendOfNum_Min=null;			// default=1;
-    Integer isFriendOfNum_Max=null;			// default=4;
+    Integer knowsNum_Min=null;			// default=1;
+    Integer knowsNum_Max=null;			// default=4;
     Integer likesNum_Min=null;				// default=1;
     Integer likesNum_Max=null;				// default=3;
     Integer lovesNum_Min =null;				// default=0;
@@ -71,202 +72,6 @@ public class ConfigFile {
     Integer dislikesNum_Max=null;			// default=1;  
 	
 
-	
-	
-	
-	/*
-	Integer publicationNum_Min=null;   		// default=300 per university
-    Integer publicationNum_Max=null;   		// default=500;
-    Integer researchGroupNum_Min=null;    	// default=10;
-    Integer researchGroupNum_Max=null;		// default=20;
-    Integer collegeNum_Min=null;			// default=10;
-    Integer collegeNum_Max=null;			// default=20;
-    Integer womenCollegeNum_Min=null;		// default=1;
-    Integer womenCollegeNum_Max=null;		// default=4;
-    Integer deptNum_Min=null;				// default=5;
-    Integer deptNum_Max=null;				// default=10;
-    Integer RANum_Min=null;					// default=5;
-    Integer RANum_Max=null;					// default=10;
-    Integer progNum_Min=null;				// default=1;
-    Integer progNum_Max=null;				// default=3;
-    Integer ugStudentNum_Min=null;			// default=40;
-    Integer ugStudentNum_Max=null;			// default=60;
-    Integer pgStudentNum_Min=null;			// default=20;
-    Integer pgStudentNum_Max=null;			// default=30;
-    Integer phdStudentNum_Min=null;			// default=2;
-    Integer phdStudentNum_Max=null;			// default=10;
-    Integer ugCourseNum_Min=null;           // default=10;
-    Integer ugCourseNum_Max=null;           // default=15;
-    Integer electiveCourseNum_Min=null;     // default=15;
-    Integer electiveCourseNum_Max=null;     // default=25;
-    Integer assistantProfessorNum_Min=null; // default=10;
-    Integer assistantProfessorNum_Max=null; // default=15;
-    Integer associateProfessorNum_Min=null; // default=8;
-    Integer associateProfessorNum_Max=null; // default=12;
-    Integer fullProfessorNum_Min=null;		// default=5;
-    Integer fullProfessorNum_Max=null;		// default=10;
-    Integer visitingProfessorNum_Min=null;  // default=2;
-    Integer visitingProfessorNum_Max=null;  // default=5;
-    Integer lecturerNum_Min=null;			// default=5;
-    Integer lecturerNum_Max=null;			// default=10;
-    Integer postDocNum_Min=null;			// default=2;
-    Integer postDocNum_Max=null;			// default=7;
-    Integer systemStaffNum_Min=null;		// default=2;
-    Integer systemStaffNum_Max=null;		// default=5;
-    Integer clericalStaffNum_Min=null;		// default=2;
-    Integer clericalStaffNum_Max=null;		// default=8;
-    Integer otherStaffNum_Min=null;			// default=15;
-    Integer otherStaffNum_Max=null;			// default=25;
-    Integer internalAdvisorNum_Min=null;	// default=1;
-    Integer internalAdvisorNum_Max=null;	// default=2;
-    Integer externalAdvisorNum_Min=null;	// default=0;
-    Integer externalAdvisorNum_Max=null;	// default=2;
-    Integer numOfElectives_Min=null;		// default=1;
-    Integer numOfElectives_Max=null;		// default=4;
-    Integer numOfElectivesOutsideDept_Min=null;// default=1;
-    Integer sameHomeTownNum_Min=null;		// default=0;
-    Integer sameHomeTownNum_Max=null;		// default=3;
-    Integer isFriendOfNum_Min=null;			// default=1;
-    Integer isFriendOfNum_Max=null;			// default=4;
-    Integer likesNum_Min=null;				// default=1;
-    Integer likesNum_Max=null;				// default=3;
-    Integer lovesNum_Min =null;				// default=0;
-    Integer lovesNum_Max=null;				// default=2;
-    Integer isCrazyAboutNum_Min=null;		// default=0;
-    Integer isCrazyAboutNum_Max=null;		// default=1;
-    Integer dislikesNum_Min=null;			// default=0;
-    Integer dislikesNum_Max=null;			// default=1;
-	
-	/*
-	Integer publicationNum_Min=null;   		// default=150 per university
-    Integer publicationNum_Max=null;   		// default=300;
-    Integer researchGroupNum_Min=null;    	// default=5;
-    Integer researchGroupNum_Max=null;		// default=10;
-    Integer collegeNum_Min=null;			// default=5;
-    Integer collegeNum_Max=null;			// default=10;
-    Integer womenCollegeNum_Min=null;		// default=1;
-    Integer womenCollegeNum_Max=null;		// default=2;
-    Integer deptNum_Min=null;				// default=3;
-    Integer deptNum_Max=null;				// default=6;
-    Integer RANum_Min=null;					// default=5;
-    Integer RANum_Max=null;					// default=6;
-    Integer progNum_Min=null;				// default=1;
-    Integer progNum_Max=null;				// default=3;
-    Integer ugStudentNum_Min=null;			// default=30;
-    Integer ugStudentNum_Max=null;			// default=45;
-    Integer pgStudentNum_Min=null;			// default=15;
-    Integer pgStudentNum_Max=null;			// default=20;
-    Integer phdStudentNum_Min=null;			// default=2;
-    Integer phdStudentNum_Max=null;			// default=5;
-    Integer ugCourseNum_Min=null;           // default=10;
-    Integer ugCourseNum_Max=null;           // default=15;
-    Integer electiveCourseNum_Min=null;     // default=10;
-    Integer electiveCourseNum_Max=null;     // default=15;
-    Integer assistantProfessorNum_Min=null; // default=8;
-    Integer assistantProfessorNum_Max=null; // default=12;
-    Integer associateProfessorNum_Min=null; // default=5;
-    Integer associateProfessorNum_Max=null; // default=10;
-    Integer fullProfessorNum_Min=null;		// default=5;
-    Integer fullProfessorNum_Max=null;		// default=10;
-    Integer visitingProfessorNum_Min=null;  // default=2;
-    Integer visitingProfessorNum_Max=null;  // default=5;
-    Integer lecturerNum_Min=null;			// default=5;
-    Integer lecturerNum_Max=null;			// default=10;
-    Integer postDocNum_Min=null;			// default=2;
-    Integer postDocNum_Max=null;			// default=7;
-    Integer systemStaffNum_Min=null;		// default=2;
-    Integer systemStaffNum_Max=null;		// default=5;
-    Integer clericalStaffNum_Min=null;		// default=2;
-    Integer clericalStaffNum_Max=null;		// default=8;
-    Integer otherStaffNum_Min=null;			// default=15;
-    Integer otherStaffNum_Max=null;			// default=25;
-    Integer internalAdvisorNum_Min=null;	// default=1;
-    Integer internalAdvisorNum_Max=null;	// default=2;
-    Integer externalAdvisorNum_Min=null;	// default=0;
-    Integer externalAdvisorNum_Max=null;	// default=2;
-    Integer numOfElectives_Min=null;		// default=1;
-    Integer numOfElectives_Max=null;		// default=4;
-    Integer numOfElectivesOutsideDept_Min=null;// default=1;
-    Integer sameHomeTownNum_Min=null;		// default=0;
-    Integer sameHomeTownNum_Max=null;		// default=3;
-    Integer isFriendOfNum_Min=null;			// default=1;
-    Integer isFriendOfNum_Max=null;			// default=4;
-    Integer likesNum_Min=null;				// default=1;
-    Integer likesNum_Max=null;				// default=3;
-    Integer lovesNum_Min =null;				// default=0;
-    Integer lovesNum_Max=null;				// default=2;
-    Integer isCrazyAboutNum_Min=null;		// default=0;
-    Integer isCrazyAboutNum_Max=null;		// default=1;
-    Integer dislikesNum_Min=null;			// default=0;
-    Integer dislikesNum_Max=null;			// default=1;
-	
-
-	
-	
-	
-	/*
-	 	Integer publicationNum_Min=null;   		// default=150 per university
-	    Integer publicationNum_Max=null;   		// default=300;
-	    Integer researchGroupNum_Min=null;    	// default=10;
-	    Integer researchGroupNum_Max=null;		// default=20;
-	    Integer collegeNum_Min=null;			// default=10;
-	    Integer collegeNum_Max=null;			// default=20;
-	    Integer womenCollegeNum_Min=null;		// default=1;
-	    Integer womenCollegeNum_Max=null;		// default=4;
-	    Integer deptNum_Min=null;				// default=6;
-	    Integer deptNum_Max=null;				// default=10;
-	    Integer RANum_Min=null;					// default=5;
-	    Integer RANum_Max=null;					// default=10;
-	    Integer progNum_Min=null;				// default=1;
-	    Integer progNum_Max=null;				// default=3;
-	    Integer ugStudentNum_Min=null;			// default=45;
-	    Integer ugStudentNum_Max=null;			// default=60;
-	    Integer pgStudentNum_Min=null;			// default=20;
-	    Integer pgStudentNum_Max=null;			// default=40;
-	    Integer phdStudentNum_Min=null;			// default=2;
-	    Integer phdStudentNum_Max=null;			// default=10;
-	    Integer ugCourseNum_Min=null;           // default=10;
-	    Integer ugCourseNum_Max=null;           // default=15;
-	    Integer electiveCourseNum_Min=null;     // default=15;
-	    Integer electiveCourseNum_Max=null;     // default=25;
-	    Integer assistantProfessorNum_Min=null; // default=10;
-	    Integer assistantProfessorNum_Max=null; // default=15;
-	    Integer associateProfessorNum_Min=null; // default=5;
-	    Integer associateProfessorNum_Max=null; // default=10;
-	    Integer fullProfessorNum_Min=null;		// default=5;
-	    Integer fullProfessorNum_Max=null;		// default=10;
-	    Integer visitingProfessorNum_Min=null;  // default=2;
-	    Integer visitingProfessorNum_Max=null;  // default=5;
-	    Integer lecturerNum_Min=null;			// default=5;
-	    Integer lecturerNum_Max=null;			// default=10;
-	    Integer postDocNum_Min=null;			// default=2;
-	    Integer postDocNum_Max=null;			// default=7;
-	    Integer systemStaffNum_Min=null;		// default=2;
-	    Integer systemStaffNum_Max=null;		// default=5;
-	    Integer clericalStaffNum_Min=null;		// default=2;
-	    Integer clericalStaffNum_Max=null;		// default=8;
-	    Integer otherStaffNum_Min=null;			// default=15;
-	    Integer otherStaffNum_Max=null;			// default=25;
-	    Integer internalAdvisorNum_Min=null;	// default=1;
-	    Integer internalAdvisorNum_Max=null;	// default=2;
-	    Integer externalAdvisorNum_Min=null;	// default=0;
-	    Integer externalAdvisorNum_Max=null;	// default=2;
-	    Integer numOfElectives_Min=null;		// default=1;
-	    Integer numOfElectives_Max=null;		// default=4;
-	    Integer numOfElectivesOutsideDept_Min=null;// default=1;
-	    Integer sameHomeTownNum_Min=null;		// default=0;
-	    Integer sameHomeTownNum_Max=null;		// default=3;
-	    Integer isFriendOfNum_Min=null;			// default=1;
-	    Integer isFriendOfNum_Max=null;			// default=4;
-	    Integer likesNum_Min=null;				// default=1;
-	    Integer likesNum_Max=null;				// default=3;
-	    Integer lovesNum_Min =null;				// default=0;
-	    Integer lovesNum_Max=null;				// default=2;
-	    Integer isCrazyAboutNum_Min=null;		// default=0;
-	    Integer isCrazyAboutNum_Max=null;		// default=1;
-	    Integer dislikesNum_Min=null;			// default=0;
-	    Integer dislikesNum_Max=null;			// default=1;
-	
 	/*
 	For about 50K triples in each profile
     int publicationNum_Min=150; //per university
@@ -320,8 +125,8 @@ public class ConfigFile {
     int numOfElectivesOutsideDept_Min=1;
     int sameHomeTownNum_Min=0;
     int sameHomeTownNum_Max=3;
-    //int isFriendOfNum_Min=1;
-    //int isFriendOfNum_Max=4;
+    //int knowsNum_Min=1;
+    //int knowsNum_Max=4;
     int likesNum_Min=1;
     int likesNum_Max=3;
     int lovesNum_Min =0;

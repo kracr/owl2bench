@@ -15,16 +15,16 @@ public class Publication {
     static String[] TOKEN = new String[]{"Book", "Specification", "Article", "TechnicalReport", "UnofficialPublication", "ConferencePaper", "Publication", "JournalArticle", "Manual", "Software"};
     String publicationType, publicationInstance;
     HashSet<String> hash = new HashSet();
-    University university;
+   // University university;
     GetRandomPerson getRandomPerson;
-    University universities[];
+   // University universities[];
 
 
     public Publication(Generator gen,University universities[],int publicationIndex) {
         this.gen=gen;
-        this.universities=universities;
+        //this.universities=universities;
         ///add about organization has publicatn
-        this.university=universities[univIndex];
+        //this.university=universities[univIndex];
         this.publicationIndex=publicationIndex;
         this.publicationInstance="P"+ publicationIndex;
         this.publicationType=TOKEN[GetRandomNo.getRandomFromRange(0,9)];
