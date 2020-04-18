@@ -121,6 +121,7 @@ public class InterlinkedProperties {
                
                 for (int a = 0; a < dislikesNum; ++a) {
                     String interest = getRandomInterest.getInterestDislikes();
+                   
                    // System.out.println(!(hash2.contains(interest)) && !(hash3.contains(interest)) && !(hash4.contains(interest)));
                     if ((interest != null) && !(hash2.contains(interest)) && !(hash3.contains(interest)) && !(hash4.contains(interest))) {
                         hash5.add(interest);

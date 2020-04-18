@@ -126,7 +126,7 @@ public class Generator {
     	//input 
         int univNum=1;
         int seed =1; //For about 50K triple Seed value: QL=1 (51K), EL=2 (52K),  DL/RL=3 (48K)		      
-        String profile= "EL";
+        String profile= "DL";
         
         if(args.length==3)
         {
@@ -481,7 +481,7 @@ public class Generator {
         //System.out.println("Counts..."+ format+ "...."+ o.getLogicalAxiomCount());
        
         try  {
-            File file = new File(System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + "-output.owl");
+            File file = new File(System.getProperty("user.dir")+ "/" + "OWL2"+this.profile + "-" + univNum + ".owl");
 try {
             if (!file.exists()) {
                 //file.mkdir();

@@ -7,8 +7,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:benchmark-dl="http://semantics.crl.ibm.com/univ-bench-dl.owl#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://benchmark/OWL2Bench"/>
     
 
@@ -1473,20 +1472,6 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#Narcissist -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Narcissist">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#loves"/>
-                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
-    </owl:Class>
-    
-
-
     <!-- http://benchmark/OWL2Bench#OperationsManagement -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#OperationsManagement">
@@ -1752,16 +1737,16 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#ScienceStudent -->
+    <!-- http://benchmark/OWL2Bench#SelfAware -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#ScienceStudent">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAware">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Student"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Person"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#hasMajor"/>
-                        <owl:someValuesFrom rdf:resource="http://benchmark/OWL2Bench#Science"/>
+                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#knows"/>
+                        <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>

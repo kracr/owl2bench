@@ -7,8 +7,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:benchmark-dl="http://semantics.crl.ibm.com/univ-bench-dl.owl#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://benchmark/OWL2Bench"/>
     
 
@@ -750,7 +749,6 @@
     <!-- http://benchmark/OWL2Bench#likes -->
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#likes">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
     
@@ -1546,14 +1544,6 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#Narcissist -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Narcissist">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
-    </owl:Class>
-    
-
-
     <!-- http://benchmark/OWL2Bench#NonScience -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#NonScience">
@@ -1829,20 +1819,10 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#ScienceStudent -->
+    <!-- http://benchmark/OWL2Bench#SelfAware -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#ScienceStudent">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Student"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#hasMajor"/>
-                        <owl:someValuesFrom rdf:resource="http://benchmark/OWL2Bench#Science"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAware">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:Class>
     
 
@@ -1952,19 +1932,7 @@
     <!-- http://benchmark/OWL2Bench#SupportingStaff -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#SupportingStaff">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://benchmark/OWL2Bench#Faculty"/>
-                    </owl:Class>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://benchmark/OWL2Bench#ResearchAssistant"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Employee"/>
     </owl:Class>
     
 

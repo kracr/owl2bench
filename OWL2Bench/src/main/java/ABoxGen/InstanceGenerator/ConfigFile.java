@@ -7,7 +7,7 @@ package ABoxGen.InstanceGenerator;
 public class ConfigFile {
 	
 		//Commented lines after null represent default values used for min and max
-	String ontologyFormat="ofn"; //format of generated default RDF-XML
+	String ontologyFormat="rdf"; //format of generated default RDF-XML
 	//owx for OWL_XML, ofn for OWL_Functional, omn for OWL_Manchester, ttl for Turtle , rdf for RDF_XML,
 	Integer publicationNum_Min=null;   		// default=300 per university
     Integer publicationNum_Max=null;   		// default=500;

@@ -20,27 +20,30 @@ public class Person {
         //if ((profile.matches("DL")) || (profile.matches("EL"))) {
         narcissism = GetRandomNo.getRandomFromRange(0,10000);
         if (narcissism==555) {
-        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        	//gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
         }
         
         
         if(!student.womenStudents){
+        	//System.out.println("coed assigned");
         		
             gender = GetRandomNo.getRandomFromRange(0,1);
             //Assign man or woman to a person instance . Person is Man or Woman ( for DL and RL only)
             if(gender==0) {
                 gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
-                
+                //System.out.println("coed assigned 1");
                 }
             else {
                 gen.classAssertion(gen.getClass("Man"),gen.getNamedIndividual(instance));}
-             
+            //System.out.println("coed assigned 2");
         }
         else {
+        	//System.out.println("woman assigned");
             gen.classAssertion(gen.getClass("Woman"),gen.getNamedIndividual(instance));
         }
         String firstName=gen.map1.get(GetRandomNo.getRandomFromRange(0,30000));
         String lastName= gen.map2.get(GetRandomNo.getRandomFromRange(0,150000));
+     
         String name= firstName+ " " + lastName;
         
         //object and data property assertion axioms for each person
@@ -60,7 +63,7 @@ public class Person {
        // if ((profile.matches("DL")) || (profile.matches("EL"))) {
         narcissism = GetRandomNo.getRandomFromRange(0,10000);
         if (narcissism==555) {
-        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        	//gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
         }
         
        
@@ -92,7 +95,7 @@ public class Person {
        // if ((profile.matches("DL")) || (profile.matches("EL"))) {
         narcissism = GetRandomNo.getRandomFromRange(0,10000);
         if (narcissism==555) {
-        	gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
+        	//gen.objectPropertyAssertion(gen.getObjectProperty("loves"),gen.getNamedIndividual(instance),gen.getNamedIndividual(instance));
         }
         
        

@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://benchmark/univ-bench-owl2#"
-     xml:base="http://benchmark/univ-bench-owl2"
+<rdf:RDF xmlns="http://benchmark/OWL2Bench#"
+     xml:base="http://benchmark/OWL2Bench"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:benchmark-dl="http://semantics.crl.ibm.com/univ-bench-dl.owl#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://benchmark/OWL2Bench"/>
     
 
@@ -36,7 +35,6 @@
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#dislikes">
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
         <owl:propertyDisjointWith rdf:resource="http://benchmark/OWL2Bench#likes"/>
     </owl:ObjectProperty>
     
@@ -551,7 +549,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#isCrazyAbout">
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#loves"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -763,9 +760,7 @@
     <!-- http://benchmark/OWL2Bench#likes -->
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#likes">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -775,7 +770,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#loves">
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#likes"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -1549,14 +1543,6 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#Narcissist -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Narcissist">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
-    </owl:Class>
-    
-
-
     <!-- http://benchmark/OWL2Bench#NonScience -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#NonScience">
@@ -1806,6 +1792,14 @@
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#ScienceStudent">
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#SelfAware -->
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAware">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:Class>
     
 
@@ -2934,15 +2928,6 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Soccer"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Swimming"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Tennis"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#CollegeDiscipline"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Course"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Interest"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Person"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
