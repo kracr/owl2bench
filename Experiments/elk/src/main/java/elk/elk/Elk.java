@@ -4,6 +4,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -12,8 +14,10 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
-
+//import debug.openllet.Logger;
 
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -27,21 +31,40 @@ public class Elk {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
+		System.out.println(args[0]);
+        System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
         OWLReasonerFactory reasonerFactory = new ElkReasonerFactory();
+        long startTime = System.nanoTime();
         OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
-        if(task.matches("CC")) {
+        long endTime = System.nanoTime();
+        long duration = ((endTime - startTime));
+        System.out.println("Time taken for Reasoner Creation " + duration );
+        //Logger logger = Logger.getRootLogger();
+        //LogManager.getLogger("org.semanticweb.elk").setLevel(Level.OFF);
+        if(task.matches("C")) {
             System.out.println("Started Consistency Checking");
-            long startTime = System.nanoTime();
+             startTime = System.nanoTime();
             reasoner.isConsistent();
-            long endTime = System.nanoTime();
-            long duration = ((endTime - startTime));
-            System.out.println("Time taken for Consistency Check " + duration );}
+            endTime = System.nanoTime();
+            duration = ((endTime - startTime));
+            System.out.println("Time taken for Consistency Check " + duration );
+            
+            }
+        else if(task.matches("R")) {
+        	System.out.println("Started Instance Checking");
+        startTime = System.nanoTime();
+        for (OWLNamedIndividual individual: ontology.getIndividualsInSignature()) {
+        	reasoner.getTypes(individual,false);
+    		}
+        endTime = System.nanoTime();
+        duration = ((endTime - startTime));
+        System.out.println("Time taken for Realization " + duration );}
             else if(task.matches("CT")) {
             	System.out.println("Started Classification Time");
-            long startTime = System.nanoTime();
+            startTime = System.nanoTime();
             reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
-            long endTime = System.nanoTime();
-            long duration = ((endTime - startTime));
+            endTime = System.nanoTime();
+            duration = ((endTime - startTime));
             System.out.println("Time taken for Classification " + duration );}
             /*
             startTime = System.nanoTime();
@@ -55,15 +78,7 @@ public class Elk {
         	//System.out.println(ontology.getIndividualsInSignature());
         	 * 
         	 */
-            else if(task.matches("IC")) {
-            	System.out.println("Started Instance Checking");
-            long startTime = System.nanoTime();
-            for (OWLNamedIndividual individual: ontology.getIndividualsInSignature()) {
-            	reasoner.getTypes(individual,false);
-        		}
-            long endTime = System.nanoTime();
-            long duration = ((endTime - startTime));
-            System.out.println("Time taken for Realization " + duration );}
+            
       
 	}
 }

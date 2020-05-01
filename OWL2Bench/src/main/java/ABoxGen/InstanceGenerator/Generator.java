@@ -126,7 +126,7 @@ public class Generator {
     	//input 
         int univNum=1;
         int seed =1; //For about 50K triple Seed value: QL=1 (51K), EL=2 (52K),  DL/RL=3 (48K)		      
-        String profile= "DL";
+        String profile= "EL";
         
         if(args.length==3)
         {
