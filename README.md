@@ -15,6 +15,7 @@ This document provides documentation for the first version of our benchmark OWL2
    4.2 [ Using Source Code (with or without default configurations). ](#code)
    
 5. [ Future Work. ](#future)
+6. [ References. ](#references)
 <a name="intro"></a>
 ## 1. Introduction
 OWl 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL 2 EL, OWl 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several OWL 2 reasoners (Hermit, JFact, Openllet) and some SPARQL query engines (Stardog, GraphDB, Virtuoso) that are backed by OWL 2 Reasoners so as to help answer queries that involve reasoning. OWL2Bench is our first step towards a standard benchmark for all the OWL 2 profiles. Our benchmark is an extension of well known University Ontology Benchmark (UOBM). OWL2Bench includes TBox for each profile covering the set of constructs supported by that profile, generation of synthetic data scalable to arbitrary size and a separate set of SPARQL queries for each profile to be executed over generated data for performance evaluation of several reasoners and SPARQL query engines.
@@ -74,3 +75,4 @@ For example. On executing using the arguments given in examples above, output fi
 
 For the next version of OWL2Bench, we plan to be able to customize the TBox for each profile rather than having a fixed TBox.
            
+## References
