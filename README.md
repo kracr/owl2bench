@@ -76,3 +76,19 @@ For example. On executing using the arguments given in examples above, output fi
 For the next version of OWL2Bench, we plan to be able to customize the TBox for each profile rather than having a fixed TBox.
            
 ## References
+1. Bail, S., B., Sattler, U.: JustBench: A Framework for OWL Benchmarking. In: The Semantic  Web  -  ISWC  2010  -  9th  International  Semantic  Web  Conference,  ISWC2010,  November  7-11,  2010,  Revised  Selected  Papers,  PartI.  Lecture  Notes  in  Computer  Science,  vol.  6496,  pp.  32–47.  Springer  (2010).
+2. Glimm,   B.,   Horrocks,   I.,   Motik,   B.,   S.,   G.,   Wang,   Z.:   Hermit:   An   owl2  reasoner.  Journal  of  Automated  Reasoning53(3),  245—-269  (Oct  2014).
+3. Guo,   Y.,   Pan,   Z.,   Heflin,   J.:   Lubm:   A   benchmark   for   owl   knowledgebase   systems.   Journal   of   Web   Semantics3(2-3),   158–182   (Oct   2005). 
+4. Hitzler,  P.,  Kr ̈otzsch,  M.,  Parsia,  B.,  F.  Patel-Schneider,  P.,  Rudolph,  S.:  OWL2 Web Ontology Language Primer (Second Edition) (2012).
+5. Kazakov, Y., Kr ̈otzsch, M., Simanˇc ́ık, F.: The incredible elk. Journal of AutomatedReasoning53(1), 1–61 (Jun 2014). 
+6. Link,  V.,  Lohmann,  S.,  F.,  H.:  Ontobench:  Generating  custom  owl  2  bench-mark ontologies. In: International Semantic Web Conference. pp. 122–130 (2016).
+7. Ma,  L.,  Yang,  Y.,  Qiu,  Z  .and  Xie,  G.,  Pan,  Y.,  Liu,  S.:  Towards  a  complete  owl  ontology  benchmark.  In:  The  Semantic  Web:  Research  and  Appli-cations.  pp.  125–139.  Springer  Berlin  Heidelberg,  Berlin,  Heidelberg  (2006).  
+8. Parsia,   B.,   Matentzoglu,   N.,   Gon ̧calves,   R.S.,   Glimm,   B.,   Steigmiller,   A.:The  owl  reasoner  evaluation  (ore)  2015  resources.  In:  The  Semantic  Web  –ISWC   2016.   pp.   159–167.   Springer   International   Publishing,   Cham   (2016).
+9. Parsia, B., Matentzoglu, N., Gon ̧calves, R.S., Glimm, B., Steigmiller, A.: The owlreasoner evaluation (ore) 2015 competition report. Journal of Automated Reasoning, 59(4), 455––482 (Dec 2017).
+10. Sakr, S., Wylot, M., Mutharaju, R., Le Phuoc, D., Fundulaki, I.: Linked Data -Storing, Querying, and Reasoning. Springer (2018).
+11. Sirin,   E.,   Parsia,   B.,   Cuenca   Grau,   B.,   Kalyanpur,   A.,   Katz,   Y.:   Pellet:A  practical  owl-dl  reasoner.  Journal  of  Web  Semantics5(2),  51–53  (2007).
+12. Steigmiller,A.,Liebig,T.,Glimm,B.:Konclude:System Description.Journal of Web Semantics. 27-28, 78–85(2014).
+13. Tsarkov,  D.,  Horrocks,  I.:  Fact++  description  logic  reasoner:  System  descrip-tion.   In:   Third   International   Joint   Conference   on   Automated   Reasoning   ,IJCAR.  pp.  292–297.  Springer  Berlin  Heidelberg,  Berlin,  Heidelberg  (2006).
+
+
+
