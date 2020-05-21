@@ -7,12 +7,11 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:benchmark-dl="http://semantics.crl.ibm.com/univ-bench-dl.owl#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://benchmark/OWL2Bench">
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label xml:lang="en">University Ontology for OWL 2 DL</rdfs:label>
-        <owl:versionInfo>OWL2Bench, ver March 23, 2020</owl:versionInfo>
+        <rdfs:comment>A Benchmark for OWL 2 Ontologies.</rdfs:comment>
+        <rdfs:label xml:lang="en">OWL2Bench</rdfs:label>
+        <owl:versionInfo>OWL2Bench, ver 10 April, 2020</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -28,12 +27,19 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#advises -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#advises">
+        <owl:equivalentProperty rdf:resource="http://benchmark/OWL2Bench#isAdvisorOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://benchmark/OWL2Bench#dislikes -->
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#dislikes">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
         <owl:propertyDisjointWith rdf:resource="http://benchmark/OWL2Bench#likes"/>
     </owl:ObjectProperty>
     
@@ -57,27 +63,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Student"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Department"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#evaluatedBy -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#evaluatedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://benchmark/OWL2Bench#evaluates"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#evaluates -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#evaluates">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
     
 
@@ -127,7 +112,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasAuthor">
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Publication"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:comment>publication has author</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -147,7 +131,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasCollaborationWith">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
@@ -171,17 +154,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#College"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#CollegeDiscipline"/>
-        <owl:propertyDisjointWith rdf:resource="http://benchmark/OWL2Bench#hasMajor"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#hasCommitteeMembers -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasCommitteeMembers">
-        <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasMember"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
     
 
@@ -231,26 +203,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasEmployee">
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasMember"/>
         <owl:inverseOf rdf:resource="http://benchmark/OWL2Bench#worksFor"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#hasEmployeeEvaluationCommittee -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasEmployeeEvaluationCommittee">
-        <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasEvaluationCommittee"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#EmployeeEvaluationCommittee"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#hasEvaluationCommittee -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasEvaluationCommittee">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
     </owl:ObjectProperty>
     
 
@@ -306,7 +258,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://benchmark/OWL2Bench#Engineering"/>
                     <rdf:Description rdf:about="http://benchmark/OWL2Bench#FineArts"/>
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
                     <rdf:Description rdf:about="http://benchmark/OWL2Bench#Management"/>
                     <rdf:Description rdf:about="http://benchmark/OWL2Bench#Science"/>
                 </owl:unionOf>
@@ -448,7 +400,8 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasSameHomeTownWith">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
     
 
@@ -460,16 +413,6 @@
         <owl:inverseOf rdf:resource="http://benchmark/OWL2Bench#isStudentOf"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Student"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#hasStudentEvaluationCommittee -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasStudentEvaluationCommittee">
-        <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasEvaluationCommittee"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#StudentEvaluationCommittee"/>
     </owl:ObjectProperty>
     
 
@@ -502,16 +445,6 @@
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasSupportingStaff"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Department"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#SystemStaff"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#hasThesisEvaluationCommittee -->
-
-    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#hasThesisEvaluationCommittee">
-        <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#hasStudentEvaluationCommittee"/>
-        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#ThesisEvaluationCommittee"/>
     </owl:ObjectProperty>
     
 
@@ -567,9 +500,17 @@
     <!-- http://benchmark/OWL2Bench#isAdvisedBy -->
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#isAdvisedBy">
+        <owl:inverseOf rdf:resource="http://benchmark/OWL2Bench#isAdvisorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Professor"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#isAdvisorOf -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#isAdvisorOf"/>
     
 
 
@@ -629,7 +570,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#isCrazyAbout">
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#loves"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -833,12 +773,18 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#knows -->
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://benchmark/OWL2Bench#likes -->
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#likes">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -848,7 +794,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#loves">
         <rdfs:subPropertyOf rdf:resource="http://benchmark/OWL2Bench#likes"/>
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:ObjectProperty>
     
 
@@ -868,7 +813,6 @@
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#orgPublication">
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Organization"/>
         <rdfs:range rdf:resource="http://benchmark/OWL2Bench#Publication"/>
-        <rdfs:comment>publishes</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -877,7 +821,6 @@
 
     <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench#publicationResearch">
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Publication"/>
-        <rdfs:comment>is about</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -964,6 +907,7 @@
 
     <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench#hasFirstName">
         <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Person"/>
+        <owl:propertyDisjointWith rdf:resource="http://benchmark/OWL2Bench#hasLastName"/>
     </owl:DatatypeProperty>
     
 
@@ -987,9 +931,7 @@
 
     <!-- http://benchmark/OWL2Bench#hasName -->
 
-    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench#hasName">
-        <rdfs:label>name</rdfs:label>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench#hasName"/>
     
 
 
@@ -1002,8 +944,7 @@
     <!-- http://benchmark/OWL2Bench#hasPublicationDate -->
 
     <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench#hasPublicationDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench#Publication"/>
     </owl:DatatypeProperty>
     
 
@@ -1054,7 +995,7 @@
     <!-- http://benchmark/OWL2Bench#Anthropology -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Anthropology">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1221,11 +1162,10 @@
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Engineering"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#FineArts"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Management"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Science"/>
         </owl:disjointUnionOf>
-        <rdfs:comment>Major field of study offered by the college.</rdfs:comment>
     </owl:Class>
     
 
@@ -1262,7 +1202,6 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ElectiveCourse"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#UGCourse"/>
         </owl:disjointUnionOf>
-        <rdfs:comment>courses offered in a department. student takes course and faculty teaches some course</rdfs:comment>
     </owl:Class>
     
 
@@ -1330,7 +1269,7 @@
     <!-- http://benchmark/OWL2Bench#Economics -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Economics">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1367,16 +1306,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
-        <rdfs:label>Employee</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#EmployeeEvaluationCommittee -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#EmployeeEvaluationCommittee">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
-        <owl:disjointWith rdf:resource="http://benchmark/OWL2Bench#StudentEvaluationCommittee"/>
     </owl:Class>
     
 
@@ -1397,7 +1326,6 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#MechanicalEngineering"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#PetroleumlEngineering"/>
         </owl:disjointUnionOf>
-        <rdfs:label>Engineering</rdfs:label>
     </owl:Class>
     
 
@@ -1405,15 +1333,7 @@
     <!-- http://benchmark/OWL2Bench#English -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#English">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
-    </owl:Class>
-    
-
-
-    <!-- http://benchmark/OWL2Bench#EvaluationCommittee -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#EvaluationCommittee">
-        <rdfs:comment>Committee that evaluates employees/students in an organization.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1465,9 +1385,9 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#FootBall -->
+    <!-- http://benchmark/OWL2Bench#Football -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#FootBall">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#Football">
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Sports"/>
     </owl:Class>
     
@@ -1500,7 +1420,7 @@
     <!-- http://benchmark/OWL2Bench#History -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#History">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1516,14 +1436,14 @@
     <!-- http://benchmark/OWL2Bench#Humanities -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Humanities">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
 
-    <!-- http://benchmark/OWL2Bench#HumanitiesAndSocial -->
+    <!-- http://benchmark/OWL2Bench#HumanitiesAndSocialScience -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocialScience">
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#CollegeDiscipline"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Anthropology"/>
@@ -1537,7 +1457,6 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Psychology"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Religions"/>
         </owl:disjointUnionOf>
-        <rdfs:label>HumanitiesAndSocial</rdfs:label>
     </owl:Class>
     
 
@@ -1561,7 +1480,40 @@
     <!-- http://benchmark/OWL2Bench#Interest -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Interest">
-        <rdfs:comment>Extra-curricular activities.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#AbstractPainting"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#ActionMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#ArticleReading"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Badminton"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Basketball"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#BookReading"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#ClassicalMusic"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#ComedyMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Cricket"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#DocumentaryMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#FictionMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Football"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#HorrorMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#NewspaperReading"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#OilPainting"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#PCGame"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#PopMusic"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#RockAndRollMusic"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#RomanticMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Shopping"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Soccer"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#StampCollecting"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Swimming"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#T20Cricket"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Tennis"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#ThrillerMovie"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Travelling"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#VideoGame"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -1613,7 +1565,7 @@
     <!-- http://benchmark/OWL2Bench#Linguistics -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Linguistics">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1621,6 +1573,7 @@
     <!-- http://benchmark/OWL2Bench#Man -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Man">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
         <owl:disjointWith rdf:resource="http://benchmark/OWL2Bench#Woman"/>
     </owl:Class>
     
@@ -1729,7 +1682,7 @@
     <!-- http://benchmark/OWL2Bench#ModernLanguages -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#ModernLanguages">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1758,24 +1711,15 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#NonScienceStudent -->
+    <!-- http://benchmark/OWL2Bench#NonScience -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#NonScienceStudent">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#NonScience">
         <owl:equivalentClass>
             <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Student"/>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#hasMajor"/>
-                                <owl:someValuesFrom rdf:resource="http://benchmark/OWL2Bench#Science"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
-                </owl:intersectionOf>
+                <owl:complementOf rdf:resource="http://benchmark/OWL2Bench#Science"/>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#CollegeDiscipline"/>
     </owl:Class>
     
 
@@ -1939,7 +1883,7 @@
     <!-- http://benchmark/OWL2Bench#Philosophy -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Philosophy">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -1970,9 +1914,7 @@
 
     <!-- http://benchmark/OWL2Bench#Program -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Program">
-        <rdfs:comment>Every organziation offers UG, PG or PhD program</rdfs:comment>
-    </owl:Class>
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#Program"/>
     
 
 
@@ -1987,7 +1929,7 @@
     <!-- http://benchmark/OWL2Bench#Psychology -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Psychology">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -2026,7 +1968,7 @@
     <!-- http://benchmark/OWL2Bench#Religions -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Religions">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
     </owl:Class>
     
 
@@ -2095,25 +2037,32 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Physics"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Statistics"/>
         </owl:disjointUnionOf>
-        <rdfs:label>Science</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://benchmark/OWL2Bench#ScienceStudent -->
+    <!-- http://benchmark/OWL2Bench#SelfAwarePerson -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#ScienceStudent">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAwarePerson">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Student"/>
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Person"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#hasMajor"/>
-                        <owl:someValuesFrom rdf:resource="http://benchmark/OWL2Bench#Science"/>
+                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#knows"/>
+                        <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#Soccer -->
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#Soccer">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Sports"/>
     </owl:Class>
     
 
@@ -2172,14 +2121,6 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#StudentEvaluationCommittee -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#StudentEvaluationCommittee">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#EvaluationCommittee"/>
-    </owl:Class>
-    
-
-
     <!-- http://benchmark/OWL2Bench#SupplyChainManagement -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#SupplyChainManagement">
@@ -2208,6 +2149,25 @@
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#SystemStaff">
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#SupportingStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#T20CricketFan -->
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#T20CricketFan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://benchmark/OWL2Bench#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#isCrazyAbout"/>
+                        <owl:hasValue rdf:resource="http://benchmark/OWL2Bench#T20Cricket"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
     </owl:Class>
     
 
@@ -2263,15 +2223,6 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#ThesisEvaluationCommittee -->
-
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#ThesisEvaluationCommittee">
-        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#StudentEvaluationCommittee"/>
-        <rdfs:comment>Evaluates PhD students</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://benchmark/OWL2Bench#Travelling -->
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#Travelling">
@@ -2284,7 +2235,6 @@
 
     <owl:Class rdf:about="http://benchmark/OWL2Bench#UGCourse">
         <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Course"/>
-        <rdfs:comment>Mandatory courses for all UG students</rdfs:comment>
     </owl:Class>
     
 
@@ -2343,24 +2293,22 @@
 
     <!-- http://benchmark/OWL2Bench#Woman -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Woman"/>
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#Woman">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench#Person"/>
+    </owl:Class>
     
 
 
-    <!-- http://benchmark/OWL2Bench#WomanCollege -->
+    <!-- http://benchmark/OWL2Bench#WomenCollege -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#WomanCollege">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#WomenCollege">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://benchmark/OWL2Bench#College"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://benchmark/OWL2Bench#hasStudent"/>
-                        <owl:allValuesFrom>
-                            <owl:Class>
-                                <owl:complementOf rdf:resource="http://benchmark/OWL2Bench#Man"/>
-                            </owl:Class>
-                        </owl:allValuesFrom>
+                        <owl:allValuesFrom rdf:resource="http://benchmark/OWL2Bench#Woman"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2372,9 +2320,7 @@
 
     <!-- http://benchmark/OWL2Bench#Work -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#Work">
-        <rdfs:label>Work</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#Work"/>
     
 
 
@@ -2397,17 +2343,13 @@
 
     <!-- http://benchmark/OWL2Bench#AbstractPainting -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#AbstractPainting">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#AbstractPainting"/>
     
 
 
     <!-- http://benchmark/OWL2Bench#ActionMovie -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#ActionMovie">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#ActionMovie"/>
     
 
 
@@ -2437,9 +2379,7 @@
 
     <!-- http://benchmark/OWL2Bench#ArticleReading -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#ArticleReading">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#ArticleReading"/>
     
 
 
@@ -2461,16 +2401,20 @@
 
     <!-- http://benchmark/OWL2Bench#BackStroke -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#BackStroke">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#BackStroke"/>
     
 
 
-    <!-- http://benchmark/OWL2Bench#BadmintonSingles -->
+    <!-- http://benchmark/OWL2Bench#Badminton -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#BadmintonSingles">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Badminton"/>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#BasketBall -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#BasketBall">
+        <owl:sameAs rdf:resource="http://benchmark/OWL2Bench#Basketball"/>
     </owl:NamedIndividual>
     
 
@@ -2563,6 +2507,14 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#Cricket -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Cricket">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#DocumentaryMovie -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#DocumentaryMovie">
@@ -2595,6 +2547,14 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#Engineering -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Engineering">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Engineering"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#English -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#English">
@@ -2611,6 +2571,22 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#FineArts -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#FineArts">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#FineArts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#FootBall -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#FootBall">
+        <owl:sameAs rdf:resource="http://benchmark/OWL2Bench#Football"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#Football -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Football">
@@ -2621,9 +2597,7 @@
 
     <!-- http://benchmark/OWL2Bench#FrontCrawl -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#FrontCrawl">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#FrontCrawl"/>
     
 
 
@@ -2659,6 +2633,14 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#HumanitiesAndSocial -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#IndustryEngineering -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#IndustryEngineering">
@@ -2675,18 +2657,18 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#LawnTennis -->
-
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#LawnTennis">
-        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://benchmark/OWL2Bench#Linguistics -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Linguistics">
         <rdf:type rdf:resource="http://benchmark/OWL2Bench#Linguistics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#Management -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Management">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Management"/>
     </owl:NamedIndividual>
     
 
@@ -2795,6 +2777,28 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#PGStudent -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#PGStudent">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#PGStudent"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://benchmark/OWL2Bench#PGStudent"/>
+        <owl:assertionProperty rdf:resource="http://benchmark/OWL2Bench#enrollFor"/>
+        <owl:targetIndividual rdf:resource="http://benchmark/OWL2Bench#UGprogram"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#PGprogram -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#PGprogram">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#PGProgram"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#PerformingArts -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#PerformingArts">
@@ -2867,6 +2871,14 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#Science -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Science">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Science"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#Shopping -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Shopping">
@@ -2875,9 +2887,9 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#SoloTravelling -->
+    <!-- http://benchmark/OWL2Bench#Soccer -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#SoloTravelling">
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Soccer">
         <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:NamedIndividual>
     
@@ -2899,6 +2911,14 @@
     
 
 
+    <!-- http://benchmark/OWL2Bench#Swimming -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Swimming">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://benchmark/OWL2Bench#T20Cricket -->
 
     <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#T20Cricket">
@@ -2907,9 +2927,9 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#TableTennis -->
+    <!-- http://benchmark/OWL2Bench#Tennis -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#TableTennis">
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Tennis">
         <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:NamedIndividual>
     
@@ -2931,31 +2951,41 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#VideoGame -->
+    <!-- http://benchmark/OWL2Bench#Travelling -->
 
-    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#VideoGame">
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#Travelling">
         <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://benchmark/OWL2Bench#UGStudent -->
 
-    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#AmericanFootball">
-        <rdfs:label>AmericanFootball</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#UGStudent">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#UGStudent"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://benchmark/OWL2Bench#UGStudent"/>
+        <owl:assertionProperty rdf:resource="http://benchmark/OWL2Bench#enrollFor"/>
+        <owl:targetIndividual rdf:resource="http://benchmark/OWL2Bench#PGprogram"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#Baseball">
-        <rdfs:label>Baseball</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://benchmark/univ-bench-2dl.owl#Kickboxing">
-        <rdfs:label>Kickboxing</rdfs:label>
-    </rdf:Description>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#UGprogram -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#UGprogram">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#UGProgram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://benchmark/OWL2Bench#VideoGame -->
+
+    <owl:NamedIndividual rdf:about="http://benchmark/OWL2Bench#VideoGame">
+        <rdf:type rdf:resource="http://benchmark/OWL2Bench#Interest"/>
+    </owl:NamedIndividual>
     
 
 
@@ -3018,17 +3048,20 @@
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Badminton"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#BasketBall"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Cricket"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#FootBall"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Football"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Soccer"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Swimming"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Tennis"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#CollegeDiscipline"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Course"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Interest"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Person"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Badminton"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#BasketBall"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Cricket"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Football"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Swimming"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -3051,7 +3084,7 @@
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Engineering"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#FineArts"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocialScience"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Management"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Science"/>
         </owl:members>
@@ -3079,32 +3112,98 @@
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#AbstractPainting"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ActionMovie"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#AeronauticalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Anthropology"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Architecture"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ArticleReading"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#AsianArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Astronomy"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#BackStroke"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#BadmintonSingles"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Badminton"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Basketball"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Biology"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#BiomedicalEngineering"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#BookReading"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ChemicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Chemistry"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#CivilEngineering"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ClassicalMusic"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ComedyMovie"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ComputerEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ComputerScience"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Cricket"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#DocumentaryMovie"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Drama"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Economics"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ElectricalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#English"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#FictionMovie"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Football"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#FrontCrawl"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Geosciences"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#History"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#HorrorMovie"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#LawnTennis"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Humanities"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#IndustryEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#LatinArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Linguistics"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MarineScience"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MaterialScienceEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MaterialsScience"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Mathematics"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MechanicalEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MediaArtsAndSiences"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MedievalArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ModernArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#ModernLanguages"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#MusicsClass"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#NewspaperReading"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#OilPainting"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#PCGame"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#PerformingArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#PetroleumEngineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Philosophy"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Physics"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#PopMusic"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Psychology"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Religions"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#RockAndRollMusic"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#RomanticMovie"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#Shopping"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#SoloTravelling"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Soccer"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#StampCollecting"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Statistics"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Swimming"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#T20Cricket"/>
-            <rdf:Description rdf:about="http://benchmark/OWL2Bench#TableTennis"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Tennis"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#TheatreAndDance"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#ThrillerMovie"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Travelling"/>
             <rdf:Description rdf:about="http://benchmark/OWL2Bench#VideoGame"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#BasketBall"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Football"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Basketball"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#FootBall"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Engineering"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#FineArts"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#HumanitiesAndSocial"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Management"/>
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench#Science"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
