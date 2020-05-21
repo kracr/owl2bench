@@ -1737,9 +1737,9 @@
     
 
 
-    <!-- http://benchmark/OWL2Bench#SelfAware -->
+    <!-- http://benchmark/OWL2Bench#SelfAwarePerson -->
 
-    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAware">
+    <owl:Class rdf:about="http://benchmark/OWL2Bench#SelfAwarePerson">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">

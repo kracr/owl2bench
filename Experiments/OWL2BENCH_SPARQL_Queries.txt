@@ -1,0 +1,117 @@
+OWL2Bench  SPARQL  Queries
+
+Twenty-two SPARQL queries are part of the OWL2Bench benchmark and reasoning is required to answer these queries. The queries have been designed with the goal of testing the reasoning support of SPARQL engines, along with their coverage of the various OWL 2 profiles. Each query comes with a detailed  description that captures the intent of the query and the OWL 2 language constructs that the SPARQL engine needs to recognize and process accordingly.      
+OWL2Bench Code Repository: https://github.com/kracr/owl2bench
+
+Format  for  each  Query:
+[Query  No.]  [SPARQL  Query]
+[Description:  ] Explains the meaning of the Query.
+[Construct Involved: ] OWL 2 language construct involved during reasoning.
+[Profile:  ] Lists out the OWL 2 Profile(s) to which the above SPARQL Query is applicable (profile(s) that supports the construct involved).
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :knows  ?y  }
+Description: Find the instances who know some other instance.
+Construct  Involved: knows  is a Reflexive Object Property.
+Profile: EL, QL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :isMemberOf  ?y  }
+Description: Find Person instances who are member (Student or Employee) of some Organization. 
+Construct  Involved: ObjectPropertyChain.
+Profile: EL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :isPartOf  ?y  }
+Description: Find  the  instances  of  Organization  which  is  a  Part  Of any other Organization.
+Construct Involved: isPartOf is a Transitive Object Property. Domain(Organization), Range(Organization)
+Profile: EL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :hasAge  ?y  }
+Description: Find the age of all the Person instances. 
+Construct Involved: hasAge is a Functional Data Property. Domain(Person), Range(xsd:nonNegativeInteger). 
+Profile: EL, RL, DL
+
+SELECT  DISTINCT  ?x  WHERE { ?x  rdf:type  :T20CricketFan  }
+Description: Find all the instances of class T20CricketFan. T20CricketFan is a Person who is crazy about T20Cricket. {T20Cricket} is an instance of Class Cricket.
+Construct  Involved:   ObjectHasValue.
+Profile: EL, RL, DL
+
+SELECT DISTINCT ?x ?y WHERE { ?x rdf:type :SelfAwarePerson  }
+Description: Find  all  the  instances  of  class  SelfAwarePerson.  SelfAwarePerson is a Person who knows themselves.
+Construct  Involved:   ObjectHasSelf. 
+Profile: EL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :hasAlumnus  ?y  }
+Description: Find all the alumni of a University.
+Construct  Involved: hasAlumnus is an Inverse Object Property of hasDegreeFrom. Domain(University), Range(Person).
+Profile: QL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE  {  ?x  :isAffiliatedOrganizationOf  ?y  }
+Description: Find Affiliations of all the Organizations.
+Construct Involved:  isAffiliatedOrganizationOf  is an Asymmetric Object Property. Domain(Organization), Range(Organization).
+Profile: QL, RL, DL
+
+SELECT DISTINCT ?x WHERE { ?x :hasCollegeDiscipline :NonScience }
+Description: Find all the colleges having Non-Science discipline. NonScience is something which is not Science 
+Construct  Involved:   ObjectComplementOf 
+Profile: QL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE  { ?x  :hasCollaborationWith ?y  }
+Description:  Find   all  the  instances  who  has  Collaboration  with  anyother instance. The query performs search across universities.
+Construct Involved: hasCollaborationWith is a Symmetric Object Property. Domain(Person), Range(Person).
+Profile: QL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE { ?x  :isAdvisedBy  ?y  }
+Description: Find all the instances who are advised by some other instance. 
+Construct  Involved: isAdvisedBy  is an Irreflexive Object Property. Domain(Person), Range(Person)
+Profile: QL, RL, DL 
+
+SELECT  DISTINCT  ?x  WHERE { ?x  rdf:type  :Person}
+Description: Find all the instances of class Person. A Person is union of Man and Woman.
+Construct  Involved:   ObjectUnionOf 
+Profile: RL, DL
+
+SELECT  DISTINCT  ?x  WHERE { ?x  rdf:type  :WomanCollege}
+Description:  Find  all the  instances of class  WomanCollege. WomanCollege      is a College which has only Woman Students.
+Construct  Involved:   AllValuesFrom 
+Profile: RL, DL
+
+SELECT  DISTINCT  ?x  WHERE { ?x  rdf:type  :LeisureStudent}
+Description: Find all the instances of class LeisureStudent. Leisure student is a Student who takes Maximum one course.
+Construct  Involved:   ObjectMaxCardinality
+Profile: RL, DL
+
+SELECT  DISTINCT  ?x  WHERE {?x  :isHeadOf  ?y}
+Description: Find the head of all the Organization.
+Construct Involved: isHeadOf is an Inverse Functional Object Property. Domain(Person), Range(Organization).
+Profile: RL, DL
+
+SELECT  DISTINCT  ?x  WHERE {?x  :hasHead  ?y}
+Description: Find all the Organizations who has head.
+Construct  Involved:   hasHead  is a Functional Object Property. Domain(Organization), Range(Person).
+Profile: RL, DL
+
+SELECT  DISTINCT  ?x  WHERE {?x  rdf:type  :UGStudent}
+Description: Find all the instances of class UGStudent. UGStudent is  a      Student who enrolls in exactly one UGProgram.
+Construct  Involved:   ObjectExactCardinality 
+Profile: DL
+
+SELECT DISTINCT ?x WHERE { ?x rdf:type :PeopleWithManyHobbies}
+Description: Find all the instances of class PeopleWithManyHobbies. PeopleWithManyHobbies is a Person who has minimum 3 Hobbies. 
+Construct  Involved:   ObjectMinCardinality 
+Profile: DL
+
+SELECT  DISTINCT  ?x  WHERE { ?x  rdf:type  :Faculty  }
+Description: Find  all  the  instances  of  class  Faculty.  A  Faculty  is  an Employee who teaches some Course. 
+Construct  Involved:   ObjectSomeValuesFrom 
+Profile: EL, QL, RL, DL
+
+SELECT  DISTINCT  ?x  ?y  WHERE  {?x  :hasSameHomeTownWith  ?y  }
+Description: Find all  the  instances  who  have  same  home  town  with any other instance. The query performs search across universities.
+Profile: EL, QL, RL, DL
+
+SELECT DISTINCT ?x ?y WHERE {?x rdf:type :Student. ?x :isStudentOf ?y. ?y :isPartOf ?z . ?z :hasCollegeDiscipline :Engineering}
+Description: Find all the Engineering Students. The Query performs search across all the universities. 
+Profile: EL, QL, RL, DL
+
+SELECT  DISTINCT  ?s  ?c  WHERE  {?s  rdf:type  :Student.  ?x rdf:type  :Organization.  ?x  :hasDean  ?z.  ?z  :teachesCourse  ?c.  ?s :takesCourse  ?c  }
+Description: Find all the students who took course taught by the Dean of the Organization. The Query performs search across all the universities. 
+Profile: EL, QL, RL, DL
