@@ -30,7 +30,7 @@ The images below represent a subset of TBox and ABox. First image represents the
 <a name="repo"></a>
 
 ## 2. About the Repository
-Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory, Experiments consists of java codes used to evaluate different reasoners (HermiT, Openllet, JFact, Pellet, Konclude and ELK) and a text file **OWL2Bench_SPARQL_Queries**, available at https://zenodo.org/record/3838735, consisting of twenty-two SPARQL queries for all the profiles used to evaluate Stardog and GraphDB, four different **TBox** for OWL 2 Profiles: **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, one excel file **RandomNames.xlsx** used to give real like names of University and Person instances, and an executable jar file : **OWL2Bench.jar**. 
+Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory, Experiments consists of java codes used to evaluate different reasoners (HermiT, Openllet, JFact, Pellet, Konclude and ELK) and a text file **OWL2Bench_SPARQL_Queries**, available at https://doi.org/10.5281/zenodo.3838735, consisting of twenty-two SPARQL queries for all the profiles used to evaluate Stardog and GraphDB, four different **TBox** for OWL 2 Profiles: **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, one excel file **RandomNames.xlsx** used to give real like names of University and Person instances, and an executable jar file : **OWL2Bench.jar**. 
 
 <a name="tbox"></a>
 
