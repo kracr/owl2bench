@@ -70,7 +70,7 @@ The output files are stored in files with names such as "OWL2"+ Profile + "-" + 
 
 For example. On executing using the arguments given in examples above, output files would be OWL2DL-1.owl, OWL2QL-1.owl, OWL2EL-10.owl, OWL2RL-100.owl. 
 
-The datasets used for the experiments are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 .
+The datasets used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 .
 
 <a name="future"></a>
 ## Future Work
