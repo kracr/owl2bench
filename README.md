@@ -22,7 +22,7 @@ OWl 2 is gaining popularity in a variety of domains because of its high level of
 
 The images below represent a subset of TBox and ABox. First image represents the TBox i.e classes and relationships that exist between them. Relationships written in red represent added OWL 2 constructs. Second image represents the ABox (generated instances) red dashed edges in the ABox represent the interlinks across Universities.
 
-![Sample TBox](https://github.com/GunjanSingh1/owl2dl-benchmark/blob/master/Images/Sample%20OWL2Bench.jpg)
+![Sample TBox](https://github.com/GunjanSingh1/owl2dl-benchmark/blob/master/Images/OWL2Bench.JPG)
 
 
 
