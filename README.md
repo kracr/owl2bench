@@ -14,9 +14,9 @@ This document provides documentation for the first version of our benchmark OWL2
 
 6. [ Usage. ](#usage)
 
-   4.1 [ Direct execution using executable jar (with default configurations). ](#exe)
+   6.1 [ Direct execution using executable jar (with default configurations). ](#exe)
    
-   4.2 [ Using Source Code (with or without default configurations). ](#code)
+   6.2 [ Using Source Code (with or without default configurations). ](#code)
    
 7. [ Future Work. ](#future)
 8. [ References. ](#references)
