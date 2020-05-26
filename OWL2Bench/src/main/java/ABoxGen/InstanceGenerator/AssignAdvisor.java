@@ -20,7 +20,7 @@ public class AssignAdvisor {
     Department dept;
     int internalAdvisorNum, externalAdvisorNum;
     HashSet<String> hash1, hash2;
-    ConfigFile configFile;
+
 
     public AssignAdvisor(Generator gen,University universities[]) {
 
@@ -28,7 +28,7 @@ public class AssignAdvisor {
         this.universities = universities;
         int i;
         getRandomPerson = new GetRandomPerson();
-        configFile=new ConfigFile();
+   
         for (i = 0; i < gen.univNum; ++i) {
             this.university = universities[i];
             for (int j = 0; j < university.coEdCollegeNum; ++j) {

@@ -19,12 +19,12 @@ public class College {
     HashSet<String> personPerUniversity;
     AssignCourse assignCourse;
     GetRandomPerson getRandomPerson;
-    ConfigFile configFile;
+   
 
     public College(University university, int collegeIndex, Boolean isWomanCollege) {
         this.personPerUniversity=university.personPerUniversity;
         this.profile=university.profile;
-        this.configFile=new ConfigFile();
+     
         this.univIndex = university.univIndex;
         this.collegeIndex = collegeIndex;
         this.gen = university.gen;

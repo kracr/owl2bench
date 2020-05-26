@@ -22,7 +22,7 @@ public class Department {
     Program ugProgram,pgProgram,phdProgram;
     HashSet<String> personPerUniversity;
     String chair;
-    ConfigFile configFile;
+   
 
     public Department(College college,int deptIndex,Boolean womenStudents) {
     	this.profile=college.profile;
@@ -32,8 +32,7 @@ public class Department {
         this.gen = college.gen;
         this.womenStudents = womenStudents;
         this.collegeDiscipline = college.collegeDiscipline;
-        configFile=new ConfigFile();
-
+       
         //employee count
         this.assistantProfessorNum = GetRandomNo.getRandomFromRange(gen.assistantProfessorNum_Min,gen.assistantProfessorNum_Max);
         this.associateProfessorNum = GetRandomNo.getRandomFromRange(gen.associateProfessorNum_Min,gen.associateProfessorNum_Max);

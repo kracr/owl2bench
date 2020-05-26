@@ -118,7 +118,7 @@ public class Generator {
     InterlinkedProperties interlinks;
     AssignAdvisor assignAdvisor;
     AssignDegree assignDegree;
-    ConfigFile configFile;
+  
     HashSet<String> universityName = new HashSet();
     HashMap<Integer,String> map1 = new HashMap<>();
     HashMap<Integer,String> map2 = new HashMap<>();
@@ -186,7 +186,7 @@ public class Generator {
 
         this.univNum = univNum;
         GetRandomNo.setSeed((long) seed);
-        this.configFile=new ConfigFile();
+
         Properties prop = new Properties();
         InputStream input = null;
 
@@ -314,7 +314,7 @@ public class Generator {
        // System.out.println(map3.size());
 
         this.universities = new University[this.univNum];
-        this.configFile=new ConfigFile();
+
         //generates university instances 
         for (int i = 0; i < this.univNum; ++i) {
             this.universities[i] = new University(this, i);

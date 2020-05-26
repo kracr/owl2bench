@@ -14,7 +14,7 @@ public class InterlinkedProperties {
     GetRandomPerson getRandomPerson;
     GetRandomInterest getRandomInterest;
     University universities[];
-    ConfigFile configFile;
+   
     Generator gen;
     String crazyAbout,profile;
     int sameHomeTownNum,isFriendOfNum,likesNum,lovesNum,isCrazyAboutNum,dislikesNum;
@@ -32,7 +32,7 @@ public class InterlinkedProperties {
         this.universities=universities;
         getRandomInterest=new GetRandomInterest();
         getRandomPerson=new GetRandomPerson();
-        configFile=new ConfigFile();
+       
         for(int i=0;i<gen.univNum;++i){
             university=universities[i];
             Iterator<String> j=university.personPerUniversity.iterator();

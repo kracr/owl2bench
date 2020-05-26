@@ -10,9 +10,9 @@ public class ResearchGroup {
     Generator gen;
     Person person;
     int RANum;
-    ConfigFile configFile;
+
     public ResearchGroup(University university,int index) {
-        configFile=new ConfigFile();
+       
         this.profile=university.profile;
         this.researchGroupInstance = university.univInstance + "RG" + index;
         this.researchProjectInstance =  researchGroupInstance+ "RP";

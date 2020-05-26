@@ -14,7 +14,7 @@ public class AssignCourse {
     College clg;
     Department dept;
     GetRandomCourse getRandomCourse;
-    ConfigFile configFile;
+
     int numOfElectivesOutsideDept, numOfElectivesWithInDept,numOfElectives,courseOutsideDepartment,courseWithInDepartment;
     HashSet<String> hash1, hash2, hash3;
 
@@ -23,7 +23,7 @@ public class AssignCourse {
         this.gen = college.gen;
         this.clg = college;
         this.getRandomCourse = new GetRandomCourse();
-        configFile=new ConfigFile();
+       
         for (int i = 0; i < college.deptNum; ++i) {
             dept = college.depts[i];
             //for ug students

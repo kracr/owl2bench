@@ -16,7 +16,7 @@ public class University {
     ResearchGroup[] researchGroups;
     HashSet<String> personPerUniversity = new HashSet();
     HashSet<String> universityName;
-    ConfigFile configFile;
+
     String profile;
 
 
@@ -35,7 +35,7 @@ public class University {
         universityName.add(cityName);
         this.univName= "U" + univIndex + " University of " + cityName;//from data dictionary eg. University of London
         System.out.println( univName);
-        this.configFile=new ConfigFile();
+      
         //:U0 rdf:type :University
         gen.classAssertion(gen.getClass("University"),gen.getNamedIndividual(univInstance) );
         //:U0 :hasName :University of XYZ
