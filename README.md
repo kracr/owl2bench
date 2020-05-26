@@ -1,5 +1,5 @@
 # OWL2Bench Documentation
-This document provides documentation for the first version of our benchmark OWL2Bench. OWL2Bench can be used to benchmark three aspects of the reasoners - supportfor OWL 2 language constructs, scalability in terms of ABox size, and the query performance.
+This document provides documentation for the first version of our benchmark OWL2Bench. OWL2Bench can be used to benchmark three aspects of the reasoners - support for OWL 2 language constructs, scalability in terms of ABox size, and the query performance.
 
 # Table of Contents
 1. [ Introduction. ](#intro)
@@ -24,17 +24,19 @@ This document provides documentation for the first version of our benchmark OWL2
 ## 1. Introduction
 OWl 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL 2 EL, OWl 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several OWL 2 reasoners (such as Hermit, JFact, Openllet, Pellet, Konclude and ELK) and some SPARQL query engines (such as Stardog and GraphDB) that are backed by OWL 2 Reasoners so as to help answer queries that involve reasoning. OWL2Bench is our first step towards a standard benchmark for all the OWL 2 profiles. Our benchmark is an extension of well known University Ontology Benchmark (UOBM). OWL2Bench includes TBox for each profile covering the set of constructs supported by that profile, generation of synthetic data scalable to arbitrary size and a separate set of SPARQL queries for each profile to be executed over generated data for performance evaluation of several reasoners and SPARQL query engines.
 
-The hierarchy among some of the classes, including the relations between them, is shown in the figure below. All the four TBoxes of OWL2Bench consist of classes such as University, College, CollegeDiscipline, Department, Person, Program, and Course. They are related to each other through relationships such as enrollFor, teachesCourse, and offerCourse.
+The hierarchy among some of the classes, including the relations between them, is shown in the figure below. All the four TBoxes of OWL2Bench consist of classes such as University, College, CollegeDiscipline, Department, Person, Program, and Course. They are related to each other through relationships such as enrollFor, teachesCourse, and offerCourse. The labeled (dashed) edges represent the properties. The unlabeled edgesrepresent the subclass relation.
 
 ![OWL2Bench](https://github.com/kracr/owl2bench/blob/master/Images/OWL2Bench.JPG)
 
 <a name="repo"></a>
 ## 2. About the Repository
-Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory, Experiments consists of java codes used to evaluate different reasoners (HermiT, Openllet, JFact, Pellet, Konclude and ELK) and a text file **OWL2Bench_SPARQL_Queries**, available at https://doi.org/10.5281/zenodo.3838735, consisting of twenty-two SPARQL queries for all the profiles used to evaluate Stardog and GraphDB, four different **TBox** for OWL 2 Profiles: **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, one excel file **RandomNames.xlsx** used to give real like names of University and Person instances, and an executable jar file : **OWL2Bench.jar**. 
+Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory for our benchmark. Experiments directory consists of all the information about the experiments performed. Other than that, the repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, and an executable jar file : **OWL2Bench.jar**. 
 
 <a name="tbox"></a>
 
 ## 3. TBox Details 
+
+The OWL2Bench TBoxes have been built by enriching the existing UOBM ontology with OWL 2 constructs. 
 
 OWL 2 DL : UNIV-BENCH-OWL2DL.owl
 
@@ -47,8 +49,12 @@ OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 <a name="abox"></a>
 ## 4. ABox Details 
 
+
+
 <a name="sparql"></a>
 ## 5. SPARQL Query Details
+
+OWL2Bench consists of twenty-two SPARQL queries to test the query performance of the OWL 2 reasoners. SPARQL Queries are available at https://doi.org/10.5281/zenodo.3838735
 
 <a name="usage"></a>
 ## 6. Usage
@@ -57,14 +63,14 @@ OWL 2 EL : UNIV-BENCH-OWL2EL.owl
 
 We have provided an executable jar file (with configurations that were used to perform the experiments) where user can specify the *Number of Universities, Required OWL 2 Profile and Seed* (in the same order). 
            
-Number of universities makes the ABox scalable. For 1 university number varies from approx 400K triples to 800K triples depending on the seed value. OWl 2 Profile could be any one of EL, QL, RL and DL.         
+Number of universities makes the ABox scalable. By default, the number of ABox axioms for 1 university is approximately 50,000 that reaches upto 14,000,000 for 200 universities.      
 
 For eg. : 
 
-java -jar OWL2Bench.jar 1 DL 1 (where 1 is the number of universities,  DL is OWL 2 profile and 1 is the seed value)
+java -jar OWL2Bench.jar 1 DL 1 (where 1 is the number of universities,  DL is OWL 2 profile and 1 is the default seed value)
 
+To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. 
 
-To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl,UNIV-BENCH-OWL2QL.owl,UNIV-BENCH-OWL2RL.owl,UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. 
 <a name="code"></a>
 ## 6.2. Using Source Code (with or without default configurations) :
 
