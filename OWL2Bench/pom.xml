@@ -30,6 +30,7 @@
                     <exclude>*.properties</exclude>
                 </excludes>
             </resource>
+            
         </resources>
         <plugins>
             <plugin>

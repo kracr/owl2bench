@@ -9,9 +9,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Properties;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -19,6 +22,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
+
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.formats.*;
@@ -26,15 +30,16 @@ import org.semanticweb.owlapi.formats.*;
 import org.semanticweb.owlapi.model.OWLDocumentFormat;
 
 public class Generator {
-    String ontologyFormat;
+    String ontologyFormat="rdf";
     int publicationNum_Min=150; //per university
     int publicationNum_Max=200; //per university
     int researchGroupNum_Min=4;
     int researchGroupNum_Max=8;
     int collegeNum_Min=5;
     int collegeNum_Max=10;
-    int womenCollegeNum_Min=1;
-    int womenCollegeNum_Max=2;
+    double ratio_womenCollege=0.2;
+    int womenCollegeNum_Min=(int)(collegeNum_Min*ratio_womenCollege);
+    int womenCollegeNum_Max=(int)(collegeNum_Max*ratio_womenCollege);
     int deptNum_Min=3;
     int deptNum_Max=5;
     int RANum_Min=4;
@@ -95,7 +100,7 @@ public class Generator {
     String[] TOKEN_Science=new String[]{"Astronomy", "Biology", "Chemistry", "ComputerScience", "GeoScience", "MarineScience", "MaterialScience", "Mathematics", "Physics", "Statistics"};
     String[] TOKEN_HumanitiesAndSocial=new String[]{"Anthropology", "Economics", "English", "History", "Humanities", "Linguistics", "ModernLanguages", "Philosophy", "Psychology", "Religions"};
     //org.slf4j.simplelogger.defaultLogLevel=error;
-
+   
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
     PrefixManager pm = new DefaultPrefixManager("http://benchmark/OWL2Bench");
     IRI ontologyIRI = IRI.create(pm.getDefaultPrefix());
@@ -126,7 +131,7 @@ public class Generator {
     	//input 
         int univNum=1;
         int seed =1; //For about 50K triple Seed value: QL=1 (51K), EL=2 (52K),  DL/RL=3 (48K)		      
-        String profile= "QL";
+        String profile= "EL";  
         
         if(args.length==3)
         {
@@ -143,8 +148,8 @@ public class Generator {
         else
         {
      
-            System.out.println("Please give arguments in the following order: No. of Universities (int), OWL 2 Profile (EL/QL/RL/DL), Seed value (int)");
-            System.out.println("For example: 1 DL 1");
+                System.out.println("Please give arguments in the following order: No. of Universities (int), OWL 2 Profile (EL/QL/RL/DL), Seed (optional) ");
+                System.out.println("For example: 1 DL 1 or 1 DL (where default seed value is 1");
         }
         //System.out.println(profile);
         new Generator().start(univNum, seed, profile);
@@ -182,224 +187,91 @@ public class Generator {
         this.univNum = univNum;
         GetRandomNo.setSeed((long) seed);
         this.configFile=new ConfigFile();
-        if(configFile.ontologyFormat!=null)
-        {
-            this.ontologyFormat=configFile.ontologyFormat;
-        }
-        //configurations
+        Properties prop = new Properties();
+        InputStream input = null;
+
+        try {
+            input = new FileInputStream("config.properties");
+            // load a properties fi
+            prop.load(input);
         //If user wants to modify the min-max parameters, they can change the null value in ConfigFile. 
-        if(configFile.publicationNum_Min!=null)
-        {
-            this.publicationNum_Min=configFile.publicationNum_Min;
+            this.ontologyFormat=prop.getProperty("ontologyFormat");
+            this.publicationNum_Min=Integer.parseInt(prop.getProperty("publicationNum_Min"));
+            this.publicationNum_Max=Integer.parseInt(prop.getProperty("publicationNum_Max"));
+            this.researchGroupNum_Min=Integer.parseInt(prop.getProperty("researchGroupNum_Min"));
+            this.researchGroupNum_Max=Integer.parseInt(prop.getProperty("researchGroupNum_Max"));
+            this.collegeNum_Min=Integer.parseInt(prop.getProperty("collegeNum_Min"));
+            this.collegeNum_Max=Integer.parseInt(prop.getProperty("collegeNum_Max"));
+            this.womenCollegeNum_Min=(int)(collegeNum_Min*ratio_womenCollege);
+            this.womenCollegeNum_Max=(int)(collegeNum_Max*ratio_womenCollege);
+            this.RANum_Min=Integer.parseInt(prop.getProperty("RANum_Min"));
+            this.RANum_Max=Integer.parseInt(prop.getProperty("RANum_Max"));
+            this.sameHomeTownNum_Min=Integer.parseInt(prop.getProperty("sameHomeTownNum_Min"));
+            this.sameHomeTownNum_Max=Integer.parseInt(prop.getProperty("sameHomeTownNum_Max"));
+            this.knowsNum_Min=Integer.parseInt(prop.getProperty("knowsNum_Min"));
+            this.knowsNum_Max=Integer.parseInt(prop.getProperty("knowsNum_Max"));
+            this.isCrazyAboutNum_Min=Integer.parseInt(prop.getProperty("isCrazyAboutNum_Min"));
+            this.isCrazyAboutNum_Max=Integer.parseInt(prop.getProperty("isCrazyAboutNum_Max"));
+            this.lovesNum_Min=Integer.parseInt(prop.getProperty("lovesNum_Min"));
+            this.lovesNum_Max=Integer.parseInt(prop.getProperty("lovesNum_Max"));
+            this.likesNum_Min=Integer.parseInt(prop.getProperty("likesNum_Min"));
+            this.likesNum_Max=Integer.parseInt(prop.getProperty("likesNum_Max"));
+            this.dislikesNum_Min=Integer.parseInt(prop.getProperty("dislikesNum_Min"));
+            this.dislikesNum_Max=Integer.parseInt(prop.getProperty("dislikesNum_Max"));
+            this.deptNum_Min=Integer.parseInt(prop.getProperty("deptNum_Min"));
+            this.deptNum_Max=Integer.parseInt(prop.getProperty("deptNum_Max"));
+            this.numOfElectives_Min=Integer.parseInt(prop.getProperty("numOfElectives_Min"));
+            this.numOfElectives_Max=Integer.parseInt(prop.getProperty("numOfElectives_Max"));
+            this.numOfElectivesOutsideDept_Min=Integer.parseInt(prop.getProperty("numOfElectivesOutsideDept_Min"));
+            this.internalAdvisorNum_Min=Integer.parseInt(prop.getProperty("internalAdvisorNum_Min"));
+            this.internalAdvisorNum_Max=Integer.parseInt(prop.getProperty("internalAdvisorNum_Max"));
+            this.externalAdvisorNum_Min=Integer.parseInt(prop.getProperty("externalAdvisorNum_Min"));
+            this.externalAdvisorNum_Max=Integer.parseInt(prop.getProperty("externalAdvisorNum_Max"));
+            this.ugStudentNum_Min=Integer.parseInt(prop.getProperty("ugStudentNum_Min"));
+            this.ugStudentNum_Max=Integer.parseInt(prop.getProperty("ugStudentNum_Max"));
+            this.pgStudentNum_Min=Integer.parseInt(prop.getProperty("pgStudentNum_Min"));
+            this.pgStudentNum_Max=Integer.parseInt(prop.getProperty("pgStudentNum_Max"));
+            this.phdStudentNum_Min=Integer.parseInt(prop.getProperty("phdStudentNum_Min"));
+            this.phdStudentNum_Max=Integer.parseInt(prop.getProperty("phdStudentNum_Max"));
+            this.assistantProfessorNum_Min=Integer.parseInt(prop.getProperty("assistantProfessorNum_Min"));
+            this.assistantProfessorNum_Max=Integer.parseInt(prop.getProperty("assistantProfessorNum_Max"));
+            this.associateProfessorNum_Min=Integer.parseInt(prop.getProperty("associateProfessorNum_Min"));
+            this.associateProfessorNum_Max=Integer.parseInt(prop.getProperty("associateProfessorNum_Max"));
+            this.fullProfessorNum_Min=Integer.parseInt(prop.getProperty("fullProfessorNum_Min"));
+            this.fullProfessorNum_Max=Integer.parseInt(prop.getProperty("fullProfessorNum_Max"));
+            this.visitingProfessorNum_Min=Integer.parseInt(prop.getProperty("visitingProfessorNum_Min"));
+            this.visitingProfessorNum_Max=Integer.parseInt(prop.getProperty("visitingProfessorNum_Max"));
+            this.lecturerNum_Min=Integer.parseInt(prop.getProperty("lecturerNum_Min"));
+            this.lecturerNum_Max=Integer.parseInt(prop.getProperty("lecturerNum_Max"));
+            this.postDocNum_Min=Integer.parseInt(prop.getProperty("postDocNum_Min"));
+            this.postDocNum_Max=Integer.parseInt(prop.getProperty("postDocNum_Max"));
+            this.systemStaffNum_Min=Integer.parseInt(prop.getProperty("systemStaffNum_Min"));
+            this.systemStaffNum_Max=Integer.parseInt(prop.getProperty("systemStaffNum_Max"));
+            this.clericalStaffNum_Min=Integer.parseInt(prop.getProperty("clericalStaffNum_Min"));
+            this.clericalStaffNum_Max=Integer.parseInt(prop.getProperty("clericalStaffNum_Max"));
+            this.otherStaffNum_Min=Integer.parseInt(prop.getProperty("otherStaffNum_Min"));
+            this.otherStaffNum_Max=Integer.parseInt(prop.getProperty("otherStaffNum_Max"));
+            this.progNum_Min=Integer.parseInt(prop.getProperty("progNum_Min"));
+            this.progNum_Max=Integer.parseInt(prop.getProperty("progNum_Max"));
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    } finally {
+        if (input != null) {
+            try {
+                input.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        if(configFile.publicationNum_Max!=null)
-        {
-            this.publicationNum_Max=configFile.publicationNum_Max;
-        }
-        if(configFile.researchGroupNum_Min!=null)
-        {
-            this.researchGroupNum_Min=configFile.researchGroupNum_Min;
-        }
-        if(configFile.researchGroupNum_Max!=null)
-        {
-            this.researchGroupNum_Max=configFile.researchGroupNum_Max;
-        }
-        if(configFile.collegeNum_Min!=null)
-        {
-            this.collegeNum_Min=configFile.collegeNum_Min;
-        }
-        if(configFile.collegeNum_Max!=null)
-        {
-            this.collegeNum_Max=configFile.collegeNum_Max;
-        }
-
-        if(configFile.womenCollegeNum_Min!=null)
-        {
-            this.womenCollegeNum_Min=configFile.womenCollegeNum_Min;
-        }
-        if(configFile.womenCollegeNum_Max!=null)
-        {
-            this.womenCollegeNum_Max=configFile.womenCollegeNum_Max;
-        }
-        if(configFile.RANum_Min!=null)
-        {
-            this.RANum_Min=configFile.RANum_Min;
-        }
-        if(configFile.RANum_Max!=null)
-        {
-            this.RANum_Max=configFile.RANum_Max;
-        }
-        if(configFile.sameHomeTownNum_Min!=null)
-        {
-            this.sameHomeTownNum_Min=configFile.sameHomeTownNum_Min;
-        }
-        if(configFile.sameHomeTownNum_Max!=null)
-        {
-            this.sameHomeTownNum_Max=configFile.sameHomeTownNum_Max;
-        }
-        if(configFile.knowsNum_Min!=null)
-        {
-            this.knowsNum_Min=configFile.knowsNum_Min;
-        }
-        if(configFile.knowsNum_Max!=null)
-        {
-            this.knowsNum_Max=configFile.knowsNum_Max;
-        }
-        if(configFile.isCrazyAboutNum_Min!=null)
-        {
-            this.isCrazyAboutNum_Min=configFile.isCrazyAboutNum_Min;
-        }
-        if(configFile.isCrazyAboutNum_Max!=null)
-        {
-            this.isCrazyAboutNum_Max=configFile.isCrazyAboutNum_Max;
-        }
-        if(configFile.lovesNum_Min!=null)
-        {
-            this.lovesNum_Min=configFile.lovesNum_Min;
-        }
-        if(configFile.lovesNum_Max!=null)
-        {
-            this.lovesNum_Max=configFile.lovesNum_Max;
-        }
-        if(configFile.likesNum_Min!=null)
-        {
-            this.likesNum_Min=configFile.likesNum_Min;
-        }
-        if(configFile.likesNum_Max!=null)
-        {
-            this.likesNum_Max=configFile.likesNum_Max;
-        }
-        if(configFile.dislikesNum_Min!=null)
-        {
-            this.dislikesNum_Min=configFile.dislikesNum_Min;
-        }
-        if(configFile.dislikesNum_Max!=null)
-        {
-            this.dislikesNum_Max=configFile.dislikesNum_Max;
-        }
-        if(configFile.deptNum_Min!=null)
-        {
-            this.deptNum_Min=configFile.deptNum_Min;
-        }
-        if(configFile.deptNum_Max!=null)
-        {
-            this.deptNum_Max=configFile.deptNum_Max;
-        }
-        if(configFile.numOfElectives_Min!=null)
-        {
-            this.numOfElectives_Min=configFile.numOfElectives_Min;
-        }
-        if(configFile.numOfElectives_Max!=null)
-        {
-            this.numOfElectives_Max=configFile.numOfElectives_Max;
-        }
-        if(configFile.numOfElectivesOutsideDept_Min!=null)
-        {
-            this.numOfElectivesOutsideDept_Min=configFile.numOfElectivesOutsideDept_Min;
-        }
-        if(configFile.internalAdvisorNum_Min!=null)
-        {
-            this.internalAdvisorNum_Min=configFile.internalAdvisorNum_Min;
-        }
-        if(configFile.internalAdvisorNum_Max!=null)
-        {
-            this.internalAdvisorNum_Max=configFile.internalAdvisorNum_Max;
-        }
-        if(configFile.externalAdvisorNum_Min!=null)
-        {
-            this.externalAdvisorNum_Min=configFile.externalAdvisorNum_Min;
-        }
-        if(configFile.externalAdvisorNum_Max!=null)
-        {
-            this.externalAdvisorNum_Max=configFile.externalAdvisorNum_Max;
-        }
-        if(configFile.ugStudentNum_Min!=null){
-            this.ugStudentNum_Min=configFile.ugStudentNum_Min;
-        }
-        if(configFile.ugStudentNum_Max!=null){
-            this.ugStudentNum_Max=configFile.ugStudentNum_Max;
-        }
-        if(configFile.pgStudentNum_Min!=null){
-            this.pgStudentNum_Min=configFile.pgStudentNum_Min;
-        }
-        if(configFile.pgStudentNum_Max!=null){
-            this.pgStudentNum_Max=configFile.pgStudentNum_Max;
-        }
-        if(configFile.phdStudentNum_Min!=null){
-            this.phdStudentNum_Min=configFile.phdStudentNum_Min;
-        }
-        if(configFile.phdStudentNum_Max!=null){
-            this.phdStudentNum_Max=configFile.phdStudentNum_Max;
-        }
-        if(configFile.assistantProfessorNum_Min!=null){
-            this.assistantProfessorNum_Min=configFile.assistantProfessorNum_Min;
-        }
-        if(configFile.assistantProfessorNum_Max!=null){
-            this.assistantProfessorNum_Max=configFile.assistantProfessorNum_Max;
-        }
-        if(configFile.associateProfessorNum_Min!=null){
-            this.associateProfessorNum_Min=configFile.associateProfessorNum_Min;
-        }
-        if(configFile.associateProfessorNum_Max!=null){
-            this.associateProfessorNum_Max=configFile.associateProfessorNum_Max;
-        }
-        if(configFile.fullProfessorNum_Min!=null){
-            this.fullProfessorNum_Min=configFile.fullProfessorNum_Min;
-        }
-        if(configFile.fullProfessorNum_Max!=null){
-            this.fullProfessorNum_Max=configFile.fullProfessorNum_Max;
-        }
-        if(configFile.visitingProfessorNum_Min!=null){
-            this.visitingProfessorNum_Min=configFile.visitingProfessorNum_Min;
-        }
-        if(configFile.visitingProfessorNum_Max!=null){
-            this.visitingProfessorNum_Max=configFile.visitingProfessorNum_Max;
-        }
-        if(configFile.lecturerNum_Min!=null){
-            this.lecturerNum_Min=configFile.lecturerNum_Min;
-        }
-        if(configFile.lecturerNum_Max!=null){
-            this.lecturerNum_Max=configFile.lecturerNum_Max;
-        }
-        if(configFile.postDocNum_Min!=null){
-            this.postDocNum_Min=configFile.postDocNum_Min;
-        }
-        if(configFile.postDocNum_Max!=null){
-            this.postDocNum_Max=configFile.postDocNum_Max;
-        }
-        if(configFile.systemStaffNum_Min!=null){
-            this.systemStaffNum_Min=configFile.systemStaffNum_Min;
-        }
-        if(configFile.systemStaffNum_Max!=null){
-            this.systemStaffNum_Max=configFile.systemStaffNum_Max;
-        }
-        if(configFile.clericalStaffNum_Min!=null){
-            this.clericalStaffNum_Min=configFile.clericalStaffNum_Min;
-        }
-        if(configFile.clericalStaffNum_Max!=null){
-            this.clericalStaffNum_Max=configFile.clericalStaffNum_Max;
-        }
-        if(configFile.otherStaffNum_Min!=null){
-            this.otherStaffNum_Min=configFile.otherStaffNum_Min;
-        }
-        if(configFile.otherStaffNum_Max!=null){
-            this.otherStaffNum_Max=configFile.otherStaffNum_Max;
-        }
-        if(configFile.progNum_Min!=null){
-            this.progNum_Min=configFile.progNum_Min;
-        }
-        if(configFile.progNum_Max!=null){
-            this.progNum_Max=configFile.progNum_Max;
-        }
-
+    }
         this.generate();
     }
 
     private void generate() {
 
-        try {
-        	//excel file used to generate real world names for person and universities
-            FileInputStream fileInputStream =new FileInputStream("RandomNames.xlsx"); 
+        try {//excel file used to generate real world names for person and universities
+        	//InputStream fileInputStream = getClass().getResourceAsStream(System.getProperty("resources/RandomNames.xlsx"));
+        	FileInputStream fileInputStream =new FileInputStream("RandomNames.xlsx"); 
             //C:\\Users\\Gunjan\\Desktop\\owlbenchmarkingreferences\\OntoBench-master\\UnivBench2DL\\RandomNames.xlsx
             // new FileInputStream("C:\\Users\\Gunjan\\Desktop\\RandomNames.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
