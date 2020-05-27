@@ -1,6 +1,6 @@
-//Generates student instances. A student could be of type UG, PG and PhD. Adds axioms of type enrollIn, enrollFor and hasMajor for each student. 
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/**Generates student instances. A student could be of type UG, PG and PhD. Adds axioms of type enrollIn, enrollFor and hasMajor for each student so that reasoner can infer the classes.
+ * 
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 

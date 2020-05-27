@@ -1,9 +1,8 @@
-/*every department has a list of courses, some mandatory courses for ug stduents and some departmental electives for ug,pg and phd students)
-//students can take electives of the same department as well as outside the department (within the college)
- //faculties can teach courses within the department or outside the department.
- */
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/**every department has a list of courses, some mandatory courses for ug stduents and some departmental electives for ug,
+ * pg and phd students)
+ * students can take electives of the same department as well as outside the department (within the college)
+ * faculties can teach courses within the department or outside the department.
+ * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 

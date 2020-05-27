@@ -1,7 +1,6 @@
-//gets a random faculty, internal professor, external professor, student or staff instance when required for other axioms. 
-//For. Eg. to assign advisor, or to assign hasSameHomeTownWith property, evaluationcommittee etc
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/**gets a random faculty, internal professor, external professor, student or staff instance when required for other axioms. 
+* For. Eg. to assign advisor, or to assign hasSameHomeTownWith property, evaluationcommittee etc
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -30,9 +29,10 @@ public class GetRandomPerson {
         this.randomUnivNum=GetRandomNo.getRandomFromRange(0,univNum-1);
 
         this.univ=universities[randomUnivNum];
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+        //if ((profile.matches("DL")) || (profile.matches("RL"))) {
         if(GetRandomNo.getRandomFromRange(0,10)==0) {
             this.womenCollegeNum = univ.womenCollegeNum;
+           
             this.randomWomenCollegeNum = GetRandomNo.getRandomFromRange(0,womenCollegeNum - 1);
             this.clg=univ.womenColleges[randomWomenCollegeNum];
         }
@@ -42,13 +42,7 @@ public class GetRandomPerson {
             this.randomCoEdCollegeNum = GetRandomNo.getRandomFromRange(0,coEdCollegeNum - 1);
             this.clg=univ.coEdColleges[randomCoEdCollegeNum];
         }
-        }
-        else
-        {
-        	this.collegeNum=univ.collegeNum;
-            this.randomCollegeNum = GetRandomNo.getRandomFromRange(0,collegeNum - 1);
-            this.clg=univ.colleges[randomCollegeNum];   	
-        }
+        
         this.deptNum=clg.deptNum;
         this.randomDeptNum=GetRandomNo.getRandomFromRange(0,deptNum-1);
         this.dept=clg.depts[randomDeptNum];
@@ -122,7 +116,8 @@ public class GetRandomPerson {
         return person;
     }
     public String getRandomExternalProfessor( University universities[], int univIndex){ //for advisors, for external comittee{
-
+    	//this.gen=gen;
+        
         if(univIndex !=0 && univIndex!= (universities.length-1)) {
             if (GetRandomNo.getRandomFromRange(0,1) == 0) {
                 otherUnivIndex = GetRandomNo.getRandomFromRange(0,univIndex - 1);
@@ -141,9 +136,11 @@ public class GetRandomPerson {
         {
             otherUnivIndex=univIndex; //if 1 university then external advisors cant be assigned so professors from same univrsity
         }
-
+        this.profile=universities[otherUnivIndex].profile;
+        //System.out.println(profile);
         this.otherUniv=universities[otherUnivIndex];
-
+        //System.out.println(profile);
+       // if (profile.matches("DL") || profile.matches("RL")) {
         if(GetRandomNo.getRandomFromRange(0,10)==0) {
             this.womenCollegeNum = otherUniv.womenCollegeNum;
             this.randomWomenCollegeNum = GetRandomNo.getRandomFromRange(0,womenCollegeNum - 1);
@@ -154,6 +151,8 @@ public class GetRandomPerson {
             this.randomCoEdCollegeNum = GetRandomNo.getRandomFromRange(0,coEdCollegeNum - 1);
             this.clg=otherUniv.coEdColleges[randomCoEdCollegeNum];
         }
+        
+
         this.randomDeptNum=GetRandomNo.getRandomFromRange(0,clg.deptNum-1);
         this.dept=clg.depts[randomDeptNum];
             this.person = dept.fullProfessors[GetRandomNo.getRandomFromRange(0,dept.fullProfessorNum - 1)].employeeInstance;
@@ -168,7 +167,7 @@ public class GetRandomPerson {
         this.randomUnivNum=GetRandomNo.getRandomFromRange(0,univNum-1);
 
         this.univ=universities[randomUnivNum];
-        if ((profile.matches("DL")) || (profile.matches("RL"))) {
+       // if ((profile.matches("DL")) || (profile.matches("RL"))) {
         if(GetRandomNo.getRandomFromRange(0,10)==0) {
             this.womenCollegeNum = univ.womenCollegeNum;
             this.randomWomenCollegeNum = GetRandomNo.getRandomFromRange(0,womenCollegeNum - 1);
@@ -179,13 +178,7 @@ public class GetRandomPerson {
             this.randomCoEdCollegeNum = GetRandomNo.getRandomFromRange(0,coEdCollegeNum - 1);
             this.clg=univ.coEdColleges[randomCoEdCollegeNum];
         }
-        }
-        else
-        {
-        	this.collegeNum=univ.collegeNum;
-            this.randomCollegeNum = GetRandomNo.getRandomFromRange(0,collegeNum - 1);
-            this.clg=univ.colleges[randomCollegeNum];   	
-        }
+      
         this.deptNum=clg.deptNum;
         this.randomDeptNum=GetRandomNo.getRandomFromRange(0,deptNum-1);
         this.dept=clg.depts[randomDeptNum];

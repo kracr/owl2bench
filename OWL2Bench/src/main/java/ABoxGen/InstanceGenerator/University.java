@@ -1,6 +1,6 @@
-/* Each University has a number of Colleges (Both women and co-ed) and research groups. the number of colleges and research groups is based on a random number whose default range is specied in generator.java */ 
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/** For each University instance, College instances (Both Women and Co-Ed) and Research Groups are generated. 
+ * And Basic hasName, hasCode data property assertion axioms are generated
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -16,10 +16,8 @@ public class University {
     ResearchGroup[] researchGroups;
     HashSet<String> personPerUniversity = new HashSet();
     HashSet<String> universityName;
-
+   
     String profile;
-
-
 
     public University(Generator gen, int univIndex) {
         this.gen = gen;
@@ -35,23 +33,21 @@ public class University {
         universityName.add(cityName);
         this.univName= "U" + univIndex + " University of " + cityName;//from data dictionary eg. University of London
         System.out.println( univName);
-      
+     
         //:U0 rdf:type :University
         gen.classAssertion(gen.getClass("University"),gen.getNamedIndividual(univInstance) );
         //:U0 :hasName :University of XYZ
         gen.dataPropertyAssertion(gen.getDataProperty("hasName"),gen.getNamedIndividual(univInstance),gen.getLiteral(univName));
         //:U0 :hasCode :U0
         gen.dataPropertyAssertion(gen.getDataProperty("hasCode"),gen.getNamedIndividual(univInstance),gen.getLiteral(univCode));
-        //random research group between 10 and 20 (default range)
+        //random research group from the defined range
         this.researchGroupNum= GetRandomNo.getRandomFromRange(gen.researchGroupNum_Min,gen.researchGroupNum_Max);
         this.researchGroups = new ResearchGroup[this.researchGroupNum];
-        //random College number between 15 and 25 (default range)
+        //random College number from the defined range
         this.collegeNum = GetRandomNo.getRandomFromRange(gen.collegeNum_Min,gen.collegeNum_Max);
+      
         
-        //since WomenCollege class belongs to only RL and DL TBox and not EL and QL
-        if (profile.matches("DL") || profile.matches("RL")) {
-        
-        //random women college number between 2 and 4 (default range)
+        //random women college number from the defined range
         this.womenCollegeNum = GetRandomNo.getRandomFromRange(gen.womenCollegeNum_Min, gen.womenCollegeNum_Max);
         //coed colleges = total colleges- women colleges
         this.coEdCollegeNum = collegeNum- womenCollegeNum ;
@@ -67,15 +63,7 @@ public class University {
             for(i = 0; i < this.coEdCollegeNum; ++i) {
                 this.coEdColleges[i] = new College(this, i,false);
             }
-            
-        }
-        else
-        {
-        	this.colleges=new College[this.collegeNum];
-        	for(i = 0; i < this.collegeNum; ++i) {
-                this.colleges[i] = new College(this, i,false);
-            }
-        }
+
         	
         for(i = 0; i < this.researchGroupNum; ++i) {
             this.researchGroups[i] = new ResearchGroup(this, i);

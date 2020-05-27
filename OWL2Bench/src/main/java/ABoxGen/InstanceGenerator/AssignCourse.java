@@ -1,6 +1,5 @@
-//Assign courses to each student, faculty and teaching assistants
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/** Assign courses to each student, faculty and teaching assistants
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -14,7 +13,7 @@ public class AssignCourse {
     College clg;
     Department dept;
     GetRandomCourse getRandomCourse;
-
+    //ConfigFile configFile;
     int numOfElectivesOutsideDept, numOfElectivesWithInDept,numOfElectives,courseOutsideDepartment,courseWithInDepartment;
     HashSet<String> hash1, hash2, hash3;
 
@@ -23,7 +22,7 @@ public class AssignCourse {
         this.gen = college.gen;
         this.clg = college;
         this.getRandomCourse = new GetRandomCourse();
-       
+        //configFile=new ConfigFile();
         for (int i = 0; i < college.deptNum; ++i) {
             dept = college.depts[i];
             //for ug students

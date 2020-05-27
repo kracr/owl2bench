@@ -1,4 +1,4 @@
-//Code that checks the profile(EL, QL, RL, DL) of a given Ontology. Nothing to do with the benchmark
+/**Code that checks the profile(EL, QL, RL, DL) of a given Ontology. Nothing to do with the OWL2Bench ABox generation*/
 
 package ABoxGen.InstanceGenerator;
 
@@ -32,7 +32,7 @@ public class Profile {
 
         int i = verbose ? 1 : 0;
 
-        OWLOntology ontology = OWLManager.createOWLOntologyManager().loadOntologyFromOntologyDocument(new File("C:\\Users\\Gunjan\\Documents\\GitHub\\OWL2Bench\\OWL2Bench\\OWL2RL-1-output.owl"));
+        OWLOntology ontology = OWLManager.createOWLOntologyManager().loadOntologyFromOntologyDocument(new File("C:\\Users\\Gunjan\\Documents\\GitHub\\OWL2Bench\\owl2bench\\UNIV-BENCH-OWL2RL.owl"));
         Map<String, Object> metrics = new LinkedHashMap<>();
         Stream.of(new OWL2DLProfile(), new OWL2RLProfile(), new OWL2ELProfile(), new OWL2QLProfile())
                 .forEach(profile -> {

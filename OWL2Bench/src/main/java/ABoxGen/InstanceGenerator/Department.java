@@ -1,6 +1,6 @@
-/*Each department has a certain number of Student, Faculties and courses.range is specified in generator.java */
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/**for each Department Instance, number of Student, Faculties and courses is fixed and then
+ * appropriate axioms are generated that help the reasoner to infer instances of Student, Faculty , Course etc type of Classes
+ * * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -22,7 +22,7 @@ public class Department {
     Program ugProgram,pgProgram,phdProgram;
     HashSet<String> personPerUniversity;
     String chair;
-   
+    //ConfigFile configFile;
 
     public Department(College college,int deptIndex,Boolean womenStudents) {
     	this.profile=college.profile;
@@ -32,7 +32,8 @@ public class Department {
         this.gen = college.gen;
         this.womenStudents = womenStudents;
         this.collegeDiscipline = college.collegeDiscipline;
-       
+        //configFile=new ConfigFile();
+
         //employee count
         this.assistantProfessorNum = GetRandomNo.getRandomFromRange(gen.assistantProfessorNum_Min,gen.assistantProfessorNum_Max);
         this.associateProfessorNum = GetRandomNo.getRandomFromRange(gen.associateProfessorNum_Min,gen.associateProfessorNum_Max);

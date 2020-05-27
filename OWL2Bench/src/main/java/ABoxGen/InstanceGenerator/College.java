@@ -1,6 +1,7 @@
-/* Each College has a number of Departments. the number of departments is based on a random number whose default range is specified in generator.java */
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/** For each College, Department instances are generated.
+ * Also generates Object Property Assertion Axioms that link a College Instance to University Instance.
+ * Once Department instances (and its related axioms), then one of the random professor from all the departments is selected as the dean.
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -13,27 +14,28 @@ public class College {
     String collegeCode,dean;
     Department[] depts;
     Generator gen;
-    boolean isWomanCollege;     
+    boolean isWomenCollege;     
     String  collegeInstance,profile,collegeName;
     String collegeDiscipline;
     HashSet<String> personPerUniversity;
     AssignCourse assignCourse;
     GetRandomPerson getRandomPerson;
-   
+    
 
-    public College(University university, int collegeIndex, Boolean isWomanCollege) {
+    public College(University university, int collegeIndex, Boolean isWomenCollege) {
         this.personPerUniversity=university.personPerUniversity;
         this.profile=university.profile;
-     
+      
         this.univIndex = university.univIndex;
         this.collegeIndex = collegeIndex;
         this.gen = university.gen;
-        this.isWomanCollege = isWomanCollege;
+        this.isWomenCollege = isWomenCollege;
         this.collegeDiscipline= gen.TOKEN_CollegeDiscipline[GetRandomNo.getRandomFromRange(0, 4)];
         getRandomPerson=new GetRandomPerson();
         // if college is women's college
-        if (this.isWomanCollege) {
-            this.collegeName = "Women College of " + collegeDiscipline;
+        if (this.isWomenCollege) {
+        	//For College Names such as Women's College of Engineering (Based on College Discipline)
+            this.collegeName = "Women's College of " + collegeDiscipline;
             this.collegeInstance = "U" + this.univIndex + "WC" + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "WC" + this.collegeIndex;
             gen.classAssertion(gen.getClass("College"), gen.getNamedIndividual(collegeInstance));
@@ -50,13 +52,14 @@ public class College {
 
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
-            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
+           
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-            }
+        
         }
 
         else {
+        	//College of Management
         	this.collegeName = "College of " + collegeDiscipline;
         	this.collegeInstance = "U" + this.univIndex + "C" + this.collegeIndex;
             this.collegeCode = "U" + this.univIndex + "C" + this.collegeIndex;
@@ -73,13 +76,10 @@ public class College {
             }
             //Assign Courses
             this.assignCourse=new AssignCourse(this);
-            if ((profile.matches("DL")) || (profile.matches("RL")) || (profile.matches("EL"))) {
+           
             dean = getRandomPerson.getRandomInternalProfessor(depts[GetRandomNo.getRandomFromRange(0,deptNum-1)]);
             gen.objectPropertyAssertion(gen.getObjectProperty("hasDean"),gen.getNamedIndividual(collegeInstance),gen.getNamedIndividual(dean));
-            }
+          
         }
     }
 }
-//college has discipline and deptt of that clg will have deptt from sublasses of college discpline
-//For eg colg is managmnt and engineering . so deptt will be dept of cse dept of ece dpett of marketing etc
-//and for those deptt students can have major course that only

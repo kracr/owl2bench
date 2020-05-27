@@ -1,6 +1,5 @@
-//assigns RAs and project name to each research group
-/* The default values for random range (min and max for each parameter) are specified in the generator.java file. 
- In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the ConfigFile.java file */
+/**assigns RAs and project name to each research group
+* In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
 
@@ -10,9 +9,9 @@ public class ResearchGroup {
     Generator gen;
     Person person;
     int RANum;
-
+    //ConfigFile configFile;
     public ResearchGroup(University university,int index) {
-       
+        //configFile=new ConfigFile();
         this.profile=university.profile;
         this.researchGroupInstance = university.univInstance + "RG" + index;
         this.researchProjectInstance =  researchGroupInstance+ "RP";
