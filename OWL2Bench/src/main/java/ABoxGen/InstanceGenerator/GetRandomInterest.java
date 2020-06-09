@@ -1,4 +1,5 @@
-/**gets random interest from all the available interests
+/**gets random interest from all the available interests.
+ * These Interest instances are linked using likes, dislikes, isCrazyAbout object properties. 
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;

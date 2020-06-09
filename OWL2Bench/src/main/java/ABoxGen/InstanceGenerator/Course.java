@@ -1,4 +1,5 @@
 /**generates Courses offered in Each Department
+ * Links Course instances using object properties 'offerCourse' and 'isTaughtBy' with Department and Faculty instances, respectively.
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;

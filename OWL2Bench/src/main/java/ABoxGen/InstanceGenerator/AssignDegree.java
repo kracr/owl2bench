@@ -1,4 +1,5 @@
-/**Adds Object Property Assertion axioms of type hasDegreeFrom for each person(faculty,staff and students) 
+/**Adds Object Property Assertion axioms of type hasDegreeFrom for each person(faculty,staff and students).
+ * This part helps in ineferring inverse relationship 'hasAlumni'
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;

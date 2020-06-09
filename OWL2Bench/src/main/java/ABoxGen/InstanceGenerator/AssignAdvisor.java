@@ -1,5 +1,5 @@
-/** Assigns Advisor to each student. Advisor could be an internal advisor (from the same department as student) or 
- * external advisor( from a different department within the same college or from different college with in the same 
+/** Assigns Advisor to each student. Advisor could be an internal advisor (any professor from the same department as student) or 
+ * external advisor( any professor from a different department within the same college or from different college with in the same 
  * university or from another university ). 
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 

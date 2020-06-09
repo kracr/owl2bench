@@ -1,5 +1,5 @@
 /**gets a random faculty, internal professor, external professor, student or staff instance when required for other axioms. 
-* For. Eg. to assign advisor, or to assign hasSameHomeTownWith property, evaluationcommittee etc
+* For. Eg. to assign advisor, knows, or to assign hasSameHomeTownWith object property,etc
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;

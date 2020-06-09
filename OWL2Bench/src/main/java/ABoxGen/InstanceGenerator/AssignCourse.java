@@ -1,4 +1,7 @@
-/** Assign courses to each student, faculty and teaching assistants
+/** Assign courses to each student, faculty and teaching assistants. For students, MAn/Woman instances are linked using property 'takesCourse,
+ * while for Faculty/TeachingAssistants, Man/Woman instances are linked using property 'teachesCourse'.
+ * Different Course instances are offered by each Department. Student/Faculty/TeachingAssistants can be linked to course 
+ * within the department or outside the department.
 * In order to modify the min-max range,that is, to modify the density of each node, user can make changes in the config.properties file */
 
 package ABoxGen.InstanceGenerator;
@@ -17,7 +20,7 @@ public class AssignCourse {
     int numOfElectivesOutsideDept, numOfElectivesWithInDept,numOfElectives,courseOutsideDepartment,courseWithInDepartment;
     HashSet<String> hash1, hash2, hash3;
 
-    //student takes 4 mandatory ug courses, and minimum 2 elective courses
+    //student takes 4 mandatory UG courses, and minimum 2 elective courses
     public AssignCourse(College college) {
         this.gen = college.gen;
         this.clg = college;
