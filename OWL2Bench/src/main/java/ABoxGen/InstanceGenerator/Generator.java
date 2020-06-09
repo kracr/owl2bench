@@ -39,68 +39,68 @@ import org.semanticweb.owlapi.model.OWLDocumentFormat;
 
 public class Generator {
     String ontologyFormat;
-    int publicationNum_Min=150; //per university
-    int publicationNum_Max=200; //per university
-    int researchGroupNum_Min=4;
-    int researchGroupNum_Max=8;
-    int collegeNum_Min=5;
-    int collegeNum_Max=10;
-    double ratio_womenCollege=0.2;
-    int womenCollegeNum_Min=(int)(collegeNum_Min*ratio_womenCollege);
-    int womenCollegeNum_Max=(int)(collegeNum_Max*ratio_womenCollege);
-    int deptNum_Min=3;
-    int deptNum_Max=5;
-    int RANum_Min=4;
-    int RANum_Max=6;
-    int progNum_Min=1;
-    int progNum_Max=3;
-    int ugStudentNum_Min=30;
-    int ugStudentNum_Max=45;
-    int pgStudentNum_Min=15;
-    int pgStudentNum_Max=20;
-    int phdStudentNum_Min=2;
-    int phdStudentNum_Max=5;
-    int ugCourseNum_Min=10;
-    int ugCourseNum_Max=15;
-    int electiveCourseNum_Min=10;
-    int electiveCourseNum_Max=15;
-    int assistantProfessorNum_Min=8;
-    int assistantProfessorNum_Max=12;
-    int associateProfessorNum_Min=5;
-    int associateProfessorNum_Max=10;
-    int fullProfessorNum_Min=5;
-    int fullProfessorNum_Max=10;
-    int visitingProfessorNum_Min=2;
-    int visitingProfessorNum_Max=5;
-    int lecturerNum_Min=5;
-    int lecturerNum_Max=10;
-    int postDocNum_Min=2;
-    int postDocNum_Max=7;
-    int systemStaffNum_Min=2;
-    int systemStaffNum_Max=5;
-    int clericalStaffNum_Min=2;
-    int clericalStaffNum_Max=8;
-    int otherStaffNum_Min=15;
-    int otherStaffNum_Max=25;
-    int internalAdvisorNum_Min=1;
-    int internalAdvisorNum_Max=2;
-    int externalAdvisorNum_Min=0;
-    int externalAdvisorNum_Max=2;
-    int numOfElectives_Min=1;
-    int numOfElectives_Max=4;
-    int numOfElectivesOutsideDept_Min=1;
-    int sameHomeTownNum_Min=0;
-    int sameHomeTownNum_Max=2;
-    int knowsNum_Min=0;
-    int knowsNum_Max=2;
-    int likesNum_Min=0;
-    int likesNum_Max=4;
-    int lovesNum_Min =0;
-    int lovesNum_Max=1;
-    int isCrazyAboutNum_Min=0;
-    int isCrazyAboutNum_Max=1;
-    int dislikesNum_Min=0;
-    int dislikesNum_Max=1;
+    int publicationNum_Min; //per university
+    int publicationNum_Max; //per university
+    int researchGroupNum_Min;
+    int researchGroupNum_Max;
+    int collegeNum_Min;//=5;
+    int collegeNum_Max;//=10;
+    double ratio_womenCollege;//=0.2;
+    int womenCollegeNum_Min;//=(int)(collegeNum_Min*ratio_womenCollege);
+    int womenCollegeNum_Max;//=(int)(collegeNum_Max*ratio_womenCollege);
+    int deptNum_Min;
+    int deptNum_Max;
+    int RANum_Min;
+    int RANum_Max;
+    int progNum_Min;
+    int progNum_Max;
+    int ugStudentNum_Min;
+    int ugStudentNum_Max;
+    int pgStudentNum_Min;
+    int pgStudentNum_Max;
+    int phdStudentNum_Min;
+    int phdStudentNum_Max;
+    int ugCourseNum_Min;
+    int ugCourseNum_Max;
+    int electiveCourseNum_Min;
+    int electiveCourseNum_Max;
+    int assistantProfessorNum_Min;
+    int assistantProfessorNum_Max;
+    int associateProfessorNum_Min;
+    int associateProfessorNum_Max;
+    int fullProfessorNum_Min;
+    int fullProfessorNum_Max;
+    int visitingProfessorNum_Min;
+    int visitingProfessorNum_Max;
+    int lecturerNum_Min;
+    int lecturerNum_Max;
+    int postDocNum_Min;
+    int postDocNum_Max;
+    int systemStaffNum_Min;
+    int systemStaffNum_Max;
+    int clericalStaffNum_Min;
+    int clericalStaffNum_Max;
+    int otherStaffNum_Min;
+    int otherStaffNum_Max;
+    int internalAdvisorNum_Min;
+    int internalAdvisorNum_Max;
+    int externalAdvisorNum_Min;
+    int externalAdvisorNum_Max;
+    int numOfElectives_Min;
+    int numOfElectives_Max;
+    int numOfElectivesOutsideDept_Min;
+    int sameHomeTownNum_Min;
+    int sameHomeTownNum_Max;
+    int knowsNum_Min;
+    int knowsNum_Max;
+    int likesNum_Min;
+    int likesNum_Max;
+    int lovesNum_Min;
+    int lovesNum_Max;
+    int isCrazyAboutNum_Min;
+    int isCrazyAboutNum_Max;
+    int dislikesNum_Min;
+    int dislikesNum_Max;
     String[] TOKEN_CollegeDiscipline= new String[]{"Engineering", "FineArts", "HumanitiesAndSocial","Management", "Science"};
     String[] TOKEN_Engineering = new String[]{"AeronauticalEngineering","BiomedicalEngineering","ChemicalEngineering","CivilEngineering","ComputerEngineering","ElectricalEngineering","IndustryEngineering","MaterialScienceEngineering","MechanicalEngineering","PetroleumEngineering"};
     String[] TOKEN_Management = new String[]{"DesignManagement", "FinancialAndAccountingManagement", "HumanResourceManagement", "MarketingManagement", "OperationsManagement", "ProjectManagement", "PublicRelationsManagement", "SalesManagement", "SupplyChainManagement", "RiskManagement"};
@@ -124,7 +124,8 @@ public class Generator {
     InterlinkedProperties interlinks;
     AssignAdvisor assignAdvisor;
     AssignDegree assignDegree;
-  
+    
+    
     HashSet<String> universityName = new HashSet();
     HashMap<Integer,String> map1 = new HashMap<>();
     HashMap<Integer,String> map2 = new HashMap<>();
@@ -136,8 +137,8 @@ public class Generator {
     public static void main(String[] args) {
     	//input 
         int univNum=1;
-        int seed =1; //For about 50K triple Seed value: QL=1 (51K), EL=2 (52K),  DL/RL=3 (48K)		      
-        String profile= "EL";  
+        int seed=1;	      
+        String profile="EL";  
         
         if(args.length==3)
         {
@@ -208,8 +209,9 @@ public class Generator {
             this.researchGroupNum_Max=Integer.parseInt(prop.getProperty("researchGroupNum_Max"));
             this.collegeNum_Min=Integer.parseInt(prop.getProperty("collegeNum_Min"));
             this.collegeNum_Max=Integer.parseInt(prop.getProperty("collegeNum_Max"));
-            this.womenCollegeNum_Min=(int)(collegeNum_Min*ratio_womenCollege);
-            this.womenCollegeNum_Max=(int)(collegeNum_Max*ratio_womenCollege);
+            this.ratio_womenCollege=Double.parseDouble(prop.getProperty("ratio_womenCollege"));
+            this.womenCollegeNum_Min=(int)(this.collegeNum_Min*this.ratio_womenCollege);
+            this.womenCollegeNum_Max=(int)(this.collegeNum_Max*this.ratio_womenCollege);
             this.RANum_Min=Integer.parseInt(prop.getProperty("RANum_Min"));
             this.RANum_Max=Integer.parseInt(prop.getProperty("RANum_Max"));
             this.sameHomeTownNum_Min=Integer.parseInt(prop.getProperty("sameHomeTownNum_Min"));
