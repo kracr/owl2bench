@@ -5,13 +5,15 @@ package ABoxGen.InstanceGenerator;
 public class Employee {
     Generator gen;
     Person person;
-    String employeeInstance,departmentInstance,profile ;
+    String employeeInstance,departmentInstance,profile, researchInterest ;
 
     public Employee(Department department,int empIndex, String employeeType, String type) {
         this.gen=department.gen;
         this.profile=department.profile;
         this.departmentInstance=department.departmentInstance;
         this.employeeInstance=departmentInstance+ type + empIndex;
+        this.researchInterest=department.collegeDiscipline+ "Topic" + empIndex;
+        //System.out.println(researchInterest);
         department.personPerUniversity.add(employeeInstance);
         //gen.classAssertion(gen.getClass(employeeType),gen.getNamedIndividual(employeeInstance));
         this.person=new Person(this , employeeInstance);
@@ -19,7 +21,7 @@ public class Employee {
         if(employeeType=="FullProfessor" || employeeType=="AssistantProfessor" || employeeType=="AssociateProfessor" || employeeType=="VisitingProfessor" || employeeType=="PostDoc" || employeeType=="Lecturer" )
         {
         	//research interest for each faculty
-            gen.dataPropertyAssertion(gen.getDataProperty("hasResearchInterest"),gen.getNamedIndividual(employeeInstance),gen.getLiteral("SomeResearchTopic"));
+            gen.dataPropertyAssertion(gen.getDataProperty("hasResearchInterest"),gen.getNamedIndividual(employeeInstance),gen.getLiteral(researchInterest));
         }
     }
 }
