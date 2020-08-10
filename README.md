@@ -67,15 +67,17 @@ OWL2Bench consists of twenty-two SPARQL queries to test the query performance of
 <a name="exe"></a>
 ## 6.1. Direct execution using executable jar (with default configurations) :
 
-We have provided an executable jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities**, **Required OWL 2 Profile**, and Seed (optional). 
+We have provided an executable jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities** (mandatory), **Required OWL 2 Profile** (mandatory), and Seed (optional). 
 
 For eg. : 
 
-java -jar OWL2Bench.jar 1 DL 1 (where 1 is the number of universities,  DL is OWL 2 profile and 1 is the default seed value)
+java -jar OWL2Bench.jar 10 EL 20 (where 10 is the number of universities,  EL is OWL 2 profile and 20 is the seed value)
+
+java -jar OWL2Bench.jar 1 DL (where 1 is the number of universities,  DL is OWL 2 profile and the default seed value)
          
 Number of universities makes the ABox scalable. By default, the number of ABox axioms for 1 university is approximately 50,000 that reaches upto 14,000,000 for 200 universities.      
-
 To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. 
+
 
 <a name="code"></a>
 ## 6.2. Using Source Code (with or without default configurations) :
@@ -84,11 +86,11 @@ We are also providing the java code (if user wants to change the configurations/
            
 **Note:** 
 
-The output files are stored in files with names such as "OWL2"+ Profile + "-" + Number of Universities + ".owl" . 
+Since we are providing the seed value as one of the inputs to the ABox generation algorithm along with the number of Universities and the desired OWL2 profile, the same set of instances is generated if the seed value remains the same across multiple runs. If the user does not specify the seed value then the default seed value of 1 will be used. Similar principle was used in UOBM as well.
 
-For example. On executing using the arguments given in examples above, output files would be OWL2DL-1.owl, OWL2QL-1.owl, OWL2EL-10.owl, OWL2RL-100.owl. 
+The output files are stored in files with names such as "OWL2"+ Profile + "-" + Number of Universities + ".owl" . For example. OWL2DL-1.owl, OWL2QL-1.owl, OWL2EL-10.owl, OWL2RL-100.owl. 
 
-The datasets used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 .
+The datasets used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 . The datasets were generated using default seed value of 1.
 
 <a name="future"></a>
 ## 7. Future Work
