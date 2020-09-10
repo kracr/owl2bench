@@ -43,11 +43,11 @@ Finished Writing to file /path/OWL2EL-1.owl
 
 ---------------------------------------------
 
-**Table 3** in the paper reports the size of generated axioms. Note that the size of ABox and TBox axioms are given separately in the table. While when you execute the code, the line on the output console 'Total Logical Axiom Count=50485' is the combined TBox + ABox axiom count.
+**Table 3** in the paper reports the size of generated axioms. Note that the size of ABox and TBox axioms are given separately in the table. While on executing the code, the line on the output console 'Total Logical Axiom Count=50485' is the combined TBox + ABox axiom count.
 
 
 
-The datasets generated (mentioned-above) using OWL2Bench was then used to evaluate the performance of:
+The datasets generated (mentioned-above) using OWL2Bench were then used to evaluate the performance of:
 
 1. Six ontology reasoners (ELK, HermiT, JFact, Openllet, Pellet, Konclude) with respect to the time taken for performing three major reasoning tasks, namely, **consistency checking**, **classification**, and **realisation** (**Table 4 and 5** in the paper). 
 
@@ -56,7 +56,7 @@ The datasets generated (mentioned-above) using OWL2Bench was then used to evalua
 
 ## Details for Table 4 and 5 :
 
-The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code for **HermiT**, **Openllet**, **Pellet**, and **JFact** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Tasks could be C (for Consistency Checking), R (for Realisation), CT (for Classification Time). For example: To run each reasoner task from command line, 
+The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code for **[HermiT](https://github.com/kracr/owl2bench/tree/master/Experiments/hermit)**, **[Openllet](https://github.com/kracr/owl2bench/tree/master/Experiments/openllet)**, **[Pellet](pellet2)**, and **[JFact](jfact)** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Tasks could be C (for Consistency Checking), R (for Realisation), CT (for Classification Time). For example: To run each reasoner task from command line, 
 
 mvn compile
 
@@ -64,8 +64,9 @@ mvn install
 
 mvn exec:java -Dexec.mainClass=debug.hermit.Hermit -Dexec.args="input_filepath/OWL2EL.owl C"
 
-For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. Also, for ELK and Konclude OWL Functional syntax was used. The RDF/XML syntax was converted to OWL/Functional using the file *convert.java* (already present in the directory). For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl --classify
+For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl --classify
 
+Also, for ELK and Konclude OWL Functional syntax was used. The RDF/XML syntax was converted to OWL/Functional using the file *[convert.java](https://github.com/kracr/owl2bench/tree/master/Experiments/convert)* (already present in the directory).
 
 ## Details for Table 6 and 7 : 
 
@@ -96,7 +97,7 @@ graphdb -Xms24g -Xmx24g
 **Query Execution:** SPARQL queries were executed from GraphDB workbench.
 
 
-If required, the datasets that were used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68. The datasets were generated using default settings and seed value of 1. 
+If required, all the datasets that were used for the experiments are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68. The datasets were generated using default settings and all are in RDF/XML format. 
 
 
 

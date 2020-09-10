@@ -13,7 +13,7 @@ Property assertion axioms are created using these instances. For example, an obj
 
 ## Usage
 
-The user must have java and maven installed in the system. 
+The user must have java and maven installed in the system. The user needs to provide two inputs, the number of universities and the OWL 2 profile (EL, QL, RL, DL) of interest. The ABox axioms are generated using OWL2Bench code, complying with the schema defined in the TBox of the selected profile. The size of the ABox depends on the number of universities. The final dataset on which the reasoners are evaluated consists of both TBox and ABox axioms.
 
 # 1. Direct execution using executable jar :
 
