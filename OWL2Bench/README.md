@@ -11,7 +11,9 @@ The number of instances that are generated for each class is selected automatica
 
 Property assertion axioms are created using these instances. For example, an object property isDepartmentOf links a Department instance to a College instance. Similarly, a data property hasName is used to connect a department name to a Department instance. The reasoner uses all such assertion axioms to draw inferences. The code links a Man/Woman instances with a Department instance using the object property 'worksFor'. Using this, the reasoner can infer all the instances of type Employee since an Employee is a Person who works for some organization (Person is a union of Man and Woman, Department is subclassOf Organization, etc). Similarly all the other classes and properties. The number of instances of each class (other than University) and the number of connections between all the instances are again selected automatically and randomly from the range specified in the configuration file. 
 
-##Usage
+## Usage
+
+The user must have java and maven installed in the system. 
 
 # 1. Direct execution using executable jar :
 

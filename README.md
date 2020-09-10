@@ -30,11 +30,11 @@ The hierarchy among some of the classes, including the relations between them, i
 
 <a name="repo"></a>
 ## 2. About the Repository
-The project repository consists of 2 main directories: **OWL2Bench** and **Experiments**. 
+The project repository consists of 2 main directories: **[OWL2Bench!](https://github.com/kracr/owl2bench/tree/master/OWL2Bench)** and **[Experiments!](https://github.com/kracr/owl2bench/tree/master/Experiments)**.
 
 **OWL2Bench** is a java source code directory that generates the varying size ABox of our benchmark (see section [ 6.2 ](#code) for source-code usage instructions). 
 
-**Experiments** directory consists of details about the experiments that were performed to compare the reasoning and querying performance of several OWL 2 Reasoners (as reported in our paper accepted at ISWC'20 Resources Track).
+**Experiments** directory consists of details about the experiments that were performed to compare the reasoning and querying performance of several OWL 2 Reasoners (as reported in our paper accepted at ISWC'20 Resources Track). 
 
 The repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, and an executable jar file : **OWL2Bench.jar**. 
 
@@ -67,10 +67,13 @@ OWL2Bench consists of twenty-two SPARQL queries to test the query performance of
 
 <a name="usage"></a>
 ## 6. Usage
+
+The user must have java and maven installed in the system. 
+
 <a name="exe"></a>
 ## 6.1. Direct execution using executable jar :
 
-We have provided an executable jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities** (mandatory), **Required OWL 2 Profile** (mandatory), and Seed (optional). 
+We have provided an executable java jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities** (mandatory), **Required OWL 2 Profile** (mandatory), and Seed (optional). 
 
 For eg. : 
 
@@ -85,7 +88,7 @@ To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL
 <a name="code"></a>
 ## 6.2. Using Source Code :
 
-We are also providing the java code for ABox generation. User can download the project repository OWL2Bench. Extract it and save it in a folder. Open command line and change to the directory that contains the pom.xml of the project. Execute the maven command:
+We are also providing the code for ABox generation. User can download the project repository OWL2Bench. Extract it and save it in a folder. Open command line and change to the directory that contains the pom.xml of the project. Execute the maven command:
 
 mvn compile
 
