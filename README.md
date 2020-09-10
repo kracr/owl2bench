@@ -60,7 +60,7 @@ OWL2Bench consists of twenty-two SPARQL queries to test the query performance of
 ## 2. About the Repository
 The project repository consists of 2 main directories: **[OWL2Bench](https://github.com/kracr/owl2bench/tree/master/OWL2Bench)** and **[Experiments](https://github.com/kracr/owl2bench/tree/master/Experiments)**.
 
-**OWL2Bench** is a java source code directory that generates the varying size datasets (TBox + ABox) to compare the reasoning and querying performance of OWL 2 Reasoners (see section [ 6.2 ](#code) for source-code usage instructions). 
+**OWL2Bench** is a java source code directory that generates the varying size datasets (TBox + ABox) to compare the reasoning and querying performance of OWL 2 Reasoners (see section [ 3.2 ](#code) for source-code usage instructions). 
 
 **Experiments** directory consists of details about the experiments that were reported in our paper accepted at ISWC'20 Resources Track. 
 
@@ -90,7 +90,7 @@ To execute **OWL2Bench.jar**, make sure the TBox for all profiles (UNIV-BENCH-OW
 <a name="code"></a>
 ## 3.2. Using Source Code :
 
-We are also providing the java source code for ABox generation. User can download the project repository OWL2Bench. Extract it and save it in a folder. Open command line and change to the directory that contains the pom.xml of the project. Execute the maven command:
+We are also providing the java source code for ABox generation. User can download the project repository owl2bench-master. Extract it and save it in a folder. There is a maven project OWL2Bench inside the owl2bench-master directory. Open command line and change to the directory that contains the pom.xml of the project OWL2Bench. Execute the maven command:
 
 mvn compile
 
