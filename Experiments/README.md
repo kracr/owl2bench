@@ -69,7 +69,7 @@ For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/extern
 
 ## Details for Table 6 and 7 : 
 
-We compared GraphDB and Stardog in terms of their loading time (Table 6) and query response time (Table 7). We did not put limits on RAM usage while Loading of axioms for both the query engines. However, for Query Response time, we kept a time-out of 10minutes and RAM limit 24GB.
+We compared GraphDB and Stardog in terms of their loading time (Table 6) and query response time (Table 7). We did not put limits on RAM usage while loading axioms for both the query engines. However, for Query Response time, we kept a time-out of 10minutes and RAM limit 24GB.
 
 ----------------------------
 
