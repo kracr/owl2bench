@@ -30,7 +30,7 @@ The hierarchy among some of the classes, including the relations between them, i
 
 <a name="repo"></a>
 ## 2. About the Repository
-The project repository consists of 2 main directories: **[OWL2Bench!](https://github.com/kracr/owl2bench/tree/master/OWL2Bench)** and **[Experiments!](https://github.com/kracr/owl2bench/tree/master/Experiments)**.
+The project repository consists of 2 main directories: **[OWL2Bench](https://github.com/kracr/owl2bench/tree/master/OWL2Bench)** and **[Experiments](https://github.com/kracr/owl2bench/tree/master/Experiments)**.
 
 **OWL2Bench** is a java source code directory that generates the varying size ABox of our benchmark (see section [ 6.2 ](#code) for source-code usage instructions). 
 
