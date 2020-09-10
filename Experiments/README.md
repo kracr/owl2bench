@@ -7,6 +7,8 @@ We use GraphDB 9.0.08 and Stardog 7.0.27 for running the SPARQL queries. GraphDB
 queries and OWL 2 QL, OWL 2 RL profiles (but not OWL 2 EL and OWL 2 DL). Stardog's underlying reasoner is Pellet and hence it supports ontologies of
 all the profiles including OWL 2 DL. For the GraphDB we used its LoadRDF tool that does offline loading and is mainly used for loading large files. We compare these two systems in terms of their loading time and query response time.
 
+The datasets used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 . The datasets were generated using default seed value of 1.
+
 
 
            
