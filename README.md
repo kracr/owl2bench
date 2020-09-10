@@ -2,35 +2,41 @@
 This document provides documentation for the first version of our benchmark OWL2Bench. OWL2Bench can be used to benchmark three aspects of the reasoners - support for OWL 2 language constructs, scalability in terms of ABox size, and the query performance.
 
 # Table of Contents
-1. [ Introduction. ](#intro)
+1. [ Introduction ](#intro)
 
-2. [ About the Repository. ](#repo)
+2. [ About the Repository ](#repo)
 
-3. [ TBox Details. ](#tbox)
+3. [ TBox Details ](#tbox)
 
-4. [ ABox Details. ](#abox)
+4. [ ABox Details ](#abox)
 
-5. [ SPARQL Query Details. ](#sparql)
+5. [ SPARQL Query Details ](#sparql)
 
-6. [ Usage. ](#usage)
+6. [ Usage ](#usage)
 
-   6.1 [ Direct execution using executable jar (with default configurations). ](#exe)
+   6.1 [ Direct execution using executable jar (with default configurations) ](#exe)
    
-   6.2 [ Using Source Code (with or without default configurations). ](#code)
+   6.2 [ Using Source Code (with or without default configurations) ](#code)
    
-7. [ Future Work. ](#future)
-8. [ References. ](#references)
+7. [ Future Work ](#future)
+8. [ References ](#references)
 <a name="intro"></a>
 ## 1. Introduction
-OWl 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL 2 EL, OWl 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several OWL 2 reasoners (such as Hermit, JFact, Openllet, Pellet, Konclude and ELK) and some SPARQL query engines (such as Stardog and GraphDB) that are backed by OWL 2 Reasoners so as to help answer queries that involve reasoning. OWL2Bench is our first step towards a standard benchmark for all the OWL 2 profiles. Our benchmark is an extension of well known University Ontology Benchmark (UOBM). OWL2Bench includes TBox for each profile covering the set of constructs supported by that profile, generation of synthetic data scalable to arbitrary size and a separate set of SPARQL queries for each profile to be executed over generated data for performance evaluation of several reasoners and SPARQL query engines.
+OWl 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL 2 EL, OWl 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several OWL 2 reasoners (such as Hermit, JFact, Openllet, Pellet, Konclude and ELK) and some SPARQL query engines (such as Stardog and GraphDB) that are backed by OWL 2 Reasoners so as to help answer queries that involve reasoning. Our benchmark, OWL2Bench, is an extension of well known University Ontology Benchmark (UOBM). OWL2Bench includes fixed TBox for each profile covering the set of constructs supported by that profile, generation of ABox of varying sizes and a separate set of SPARQL queries for each profile to be executed over generated data for performance evaluation of several reasoners and SPARQL query engines.
 
-The hierarchy among some of the classes, including the relations between them, is shown in the figure below. All the four TBoxes of OWL2Bench consist of classes such as University, College, CollegeDiscipline, Department, Person, Program, and Course. They are related to each other through relationships such as enrollFor, teachesCourse, and offerCourse. The labeled (dashed) edges represent the properties. The unlabeled edgesrepresent the subclass relation.
+The hierarchy among some of the classes, including the relations between them, is shown in the figure below. All the four TBoxes (one for each profile) of OWL2Bench consist of classes such as University, College, CollegeDiscipline, Department, Person, Program, and Course. They are related to each other through relationships such as enrollFor, teachesCourse, and offerCourse. The labeled (dashed) edges represent the properties. The unlabeled edges represent the subclass relation.
 
 ![OWL2Bench](https://github.com/kracr/owl2bench/blob/master/Images/OWL2Bench.JPG)
 
 <a name="repo"></a>
 ## 2. About the Repository
-Repository consists of 2 directories: **OWL2Bench** and **Experiments**. OWL2Bench is a java source code directory that generated the varying size ABox of our benchmark (More details are given in Section 4). Experiments directory consists of java codes for reasoner implementation and details about the experiments performed. The repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, and an executable jar file : **OWL2Bench.jar**. 
+The project repository consists of 2 main directories: **OWL2Bench** and **Experiments**. 
+
+**OWL2Bench** is a java source code directory that generates the varying size ABox of our benchmark (see section [ 6.2 ](#code) for source-code usage instructions). 
+
+**Experiments** directory consists of details about the experiments that were performed to compare the reasoning and querying performance of several OWL 2 Reasoners (as reported in our paper accepted at ISWC'20 Resources Track).
+
+The repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **UNIV-BENCH-OWL2EL.owl**, **UNIV-BENCH-OWL2QL.owl**, **UNIV-BENCH-OWL2RL.owl**, **UNIV-BENCH-OWL2DL.owl**, and an executable jar file : **OWL2Bench.jar**. 
 
 <a name="tbox"></a>
 
@@ -54,9 +60,6 @@ instance data that is generated complies with the schema defined in the TBox of 
 
 Property assertion axioms are created using these instances. For example, an object property isDepartmentOf links a Department instance to a College instance. Similarly, a data property hasName is used to connect a department name to a Department instance. The number of instances of each class (other than University) and the number of connections between all the instances are again selected automatically and randomly from the range specified in the configuration file. 
 
-In order to change the size of the generated ABox as well as to control the density (number of connections between different instances), the range (maximum and minimum values of the parameters) can be modified in the configuration file. Moreover, the output ontology format can also be specified in the configuration file. By default, the generated ontology format is RDF/XML.
-
-
 <a name="sparql"></a>
 ## 5. SPARQL Query Details
 
@@ -65,30 +68,40 @@ OWL2Bench consists of twenty-two SPARQL queries to test the query performance of
 <a name="usage"></a>
 ## 6. Usage
 <a name="exe"></a>
-## 6.1. Direct execution using executable jar (with default configurations) :
+## 6.1. Direct execution using executable jar :
 
-We have provided an executable jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities**, **Required OWL 2 Profile**, and Seed (optional). 
+We have provided an executable jar file that generates the datasets with default configurations (used in the experiments). In order to execute this Jar file, user need to give the inputs (in the same order): **Number of Universities** (mandatory), **Required OWL 2 Profile** (mandatory), and Seed (optional). 
 
 For eg. : 
 
-java -jar OWL2Bench.jar 1 DL 1 (where 1 is the number of universities,  DL is OWL 2 profile and 1 is the default seed value)
+java -jar OWL2Bench.jar 10 EL 20 (where 10 is the number of universities,  EL is OWL 2 profile and 20 is the seed value)
+
+java -jar OWL2Bench.jar 1 DL (where 1 is the number of universities,  DL is OWL 2 profile and the default seed value)
          
 Number of universities makes the ABox scalable. By default, the number of ABox axioms for 1 university is approximately 50,000 that reaches upto 14,000,000 for 200 universities.      
-
 To execute **OWL2Bench.jar** make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. 
 
-<a name="code"></a>
-## 6.2. Using Source Code (with or without default configurations) :
 
-We are also providing the java code (if user wants to change the configurations/density of each node) for ABox generation. User can download the project repository OWL2Bench. After downloading user just need to import this maven project and then user can change the min-max variables in config.properties file and run Generator.java with arguments : *Number of Universities, Required OWL 2 Profile and Seed* (same as above). Required files are already present in the project directory. 
-           
+<a name="code"></a>
+## 6.2. Using Source Code :
+
+We are also providing the java code for ABox generation. User can download the project repository OWL2Bench. Extract it and save it in a folder. Open command line and change to the directory that contains the pom.xml of the project. Execute the maven command:
+
+mvn compile
+
+mvn install
+
+Now, using maven's exec plugin, run the main class *Generator* and pass the list of arguments *Number of Universities, Required OWL 2 Profile and Seed* (same as above) using exec.args. For example-
+
+mvn exec:java -Dexec.mainClass=ABoxGen.InstanceGenerator.Generator -Dexec.args="1 QL 1"
+
+The output files are stored in files with names such as "OWL2"+ Profile + "-" + Number of Universities + ".owl" . For example. OWL2DL-1.owl, OWL2QL-1.owl, OWL2EL-10.owl, OWL2RL-100.owl. 
+
 **Note:** 
 
-The output files are stored in files with names such as "OWL2"+ Profile + "-" + Number of Universities + ".owl" . 
+Since we are providing the seed value as one of the inputs to the ABox generation algorithm along with the number of Universities and the desired OWL2 profile, the same set of instances is generated if the seed value remains the same across multiple runs. If the user does not specify the seed value then the default seed value of 1 will be used. Similar principle was used in UOBM as well.
 
-For example. On executing using the arguments given in examples above, output files would be OWL2DL-1.owl, OWL2QL-1.owl, OWL2EL-10.owl, OWL2RL-100.owl. 
-
-The datasets used for the experiments (in RDF/XML Format) are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68 .
+In order to change the default size of the generated ABox as well as to control the density of each node (number of connections between different instances), the range (maximum and minimum values of the parameters) can be modified in the configuration file. Moreover, the output ontology format can also be specified in the configuration file (owx for OWL_XML, ofn for OWL_Functional, omn for OWL_Manchester, ttl for Turtle, rdf for RDF_XML). By default, the generated ontology format is RDF/XML.
 
 <a name="future"></a>
 ## 7. Future Work
