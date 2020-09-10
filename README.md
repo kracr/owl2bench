@@ -36,7 +36,7 @@ The project repository consists of 2 main directories: **[OWL2Bench](https://git
 
 **Experiments** directory consists of details about the experiments that were performed to compare the reasoning and querying performance of several OWL 2 Reasoners (as reported in our paper accepted at ISWC'20 Resources Track). 
 
-The repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **[UNIV-BENCH-OWL2EL.owl]((https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2EL.owl))**, **[UNIV-BENCH-OWL2QL.owl]((https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2QL.owl))**, **[UNIV-BENCH-OWL2RL.owl]((https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2RL.owl))**, **[UNIV-BENCH-OWL2DL.owl]((https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2DL.owl))**, and an executable jar file : **OWL2Bench.jar**. 
+The repository also consists of four different **TBox** for each OWL 2 Profiles (EL, QL, RL and DL): **[UNIV-BENCH-OWL2EL.owl](https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2EL.owl)**, **[UNIV-BENCH-OWL2QL.owl](https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2QL.owl)**, **[UNIV-BENCH-OWL2RL.owl](https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2RL.owl)**, **[UNIV-BENCH-OWL2DL.owl](https://github.com/kracr/owl2bench/blob/master/UNIV-BENCH-OWL2DL.owl)**, and an executable jar file : **[OWL2Bench.jar](https://github.com/kracr/owl2bench/blob/master/OWL2Bench.jar)**. 
 
 <a name="tbox"></a>
 
