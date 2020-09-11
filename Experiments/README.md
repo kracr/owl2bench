@@ -72,7 +72,7 @@ For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/extern
 
 Also, for ELK and Konclude OWL Functional syntax was used. The dataset could be directly generated in OWL-Functional syntax by changing the configuration parameter in OWL2Bench source code or using Protege. We converted RDF/XML to OWL/Functional using the file *[convert.java](https://github.com/kracr/owl2bench/tree/master/Experiments/convert)* (already present in the directory). 
 
-For reasoning tasks run the [script](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/reasoning tasks table 4 and 5.sh)
+For reasoning tasks run the script [reasoning tasks table 4 and 5.sh](https://github.com/kracr/owl2bench/blob/master/Experiments/Reasoner%20Evaluation/reasoning%20tasks%20table%204%20and%205.sh)
 
 ## Details for Table 6 and 7 : 
 
