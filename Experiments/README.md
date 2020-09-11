@@ -45,7 +45,7 @@ Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner 
 8. [ Stardog 7.0.2 ](https://www.stardog.com/)
 
 
-We first generated the datasets using OWL2Bench. In order to generate the datasets used in the paper, follow the steps given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). Use default seed value '1'. Or, **run the script [https://github.com/kracr/owl2bench/blob/master/Experiments/OWL2Bench%20default%20dataset%20generation.sh)**. The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). **Table 3** in the paper reports the size of generated axioms. Few lines from the output look like this:
+We first generated the datasets using OWL2Bench. In order to generate the datasets used in the paper, follow the steps given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). Use default seed value '1'. Or, **run the [script] (https://github.com/kracr/owl2bench/blob/master/Experiments/OWL2Bench%20default%20dataset%20generation.sh)**. The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). **Table 3** in the paper reports the size of generated axioms. Few lines from the output look like this:
 
 ---------------------------------------------
 
@@ -83,7 +83,7 @@ For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/extern
 
 Also, for ELK and Konclude OWL Functional syntax was used. The dataset could be directly generated in OWL-Functional syntax by changing the configuration parameter in OWL2Bench source code or using Protege. We converted RDF/XML to OWL/Functional using the file *[convert.java](https://github.com/kracr/owl2bench/tree/master/Experiments/convert)* (already present in the directory). 
 
-**For reasoning tasks run the [script](https://github.com/kracr/owl2bench/blob/master/Experiments/Reasoner%20Evaluation/reasoning%20tasks%20table%204%20and%205.sh)**
+**For reasoning tasks run the [ script ](https://github.com/kracr/owl2bench/blob/master/Experiments/Reasoner%20Evaluation/reasoning%20tasks%20table%204%20and%205.sh)**
 
 ## Details for Table 6 and 7 : 
 
