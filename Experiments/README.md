@@ -105,6 +105,7 @@ graphdb -Xms24g -Xmx24g
 Scripts for [Loading (both Stardog and GraphDB)](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/loading table 6.sh) and [Query Execution (Stardog)](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/queries table 7.sh) are present in the directory. 
 
 
+
 If required, all the datasets that were used for the experiments are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68. The datasets were generated using default settings and all are in RDF/XML format. 
 
 
