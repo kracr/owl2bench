@@ -29,38 +29,45 @@ public class Pellet {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
 		OWLReasonerFactory reasonerFactory = new PelletReasonerFactory();
+		
+		
 		long startTime = System.nanoTime();
 		OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
         long endTime = System.nanoTime();
-        long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
+        long duration0 = ((endTime - startTime));
+        //System.out.println("Time taken for Reasoner Creation =" + duration0 );
 		
-		 if(task.matches("C")) {
+        
+		 if(task.matches("consistency")) {
 		        System.out.println("Started Consistency Checking");
 		        startTime = System.nanoTime();
 		        System.out.println(" " + reasoner.isConsistent() );
 		         endTime = System.nanoTime();
-		         duration = ((endTime - startTime));
-		        System.out.println("Time taken for Consistency Check " + duration );
+		         long duration = (((endTime - startTime))+duration0)/1000000000;
+		         System.out.println("Pellet : Consistency Check in seconds =" + duration );
 		     
 		        }
-		        else if(task.matches("R")) {
+		 
+		 
+		 else if(task.matches("realisation")) {
 		        	System.out.println("Started Instance Checking");
 		         startTime = System.nanoTime();
 		        for (OWLNamedIndividual individual: ontology.getIndividualsInSignature()) {
 		        	reasoner.getTypes(individual,false);
 		    		}
 		         endTime = System.nanoTime();
-		         duration = ((endTime - startTime));
-		        System.out.println("Time taken for Realization " + duration );}
+		         long duration = (((endTime - startTime))+duration0)/1000000000;
+		         System.out.println("Pellet : Realisation in seconds =" + duration );}
 		        
-		        else if(task.matches("CT")) {
+		 
+		 
+		 else if(task.matches("classification")) {
 		        	System.out.println("Started Classification Time");
 		         startTime = System.nanoTime();
 		        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 		         endTime = System.nanoTime();
-		        duration = ((endTime - startTime));
-		        System.out.println("Time taken for Classification " + duration );}
+		         long duration = (((endTime - startTime))+duration0)/1000000000;
+		         System.out.println("Pellet : Classification in seconds =" + duration );}
      
     }
 

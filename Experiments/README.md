@@ -1,29 +1,32 @@
 # Experiments
 
-Note: The file contains details of the experiments and results that were reported in our paper. 
+Note: The file contains details of the experiments and results that were reported in our paper.
 
-All our evaluations ran on a server with an AMD Ryzen Threadripper 2990WX 32-Core Processor and 128GB of RAM. The server ran on a 5.3.0-46-generic \#38~18.04.1-Ubuntu SMP operating system. We use Java 1.8 and OWL API 5.1.11 in the experiments. For the performance evaluation we fixed 24GB of RAM. We reported average time taken for 5 independent runs. 
+Directory structure
+ 
 
-We ran our benchmark on:
+All our evaluations ran on a server with an AMD Ryzen Threadripper 2990WX 32-Core Processor and 128GB of RAM. The server ran on a 5.3.0-46-generic \#38~18.04.1-Ubuntu SMP operating system. We use Java 1.8 and OWL API 5. For the performance evaluation we fixed 24GB of RAM. We reported average time taken for 5 independent runs. 
 
-1. [ ELK 0.4.3 ](https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) 
+Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner evaluations. So, in order to demonstrate the utility of OWL2Bench we ran the generated datasets on 6 OWL2Reasoners and 2 SPARQL Query Engines. The list is given below. The version used along with their links are also specified. Other than the links we also provide (in the Experiments directory) the exact java codes, jar files, and downloaded versions that were used during experiments.
 
-2. [ HermiT 1.3.8.1 ](https://github.com/kracr/owl2bench/tree/master/Experiments/hermit)
+1. [ ELK 0.4.3 ](https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3)(https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) 
 
-3. [ JFact 5.0.0 ](https://github.com/kracr/owl2bench/tree/master/Experiments/jfact)
+2. [ HermiT 1.3.8.1 ](https://jar-download.com/artifacts/com.hermit-reasoner/org.semanticweb.hermit/1.3.8.1/source-code)(https://jar-download.com/artifacts/com.hermit-reasoner/org.semanticweb.hermit/1.3.8.1/source-code)
 
-4. [ Konclude 0.6.2 ](https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip)
+3. [ JFact 5.0.0 ](https://jar-download.com/artifacts/net.sourceforge.owlapi/jfact/5.0.0/source-code)(https://jar-download.com/artifacts/net.sourceforge.owlapi/jfact/5.0.0/source-code)
 
-5. [ Openllet 2.6.4 ](https://github.com/kracr/owl2bench/tree/master/Experiments/openllet)
+4. [ Konclude 0.6.2 ](https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip)(https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip)
 
-6. [ Pellet 2.3.6 ](https://github.com/kracr/owl2bench/tree/master/Experiments/pellet2)
+5. [ Openllet 2.6.4 ](https://jar-download.com/artifacts/com.github.galigator.openllet/openllet-owlapi/2.6.4/source-code)(https://jar-download.com/artifacts/com.github.galigator.openllet/openllet-owlapi/2.6.4/source-code)
+
+6. [ Pellet 2.3.6 ](https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)(https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)
 
 7. [ GraphDB 9.0.0 ](https://www.ontotext.com/products/graphdb/graphdb-free/)
 
 8. [ Stardog 7.0.2 ](https://www.stardog.com/)
 
 
-We first generated the datasets using OWL2Bench for the performance evaluation of reasoners (details for dataset generation given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). Few lines from the output are given below:
+We first generated the datasets using OWL2Bench (details for dataset generation given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). **Table 3** in the paper reports the size of generated axioms. Few lines from the output look like this:
 
 ---------------------------------------------
 
@@ -43,8 +46,7 @@ Finished Writing to file /path/OWL2EL-1.owl
 
 ---------------------------------------------
 
-**Table 3** in the paper reports the size of generated axioms. Note that the size of ABox and TBox axioms are given separately in the table. While on executing the code, the line on the output console 'Total Logical Axiom Count=50485' is the combined TBox + ABox axiom count.
-
+Note that the size of ABox and TBox axioms are given separately in the table. While on executing the code, the line on the output console 'Total Logical Axiom Count=50485' is the combined TBox + ABox axiom count.
 
 
 The datasets generated (mentioned-above) using OWL2Bench were then used to evaluate the performance of:
@@ -56,21 +58,23 @@ The datasets generated (mentioned-above) using OWL2Bench were then used to evalu
 
 ## Details for Table 4 and 5 :
 
-The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code for **[HermiT](https://github.com/kracr/owl2bench/tree/master/Experiments/hermit)**, **[Openllet](https://github.com/kracr/owl2bench/tree/master/Experiments/openllet)**, **[Pellet](pellet2)**, and **[JFact](jfact)** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Tasks could be C (for Consistency Checking), R (for Realisation), CT (for Classification Time). For example: To run each reasoner task from command line, 
+The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code and executable jar files for **[HermiT](https://github.com/kracr/owl2bench/tree/master/Experiments/hermit)**, **[Openllet](https://github.com/kracr/owl2bench/tree/master/Experiments/openllet)**, **[Pellet](pellet2)**, and **[JFact](jfact)** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Task argument could be *consistency* (for Consistency Checking), *realisation* (for Realisation Task), *classification* (for Classification Task). For example: To run each reasoner task from command line, 
 
 mvn compile
 
 mvn install
 
-mvn exec:java -Dexec.mainClass=debug.hermit.Hermit -Dexec.args="input_filepath/OWL2EL.owl C"
+mvn exec:java -Dexec.mainClass=debug.hermit.Hermit -Dexec.args="input_filepath/OWL2EL.owl consistency"
 
-For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl --classify
+However, we did not use these commands in scripts. We used the java runnable jar files created using Eclipse IDE.
 
-Also, for ELK and Konclude OWL Functional syntax was used. The RDF/XML syntax was converted to OWL/Functional using the file *[convert.java](https://github.com/kracr/owl2bench/tree/master/Experiments/convert)* (already present in the directory).
+For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl -c
+
+Also, for ELK and Konclude OWL Functional syntax was used. The dataset could be directly generated in OWL-Functional syntax by changing the configuration parameter in OWL2Bench source code or using Protege. We converted RDF/XML to OWL/Functional using the file *[convert.java](https://github.com/kracr/owl2bench/tree/master/Experiments/convert)* (already present in the directory). 
 
 ## Details for Table 6 and 7 : 
 
-We compared GraphDB and Stardog in terms of their loading time (Table 6) and query response time (Table 7). We did not put limits on RAM usage while loading axioms for both the query engines. However, for Query Response time, we kept a time-out of 10minutes and RAM limit 24GB.
+We compared GraphDB and Stardog in terms of their loading time (Table 6) and query response time (Table 7). We did not put limits on RAM usage while loading axioms for both the query engines. However, for Query Response time, we kept a time-out of 10minutes and RAM limit 24GB. The queries are available at https://doi.org/10.5281/zenodo.3838735.
 
 ----------------------------
 

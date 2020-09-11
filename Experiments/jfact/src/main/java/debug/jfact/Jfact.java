@@ -26,52 +26,46 @@ public class Jfact {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);	
-		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+		//System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
 		OWLReasonerFactory reasonerFactory = new JFactFactory();
+		
+		
 		long startTime = System.nanoTime();
 		OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);	
 		long endTime = System.nanoTime();
-        long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
-		if(task.matches("C")) {
+        long duration0 = ((endTime - startTime));
+        //System.out.println("Time taken for Reasoner Creation =" + duration0 );
+		
+        
+        if(task.matches("consistency")) {
 	        System.out.println("Started Consistency Checking");
 	         startTime = System.nanoTime();
 	        reasoner.isConsistent();
 	         endTime = System.nanoTime();
-	         duration = ((endTime - startTime));
-	        System.out.println("Time taken for Consistency Check " + duration );
-	        
-	        
+	         long duration = (((endTime - startTime))+duration0)/1000000000;
+	         System.out.println("JFact : Consistency Check in seconds =" + duration );
 	        }
-	      else if(task.matches("R")) {
+        
+        
+	    else if(task.matches("realisation")) {
 	        	System.out.println("Started Instance Checking");
 	         startTime = System.nanoTime();
 	        for (OWLNamedIndividual individual: ontology.getIndividualsInSignature()) {
 	        	reasoner.getTypes(individual,false);
 	    		}
 	         endTime = System.nanoTime();
-	         duration = ((endTime - startTime));
-	        System.out.println("Time taken for Realization " + duration );}
+	         long duration = (((endTime - startTime))+duration0)/1000000000;
+	         System.out.println("JFact : Realisation in seconds =" + duration );}
 
-	        else if(task.matches("CT")) {
+        
+	    else if(task.matches("classification")) {
 	        	System.out.println("Started Classification Time");
 	         startTime = System.nanoTime();
 	        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 	         endTime = System.nanoTime();
-	         duration = ((endTime - startTime));
-	        System.out.println("Time taken for Classification " + duration );}
-	        /*
-	        startTime = System.nanoTime();
-	        for (OWLClass clazz : ontology.getClassesInSignature()) {
-	    		reasoner.getInstances(
-	    		clazz, false);
-	    		}
-	        endTime = System.nanoTime();
-	        duration = ((endTime - startTime));
-	        System.out.println("Time taken for Retrieval " + duration );
-	    	//System.out.println(ontology.getIndividualsInSignature());
-	    	 * 
-	    	 */
+	         long duration = (((endTime - startTime))+duration0)/1000000000;
+	         System.out.println("JFact : Classification in seconds =" + duration );}
+
 	  
 	}
 }

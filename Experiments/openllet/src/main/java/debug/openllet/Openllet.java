@@ -27,24 +27,27 @@ public class Openllet {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
-		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+		//System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+		
+		
 		long startTime = System.nanoTime();
         final OpenlletReasoner reasoner = OpenlletReasonerFactory.getInstance().createReasoner(ontology);
         long endTime = System.nanoTime();
-        long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
+        long duration0 = ((endTime - startTime));
+        //System.out.println("Time taken for Reasoner Creation =" + duration0 );
     
-        if(task.matches("C")) {
+        
+        if(task.matches("consistency")) {
             System.out.println("Started Consistency Checking");
             startTime = System.nanoTime();
             System.out.println(" " + reasoner.isConsistent() );
              endTime = System.nanoTime();
-            duration = ((endTime - startTime));
-            System.out.println("Time taken for Consistency Check " + duration );
-            
-            
+             long duration = (((endTime - startTime))+duration0)/1000000000;
+             System.out.println("Openllet : Consistency Check in seconds =" + duration );                  
             }
-        else if(task.matches("R")) {
+        
+        
+        else if(task.matches("realisation")) {
         	System.out.println("Started Instance Checking");
          startTime = System.nanoTime();
       
@@ -53,27 +56,18 @@ public class Openllet {
         	reasoner.getTypes(individual,false);
     		}
          endTime = System.nanoTime();
-         duration = ((endTime - startTime));
-        System.out.println("Time taken for Realization " + duration );}
-            else if(task.matches("CT")) {
+         long duration = (((endTime - startTime))+duration0)/1000000000;
+         System.out.println("Openllet : Realisation in seconds =" + duration );}
+        
+        
+        else if(task.matches("classification")) {
             	System.out.println("Started Classification Time");
              startTime = System.nanoTime();
             reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
              endTime = System.nanoTime();
-             duration = ((endTime - startTime));
-            System.out.println("Time taken for Classification " + duration );}
-            /*
-            startTime = System.nanoTime();
-            for (OWLClass clazz : ontology.getClassesInSignature()) {
-        		reasoner.getInstances(
-        		clazz, false);
-        		}
-            endTime = System.nanoTime();
-            duration = ((endTime - startTime));
-            System.out.println("Time taken for Retrieval " + duration );
-        	//System.out.println(ontology.getIndividualsInSignature());
-        	 * 
-        	 */
+             long duration = (((endTime - startTime))+duration0)/1000000000;
+             System.out.println("Openllet : Classification in seconds =" + duration );}
+
             
 	}
 }
