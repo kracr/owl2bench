@@ -26,7 +26,7 @@ Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner 
 8. [ Stardog 7.0.2 ](https://www.stardog.com/)
 
 
-We first generated the datasets using OWL2Bench. In order to generate the datasets used in the paper, follow the steps given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). Use default seed value '1'. Or, run the script [OWL2Bench default dataset.sh](https://github.com/kracr/owl2bench/blob/master/Experiments/OWL2Bench default dataset generation.sh). The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). **Table 3** in the paper reports the size of generated axioms. Few lines from the output look like this:
+We first generated the datasets using OWL2Bench. In order to generate the datasets used in the paper, follow the steps given in the [ OWL2Bench's README ](https://github.com/kracr/owl2bench/blob/master/README.md#usage)). Use default seed value '1'. Or, run the script [OWL2Bench default dataset.sh](https://github.com/kracr/owl2bench/blob/master/Experiments/OWL2Bench%20default%20dataset%20generation.sh). The generated datasets are based on the number of universities. So we generated datasets for 1, 2, 5, 10, 20, 50, 100, 200 universities. The size varies from approximately 50,000 axioms (for 1 university) to 14 million axioms(for 200 universities). **Table 3** in the paper reports the size of generated axioms. Few lines from the output look like this:
 
 ---------------------------------------------
 
@@ -58,7 +58,7 @@ The datasets generated (mentioned-above) using OWL2Bench were then used to evalu
 
 ## Details for Table 4 and 5 :
 
-The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code and executable jar files for **[HermiT](https://github.com/kracr/owl2bench/tree/master/Experiments/hermit)**, **[Openllet](https://github.com/kracr/owl2bench/tree/master/Experiments/openllet)**, **[Pellet](pellet2)**, and **[JFact](jfact)** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Task argument could be *consistency* (for Consistency Checking), *realisation* (for Realisation Task), *classification* (for Classification Task). For example: To run each reasoner task from command line, 
+The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java code and executable jar files for **[HermiT](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner%20Evaluation/Java%20codes%20for%20OWL%20API%20based%20reasoners/hermit)**, **[Openllet](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner%20Evaluation/Java%20codes%20for%20OWL%20API%20based%20reasoners/openllet)**, **[Pellet](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner%20Evaluation/Java%20codes%20for%20OWL%20API%20based%20reasoners/pellet2)**, and **[JFact](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner%20Evaluation/Java%20codes%20for%20OWL%20API%20based%20reasoners/jfact)** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Task argument could be *consistency* (for Consistency Checking), *realisation* (for Realisation Task), *classification* (for Classification Task). For example: To run each reasoner task from command line, 
 
 mvn compile
 
@@ -66,7 +66,7 @@ mvn install
 
 mvn exec:java -Dexec.mainClass=debug.hermit.Hermit -Dexec.args="input_filepath/OWL2EL.owl consistency"
 
-However, we did not use these commands in scripts. We used the [java runnable jar files](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/Java codes for OWL API based reasoners) created using Eclipse IDE.
+However, we did not use these commands in scripts. We used the [java runnable jar files](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner%20Evaluation/Java%20codes%20for%20OWL%20API%20based%20reasoners) created using Eclipse IDE.
 
 For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl -c
 
@@ -102,7 +102,7 @@ graphdb -Xms24g -Xmx24g
 
 **Query Execution:** SPARQL queries were executed from GraphDB workbench. 
 
-Scripts for [Loading (both Stardog and GraphDB)](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/loading table 6.sh) and [Query Execution (Stardog)](https://github.com/kracr/owl2bench/tree/master/Experiments/Reasoner Evaluation/queries table 7.sh) are present in the directory. 
+Scripts for [Loading (both Stardog and GraphDB)](https://github.com/kracr/owl2bench/blob/master/Experiments/SPARQL%20Query%20Engine%20Evaluation/evaluation%20scripts/Loading%20table%206.sh) and [Query Execution (Stardog)](https://github.com/kracr/owl2bench/blob/master/Experiments/SPARQL%20Query%20Engine%20Evaluation/evaluation%20scripts/Queries%20table%207.sh) are present in the directory. 
 
 
 
