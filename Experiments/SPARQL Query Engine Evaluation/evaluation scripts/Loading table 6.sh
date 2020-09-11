@@ -1,88 +1,76 @@
 #!/bin/bash
-# all SPARQL query commands
 
-#export STARDOG_SERVER_JAVA_ARGS="-Xms24g -Xmx24g -XX:MaxDirectMemorySize=64g"
+#GraphDB loading of axioms using loadRDF tool. It does offline loading
 
-#/home/gunjans/stardog-7.2.0/bin/stardog-admin server start
-
-for i in 1 2 3 4 5
+for profile in OWL2QL OWL2RL
 do
-	echo $i
-	echo "Iteration"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql1 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql5 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql10 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql10"
+	for univ in 1 5 10
+	do 
+		for iteration in 1 2 3 4 5
+		do
+			file_path=/mnt/home/
+			file_name="$file_path$profile-$univ.owl"
+			graphdb_loadrdf=/graphdbfree-9.0.0/bin/loadrdf
+			  
+			$graphdb_loadrdf -f -i $profile$univ-iter$iteration -m parallel $file_name
+		done
+	done
+done
 
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl10"
+#Stardog database creation. First we need to run the server using /stardog-7.2.0/bin/stardog-admin server start
 
+for profile in OWL2EL
+do
+	for univ in 1 5 10
+	do 
+		for iteration in 1 2 3 4 5
+		do
+			file_path=/mnt/home/
+			file_name="$file_path$profile-$univ.owl"
+			/stardog-7.2.0/bin/stardog-admin db drop $profile$univ
+			/stardog-7.2.0/bin/stardog-admin db create -n $profile$univ -o reasoning.type="EL" query.timeout='600s' -- $file_name
+		done
+	done
+done
 
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"	
-	echo "Done Query3 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for rl10"
+for profile in OWL2QL
+do
+	for univ in 1 5 10
+	do 
+		for iteration in 1 2 3 4 5
+		do
+			file_path=/mnt/home/
+			file_name="$file_path$profile-$univ.owl"
+			/stardog-7.2.0/bin/stardog-admin db drop $profile$univ
+			/stardog-7.2.0/bin/stardog-admin db create -n $profile$univ -o reasoning.type="QL" query.timeout='600s' -- $file_name
+		done
+	done
+done
 
+for profile in OWL2RL
+do
+	for univ in 1 5 10
+	do 
+		for iteration in 1 2 3 4 5
+		do
+			file_path=/mnt/home/
+			file_name="$file_path$profile-$univ.owl"
+			/stardog-7.2.0/bin/stardog-admin db drop $profile$univ
+			/stardog-7.2.0/bin/stardog-admin db create -n $profile$univ -o reasoning.type="RL" query.timeout='600s' -- $file_name
+		done
+	done
+done
 
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl10"
-
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl10"
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el10"
-
-
+for profile in OWL2DL
+do
+	for univ in 1 5 10
+	do 
+		for iteration in 1 2 3 4 5
+		do
+			file_path=/mnt/home/
+			file_name="$file_path$profile-$univ.owl"
+			/stardog-7.2.0/bin/stardog-admin db drop $profile$univ
+			/stardog-7.2.0/bin/stardog-admin db create -n $profile$univ -o reasoning.type="DL" query.timeout='600s' -- $file_name
+		done
+	done
 done

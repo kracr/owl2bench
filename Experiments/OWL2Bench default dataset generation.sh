@@ -1,88 +1,17 @@
 #!/bin/bash
-# all SPARQL query commands
+# all reasoner commands
 
-#export STARDOG_SERVER_JAVA_ARGS="-Xms24g -Xmx24g -XX:MaxDirectMemorySize=64g"
+#the OWL2Bench.jar was created from using the source code given in the github repository.
 
-#/home/gunjans/stardog-7.2.0/bin/stardog-admin server start
+#make sure the other files: TBoxes and RandomName.xlsx are present in the same directory as OWL2Bench.jar 
 
-for i in 1 2 3 4 5
+
+for profile in EL QL RL DL
 do
-	echo $i
-	echo "Iteration"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql1 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql5 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r ql10 "SELECT DISTINCT ?y ?x WHERE { ?y :knows ?x.}"
-	echo "Done Query1 for ql10"
+	for univ in 1 2 5 10 20 50 100 200
+	do
 
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :isMemberOf ?x.}"
-	echo "Done Query2 for rl10"
-
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"	
-	echo "Done Query3 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :isPartOf ?x.}"
-	echo "Done Query3 for rl10"
-
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y ?x WHERE { ?y :hasAge ?x.}"
-	echo "Done Query4 for rl10"
-
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for el10"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r rl10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :T20CricketFan.}"
-	echo "Done Query5 for rl10"
-
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el1 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el1"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el5 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el5"
-	/home/gunjans/stardog-7.2.0/bin/stardog query -r el10 "SELECT DISTINCT ?y WHERE { ?y rdf:type :SelfAware.}"
-	echo "Done Query6 for el10"
-
-
+		java -jar OWL2Bench.jar $univ $profile 1 
+	done
 done
+
