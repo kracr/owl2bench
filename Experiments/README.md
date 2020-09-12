@@ -9,13 +9,21 @@ Directory structure:
 1. README
 
 2. Scripts for Evaluations: steps to follow (dos2unix script.sh, chmod +x script.sh, ./script.sh)
+
 	2.1 main.sh : Main script that runs all the below given scripts.
+
 	2.2 dataset.sh: Script for generating exact same Dataset used in the paper (Table 3).
+
 	2.3 reasoningTask1.sh: Script for 3 tasks consistency, realisation, classification on HermiT, Openllet, Pellet, JFact
+
 	2.4 reasoningTask2.sh: Script for 3 tasks consistency, realisation, classification on ELK
+
 	2.5 reasoningTask3.sh: Script for 3 tasks consistency, realisation, classification on Konclude
+
 	2.6 LoadingGraphDB.sh: Script for loading datasets on GraphDB using its loadRDF tool.
+
 	2.7 LoadingStardog.sh: Script for loading datasets on Stardog.
+
 	2.8 QueryResponse.sh: Script for executing SPARQL queries on Stardog.
 
 3. java runnable jar files: additional jar files (HermiT, Openllet, Pellet, JFact, convert) that were generated using Eclipse IDE from their source codes. Source code files are also provided in the directory.
@@ -77,11 +85,11 @@ The datasets generated (mentioned-above) using OWL2Bench were then used to evalu
 
 ## Details for Table 4 and 5 :
 
-The time-out for each of these experiments was set to 90 minutes. This directory (https://github.com/kracr/owl2bench/tree/master/Experiments/runnable java jar files) already consists of the java code and executable jar files for **HermiT**, **Openllet**, **Pellet**, and **JFact** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Task argument could be *consistency* (for Consistency Checking), *realisation* (for Realisation Task), *classification* (for Classification Task). However, we used the java runnable jar files in these scripts..
+The time-out for each of these experiments was set to 90 minutes. This directory already consists of the java source code and [executable jar files](https://github.com/kracr/owl2bench/tree/master/Experiments/java%20runnable%20jar%20files)  for **HermiT**, **Openllet**, **Pellet**, and **JFact** that were implemented using the OWL API. Two arguments need to be passed: *Input File name (path)* and *Reasoning Task*. The Reasoning Task argument could be *consistency* (for Consistency Checking), *realisation* (for Realisation Task), *classification* (for Classification Task). However, we used the java runnable jar files in these scripts..
 
 For the other two reasoners **Konclude** (https://www.derivo.de/fileadmin/externe_websites/ext.derivo/KoncludeReleases/v0.6.2-544/Konclude-v0.6.2-544-Linux-x64-GCC4.3.2-Static-Qt4.8.5.zip) and **ELK** (https://github.com/liveontologies/elk-reasoner/releases/tag/v0.4.3) standalone executable files were used. For example: ./Konclude classification -i OWL2DL-1.owl, java -jar elk-standalone.jar -i OWL2EL-100.owl -c
 
-Also, for ELK and Konclude OWL Functional syntax was used. The dataset could be directly generated in OWL-Functional syntax by changing the configuration parameter in OWL2Bench source code or can be converted using Protege. We converted RDF/XML to OWL/Functional using the file *[convert.jar](https://github.com/kracr/owl2bench/tree/master/Experiments/runnable java jar files)* (already present in the directory). 
+Also, for ELK and Konclude OWL Functional syntax was used. The dataset could be directly generated in OWL-Functional syntax by changing the configuration parameter in OWL2Bench source code or can be converted using Protege. We converted RDF/XML to OWL/Functional using the file *[convert.jar](https://github.com/kracr/owl2bench/tree/master/Experiments/java%20runnable%20jar%20files)* (already present in the directory). 
 
 **For reasoning tasks run the [ script ](https://github.com/kracr/owl2bench/blob/master/Experiments)** reasoningTasks1.sh, reasoningTasks2.sh, reasoningTasks3.sh,
 
