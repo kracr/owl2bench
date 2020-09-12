@@ -18,8 +18,9 @@ This document provides documentation for the first version of our benchmark OWL2
    
    3.2 [ Using Source Code (with or without default configurations) ](#code)
    
-4. [ Future Work ](#future)
-5. [ References ](#references)
+4. [ Experiments Performed ](#experiments)
+5. [ Future Work ](#future)
+6. [ References ](#references)
 <a name="intro"></a>
 ## 1. Introduction
 OWl 2 is gaining popularity in a variety of domains because of its high level of expressivity. OWL 2 has several profiles such as OWL 2 EL, OWl 2 QL, OWL 2 RL, and OWL 2 DL that vary in terms of their expressivity and reasoning performance. There are several OWL 2 reasoners (such as Hermit, JFact, Openllet, Pellet, Konclude and ELK) and some SPARQL query engines (such as Stardog and GraphDB) that are backed by OWL 2 Reasoners so as to help answer queries that involve reasoning. Our benchmark, OWL2Bench, is an extension of well known University Ontology Benchmark (UOBM). OWL2Bench includes fixed TBox for each profile covering the set of constructs supported by that profile, generation of ABox of varying sizes and a separate set of SPARQL queries for each profile to be executed over generated data for performance evaluation of several reasoners and SPARQL query engines.
@@ -70,7 +71,9 @@ The repository also consists of four different **TBox** for each OWL 2 Profiles 
 <a name="usage"></a>
 ## 3. Usage Instructions
 
-The user must have *java and maven* installed in the system. The user needs to provide two inputs, *the number of universities* and *the OWL 2 profile* (EL, QL, RL, DL) of interest. The ABox axioms are generated using [OWL2Bench code](https://github.com/kracr/owl2bench/tree/master/OWL2Bench), complying with the schema defined in the TBox of the selected profile. The size of the ABox depends on the number of universities. The final dataset on which the reasoners are evaluated consists of both TBox and ABox axioms.
+Requirements: The user must have *java and maven* installed in the system. 24 GB RAM for all the experiments. 
+
+The user needs to provide two inputs, *the number of universities* and *the OWL 2 profile* (EL, QL, RL, DL) of interest. The ABox axioms are generated using [OWL2Bench code](https://github.com/kracr/owl2bench/tree/master/OWL2Bench), complying with the schema defined in the TBox of the selected profile. The size of the ABox depends on the number of universities. The final dataset on which the reasoners are evaluated consists of both TBox and ABox axioms.
 
 <a name="exe"></a>
 ## 3.1. Direct execution using executable jar :
@@ -110,13 +113,18 @@ Since we are providing the seed value as one of the inputs to the ABox generatio
 
 In order to change the default size of the generated ABox as well as to control the density of each node (number of connections between different instances), the range (maximum and minimum values of the parameters) can be modified in the configuration file. Moreover, the output ontology format can also be specified in the configuration file (owx for OWL_XML, ofn for OWL_Functional, omn for OWL_Manchester, ttl for Turtle, rdf for RDF_XML). By default, the generated ontology format is RDF/XML.
 
+<a name="experiments"></a>
+## 4. Experiments Performed
+
+The [Experiments directory](https://github.com/kracr/owl2bench/tree/master/Experiments) consists of scripts required for evaluations. The details about the files and experiments performed are provided in the [README](https://github.com/kracr/owl2bench/blob/master/Experiments/README.md).
+
 <a name="future"></a>
-## 4. Future Work
+## 5. Future Work
 
 For the next version of OWL2Bench, we plan to be able to customize the TBox for each profile rather than having a fixed TBox. We also plan to extend this by providing an option to the users to choose the desired hardness level (easy, medium, and hard) of the ontology with respect to the reasoning time and OWL2Bench will then generate such an ontology.
  
 <a name="references"></a> 
-## 5. References
+## 6. References
 1. Bail, S., B., Sattler, U.: JustBench: A Framework for OWL Benchmarking. In: The Semantic  Web  -  ISWC  2010  -  9th  International  Semantic  Web  Conference,  ISWC2010,  November  7-11,  2010,  Revised  Selected  Papers,  PartI.  Lecture  Notes  in  Computer  Science,  vol.  6496,  pp.  32–47.  Springer  (2010).
 2. Glimm,   B.,   Horrocks,   I.,   Motik,   B.,   S.,   G.,   Wang,   Z.:   Hermit:   An   owl2  reasoner.  Journal  of  Automated  Reasoning53(3),  245—-269  (Oct  2014).
 3. Guo,   Y.,   Pan,   Z.,   Heflin,   J.:   Lubm:   A   benchmark   for   owl   knowledgebase   systems.   Journal   of   Web   Semantics3(2-3),   158–182   (Oct   2005). 
