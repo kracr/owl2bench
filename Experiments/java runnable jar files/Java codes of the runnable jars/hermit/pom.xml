@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>debug</groupId>
+  <artifactId>hermit</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>hermit</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+            <!-- https://mvnrepository.com/artifact/com.hermit-reasoner/org.semanticweb.hermit -->
+<dependency>
+    <groupId>com.hermit-reasoner</groupId>
+    <artifactId>org.semanticweb.hermit</artifactId>
+    <version>1.3.8.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.antlr/antlr -->
+<dependency>
+    <groupId>org.antlr</groupId>
+    <artifactId>antlr</artifactId>
+    <version>3.5.2</version>
+</dependency>
+<dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-api</artifactId>
+       <version>1.7.5</version>
+   </dependency>
+   <dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-log4j12</artifactId>
+       <version>1.7.5</version>
+   </dependency>
+
+  </dependencies>
+</project>
