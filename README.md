@@ -71,7 +71,7 @@ The repository also consists of four different **TBox** for each OWL 2 Profiles 
 <a name="usage"></a>
 ## 3. Usage Instructions
 
-Requirements: The user must have *java and maven* installed in the system. 24 GB RAM for all the experiments. 
+Requirements: The user must have *java and maven* installed in the system. 24 GB RAM for all the experiments. Operating System-Ubuntu
 
 The user needs to provide two inputs, *the number of universities* and *the OWL 2 profile* (EL, QL, RL, DL) of interest. The ABox axioms are generated using [OWL2Bench code](https://github.com/kracr/owl2bench/tree/master/OWL2Bench), complying with the schema defined in the TBox of the selected profile. The size of the ABox depends on the number of universities. The final dataset on which the reasoners are evaluated consists of both TBox and ABox axioms.
 

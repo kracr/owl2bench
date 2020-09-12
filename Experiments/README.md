@@ -128,6 +128,7 @@ GraphDB steps:
 5) **For Query Execution:** SPARQL queries were executed from GraphDB workbench. So, the queries given at https://doi.org/10.5281/zenodo.3838735 can be directly executed (http://graphdb.ontotext.com/documentation/free/querying-data.html).
 
 
+Note: The scripts do not automatically find the average over 5 independent runs because there could be time-out, memory errors or other errors. So, the average of time-taken over 5 runs was computed manually. 
 
 If required, all the datasets that were used for the experiments are available at https://drive.google.com/drive/u/3/folders/1HYURRLaQkLK8cQwV-UBNKK4_Zur2nU68. The datasets were generated using default settings and all are in RDF/XML format. 
 
