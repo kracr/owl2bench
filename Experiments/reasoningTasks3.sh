@@ -27,7 +27,7 @@ do
 					
 					file_name="$file_path/$profile-$univ.owl"
 
-					echo "timeout 5400 ./Konclude $task -i $file_name"
+					timeout 5400 ./Konclude $task -i $file_name
 					echo "Finished Reasoner: $reasoner FileName: $profile-$univ Task: $task University: $univ Iteration: $i"
 
 				done

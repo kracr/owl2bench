@@ -19,9 +19,7 @@ do
 				do
 					sleep 5
 					file_path=$(pwd)
-					file_name="$file_path/$profile-$univ.owl"
-#change to elk directory
-cd 
+					file_name="$(pwd)/$profile-$univ.owl"
 
 					timeout 5400 java -Xms24g -Xmx24g -jar $file_path/elk-distribution-0.4.3-standalone-executable/elk-standalone.jar -i $file_name -$task
 					echo "Finished Reasoner: $reasoner FileName: $profile-$univ Task: $task University: $univ Iteration: $i"

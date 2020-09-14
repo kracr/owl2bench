@@ -1,6 +1,8 @@
 #!/bin/bash
 # all reasoner commands
 
+#Run: dos2unix script.sh, chmod +x script.sh, ./script.sh to run the scripts
+
 #This is the main script that can be used to run all the experiments.
 
 #Steps to follow to run this script:
@@ -26,7 +28,7 @@
 
 ############################################
 #script for dataset generation
-./dataset.sh path_directory >dataset.log
+./dataset.sh >dataset.log
 
 
 #Note that the size of ABox and different type of TBox axioms are given separately in the table. While on executing the code, the line on the output console gives 'Total Logical Axiom Count= '.
@@ -47,7 +49,7 @@ grep -B 1 -i "Finished Reasoner:" hermitpelletopenlletjfact.log >reasoningTimeHe
 
 
 
-#We will now convert all the files into OWL functional syntax for ELK and Konclude. We save them inside koncludes directory for now.
+#We will now convert all the files into OWL functional syntax for ELK and Konclude. We save them inside konclude's directory for now.
 
 ./convert.sh >convert.log
 
@@ -117,6 +119,7 @@ grep -B 2 -i "Successfully created database" loadingStardog.log >loadingTimeStar
 
 grep -A 1 -i "Query returned" queryStardog.log >queryResponseTimeStardog.log
 
+#use queryResponseTimeStardog.log for time-taken by stardog
 ##############################################
 
 #for query response time on graphdb, queries were executed using workbench 'http://graphdb.ontotext.com/documentation/free/run-stand-alone-server.html'
@@ -124,3 +127,4 @@ grep -A 1 -i "Query returned" queryStardog.log >queryResponseTimeStardog.log
 #Start the GraphDB Server (graphdb -Xms24g -Xmx24g) 
 $(pwd)/graphdb-free-9.0.0/bin/graphdb -Xms24g -Xmx24g
 #and Workbench interface by executing the graphdb startup script located in the $graphdb_home/bin folder: A message appears in the console telling you that GraphDB has been started in Workbench mode. To access the Workbench, open http://localhost:7200/ in your browser.
+
