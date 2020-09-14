@@ -10,7 +10,7 @@ Directory structure:
 
 2. Scripts for Evaluations: steps to follow (dos2unix script.sh, chmod +x script.sh, ./script.sh)
 
-	2.1 main.sh : Main script that runs all the below given scripts.
+	2.1 main.sh : Main script that runs all the below given scripts. Steps to follow are provided as 'comments' on the top in main.sh
 
 	2.2 dataset.sh: Script for generating exact same Dataset used in the paper (Table 3).
 

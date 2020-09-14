@@ -18,11 +18,12 @@ do
 				for i in 1 2 3 4 5
 				do
 					sleep 5
-					file_path=
-					file_name="$file_path$profile-$univ.owl"
+					file_path=$(pwd)
+					file_name="$file_path/$profile-$univ.owl"
+#change to elk directory
+cd 
 
-
-					timeout 5400 java -Xms24g -Xmx24g -jar elk-standalone.jar -i $file_name -$task
+					timeout 5400 java -Xms24g -Xmx24g -jar $file_path/elk-distribution-0.4.3-standalone-executable/elk-standalone.jar -i $file_name -$task
 					echo "Finished Reasoner: $reasoner FileName: $profile-$univ Task: $task University: $univ Iteration: $i"
 
 				done
