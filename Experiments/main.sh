@@ -21,7 +21,6 @@
 
 #Now, from the terminal, change to this 'New Directory' and run this main script. 
 
-#to run reasoningTasks2.sh provide path to the ELK standalone.jar file
 
 
 
@@ -49,7 +48,7 @@ grep -B 1 -i "Finished Reasoner:" hermitpelletopenlletjfact.log >reasoningTimeHe
 
 
 
-#We will now convert all the files into OWL functional syntax for ELK and Konclude. We save them inside konclude's directory for now.
+#We will now convert all the files into OWL functional syntax for ELK and Konclude. 
 
 ./convert.sh >convert.log
 
