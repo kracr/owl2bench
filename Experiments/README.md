@@ -47,7 +47,7 @@ Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner 
 
 6. [ Pellet 2.3.6 ](https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)(https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)
 
-7. [ GraphDB 9.0.0 ](https://www.ontotext.com/products/graphdb/graphdb-free/)(https://www.ontotext.com/products/graphdb/graphdb-free/)
+7. [ GraphDB 9.0.0 ](https://www.ontotext.com/products/graphdb/graphdb-free/)(http://download.ontotext.com/owlim/cc4fadf4-e3ae-11e9-9439-42843b1b6b38/graphdb-free-9.0.0-dist.zip)
 
 8. [ Stardog 7.0.2 ](https://www.stardog.com/get-started/)(https://www.stardog.com/get-started/)
 
