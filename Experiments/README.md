@@ -26,14 +26,14 @@ Directory structure:
 
 	2.8 QueryResponse.sh: Script for executing SPARQL queries on Stardog.
 
-3. java runnable jar files: additional jar files (HermiT, Openllet, Pellet, JFact, convert) that were generated using Eclipse IDE from their source codes. Source code files are also provided in the directory.
+3. java runnable jar files: additional jar files (hermit, openllet, pellet, jfact, convert) that were generated using Eclipse IDE from their source codes. Source code files are also provided in the directory.
 
 -----------------------------------------------------------------------------------
 
 All our evaluations ran on a server with an AMD Ryzen Threadripper 2990WX 32-Core Processor and 128GB of RAM. The server ran on a 5.3.0-46-generic \#38~18.04.1-Ubuntu SMP operating system. **We used Java 1.8 and OWL API 5. For the performance evaluation we fixed 24GB of RAM**. We reported average time taken for 5 independent runs. 
 
 
-Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner evaluations. So, in order to demonstrate the utility of OWL2Bench we ran the generated datasets on 6 OWL2Reasoners and 2 SPARQL Query Engines. The list is given below. The version used along with their links are also specified.
+Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner evaluations. So, in order to demonstrate the utility of OWL2Bench we ran the generated datasets on 6 OWL 2 Reasoners and 2 SPARQL Query Engines. The list is given below. The version used along with their links are also specified.
 
 1. [ ELK 0.4.3 ](https://github.com/liveontologies/elk-reasoner/releases/download/v0.4.3/elk-distribution-0.4.3-standalone-executable.zip)(https://github.com/liveontologies/elk-reasoner/releases/download/v0.4.3/elk-distribution-0.4.3-standalone-executable.zip) 
 
@@ -47,7 +47,7 @@ Our benchmark, OWL2Bench, generates varying size datasets for ontology reasoner 
 
 6. [ Pellet 2.3.6 ](https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)(https://jar-download.com/artifacts/com.github.ansell.pellet/pellet-core/2.3.6-ansell/source-code)
 
-7. [ GraphDB 9.0.0 ](https://www.ontotext.com/products/graphdb/graphdb-free/)(https://www.ontotext.com/products/graphdb/graphdb-free/)
+7. [ GraphDB 9.0.0 ](https://www.ontotext.com/products/graphdb/graphdb-free/)(http://download.ontotext.com/owlim/cc4fadf4-e3ae-11e9-9439-42843b1b6b38/graphdb-free-9.0.0-dist.zip)
 
 8. [ Stardog 7.0.2 ](https://www.stardog.com/get-started/)(https://www.stardog.com/get-started/)
 
@@ -117,7 +117,7 @@ Stardog steps:
 GraphDB steps:
 
 ----------------------------
-1) Download your GraphDB 9.0.0 distribution file from https://www.ontotext.com/products/graphdb/graphdb-free/ and unzip it.
+1) Download your GraphDB 9.0.0 distribution file from http://download.ontotext.com/owlim/cc4fadf4-e3ae-11e9-9439-42843b1b6b38/graphdb-free-9.0.0-dist.zip and unzip it.
 
 2) **For Loading:** We used its LoadRDF tool that does offline loading and is mainly used for loading large files. <graphdb-dist>/bin/loadrdf -f -i <repo-name> -m parallel < data file(s)>. [Script](https://github.com/kracr/owl2bench/blob/master/Experiments) LoadingGraphDB.sh
 
