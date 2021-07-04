@@ -1,0 +1,7 @@
+NonHumanitiesAndSocialScience complementOf HumanitiesAndSocialScience
+NonPhysicalScience complementOf PhysicalScience
+NonManagement complementOf Management
+NonScience complementOf Science
+NonBiologicalScience complementOf BiologicalScience
+NonFineArts complementOf FineArts
+NonEngineering complementOf Engineering

@@ -1,0 +1,7 @@
+isHeadOf equivalent leads
+hasAdvisor equivalent isAdvisedBy
+hasPart equivalent hasSubOrganization
+advises equivalent isAdvisorOf
+registeredTo equivalent takesCourse
+hasDegreeFrom equivalent isAlumniOf
+isPartOf equivalent isSubOrganizationOf

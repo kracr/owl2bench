@@ -1,0 +1,12 @@
+hasLastName domain Person
+hasTelephone domain Person
+hasFirstName domain Person
+hasTitle domain Person
+hasTenure domain Faculty
+publicationTitle domain Publication
+hasEmailAddress domain Person
+hasPublicationDate domain Publication
+hasName domain Person
+hasTotalBacklogs domain Student
+hasOfficeNumber domain Person
+hasAge domain Person

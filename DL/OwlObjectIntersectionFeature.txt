@@ -1,0 +1,2 @@
+Father IntersectionOf Man,Parent
+Mother IntersectionOf Parent,Woman

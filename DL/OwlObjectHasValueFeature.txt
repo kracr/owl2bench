@@ -1,0 +1,6 @@
+BadmintonFan isCrazyAbout Badminton 
+TennisFan isCrazyAbout Tennis 
+T20CricketFan isCrazyAbout T20Cricket 
+SoccerFan isCrazyAbout Soccer 
+TestCricketFan isCrazyAbout TestCricket 
+OneDayCricketFan isCrazyAbout OneDayCricket 

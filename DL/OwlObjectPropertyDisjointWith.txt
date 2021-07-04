@@ -1,0 +1,4 @@
+advises disjointWithObject hasMajor
+dislikes disjointWithObject likes
+advises disjointWithObject courseOfferedBy
+advises disjointWithObject enrollFor

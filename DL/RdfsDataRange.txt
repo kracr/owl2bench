@@ -1,0 +1,4 @@
+hasDOI range xsd:string
+hasResearchInterest range rdfs:Literal
+publicationTitle range xsd:string
+hasOfficeNumber range xsd:string

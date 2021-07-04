@@ -1,0 +1,5 @@
+isPartOf Transitive
+hasPart Transitive
+hasSameHomeTownWith Transitive
+isSubOrganizationOf Transitive
+hasSubOrganization Transitive

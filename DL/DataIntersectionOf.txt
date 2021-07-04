@@ -1,0 +1,1 @@
+hasTotalBacklogs IntersectionOf xsd:integer,xsd:nonNegativeInteger
