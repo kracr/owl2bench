@@ -15,6 +15,9 @@ import java.util.stream.Collectors;
 
 public class Util {
 	
+	static LinkedHashMap<String,Integer> commonConstructs;
+	static LinkedHashMap<String,Integer> underscoreCommonConstructs;
+	
 	/**
 	 * Sorting on the basis of Axiom Count of construct 
 	 * 
@@ -137,14 +140,18 @@ public class Util {
 	 * We store ONLY those concepts/properties which CONSISTS UNDERSCORE in them.
 	 * Example Key/Value:- ( takesCourse_2, 0 ) , ( Employee_0, 0 ) , ( dislikes_1, 0 ) , ( Man_5, 0 )
 	 */
-	public void initializeGlobalHashMaps() throws IOException {
-	      LinkedHashMap<String,Integer> commonConstructs = new LinkedHashMap<String,Integer>();
+	public static void initializeGlobalHashMaps() throws IOException {
+//	      LinkedHashMap<String,Integer> commonConstructs = new LinkedHashMap<String,Integer>();
+	      commonConstructs = new LinkedHashMap<String,Integer>();
+	      
 	      FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir")+File.separator+"commonConstructs.ser");
 	      ObjectOutputStream oos = new ObjectOutputStream(fos);
 	      oos.writeObject(commonConstructs);
 	      oos.close();fos.close();
 	      
-	      LinkedHashMap<String,Integer> underscoreCommonConstructs = new LinkedHashMap<String,Integer>();
+//	      LinkedHashMap<String,Integer> underscoreCommonConstructs = new LinkedHashMap<String,Integer>();
+	      underscoreCommonConstructs = new LinkedHashMap<String,Integer>();
+	      
 	      FileOutputStream fos1 = new FileOutputStream(System.getProperty("user.dir")+File.separator+"underscoreCommonConstructs.ser");
 	      ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
 	      oos1.writeObject(underscoreCommonConstructs);

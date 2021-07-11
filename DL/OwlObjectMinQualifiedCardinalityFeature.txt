@@ -1,4 +1,4 @@
+Student takesCourse min 1 Course 
 Student hasFacultyAdvisor min 1 Faculty 
 Publication hasAuthor min 1 Person 
-Student takesCourse min 1 Course 
 PeopleWithManyHobbies likes min 3 Interest 

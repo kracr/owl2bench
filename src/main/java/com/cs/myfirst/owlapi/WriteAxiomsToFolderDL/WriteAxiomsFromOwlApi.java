@@ -389,41 +389,41 @@ public class WriteAxiomsFromOwlApi {
 		 String[] separator1 = {"\\r?\\n"," complementOf "," IntersectionOf "," OneOf "," UnionOf "};
 		 String[] generatedOntologyTerm1 = {"","ObjectComplementOf","ObjectIntersectionOf","ObjectOneOf","ObjectUnionOf"};
 		 
-		 String[] construct2 = {"AllDisjointClasses","DisjointUnion","DisjointWith","EquivalentClass","RdfsSubClassOf"};
-		 String[] filename2 = {"OwlAllDisjointClassesFeature.txt","OwlDisjointUnionFeature.txt","OwlDisjointWithFeature.txt","OwlEquivalentClassFeature.txt","RdfsSubClassOfFeature.txt"};
-		 String[] separator2 = {" , "," DisjointUnionOf "," disjointWith "," EquivalentClasses "," SubClassOf "};
-		 String[] generatedOntologyTerm2 = {"DisjointClasses","DisjointUnion","DisjointClasses-DisjointWith","EquivalentClasses","SubClassOf"};
+		 String[] construct2 = {"DisjointUnion","DisjointWith","EquivalentClass","RdfsSubClassOf"}; //"AllDisjointClasses",
+		 String[] filename2 = {"OwlDisjointUnionFeature.txt","OwlDisjointWithFeature.txt","OwlEquivalentClassFeature.txt","RdfsSubClassOfFeature.txt"}; //"OwlAllDisjointClassesFeature.txt",
+		 String[] separator2 = {" DisjointUnionOf "," disjointWith "," EquivalentClasses "," SubClassOf "}; //" , ",
+		 String[] generatedOntologyTerm2 = {"DisjointUnion","DisjointClasses-DisjointWith","EquivalentClasses","SubClassOf"}; //"DisjointClasses",
 		 
 		 String[] construct3 = {"AsymmetricProperty","EquivalentObjectProperty","FunctionalObjectProperty",
 				  "InverseFunctionalProperty","InverseOfProperty","IrreflexiveProperty",
 				  "ObjectPropertyDisjointWith","ReflexiveProperty","SymmetricProperty",
 				  "TransitiveProperty","RdfsObjectDomain","RdfsObjectRange","PropertyChainAxiom",
-				  "RdfsObjectSubPropertyOf","AllDisjointObjectProperties","ObjectProperty"}; 
+				  "RdfsObjectSubPropertyOf","ObjectProperty"}; //"AllDisjointObjectProperties",
 		 String[] filename3 = {"OwlAsymmetricProperty.txt","OwlEquivalentObjectProperty.txt","OwlFunctionalObjectProperty.txt",
 				 "OwlInverseFunctionalProperty.txt","OwlInverseOfProperty.txt","OwlIrreflexiveProperty.txt",
 				 "OwlObjectPropertyDisjointWith.txt","OwlReflexiveProperty.txt","OwlSymmetricProperty.txt",
 				 "OwlTransitiveProperty.txt","RdfsObjectDomain.txt","RdfsObjectRange.txt","OwlPropertyChainAxiomFeature.txt",
-				 "RdfsObjectSubPropertyOf.txt","AllDisjointObjectProperties.txt","OwlObjectProperty.txt"}; 
+				 "RdfsObjectSubPropertyOf.txt","OwlObjectProperty.txt"}; //"AllDisjointObjectProperties.txt",
 		 String[] separator3 = {" Asymmetric"," equivalent "," Functional",
 				 " inverse"," inverseOf "," irreflexive",
 				 " disjointWithObject "," reflexive"," Symmetrical",
 				 " Transitive"," domain "," range "," , ",
-				 " SubPropertyOf "," disjointObject "," "}; 
+				 " SubPropertyOf "," "}; // " disjointObject ",
 		 String[] generatedOntologyTerm3 = {"AsymmetricObjectProperty","EquivalentObjectProperties","FunctionalObjectProperty",
 				 "InverseFunctionalObjectProperty","InverseObjectProperties","IrreflexiveObjectProperty",
 				 "DisjointObjectProperties-DisjointWith","ReflexiveObjectProperty","SymmetricObjectProperty",
 				 "TransitiveObjectProperty","ObjectPropertyDomain","ObjectPropertyRange","SubObjectPropertyOfObjectPropertyChain",
-				 "SubObjectPropertyOf","DisjointObjectProperties",""};
+				 "SubObjectPropertyOf",""}; //"DisjointObjectProperties",
 		 
 		 String[] construct4 = {"ObjectAllValuesFrom","ObjectHasSelf","ObjectHasValue","ObjectSomeValuesFrom","ObjectQualifiedCardinality","ObjectMaxQualifiedCardinality","ObjectMinQualifiedCardinality"};
 		 String[] filename4 = {"OwlObjectAllValuesFromFeature.txt","OwlObjectHasSelfFeature.txt","OwlObjectHasValueFeature.txt","OwlObjectSomeValuesFromFeature.txt","OwlObjectQualifiedCardinalityFeature.txt","OwlObjectMaxQualifiedCardinalityFeature.txt","OwlObjectMinQualifiedCardinalityFeature.txt"};
 		 String[] separator4 = {" "," "," "," "," "," "," "};
 		 String[] generatedOntologyTerm4 = {"ObjectAllValuesFrom","ObjectHasSelf","ObjectHasValue","ObjectSomeValuesFrom","ObjectExactCardinality","ObjectMaxCardinality","ObjectMinCardinality"};
 		 
-		 String[] construct5 = {"AllDisjointDataProperties","EquivalentDataProperty","FunctionalDataProperty","DataPropertyDisjointWith","RdfsDataDomain","RdfsDataRange","RdfsDataSubPropertyOf"}; 
-		 String[] filename5 = {"AllDisjointDataProperties.txt","EquivalentDataProperty.txt","OwlFunctionalDataProperty.txt","DataPropertyDisjointWith.txt","RdfsDataDomain.txt","RdfsDataRange.txt","RdfsDataSubPropertyOf.txt"}; 
-		 String[] separator5 = {" disjointData "," EquivalentTo "," Functional"," disjointWithData "," domain "," range "," subpropertyof "}; 
-		 String[] generatedOntologyTerm5 = {"DisjointDataProperties","EquivalentDataProperties","FunctionalDataProperty","DisjointDataProperties-DisjointWith","DataPropertyDomain","DataPropertyRange","SubDataPropertyOf"}; 
+		 String[] construct5 = {"EquivalentDataProperty","FunctionalDataProperty","DataPropertyDisjointWith","RdfsDataDomain","RdfsDataRange","RdfsDataSubPropertyOf"}; //"AllDisjointDataProperties",
+		 String[] filename5 = {"EquivalentDataProperty.txt","OwlFunctionalDataProperty.txt","DataPropertyDisjointWith.txt","RdfsDataDomain.txt","RdfsDataRange.txt","RdfsDataSubPropertyOf.txt"}; //"AllDisjointDataProperties.txt",
+		 String[] separator5 = {" EquivalentTo "," Functional"," disjointWithData "," domain "," range "," subpropertyof "}; //" disjointData ",
+		 String[] generatedOntologyTerm5 = {"EquivalentDataProperties","FunctionalDataProperty","DisjointDataProperties-DisjointWith","DataPropertyDomain","DataPropertyRange","SubDataPropertyOf"}; //"DisjointDataProperties",
 		 
 		 String[] construct6 = {"DataAllValues","DataHasValue", "DataMaxQualifiedCardinality","DataMinQualifiedCardinality","DataQualifiedCardinality","DataSomeValuesFrom"};
 		 String[] filename6 = {"DataAllValues.txt","DataHasValue.txt", "DataMaxQualifiedCardinality.txt","DataMinQualifiedCardinality.txt","DataQualifiedCardinality.txt","DataSomeValuesFrom.txt"};
@@ -440,7 +440,7 @@ public class WriteAxiomsFromOwlApi {
 		 String[] separator9 = {" classAssertion "};
 		 String[] generatedOntologyTerm9 = {"ClassAssertion"};
 		 
-		 String[] construct10 = {"OwlHasKey"}; 
+		 String[] construct10 = {"HasKey"}; 
 		 String[] filename10 = {"OwlHasKey.txt"};
 		 String[] separator10 = {" HasKey "};
 		 String[] generatedOntologyTerm10 = {"HasKey"};

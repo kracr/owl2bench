@@ -58,8 +58,10 @@ public class Demo2 {
 //		    	}   
 		    }
 		}
-		//System.out.println("len "+userval.length);
+		String format = params.get("format").asText();
+		System.out.println("                            STARTING                              format "+format);
+		System.out.println("                            STARTING                              len "+userval.length);
 		app App = new app();
-		App.generate(userval);
+		App.generate(userval,format);
 	}
 }

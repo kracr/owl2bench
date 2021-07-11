@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import Predefined from "./types/Predefined.js";
-//const axios = require('axios');
 import axios from "axios";
+import "./bootstrap.min.css";
 
 //const constructs1 = ['owl:Class','owl:complementOf','owl:intersectionOf','owl:Nothing','owl:oneOf','owl:Thing','owl:unionOf'];
 const constructs1 = [
@@ -24,7 +24,6 @@ const h1 = "Predefined Classes, Boolean Connectives and Enumerations";
 //const constructs2 = ['owl:AllDisjointClasses','owl:disjointUnionOf','owl:disjointWith','owl:equivalentClass','rdf:subClassOf'];
 //"AllDisjointClasses",
 const constructs2 = [
-  "AllDisjointClasses",
   "DisjointUnion",
   "DisjointWith",
   "EquivalentClass",
@@ -38,6 +37,7 @@ for (let i = 0; i < constructs2.length; i++) {
 }
 const h2 = "Class Expression Axioms";
 
+//  "AllDisjointObjectProperties",
 // const constructs3 = ['owl:AllDisjointProperties (Object)','owl:AsmmetricProperty','owl:bottomObjectProperty','owl:equivalentProperty','owl:FunctionalProperty (Object)',
 // 'owl:InverseFunctionalProperty','owl:inverseOf','owl:IrreflexiveProperty','owl:ObjectProperty','owl:PropertyChainAxiom',
 // 'owl:propertyDisjointWith (Object)','owl:ReflexiveProperty','owl:SymmetricProperty','owl:topObjectProperty',
@@ -58,7 +58,6 @@ const constructs3 = [
   "RdfsObjectRange",
   "PropertyChainAxiom",
   "RdfsObjectSubPropertyOf",
-  "AllDisjointObjectProperties",
   "ObjectProperty",
 ];
 let initally3 = [];
@@ -89,12 +88,12 @@ for (let i = 0; i < constructs4.length; i++) {
 }
 const h4 = "Object Properties Restrictions";
 
+//  "AllDisjointDataProperties",
 // const constructs5 = ['owl:AllDisjointProperties (Data)','owl:bottomDataProperty','owl:DatatypeProperty'
 // ,'owl:equivalentProperty','owl:FunctionalProperty (Data)','owl:propertyDisjointWith (Data)',
 // 'owl:topDataProperty','rdfs:domain (Data)','rdfs:range (Data)','rdfs:subPropertyOf (Data)'];
 //"BottomDataProperty","DatatypeProperty","FunctionalDataProperty","DataPropertyDisjointWith","TopDataProperty",
 const constructs5 = [
-  "AllDisjointDataProperties",
   "EquivalentDataProperty",
   "FunctionalDataProperty",
   "DataPropertyDisjointWith",
@@ -138,7 +137,6 @@ const constructs7 = [
   "DataIntersectionOf",
   "DataOneOf",
   "DataUnionOf",
-  "HasKey",
 ];
 let initally7 = [];
 const indexes7 = new Map();
@@ -147,6 +145,16 @@ for (let i = 0; i < constructs7.length; i++) {
   indexes7[constructs7[i]] = i;
 }
 const h7 = "Data Ranges";
+
+const constructs10 = ["HasKey", "AssertionAxioms"];
+// const constructs10 = ["HasKey", "AssertionAxiomCount"];
+let initally10 = [];
+const indexes10 = new Map();
+for (let i = 0; i < constructs10.length; i++) {
+  initally10[i] = false;
+  indexes10[constructs10[i]] = i;
+}
+const h10 = "Assertions";
 
 const constructs8 = [
   "owl:rational",
@@ -205,15 +213,6 @@ const h9 = "Individuals";
 //const constructs10 = ['owl:AllDifferent','owl:hasKey','owl:NegativePropertyAssertion(on Data Property)',
 //owl:NegativePropertyAssertion(on Object Property)','owl:sameAs'];
 
-const constructs10 = ["owl:hasKey"];
-let initally10 = [];
-const indexes10 = new Map();
-for (let i = 0; i < constructs10.length; i++) {
-  initally10[i] = false;
-  indexes10[constructs10[i]] = i;
-}
-const h10 = "Assertions";
-
 const constructs11 = [
   "owl:AnnotationProperty",
   "owl:backwardCompactibleWith",
@@ -241,25 +240,11 @@ for (let i = 0; i < constructs11.length; i++) {
 }
 const h11 = "OWL Annotations";
 
-const headers = [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11];
+const headers = [h1, h2, h3, h4, h5, h6, h7, h10];
 const headingInd = new Map();
 for (let i = 0; i < headers.length; i++) {
   headingInd[headers[i]] = i;
 }
-
-// const overallconstructs = [
-//   constructs1,
-//   constructs2,
-//   constructs3,
-//   constructs4,
-//   constructs5,
-//   constructs6,
-//   constructs7,
-//   constructs8,
-//   constructs9,
-//   constructs10,
-//   constructs11,
-// ];
 
 const overallconstructs = [
   constructs1,
@@ -269,6 +254,7 @@ const overallconstructs = [
   constructs5,
   constructs6,
   constructs7,
+  constructs10,
 ];
 
 let total = 0;
@@ -593,6 +579,7 @@ function App() {
     setCheck5,
     setCheck6,
     setCheck7,
+    setCheck10,
   ];
   const boxes = [
     checkbox1,
@@ -602,6 +589,7 @@ function App() {
     checkbox5,
     checkbox6,
     checkbox7,
+    checkbox10,
   ];
   const index = [
     indexes1,
@@ -611,6 +599,7 @@ function App() {
     indexes5,
     indexes6,
     indexes7,
+    indexes10,
   ];
 
   let generate = () => {
@@ -630,7 +619,7 @@ function App() {
             userVal = 1;
             userInput.push(1);
           }
-          console.log(construct + " | " + userVal);
+          // console.log(construct + " | " + userVal);
         } else {
           userInput.push(0);
         }
@@ -640,6 +629,8 @@ function App() {
       axios
         .post("http://localhost:8080/api/send", {
           userValues: userInput,
+          // format: "xmlFormat",
+          format: "manchesterFormat",
         })
         .then((response) => {
           alert(
@@ -688,7 +679,25 @@ function App() {
       let contructNames = overallconstructs[j];
       for (let i = 0; i < boxes[j].length; i++) {
         allCheck[i] = boolVal;
-        //console.log(contructNames[i]+" | "+i)
+        if (boolVal == false) {
+          document.getElementById(contructNames[i] + "Text").value = "";
+          document.getElementById("selectAllInput").value = "";
+          // console.log(
+          //   contructNames[i] +
+          //     " = " +
+          //     document.getElementById(contructNames[i] + "Text").value
+          // );
+        }
+        if (boolVal == true) {
+          document.getElementById(contructNames[i] + "Text").value =
+            document.getElementById("selectAllInput").value.length != 0
+              ? document.getElementById("selectAllInput").value
+              : 1;
+          // console.log(
+          //   document.getElementById("selectAllInput").value +
+          //     " =  dekho left main "
+          // );
+        }
       }
       fxns[j](allCheck);
     }
@@ -697,9 +706,27 @@ function App() {
   let selectNone = () => toggle(false);
 
   let toggleChildren = (ind, boolVal) => {
-    //console.log(headingInd[ind]+" dekho ");
     let allCheck = [];
+    let contructNames = overallconstructs[headingInd[ind]];
     for (let i = 0; i < boxes[headingInd[ind]].length; i++) {
+      // console.log(
+      //   contructNames[i] +
+      //     " = " +
+      //     document.getElementById(contructNames[i] + "Text").value +
+      //     " = " +
+      //     ind +
+      //     " || " +
+      //     document.getElementById("selectAllInput" + ind).value
+      // );
+      if (boolVal == false) {
+        document.getElementById("selectAllInput" + ind).value = "";
+        document.getElementById(contructNames[i] + "Text").value = "";
+      } else if (boolVal == true) {
+        document.getElementById(contructNames[i] + "Text").value =
+          document.getElementById("selectAllInput" + ind).value.length != 0
+            ? document.getElementById("selectAllInput" + ind).value
+            : 1;
+      }
       allCheck[i] = boolVal;
     }
     fxns[headingInd[ind]](allCheck);
@@ -724,9 +751,8 @@ function App() {
       document.getElementById(nameclicked + "Text").value = "";
     }
     let allCheck = [...boxes[headingInd[ind]]];
-    allCheck[index[headingInd[ind]][nameclicked]] = !boxes[headingInd[ind]][
-      index[headingInd[ind]][nameclicked]
-    ];
+    allCheck[index[headingInd[ind]][nameclicked]] =
+      !boxes[headingInd[ind]][index[headingInd[ind]][nameclicked]];
     fxns[headingInd[ind]](allCheck);
     //console.log(ind+ " | "+nameclicked+"  "+e.target.checked+" "+allCheck[index[headingInd[ind]][nameclicked]]+" "+!boxes[headingInd[ind]][index[headingInd[ind]][nameclicked]]);
   };
@@ -736,8 +762,35 @@ function App() {
       <div className="row justify-content-center">
         <h1>OWL2Bench</h1>
       </div>
+
+      <div class="dropdown show">
+        <a
+          class="btn btn-secondary dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown link
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">
+            Action
+          </a>
+          <a class="dropdown-item" href="#">
+            Another action
+          </a>
+          <a class="dropdown-item" href="#">
+            Something else here
+          </a>
+        </div>
+      </div>
+
       <hr></hr>
-      <div className="row justify-content-center">
+      {/* <div className="row justify-content-center">
         <div className="col-3">
           <button class="btn btn-primary"> Easy </button>
         </div>
@@ -747,7 +800,7 @@ function App() {
         <div className="col-3">
           <button class="btn btn-primary"> Hard </button>
         </div>
-      </div>
+      </div> */}
       <hr></hr>
       {/* <div className="row justify-content-center">
         <div className=" col-1"></div>
@@ -791,25 +844,31 @@ function App() {
       <hr></hr> */}
       <div className="row">
         <div className=" col-md-3"></div>
-        <div className=" col-md-3">
+        <div className=" col-md-4">
           {" "}
           <button class="btn btn-success" onClick={selectAll}>
             {" "}
             Select All{" "}
           </button>{" "}
+          <input
+            type="text"
+            class="col-md-3 mb-3"
+            id="selectAllInput"
+            placeholder="All Input"
+          ></input>
         </div>
-        <div className=" col-md-3">
+        <div className=" col-md-4">
           {" "}
           <button class="btn btn-success" onClick={selectNone}>
             Select None
           </button>{" "}
         </div>
-        <div className=" col-md-3">
+        {/* <div className=" col-md-3">
           {" "}
           <button class="btn btn-success" onClick={invertToggle}>
             Invert Selections
           </button>{" "}
-        </div>
+        </div> */}
       </div>
       <hr></hr>
       <hr></hr>
@@ -900,7 +959,17 @@ function App() {
             heading={h7}
           />
         </div>
-        {/* <div className="container col-6"><Predefined invertToggle={invertToggleChildren} handleCheckboxChange={handleCheckboxOne} toggleParent={toggleChildren} constructs={constructs8} initally={checkbox8} indexes={indexes8} heading={h8} /></div> */}
+        <div className="container col-6">
+          <Predefined
+            invertToggle={invertToggleChildren}
+            handleCheckboxChange={handleCheckboxOne}
+            toggleParent={toggleChildren}
+            constructs={constructs10}
+            initally={checkbox10}
+            indexes={indexes10}
+            heading={h10}
+          />
+        </div>
       </div>
       <br></br>
       {/* <div className="row">

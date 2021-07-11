@@ -292,12 +292,6 @@ public class LastDance {
 		LinkedHashMap<String, Integer> globalCommons = tp.loadGlobalCommons("commonConstructs.ser");
 		LinkedHashMap<String, Integer> underscoreGlobalCommons = tp.loadGlobalCommons("underscoreCommonConstructs.ser");
 		
-//		String[] files = {"RdfsObjectDomain.txt","RdfsObjectRange.txt","RdfsDataDomain.txt","RdfsDataRange.txt",
-//				"RdfsSubClassOfFeature.txt","RdfsDataSubPropertyOf.txt","RdfsObjectSubPropertyOf.txt"};	
-//		String[] constructs = {" domain "," range "," domain "," range ",
-//				" SubClassOf "," subpropertyof "," SubPropertyOf "};
-//		if ( i <= 3 ) {
-		
 		String[] files = {"RdfsSubClassOfFeature.txt","RdfsDataSubPropertyOf.txt","RdfsObjectSubPropertyOf.txt",
 				
 				"RdfsObjectDomain.txt","RdfsObjectRange.txt","RdfsDataDomain.txt","RdfsDataRange.txt",

@@ -1,10 +1,14 @@
 package owl.cs.myfirst.owlapi.Features;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.stream.Stream;
 
+import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -14,6 +18,7 @@ import org.semanticweb.owlapi.model.OWLDataRange;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.model.parameters.Imports;
 
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
@@ -30,10 +35,33 @@ public class AssertionCategory {
 		AssertionCategory.ontology = ontology;
 	}
 	
-	public static void convertLineToOwlHasKey(ArrayList<String> allConcepts) {
+	public static void convertLineToHasKey(ArrayList<String> allConcepts) {
 		OWLClass hasKeyClass = featurePool.getExclusiveClass(allConcepts.get(0));
 		OWLDataProperty hasKeyProperty = factory.getOWLDataProperty(allConcepts.get(1), pm);
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLHasKeyAxiom(hasKeyClass, hasKeyProperty));
+	}
+	
+	public static void convertLineToAssertionAxiom() {
+		System.out.println(" reaching here ");
+//		System.out.println(ontology.getImportsClosure());
+		
+//		System.out.println(ontology.getAxioms(AxiomType.));
+//		System.out.println();
+		
+		System.out.println(ontology.getAxioms(AxiomType.ANNOTATION_ASSERTION));
+		System.out.println();
+		System.out.println(ontology.getAxioms(AxiomType.ANNOTATION_PROPERTY_DOMAIN));
+		System.out.println();
+		System.out.println(ontology.getAxioms(AxiomType.ANNOTATION_PROPERTY_RANGE));
+		System.out.println();
+		System.out.println(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
+		System.out.println();
+		System.out.println(ontology.getAxioms(AxiomType.DATA_PROPERTY_ASSERTION));
+		System.out.println();
+		System.out.println(ontology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION));
+		System.out.println();
+//		Set<OWLAxiom> aBox = ontology.getABoxAxioms(includeImportsClosure);
+//		System.out.println(aBox);	
 	}
 	
 	

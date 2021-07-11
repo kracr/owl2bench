@@ -47,12 +47,12 @@ public class CommonFramework {
 
 		if ( commonGlobalHashMap.containsKey(concept) ) {
 			int count = commonGlobalHashMap.get(concept);
-			System.out.println(count+" || globalhashmap count "+limit+" || userInp "+userInp);
+//			System.out.println(count+" || globalhashmap count "+limit+" || userInp "+userInp);
 		}
 		
 		String value = "";
 		int upperBound = ((userInp-2)/limit)-1;
-		if ( upperBound != 0 ) {
+		if ( upperBound > 0 ) {
 			Random r = new Random();
 			int low = -1;
 			int high = upperBound-1;
@@ -181,7 +181,7 @@ public class CommonFramework {
 				if ( !isIsNumber(allConcepts.get(1)) && !isIsLiteral(allConcepts.get(1)) && allConcepts.size() == 2 ) {
 					//((userInp-2)/(sortedUserInput.get(filename))-1)
 					String value = getRandomMaxTerm(allConcepts.get(1),rankedAxioms.size(),userInp);
-					System.out.println(filename+" common framework "+value+" || "+allConcepts.get(1)+" || "+userInp+" | axiom size "+rankedAxioms.size());
+//					System.out.println(filename+" common framework "+value+" || "+allConcepts.get(1)+" || "+userInp+" | axiom size "+rankedAxioms.size());
 					allConcepts.add(1, value);
 				}
 			}
@@ -250,6 +250,9 @@ public class CommonFramework {
 		rdfsSubsOnly = new LinkedHashMap<String,Integer>();
 		TextFileProcessor pattern = new TextFileProcessor();
 		ArrayList<String> axioms = pattern.readTxtFile(fileName,construct);
+
+		if ( axioms.size() == 0 ) return ;
+		
 		Collections.shuffle(axioms);
 		ArrayList<String> rankedAxioms = pattern.rankAxioms(axioms);
 		int count = insertAxiomIntoOntology(rankedAxioms,0,userInp,"first",0,fileName);

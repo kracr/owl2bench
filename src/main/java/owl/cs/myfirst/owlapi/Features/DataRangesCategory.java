@@ -37,12 +37,6 @@ public class DataRangesCategory {
 		DataRangesCategory.ontology = ontology;
 	}		
 	
-	public static void convertLineToHasKey(ArrayList<String> allConcepts) {
-		OWLClass hasKeyClass = featurePool.getExclusiveClass(allConcepts.get(0));
-		OWLDataProperty hasKeyProperty = factory.getOWLDataProperty(allConcepts.get(1), pm);
-		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLHasKeyAxiom(hasKeyClass, hasKeyProperty));
-	}
-	
 	public static void convertLineToDataComplementOf(ArrayList<String> allConcepts) {
 		String prop = allConcepts.get(0);
 	    OWLDatatype datatype = factory.getOWLDatatype(allConcepts.get(1), pm);
@@ -71,10 +65,12 @@ public class DataRangesCategory {
 		OWLDatatype datatype = factory.getOWLDatatype(allConcepts.get(0), pm);
 		ArrayList<OWLLiteral> props = new ArrayList<OWLLiteral>();
 		for ( int i = 1 ; i < allConcepts.size() ; i=i+2 ) {
+//			OWLLiteral obj = factory.getOWLLiteral(allConcepts.get(i), OWL2Datatype.XSD_STRING );
 			OWLLiteral obj = factory.getOWLLiteral(allConcepts.get(i),allConcepts.get(i+1));
 			props.add(obj);
 		}
 		OWLDataOneOf owlDataOneOf = factory.getOWLDataOneOf(props);
+//		System.out.println(owlDataOneOf);
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDatatypeDefinitionAxiom(datatype, owlDataOneOf));
 		//addAxiomToOntology(factory.getOWLDatatypeDefinitionAxiom(datatype, owlDataOneOf));
 	}
