@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Predefined from "./types/Predefined.js";
 import axios from "axios";
 import "./bootstrap.min.css";
+// import "./bootstrap.min.js";
+// import "../node_modules/jquery/dist/jquery.min.js";
 
 //const constructs1 = ['owl:Class','owl:complementOf','owl:intersectionOf','owl:Nothing','owl:oneOf','owl:Thing','owl:unionOf'];
 const constructs1 = [
@@ -146,7 +148,12 @@ for (let i = 0; i < constructs7.length; i++) {
 }
 const h7 = "Data Ranges";
 
-const constructs10 = ["HasKey", "AssertionAxioms"];
+const constructs10 = [
+  "HasKey",
+  "ClassAssertionAxioms",
+  "ObjectPropertyAssertionAxioms",
+  "DataPropertyAssertionAxioms",
+];
 // const constructs10 = ["HasKey", "AssertionAxiomCount"];
 let initally10 = [];
 const indexes10 = new Map();
@@ -571,6 +578,9 @@ function App() {
   const [checkbox9, setCheck9] = useState(initally9);
   const [checkbox10, setCheck10] = useState(initally10);
   const [checkbox11, setCheck11] = useState(initally11);
+  const [extra, setExtra] = useState(false);
+  const [format, setFormat] = useState("XML");
+
   const fxns = [
     setCheck1,
     setCheck2,
@@ -626,11 +636,12 @@ function App() {
       }
     }
     if (ifany == true) {
+      console.log(extra + " |" + format);
       axios
         .post("http://localhost:8080/api/send", {
           userValues: userInput,
-          // format: "xmlFormat",
-          format: "manchesterFormat",
+          format: format,
+          extra: extra,
         })
         .then((response) => {
           alert(
@@ -757,38 +768,22 @@ function App() {
     //console.log(ind+ " | "+nameclicked+"  "+e.target.checked+" "+allCheck[index[headingInd[ind]][nameclicked]]+" "+!boxes[headingInd[ind]][index[headingInd[ind]][nameclicked]]);
   };
 
+  let extraHierarchyDomainRange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    setExtra(value);
+  };
+
+  let selectOutputFormat = (e) => {
+    const target = e.target;
+    setFormat(target.value);
+  };
+
   return (
     <div className="App">
       <div className="row justify-content-center">
         <h1>OWL2Bench</h1>
       </div>
-
-      <div class="dropdown show">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown link
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">
-            Action
-          </a>
-          <a class="dropdown-item" href="#">
-            Another action
-          </a>
-          <a class="dropdown-item" href="#">
-            Something else here
-          </a>
-        </div>
-      </div>
-
       <hr></hr>
       {/* <div className="row justify-content-center">
         <div className="col-3">
@@ -1004,8 +999,27 @@ function App() {
       <br></br> */}
       <hr></hr>
       <hr></hr>
-      <div className="row justify-content-center">
-        <button class="btn btn-primary" onClick={(event) => generate()}>
+      <div className="row justify-content-around">
+        <select onChange={selectOutputFormat}>
+          <option value="XML">XML</option>
+          <option value="RDF">RDF</option>
+          <option value="Manchester">Manchester</option>
+          <option value="Functional">Functional</option>
+          <option value="Turtle">Turtle</option>
+        </select>
+        <div className="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckChecked"
+            onChange={extraHierarchyDomainRange}
+          ></input>
+          <label class="form-check-label" for="flexCheckChecked">
+            Extra Hierarchy, Domain And Range
+          </label>
+        </div>
+        <button className="btn btn-primary" onClick={(event) => generate()}>
           {" "}
           Generate{" "}
         </button>

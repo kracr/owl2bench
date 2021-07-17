@@ -52,7 +52,7 @@ function Predefined(props) {
             type="text"
             class="col-md-3 mb-3"
             id={"selectAllInput" + props.heading}
-            placeholder="All Input"
+            placeholder="Input"
           ></input>
         </div>
         <div className="col-5">
