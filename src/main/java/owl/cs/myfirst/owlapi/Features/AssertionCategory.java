@@ -206,15 +206,16 @@ public class AssertionCategory {
 		String result = "";
 		if ( !key.equals("anyInstance") ) {	
 			String item = key.contains("_") ? key.substring(0,key.indexOf("_")) : key;
-			int num = Util.commonConstructs.containsKey(item) ? Util.commonConstructs.get(item) : 0;
-			
-			result = key.toLowerCase();
+			String num = Util.commonConstructs.containsKey(item) ? String.valueOf(Util.commonConstructs.get(item)) : "";
+
+			result = key.toLowerCase()+num;
 		} else {
 			ArrayList<String> alreadyIndi = new ArrayList<String>(allConcepts);
 			Collections.shuffle(alreadyIndi, new Random(2));
 			
-			result = alreadyIndi.get(0);
+			result = alreadyIndi.get(0).toLowerCase();
 		}
+//		System.out.println(result.trim());
 		return result.trim();
 	}
 	
