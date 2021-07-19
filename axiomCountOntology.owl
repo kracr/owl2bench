@@ -1,1224 +1,3535 @@
-Prefix: : <http://benchmark/OWL2Bench/>
-Prefix: owl: <http://www.w3.org/2002/07/owl#>
-Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix: xml: <http://www.w3.org/XML/1998/namespace>
-Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
-
-
-
-Ontology: 
-
-Datatype: rdfs:Literal
-
-    
-Datatype: xsd:dateTime
-
-    
-Datatype: xsd:dateTimeStamp
-
-    
-Datatype: xsd:integer
-
-    
-Datatype: xsd:negativeInteger
-
-    
-Datatype: xsd:nonNegativeInteger
-
-    
-Datatype: xsd:string
-
-    
-ObjectProperty: advises
-
-    DisjointWith: 
-        courseOfferedBy,
-        enrollFor,
-        hasMajor
-    
-    
-ObjectProperty: courseOfferedBy
-
-    DisjointWith: 
-        advises
-    
-    
-ObjectProperty: enrollFor
-
-    DisjointWith: 
-        advises
-    
-    Characteristics: 
-        Functional
-    
-    
-ObjectProperty: enrollIn
-
-    Characteristics: 
-        Functional
-    
-    
-ObjectProperty: hasAuthor
-
-    
-ObjectProperty: hasCollaborationWith
-
-    Characteristics: 
-        Symmetric
-    
-    Domain: 
-        Person_8
-    
-    
-ObjectProperty: hasCollaborationWith_0
-
-    Characteristics: 
-        Symmetric
-    
-    
-ObjectProperty: hasDean
-
-    Characteristics: 
-        Functional
-    
-    InverseOf: 
-        isDeanOf
-    
-    
-ObjectProperty: hasDegreeFrom
-
-    
-ObjectProperty: hasMajor
-
-    DisjointWith: 
-        advises
-    
-    
-ObjectProperty: hasPart
-
-    EquivalentTo: 
-        hasSubOrganization
-    
-    Characteristics: 
-        Transitive
-    
-    InverseOf: 
-        isPartOf
-    
-    
-ObjectProperty: hasSameHomeTownWith
-
-    Characteristics: 
-        Symmetric,
-        Transitive
-    
-    
-ObjectProperty: hasStudent
-
-    
-ObjectProperty: hasSubOrganization
-
-    EquivalentTo: 
-        hasPart
-    
-    Characteristics: 
-        Transitive
-    
-    InverseOf: 
-        isSubOrganizationOf
-    
-    
-ObjectProperty: isAdvisedBy
-
-    Characteristics: 
-        Irreflexive
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf
-
-    Characteristics: 
-        Irreflexive,
-        Asymmetric
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_0
-
-    Characteristics: 
-        Irreflexive,
-        Asymmetric
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_1
-
-    Characteristics: 
-        Asymmetric
-    
-    
-ObjectProperty: isCrazyAbout
-
-    
-ObjectProperty: isDeanOf
-
-    Characteristics: 
-        InverseFunctional
-    
-    InverseOf: 
-        hasDean
-    
-    
-ObjectProperty: isDeanOf_0
-
-    Characteristics: 
-        InverseFunctional
-    
-    
-ObjectProperty: isHeadOf
-
-    Characteristics: 
-        InverseFunctional
-    
-    
-ObjectProperty: isMemberOf
-
-    SubPropertyChain: 
-        enrollIn o isPartOf
-    
-    
-ObjectProperty: isPartOf
-
-    EquivalentTo: 
-        isSubOrganizationOf
-    
-    InverseOf: 
-        hasPart
-    
-    
-ObjectProperty: isStudentOf
-
-    SubPropertyChain: 
-        enrollIn o isSubOrganizationOf
-    
-    Domain: 
-        Student
-    
-    
-ObjectProperty: isSubOrganizationOf
-
-    EquivalentTo: 
-        isPartOf
-    
-    InverseOf: 
-        hasSubOrganization
-    
-    
-ObjectProperty: knows
-
-    Characteristics: 
-        Reflexive
-    
-    
-ObjectProperty: knows_0
-
-    Characteristics: 
-        Reflexive
-    
-    
-ObjectProperty: knows_1
-
-    Characteristics: 
-        Reflexive
-    
-    
-ObjectProperty: registeredTo
-
-    EquivalentTo: 
-        takesCourse
-    
-    
-ObjectProperty: takesCourse
-
-    EquivalentTo: 
-        registeredTo
-    
-    Domain: 
-        Student
-    
-    
-ObjectProperty: takesCourse_0
-
-    
-ObjectProperty: worksFor
-
-    SubPropertyChain: 
-        worksFor o isSubOrganizationOf
-    
-    
-DataProperty: hasAge
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_0
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_1
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_10
-
-    
-DataProperty: hasAge_11
-
-    
-DataProperty: hasAge_2
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_3
-
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_4
-
-    
-DataProperty: hasAge_5
-
-    
-DataProperty: hasAge_6
-
-    
-DataProperty: hasAge_7
-
-    
-DataProperty: hasAge_8
-
-    
-DataProperty: hasAge_9
-
-    
-DataProperty: hasCode
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-        (rdfs:Literal or xsd:string)
-    
-    EquivalentTo: 
-        hasID
-    
-    
-DataProperty: hasCode_0
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-        (rdfs:Literal or xsd:string)
-    
-    EquivalentTo: 
-        hasID_0
-    
-    
-DataProperty: hasCode_1
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasID_1
-    
-    
-DataProperty: hasCode_10
-
-    EquivalentTo: 
-        hasID_10
-    
-    
-DataProperty: hasCode_11
-
-    EquivalentTo: 
-        hasID_11
-    
-    
-DataProperty: hasCode_2
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasID_2
-    
-    
-DataProperty: hasCode_3
-
-    EquivalentTo: 
-        hasID_3
-    
-    
-DataProperty: hasCode_4
-
-    EquivalentTo: 
-        hasID_4
-    
-    
-DataProperty: hasCode_5
-
-    EquivalentTo: 
-        hasID_5
-    
-    
-DataProperty: hasCode_6
-
-    EquivalentTo: 
-        hasID_6
-    
-    
-DataProperty: hasCode_7
-
-    EquivalentTo: 
-        hasID_7
-    
-    
-DataProperty: hasCode_8
-
-    EquivalentTo: 
-        hasID_8
-    
-    
-DataProperty: hasCode_9
-
-    EquivalentTo: 
-        hasID_9
-    
-    
-DataProperty: hasDOI
-
-    
-DataProperty: hasDOI_0
-
-    
-DataProperty: hasDOI_1
-
-    
-DataProperty: hasDOI_2
-
-    
-DataProperty: hasEmailAddress
-
-    
-DataProperty: hasEmailAddress_0
-
-    
-DataProperty: hasEmailAddress_1
-
-    
-DataProperty: hasEmailAddress_10
-
-    
-DataProperty: hasEmailAddress_11
-
-    
-DataProperty: hasEmailAddress_2
-
-    
-DataProperty: hasEmailAddress_3
-
-    
-DataProperty: hasEmailAddress_4
-
-    
-DataProperty: hasEmailAddress_5
-
-    
-DataProperty: hasEmailAddress_6
-
-    
-DataProperty: hasEmailAddress_7
-
-    
-DataProperty: hasEmailAddress_8
-
-    
-DataProperty: hasEmailAddress_9
-
-    
-DataProperty: hasID
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasCode
-    
-    
-DataProperty: hasID_0
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasCode_0
-    
-    
-DataProperty: hasID_1
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasCode_1
-    
-    
-DataProperty: hasID_10
-
-    EquivalentTo: 
-        hasCode_10
-    
-    
-DataProperty: hasID_11
-
-    EquivalentTo: 
-        hasCode_11
-    
-    
-DataProperty: hasID_2
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasCode_2
-    
-    
-DataProperty: hasID_3
-
-    Characteristics: 
-        Functional
-    
-    EquivalentTo: 
-        hasCode_3
-    
-    
-DataProperty: hasID_4
-
-    EquivalentTo: 
-        hasCode_4
-    
-    
-DataProperty: hasID_5
-
-    EquivalentTo: 
-        hasCode_5
-    
-    
-DataProperty: hasID_6
-
-    EquivalentTo: 
-        hasCode_6
-    
-    
-DataProperty: hasID_7
-
-    EquivalentTo: 
-        hasCode_7
-    
-    
-DataProperty: hasID_8
-
-    EquivalentTo: 
-        hasCode_8
-    
-    
-DataProperty: hasID_9
-
-    EquivalentTo: 
-        hasCode_9
-    
-    
-DataProperty: hasName
-
-    
-DataProperty: hasName_0
-
-    
-DataProperty: hasName_1
-
-    
-DataProperty: hasName_10
-
-    
-DataProperty: hasName_11
-
-    
-DataProperty: hasName_2
-
-    
-DataProperty: hasName_3
-
-    
-DataProperty: hasName_4
-
-    
-DataProperty: hasName_5
-
-    
-DataProperty: hasName_6
-
-    
-DataProperty: hasName_7
-
-    
-DataProperty: hasName_8
-
-    
-DataProperty: hasName_9
-
-    
-DataProperty: hasPublicationDate
-
-    Range: 
-        (xsd:dateTime or xsd:dateTimeStamp)
-    
-    
-DataProperty: hasResearchInterest
-
-    
-DataProperty: hasResearchInterest_0
-
-    
-DataProperty: hasResearchInterest_1
-
-    
-DataProperty: hasResearchInterest_2
-
-    
-DataProperty: hasResearchInterest_3
-
-    
-DataProperty: hasResearchInterest_4
-
-    
-DataProperty: hasResearchInterest_5
-
-    
-DataProperty: hasTitle
-
-    
-DataProperty: hasTitle_0
-
-    
-DataProperty: hasTitle_1
-
-    
-DataProperty: hasTitle_10
-
-    
-DataProperty: hasTitle_11
-
-    
-DataProperty: hasTitle_2
-
-    
-DataProperty: hasTitle_3
-
-    
-DataProperty: hasTitle_4
-
-    
-DataProperty: hasTitle_5
-
-    
-DataProperty: hasTitle_6
-
-    
-DataProperty: hasTitle_7
-
-    
-DataProperty: hasTitle_8
-
-    
-DataProperty: hasTitle_9
-
-    
-DataProperty: hasTotalBacklogs
-
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger),
-        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
-    
-    
-DataProperty: hasTotalBacklogs_0
-
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger),
-        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
-    
-    
-DataProperty: hasTotalBacklogs_1
-
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
-    
-    
-DataProperty: hasTotalBacklogs_2
-
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
-    
-    
-DataProperty: hasTotalBacklogs_3
-
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
-    
-    
-DataProperty: hasTotalBacklogs_4
-
-    
-Class: Article
-
-    SubClassOf: 
-        Publication
-    
-    DisjointUnionOf: 
-        ConferencePaper, JournalArticle, TechnicalReport
-    
-    
-Class: Book
-
-    
-Class: CoEdCollege
-
-    SubClassOf: 
-        hasStudent some Person
-    
-    
-Class: College
-
-    SubClassOf: 
-        hasStudent some Person
-    
-    
-Class: ConferencePaper
-
-    SubClassOf: 
-        Article
-    
-    
-Class: Course
-
-    EquivalentTo: 
-        TeachingCourse
-    
-    SubClassOf: 
-        takesCourse min 1 Student,
-        takesCourse max 1 LeisureStudent,
-        hasCode exactly 1 xsd:string
-    
-    DisjointUnionOf: 
-        ElectiveCourse, UGCourse
-    
-    
-Class: Course_0
-
-    SubClassOf: 
-        takesCourse_0 max 1 LeisureStudent_0,
-        hasCode_0 exactly 1 xsd:string
-    
-    
-Class: Course_1
-
-    SubClassOf: 
-        hasCode_1 exactly 1 xsd:string
-    
-    
-Class: Course_2
-
-    SubClassOf: 
-        hasCode_2 exactly 1 xsd:string
-    
-    
-Class: ElectiveCourse
-
-    
-Class: Father
-
-    EquivalentTo: 
-        Man
-         and Parent
-    
-    
-Class: Football
-
-    EquivalentTo: 
-        Soccer
-    
-    
-Class: GovernmentOrganization
-
-    EquivalentTo: 
-        {NonProfitOrganization , ProfitOrganization}
-    
-    
-Class: Human
-
-    EquivalentTo: 
-        Person
-    
-    
-Class: HumanitiesAndSocialScience
-
-    EquivalentTo: 
-        {Anthropology , Economics , English , History , Humanities , Linguistics , ModernLanguages , Philosophy , Psychology , Religions}
-    
-    
-Class: JournalArticle
-
-    
-Class: LeisureStudent
-
-    
-Class: LeisureStudent_0
-
-    
-Class: Man
-
-    
-Class: Man_0
-
-    
-Class: Manual
-
-    
-Class: Mother
-
-    EquivalentTo: 
-        Parent
-         and Woman
-    
-    
-Class: NonHumanitiesAndSocialScience
-
-    SubClassOf: 
-        not (HumanitiesAndSocialScience)
-    
-    
-Class: NonScience
-
-    SubClassOf: 
-        not (Science)
-    
-    
-Class: PGProgram
-
-    SubClassOf: 
-        enrollFor exactly 1 PGStudent
-    
-    
-Class: PGStudent
-
-    
-Class: Parent
-
-    
-Class: Person
-
-    EquivalentTo: 
-        Human
-    
-    SubClassOf: 
-        Man or Woman,
-        hasDegreeFrom only University,
-        hasAuthor min 1 Publication,
-        hasName some xsd:string,
-        hasEmailAddress only xsd:string,
-        hasResearchInterest min 1 xsd:string,
-        hasID exactly 1 xsd:string,
-        hasTitle max 5 xsd:string
-    
-    
-Class: Person_0
-
-    SubClassOf: 
-        Man_0 or Woman_0,
-        hasName_0 some xsd:string,
-        hasEmailAddress_0 only xsd:string,
-        hasResearchInterest_0 min 1 xsd:string,
-        hasID_0 exactly 1 xsd:string,
-        hasTitle_0 max 5 xsd:string
-    
-    
-Class: Person_1
-
-    SubClassOf: 
-        hasName_1 some xsd:string,
-        hasEmailAddress_1 only xsd:string,
-        hasResearchInterest_1 min 1 xsd:string,
-        hasID_1 exactly 1 xsd:string,
-        hasTitle_1 max 5 xsd:string
-    
-    
-Class: Person_10
-
-    SubClassOf: 
-        hasName_10 some xsd:string,
-        hasEmailAddress_10 only xsd:string,
-        hasTitle_10 max 5 xsd:string
-    
-    
-Class: Person_11
-
-    SubClassOf: 
-        hasName_11 some xsd:string,
-        hasEmailAddress_11 only xsd:string,
-        hasTitle_11 max 5 xsd:string
-    
-    
-Class: Person_2
-
-    SubClassOf: 
-        hasName_2 some xsd:string,
-        hasEmailAddress_2 only xsd:string,
-        hasResearchInterest_2 min 1 xsd:string,
-        hasID_2 exactly 1 xsd:string,
-        hasTitle_2 max 5 xsd:string
-    
-    
-Class: Person_3
-
-    SubClassOf: 
-        hasName_3 some xsd:string,
-        hasEmailAddress_3 only xsd:string,
-        hasResearchInterest_3 min 1 xsd:string,
-        hasID_3 exactly 1 xsd:string,
-        hasTitle_3 max 5 xsd:string
-    
-    
-Class: Person_4
-
-    SubClassOf: 
-        hasName_4 some xsd:string,
-        hasEmailAddress_4 only xsd:string,
-        hasResearchInterest_4 min 1 xsd:string,
-        hasTitle_4 max 5 xsd:string
-    
-    
-Class: Person_5
-
-    SubClassOf: 
-        hasName_5 some xsd:string,
-        hasEmailAddress_5 only xsd:string,
-        hasResearchInterest_5 min 1 xsd:string,
-        hasTitle_5 max 5 xsd:string
-    
-    
-Class: Person_6
-
-    SubClassOf: 
-        hasName_6 some xsd:string,
-        hasEmailAddress_6 only xsd:string,
-        hasTitle_6 max 5 xsd:string
-    
-    
-Class: Person_7
-
-    SubClassOf: 
-        hasName_7 some xsd:string,
-        hasEmailAddress_7 only xsd:string,
-        hasTitle_7 max 5 xsd:string
-    
-    
-Class: Person_8
-
-    SubClassOf: 
-        hasName_8 some xsd:string,
-        hasEmailAddress_8 only xsd:string,
-        hasTitle_8 max 5 xsd:string
-    
-    
-Class: Person_9
-
-    SubClassOf: 
-        hasName_9 some xsd:string,
-        hasEmailAddress_9 only xsd:string,
-        hasTitle_9 max 5 xsd:string
-    
-    
-Class: Publication
-
-    SubClassOf: 
-        hasDOI exactly 1 xsd:string
-    
-    DisjointUnionOf: 
-        Article, Book, Manual, Software, Specification, UnofficialPublication
-    
-    
-Class: Publication_0
-
-    SubClassOf: 
-        hasDOI_0 exactly 1 xsd:string
-    
-    
-Class: Publication_1
-
-    SubClassOf: 
-        hasDOI_1 exactly 1 xsd:string
-    
-    
-Class: Publication_2
-
-    SubClassOf: 
-        hasDOI_2 exactly 1 xsd:string
-    
-    
-Class: RetiringPerson
-
-    SubClassOf: 
-        hasAge value "59"
-    
-    
-Class: RetiringPerson_0
-
-    SubClassOf: 
-        hasAge_0 value "59"
-    
-    
-Class: RetiringPerson_1
-
-    SubClassOf: 
-        hasAge_1 value "59"
-    
-    
-Class: RetiringPerson_10
-
-    SubClassOf: 
-        hasAge_10 value "59"
-    
-    
-Class: RetiringPerson_11
-
-    SubClassOf: 
-        hasAge_11 value "59"
-    
-    
-Class: RetiringPerson_2
-
-    SubClassOf: 
-        hasAge_2 value "59"
-    
-    
-Class: RetiringPerson_3
-
-    SubClassOf: 
-        hasAge_3 value "59"
-    
-    
-Class: RetiringPerson_4
-
-    SubClassOf: 
-        hasAge_4 value "59"
-    
-    
-Class: RetiringPerson_5
-
-    SubClassOf: 
-        hasAge_5 value "59"
-    
-    
-Class: RetiringPerson_6
-
-    SubClassOf: 
-        hasAge_6 value "59"
-    
-    
-Class: RetiringPerson_7
-
-    SubClassOf: 
-        hasAge_7 value "59"
-    
-    
-Class: RetiringPerson_8
-
-    SubClassOf: 
-        hasAge_8 value "59"
-    
-    
-Class: RetiringPerson_9
-
-    SubClassOf: 
-        hasAge_9 value "59"
-    
-    
-Class: Science
-
-    
-Class: Soccer
-
-    EquivalentTo: 
-        Football
-    
-    
-Class: SoccerFan
-
-    SubClassOf: 
-        isCrazyAbout value Soccer
-    
-    
-Class: Software
-
-    
-Class: Specification
-
-    
-Class: Student
-
-    
-Class: StudentWithBacklog
-
-    SubClassOf: 
-        hasTotalBacklogs min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_0
-
-    SubClassOf: 
-        hasTotalBacklogs_0 min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_1
-
-    SubClassOf: 
-        hasTotalBacklogs_1 min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_2
-
-    SubClassOf: 
-        hasTotalBacklogs_2 min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_3
-
-    SubClassOf: 
-        hasTotalBacklogs_3 min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_4
-
-    SubClassOf: 
-        hasTotalBacklogs_4 min 1 rdfs:Literal
-    
-    
-Class: T20CricketFan
-
-    SubClassOf: 
-        isCrazyAbout value T20Cricket
-    
-    
-Class: TeachingCourse
-
-    EquivalentTo: 
-        Course
-    
-    
-Class: TechnicalReport
-
-    
-Class: UGCourse
-
-    
-Class: UGProgram
-
-    SubClassOf: 
-        enrollFor exactly 1 UGStudent
-    
-    
-Class: UGStudent
-
-    
-Class: University
-
-    
-Class: UnofficialPublication
-
-    
-Class: Woman
-
-    
-Class: Woman_0
-
-    
-Class: WomenCollege
-
-    SubClassOf: 
-        College,
-        hasStudent only Woman
-    
-    
-Individual: Anthropology
-
-    
-Individual: Economics
-
-    
-Individual: English
-
-    
-Individual: History
-
-    
-Individual: Humanities
-
-    
-Individual: Linguistics
-
-    
-Individual: ModernLanguages
-
-    
-Individual: NonProfitOrganization
-
-    
-Individual: Philosophy
-
-    
-Individual: ProfitOrganization
-
-    
-Individual: Psychology
-
-    
-Individual: Religions
-
-    
-Individual: Soccer
-
-    
-Individual: T20Cricket
-
-    
+@prefix : <http://benchmark/OWL2Bench/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://benchmark/OWL2Bench/advises
+:advises rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty :isAdvisorOf ;
+         owl:propertyDisjointWith :courseOfferedBy ,
+                                  :enrollFor ,
+                                  :hasMajor .
+
+
+###  http://benchmark/OWL2Bench/advises_0
+:advises_0 rdf:type owl:ObjectProperty ;
+           owl:propertyDisjointWith :courseOfferedBy_0 ,
+                                    :enrollFor_0 ,
+                                    :hasMajor_0 .
+
+
+###  http://benchmark/OWL2Bench/advises_1
+:advises_1 rdf:type owl:ObjectProperty ;
+           owl:propertyDisjointWith :enrollFor_1 ,
+                                    :hasMajor_1 .
+
+
+###  http://benchmark/OWL2Bench/courseOfferedBy
+:courseOfferedBy rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/courseOfferedBy_0
+:courseOfferedBy_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/dislikes
+:dislikes rdf:type owl:ObjectProperty ;
+          owl:propertyDisjointWith :likes_1 .
+
+
+###  http://benchmark/OWL2Bench/dislikes_0
+:dislikes_0 rdf:type owl:ObjectProperty ;
+            owl:propertyDisjointWith :likes_0 .
+
+
+###  http://benchmark/OWL2Bench/enrollFor
+:enrollFor rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollFor_0
+:enrollFor_0 rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollFor_1
+:enrollFor_1 rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollFor_2
+:enrollFor_2 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollIn
+:enrollIn rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollIn_0
+:enrollIn_0 rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollIn_1
+:enrollIn_1 rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/enrollIn_2
+:enrollIn_2 rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasAdvisor
+:hasAdvisor rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty :isAdvisedBy .
+
+
+###  http://benchmark/OWL2Bench/hasAlumnus
+:hasAlumnus rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasDegreeFrom ;
+            rdfs:domain :University_0 .
+
+
+###  http://benchmark/OWL2Bench/hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasAuthor_0
+:hasAuthor_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasAuthor_1
+:hasAuthor_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasCollaborationWith
+:hasCollaborationWith rdf:type owl:ObjectProperty ,
+                               owl:SymmetricProperty ;
+                      rdfs:domain :Person .
+
+
+###  http://benchmark/OWL2Bench/hasCollaborationWith_0
+:hasCollaborationWith_0 rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasCollaborationWith_1
+:hasCollaborationWith_1 rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasCollaborationWith_2
+:hasCollaborationWith_2 rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasCollaborationWith_3
+:hasCollaborationWith_3 rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasCollegeDiscipline
+:hasCollegeDiscipline rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDean
+:hasDean rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isDeanOf ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Organization .
+
+
+###  http://benchmark/OWL2Bench/hasDean_0
+:hasDean_0 rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDean_1
+:hasDean_1 rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDegreeFrom
+:hasDegreeFrom rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty :isAlumniOf .
+
+
+###  http://benchmark/OWL2Bench/hasDegreeFrom_0
+:hasDegreeFrom_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDegreeFrom_1
+:hasDegreeFrom_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDegreeFrom_2
+:hasDegreeFrom_2 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDegreeFrom_3
+:hasDegreeFrom_3 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasFacultyAdvisor
+:hasFacultyAdvisor rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasFacultyAdvisor_0
+:hasFacultyAdvisor_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasMajor
+:hasMajor rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasMajor_0
+:hasMajor_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasMajor_1
+:hasMajor_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isMemberOf .
+
+
+###  http://benchmark/OWL2Bench/hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty :hasSubOrganization ;
+         owl:inverseOf :isPartOf ;
+         rdf:type owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/hasPart_0
+:hasPart_0 rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty :hasSubOrganization_0 ;
+           rdf:type owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSameHomeTownWith
+:hasSameHomeTownWith rdf:type owl:ObjectProperty ,
+                              owl:SymmetricProperty ,
+                              owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSameHomeTownWith_0
+:hasSameHomeTownWith_0 rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty ,
+                                owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSameHomeTownWith_1
+:hasSameHomeTownWith_1 rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSameHomeTownWith_2
+:hasSameHomeTownWith_2 rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSameHomeTownWith_3
+:hasSameHomeTownWith_3 rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/hasStudent
+:hasStudent rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isStudentOf .
+
+
+###  http://benchmark/OWL2Bench/hasStudent_0
+:hasStudent_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasStudent_1
+:hasStudent_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasStudent_2
+:hasStudent_2 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasStudent_3
+:hasStudent_3 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/hasSubOrganization
+:hasSubOrganization rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isSubOrganizationOf ;
+                    rdf:type owl:TransitiveProperty ;
+                    rdfs:domain :Organization .
+
+
+###  http://benchmark/OWL2Bench/hasSubOrganization_0
+:hasSubOrganization_0 rdf:type owl:ObjectProperty ,
+                               owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTeacher
+:hasTeacher rdf:type owl:ObjectProperty ;
+            owl:inverseOf :teachesTo ;
+            owl:propertyChainAxiom ( :registeredTo
+                                     :isTaughtBy
+                                   ) .
+
+
+###  http://benchmark/OWL2Bench/isAdvisedBy
+:isAdvisedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isAdvisorOf ;
+             rdf:type owl:IrreflexiveProperty ;
+             rdfs:domain :Person .
+
+
+###  http://benchmark/OWL2Bench/isAdvisedBy_0
+:isAdvisedBy_0 rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAdvisedBy_1
+:isAdvisedBy_1 rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAdvisedBy_2
+:isAdvisedBy_2 rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAdvisedBy_3
+:isAdvisedBy_3 rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAdvisorOf
+:isAdvisorOf rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf
+:isAffiliatedOrganizationOf rdf:type owl:ObjectProperty ,
+                                     owl:AsymmetricProperty ,
+                                     owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0
+:isAffiliatedOrganizationOf_0 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1
+:isAffiliatedOrganizationOf_1 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2
+:isAffiliatedOrganizationOf_2 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3
+:isAffiliatedOrganizationOf_3 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_4
+:isAffiliatedOrganizationOf_4 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_5
+:isAffiliatedOrganizationOf_5 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_6
+:isAffiliatedOrganizationOf_6 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_7
+:isAffiliatedOrganizationOf_7 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_8
+:isAffiliatedOrganizationOf_8 rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty .
+
+
+###  http://benchmark/OWL2Bench/isAlumniOf
+:isAlumniOf rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/isCrazyAbout
+:isCrazyAbout rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/isCrazyAbout_0
+:isCrazyAbout_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/isDeanOf
+:isDeanOf rdf:type owl:ObjectProperty ,
+                   owl:InverseFunctionalProperty ;
+          rdfs:domain :Person_7 .
+
+
+###  http://benchmark/OWL2Bench/isDeanOf_0
+:isDeanOf_0 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isDeanOf_1
+:isDeanOf_1 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isDeanOf_2
+:isDeanOf_2 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isDeanOf_3
+:isDeanOf_3 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isHeadOf
+:isHeadOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty :leads ;
+          rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isHeadOf_0
+:isHeadOf_0 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isHeadOf_1
+:isHeadOf_1 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isHeadOf_2
+:isHeadOf_2 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isHeadOf_3
+:isHeadOf_3 rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            owl:propertyChainAxiom ( :enrollIn
+                                     :isPartOf
+                                   ) ,
+                                   ( :worksFor
+                                     :isPartOf
+                                   ) .
+
+
+###  http://benchmark/OWL2Bench/isMemberOf_0
+:isMemberOf_0 rdf:type owl:ObjectProperty ;
+              owl:propertyChainAxiom ( :enrollIn_0
+                                       :isPartOf_0
+                                     ) ,
+                                     ( :worksFor_0
+                                       :isPartOf_0
+                                     ) .
+
+
+###  http://benchmark/OWL2Bench/isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty :isSubOrganizationOf ;
+          rdf:type owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isPartOf_0
+:isPartOf_0 rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty :isSubOrganizationOf_0 ;
+            rdf:type owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isStudentOf
+:isStudentOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Student_1 ;
+             owl:propertyChainAxiom ( :enrollIn
+                                      :isSubOrganizationOf
+                                    ) .
+
+
+###  http://benchmark/OWL2Bench/isStudentOf_0
+:isStudentOf_0 rdf:type owl:ObjectProperty ;
+               owl:propertyChainAxiom ( :enrollIn_0
+                                        :isSubOrganizationOf_0
+                                      ) .
+
+
+###  http://benchmark/OWL2Bench/isSubOrganizationOf
+:isSubOrganizationOf rdf:type owl:ObjectProperty ,
+                              owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isSubOrganizationOf_0
+:isSubOrganizationOf_0 rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty .
+
+
+###  http://benchmark/OWL2Bench/isTaughtBy
+:isTaughtBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :teachesCourse .
+
+
+###  http://benchmark/OWL2Bench/isTeachingAssistantOf
+:isTeachingAssistantOf rdf:type owl:ObjectProperty ;
+                       rdfs:domain :TeachingAssistant .
+
+
+###  http://benchmark/OWL2Bench/knows
+:knows rdf:type owl:ObjectProperty ,
+                owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_0
+:knows_0 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_1
+:knows_1 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_2
+:knows_2 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_3
+:knows_3 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_4
+:knows_4 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_5
+:knows_5 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_6
+:knows_6 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_7
+:knows_7 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/knows_8
+:knows_8 rdf:type owl:ObjectProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://benchmark/OWL2Bench/leads
+:leads rdf:type owl:ObjectProperty ;
+       rdfs:domain :Person_6 .
+
+
+###  http://benchmark/OWL2Bench/likes
+:likes rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/likes_0
+:likes_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/likes_1
+:likes_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/registeredBy
+:registeredBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :registeredTo .
+
+
+###  http://benchmark/OWL2Bench/registeredTo
+:registeredTo rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty :takesCourse .
+
+
+###  http://benchmark/OWL2Bench/registeredTo_0
+:registeredTo_0 rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty :takesCourse_0 .
+
+
+###  http://benchmark/OWL2Bench/takesCourse
+:takesCourse rdf:type owl:ObjectProperty ;
+             rdfs:domain :Student_1 .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_0
+:takesCourse_0 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_1
+:takesCourse_1 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_2
+:takesCourse_2 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_3
+:takesCourse_3 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_4
+:takesCourse_4 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_5
+:takesCourse_5 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_6
+:takesCourse_6 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_7
+:takesCourse_7 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/takesCourse_8
+:takesCourse_8 rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/teachesCourse
+:teachesCourse rdf:type owl:ObjectProperty .
+
+
+###  http://benchmark/OWL2Bench/teachesTo
+:teachesTo rdf:type owl:ObjectProperty ;
+           owl:propertyChainAxiom ( :teachesCourse
+                                    :registeredBy
+                                  ) .
+
+
+###  http://benchmark/OWL2Bench/worksFor
+:worksFor rdf:type owl:ObjectProperty ;
+          owl:propertyChainAxiom ( :worksFor
+                                   :isSubOrganizationOf
+                                 ) .
+
+
+###  http://benchmark/OWL2Bench/worksFor_0
+:worksFor_0 rdf:type owl:ObjectProperty ;
+            owl:propertyChainAxiom ( :worksFor_0
+                                     :isSubOrganizationOf_0
+                                   ) .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://benchmark/OWL2Bench/hasAge
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:range [ rdf:type rdfs:Datatype ;
+                     owl:datatypeComplementOf xsd:negativeInteger
+                   ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_0
+:hasAge_0 rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_1
+:hasAge_1 rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_10
+:hasAge_10 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_11
+:hasAge_11 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_12
+:hasAge_12 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_13
+:hasAge_13 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_14
+:hasAge_14 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_15
+:hasAge_15 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_16
+:hasAge_16 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_17
+:hasAge_17 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_18
+:hasAge_18 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_19
+:hasAge_19 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_2
+:hasAge_2 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_20
+:hasAge_20 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_21
+:hasAge_21 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_22
+:hasAge_22 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_23
+:hasAge_23 rdf:type owl:DatatypeProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:datatypeComplementOf xsd:negativeInteger
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_3
+:hasAge_3 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_4
+:hasAge_4 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_5
+:hasAge_5 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_6
+:hasAge_6 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_7
+:hasAge_7 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_8
+:hasAge_8 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasAge_9
+:hasAge_9 rdf:type owl:DatatypeProperty ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:datatypeComplementOf xsd:negativeInteger
+                     ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode
+:hasCode rdf:type owl:DatatypeProperty ;
+         owl:equivalentProperty :hasID ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:range [ rdf:type rdfs:Datatype ;
+                      owl:unionOf ( rdfs:Literal
+                                    xsd:string
+                                  )
+                    ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_0
+:hasCode_0 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_0 ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_1
+:hasCode_1 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_1 ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_2
+:hasCode_2 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_2 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_3
+:hasCode_3 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_3 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_4
+:hasCode_4 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_4 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_5
+:hasCode_5 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_5 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_6
+:hasCode_6 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_6 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_7
+:hasCode_7 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_7 ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( rdfs:Literal
+                                      xsd:string
+                                    )
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/hasCode_8
+:hasCode_8 rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty :hasID_8 .
+
+
+###  http://benchmark/OWL2Bench/hasDOI
+:hasDOI rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDOI_0
+:hasDOI_0 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasDOI_1
+:hasDOI_1 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress
+:hasEmailAddress rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_0
+:hasEmailAddress_0 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_1
+:hasEmailAddress_1 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_2
+:hasEmailAddress_2 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_3
+:hasEmailAddress_3 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_4
+:hasEmailAddress_4 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_5
+:hasEmailAddress_5 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_6
+:hasEmailAddress_6 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_7
+:hasEmailAddress_7 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasEmailAddress_8
+:hasEmailAddress_8 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID
+:hasID rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_0
+:hasID_0 rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_1
+:hasID_1 rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_2
+:hasID_2 rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_3
+:hasID_3 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_4
+:hasID_4 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_5
+:hasID_5 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_6
+:hasID_6 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_7
+:hasID_7 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasID_8
+:hasID_8 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName
+:hasName rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_0
+:hasName_0 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_1
+:hasName_1 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_2
+:hasName_2 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_3
+:hasName_3 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_4
+:hasName_4 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_5
+:hasName_5 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_6
+:hasName_6 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_7
+:hasName_7 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasName_8
+:hasName_8 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate
+:hasPublicationDate rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( xsd:dateTime
+                                               xsd:dateTimeStamp
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_0
+:hasPublicationDate_0 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_1
+:hasPublicationDate_1 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_2
+:hasPublicationDate_2 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_3
+:hasPublicationDate_3 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_4
+:hasPublicationDate_4 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_5
+:hasPublicationDate_5 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasPublicationDate_6
+:hasPublicationDate_6 rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:dateTime
+                                                 xsd:dateTimeStamp
+                                               )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/hasResearchInterest
+:hasResearchInterest rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasResearchInterest_0
+:hasResearchInterest_0 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasResearchInterest_1
+:hasResearchInterest_1 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasResearchInterest_2
+:hasResearchInterest_2 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasResearchInterest_3
+:hasResearchInterest_3 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle
+:hasTitle rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_0
+:hasTitle_0 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_1
+:hasTitle_1 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_2
+:hasTitle_2 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_3
+:hasTitle_3 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_4
+:hasTitle_4 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_5
+:hasTitle_5 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_6
+:hasTitle_6 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_7
+:hasTitle_7 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTitle_8
+:hasTitle_8 rdf:type owl:DatatypeProperty .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs
+:hasTotalBacklogs rdf:type owl:DatatypeProperty ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:intersectionOf ( xsd:integer
+                                                    xsd:nonNegativeInteger
+                                                  )
+                             ] ,
+                             [ rdf:type rdfs:Datatype ;
+                               owl:unionOf ( rdfs:Literal
+                                             xsd:nonNegativeInteger
+                                             xsd:string
+                                           )
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_0
+:hasTotalBacklogs_0 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_1
+:hasTotalBacklogs_1 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_10
+:hasTotalBacklogs_10 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_11
+:hasTotalBacklogs_11 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_12
+:hasTotalBacklogs_12 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_13
+:hasTotalBacklogs_13 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_14
+:hasTotalBacklogs_14 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_15
+:hasTotalBacklogs_15 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_16
+:hasTotalBacklogs_16 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_17
+:hasTotalBacklogs_17 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_18
+:hasTotalBacklogs_18 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_19
+:hasTotalBacklogs_19 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_2
+:hasTotalBacklogs_2 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_20
+:hasTotalBacklogs_20 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_21
+:hasTotalBacklogs_21 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_22
+:hasTotalBacklogs_22 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_23
+:hasTotalBacklogs_23 rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:intersectionOf ( xsd:integer
+                                                       xsd:nonNegativeInteger
+                                                     )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_3
+:hasTotalBacklogs_3 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_4
+:hasTotalBacklogs_4 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_5
+:hasTotalBacklogs_5 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_6
+:hasTotalBacklogs_6 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] ,
+                               [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( rdfs:Literal
+                                               xsd:nonNegativeInteger
+                                               xsd:string
+                                             )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_7
+:hasTotalBacklogs_7 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_8
+:hasTotalBacklogs_8 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/hasTotalBacklogs_9
+:hasTotalBacklogs_9 rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:intersectionOf ( xsd:integer
+                                                      xsd:nonNegativeInteger
+                                                    )
+                               ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://benchmark/OWL2Bench/AcademicStaff
+:AcademicStaff rdf:type owl:Class ;
+               owl:equivalentClass :Faculty .
+
+
+###  http://benchmark/OWL2Bench/AcademicStaff_0
+:AcademicStaff_0 rdf:type owl:Class ;
+                 owl:equivalentClass :Faculty_0 .
+
+
+###  http://benchmark/OWL2Bench/Article
+:Article rdf:type owl:Class ;
+         rdfs:subClassOf :Publication_0 ;
+         owl:disjointUnionOf ( :ConferencePaper
+                               :JournalArticle
+                               :TechnicalReport
+                             ) .
+
+
+###  http://benchmark/OWL2Bench/Article_0
+:Article_0 rdf:type owl:Class ;
+           owl:disjointUnionOf ( :ConferencePaper_0
+                                 :JournalArticle_0
+                                 :TechnicalReport_0
+                               ) .
+
+
+###  http://benchmark/OWL2Bench/Article_1
+:Article_1 rdf:type owl:Class ;
+           owl:disjointUnionOf ( :ConferencePaper_1
+                                 :JournalArticle_1
+                                 :TechnicalReport_1
+                               ) .
+
+
+###  http://benchmark/OWL2Bench/Article_2
+:Article_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/BadmintonFan
+:BadmintonFan rdf:type owl:Class ;
+              rdfs:subClassOf :Person_5 ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isCrazyAbout ;
+                                owl:hasValue :Badminton
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/BadmintonFan_0
+:BadmintonFan_0 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isCrazyAbout_0 ;
+                                  owl:hasValue :Badminton_0
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/BiologicalScience
+:BiologicalScience rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:oneOf ( :Botany
+                                                     :Genetics
+                                                     :MolecularBiology
+                                                     :Paleontology
+                                                     :Zoology
+                                                   )
+                                       ] .
+
+
+###  http://benchmark/OWL2Bench/Book
+:Book rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Book_0
+:Book_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Book_1
+:Book_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/CoEdCollege
+:CoEdCollege rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasStudent ;
+                               owl:someValuesFrom :Person
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/College
+:College rdf:type owl:Class ;
+         owl:equivalentClass :School ;
+         rdfs:subClassOf :Organization ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStudent ;
+                           owl:someValuesFrom :Person
+                         ] .
+
+
+###  http://benchmark/OWL2Bench/ConferencePaper
+:ConferencePaper rdf:type owl:Class ;
+                 rdfs:subClassOf :Article_2 .
+
+
+###  http://benchmark/OWL2Bench/ConferencePaper_0
+:ConferencePaper_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/ConferencePaper_1
+:ConferencePaper_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Course
+:Course rdf:type owl:Class ;
+        owl:equivalentClass :TeachingCourse ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :takesCourse ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Student
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :takesCourse ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :LeisureStudent
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCode ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        owl:disjointUnionOf ( :ElectiveCourse
+                              :UGCourse
+                            ) ;
+        owl:hasKey ( :hasCode
+                   ) .
+
+
+###  http://benchmark/OWL2Bench/Course_0
+:Course_0 rdf:type owl:Class ;
+          owl:equivalentClass :TeachingCourse_0 ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_0 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Student_0
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_0 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_0
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCode_0 ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ;
+          owl:disjointUnionOf ( :ElectiveCourse_0
+                                :UGCourse_0
+                              ) .
+
+
+###  http://benchmark/OWL2Bench/Course_1
+:Course_1 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_1 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Student_1
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_1 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_1
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCode_1 ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ;
+          owl:disjointUnionOf ( :ElectiveCourse_1
+                                :UGCourse_1
+                              ) .
+
+
+###  http://benchmark/OWL2Bench/Course_2
+:Course_2 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_2 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_2
+                          ] ;
+          owl:disjointUnionOf ( :ElectiveCourse_2
+                                :UGCourse_2
+                              ) .
+
+
+###  http://benchmark/OWL2Bench/Course_3
+:Course_3 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_3 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_3
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Course_4
+:Course_4 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_4 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_4
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Course_5
+:Course_5 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_5 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_5
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Course_6
+:Course_6 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_6 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_6
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Course_7
+:Course_7 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_7 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_7
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Course_8
+:Course_8 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :takesCourse_8 ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :LeisureStudent_8
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Dean
+:Dean rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isHeadOf ;
+                        owl:someValuesFrom :College
+                      ] .
+
+
+###  http://benchmark/OWL2Bench/Department
+:Department rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Director
+:Director rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :isHeadOf ;
+                            owl:someValuesFrom :Program
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/ElectiveCourse
+:ElectiveCourse rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/ElectiveCourse_0
+:ElectiveCourse_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/ElectiveCourse_1
+:ElectiveCourse_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/ElectiveCourse_2
+:ElectiveCourse_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Employee
+:Employee rdf:type owl:Class ;
+          owl:equivalentClass :Staff ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :worksFor ;
+                            owl:someValuesFrom :Organization
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Engineering
+:Engineering rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:oneOf ( :AeronauticalEngineering
+                                               :BiomedicalEngineering
+                                               :ChemicalEngineering
+                                               :CivilEngineering
+                                               :ComputerEngineering
+                                               :ElectricalEngineering
+                                               :IndustryEngineering
+                                               :MaterialScienceEngineering
+                                               :MechanicalEngineering
+                                               :PetroleumEngineering
+                                             )
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/Engineering_0
+:Engineering_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Faculty
+:Faculty rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :teachesCourse ;
+                           owl:someValuesFrom :Course
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasFacultyAdvisor ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Student
+                         ] .
+
+
+###  http://benchmark/OWL2Bench/Faculty_0
+:Faculty_0 rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasFacultyAdvisor_0 ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Student_0
+                           ] .
+
+
+###  http://benchmark/OWL2Bench/Father
+:Father rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Man
+                                                   :Parent
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://benchmark/OWL2Bench/Father_0
+:Father_0 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Man_0
+                                                     :Parent_0
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Father_1
+:Father_1 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Man_1
+                                                     :Parent_1
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Father_2
+:Father_2 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Man_2
+                                                     :Parent_2
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Father_3
+:Father_3 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Man_3
+                                                     :Parent_3
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/FineArts
+:FineArts rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :Architecture
+                                            :AsianArts
+                                            :Drama
+                                            :LatinArts
+                                            :MediaArtsAndSciences
+                                            :MedievalArts
+                                            :ModernArts
+                                            :MusicsClass
+                                            :PerformingArts
+                                            :TheatreAndDance
+                                          )
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Football
+:Football rdf:type owl:Class ;
+          owl:equivalentClass :Soccer .
+
+
+###  http://benchmark/OWL2Bench/Football_0
+:Football_0 rdf:type owl:Class ;
+            owl:equivalentClass :Soccer_0 .
+
+
+###  http://benchmark/OWL2Bench/GovernmentOrganization
+:GovernmentOrganization rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( :NonProfitOrganization
+                                                          :ProfitOrganization
+                                                        )
+                                            ] .
+
+
+###  http://benchmark/OWL2Bench/Human
+:Human rdf:type owl:Class ;
+       owl:equivalentClass :Person .
+
+
+###  http://benchmark/OWL2Bench/Human_0
+:Human_0 rdf:type owl:Class ;
+         owl:equivalentClass :Person_0 .
+
+
+###  http://benchmark/OWL2Bench/HumanitiesAndSocialScience
+:HumanitiesAndSocialScience rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                  owl:oneOf ( :Anthropology
+                                                              :Economics
+                                                              :English
+                                                              :History
+                                                              :Humanities
+                                                              :Linguistics
+                                                              :ModernLanguages
+                                                              :Philosophy
+                                                              :Psychology
+                                                              :Religions
+                                                            )
+                                                ] .
+
+
+###  http://benchmark/OWL2Bench/HumanitiesAndSocialScience_0
+:HumanitiesAndSocialScience_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Interest
+:Interest rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :likes ;
+                            owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                            owl:onClass :PeopleWithManyHobbies
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Interest_0
+:Interest_0 rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :likes_0 ;
+                              owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PeopleWithManyHobbies_0
+                            ] .
+
+
+###  http://benchmark/OWL2Bench/JournalArticle
+:JournalArticle rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/JournalArticle_0
+:JournalArticle_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/JournalArticle_1
+:JournalArticle_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent
+:LeisureStudent rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_0
+:LeisureStudent_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_1
+:LeisureStudent_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_2
+:LeisureStudent_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_3
+:LeisureStudent_3 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_4
+:LeisureStudent_4 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_5
+:LeisureStudent_5 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_6
+:LeisureStudent_6 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_7
+:LeisureStudent_7 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/LeisureStudent_8
+:LeisureStudent_8 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man
+:Man rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_0
+:Man_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_1
+:Man_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_2
+:Man_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_3
+:Man_3 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_4
+:Man_4 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_5
+:Man_5 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_6
+:Man_6 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_7
+:Man_7 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Man_8
+:Man_8 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Management
+:Management rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:oneOf ( :DesignManagement
+                                              :FinancialAndAccountingManagement
+                                              :HumanResourceManagement
+                                              :MarketingManagement
+                                              :OperationsManagement
+                                              :ProjectManagement
+                                              :PublicRelationsManagement
+                                              :RiskManagement
+                                              :SalesManagement
+                                              :SupplyChainManagement
+                                            )
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/Management_0
+:Management_0 rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :DesignManagement_0
+                                                :FinancialAndAccountingManagement_0
+                                                :HumanResourceManagement_0
+                                                :MarketingManagement_0
+                                                :OperationsManagement_0
+                                                :ProjectManagement_0
+                                                :PublicRelationsManagement_0
+                                                :RiskManagement_0
+                                                :SalesManagement_0
+                                                :SupplyChainManagement_0
+                                              )
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/Manual
+:Manual rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Manual_0
+:Manual_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Manual_1
+:Manual_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Mother
+:Mother rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Parent
+                                                   :Woman
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://benchmark/OWL2Bench/Mother_0
+:Mother_0 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Parent_0
+                                                     :Woman_0
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Mother_1
+:Mother_1 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Parent_1
+                                                     :Woman_1
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Mother_2
+:Mother_2 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Parent_2
+                                                     :Woman_2
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/Mother_3
+:Mother_3 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Parent_3
+                                                     :Woman_3
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/NonBiologicalScience
+:NonBiologicalScience rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Class ;
+                                        owl:complementOf :BiologicalScience
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/NonEngineering
+:NonEngineering rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:complementOf :Engineering
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/NonEngineering_0
+:NonEngineering_0 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Class ;
+                                    owl:complementOf :Engineering_0
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/NonFineArts
+:NonFineArts rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Class ;
+                               owl:complementOf :FineArts
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience
+:NonHumanitiesAndSocialScience rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Class ;
+                                                 owl:complementOf :HumanitiesAndSocialScience
+                                               ] .
+
+
+###  http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience_0
+:NonHumanitiesAndSocialScience_0 rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Class ;
+                                                   owl:complementOf :HumanitiesAndSocialScience_0
+                                                 ] .
+
+
+###  http://benchmark/OWL2Bench/NonManagement
+:NonManagement rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:complementOf :Management
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/NonManagementStudent
+:NonManagementStudent rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasCollegeDiscipline ;
+                                        owl:someValuesFrom :NonManagement
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/NonPhysicalScience
+:NonPhysicalScience rdf:type owl:Class ;
+                    rdfs:subClassOf :Science_0 ,
+                                    [ rdf:type owl:Class ;
+                                      owl:complementOf :PhysicalScience
+                                    ] .
+
+
+###  http://benchmark/OWL2Bench/NonScience
+:NonScience rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Class ;
+                              owl:complementOf :Science
+                            ] .
+
+
+###  http://benchmark/OWL2Bench/NonScience_0
+:NonScience_0 rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Class ;
+                                owl:complementOf :Science_0
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/OneDayCricketFan
+:OneDayCricketFan rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isCrazyAbout ;
+                                    owl:hasValue :OneDayCricket
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/OneDayCricketFan_0
+:OneDayCricketFan_0 rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isCrazyAbout_0 ;
+                                      owl:hasValue :OneDayCricket_0
+                                    ] .
+
+
+###  http://benchmark/OWL2Bench/Organization
+:Organization rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PGProgram
+:PGProgram rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :enrollFor ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :PGStudent
+                           ] .
+
+
+###  http://benchmark/OWL2Bench/PGProgram_0
+:PGProgram_0 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :enrollFor_0 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :PGStudent_0
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/PGProgram_1
+:PGProgram_1 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :enrollFor_1 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :PGStudent_1
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/PGProgram_2
+:PGProgram_2 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :enrollFor_2 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :PGStudent_2
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/PGStudent
+:PGStudent rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PGStudent_0
+:PGStudent_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PGStudent_1
+:PGStudent_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PGStudent_2
+:PGStudent_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Parent
+:Parent rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Parent_0
+:Parent_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Parent_1
+:Parent_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Parent_2
+:Parent_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Parent_3
+:Parent_3 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PeopleWithHobby
+:PeopleWithHobby rdf:type owl:Class ;
+                 rdfs:subClassOf :Person_5 ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :likes ;
+                                   owl:someValuesFrom :Interest
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/PeopleWithManyHobbies
+:PeopleWithManyHobbies rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PeopleWithManyHobbies_0
+:PeopleWithManyHobbies_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Class ;
+                          owl:unionOf ( :Man
+                                        :Woman
+                                      )
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDegreeFrom ;
+                          owl:allValuesFrom :University
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAuthor ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Publication
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:someValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasEmailAddress ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasResearchInterest ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasID ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasTitle ;
+                          owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        owl:hasKey ( :hasID
+                   ) .
+
+
+###  http://benchmark/OWL2Bench/Person_0
+:Person_0 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_0
+                                          :Woman_0
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDegreeFrom_0 ;
+                            owl:allValuesFrom :University_0
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAuthor_0 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Publication_0
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_0 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_0 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasResearchInterest_0 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasID_0 ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_0 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_1
+:Person_1 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_1
+                                          :Woman_1
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDegreeFrom_1 ;
+                            owl:allValuesFrom :University_1
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAuthor_1 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Publication_1
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_1 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_1 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasResearchInterest_1 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasID_1 ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_1 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_2
+:Person_2 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_2
+                                          :Woman_2
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDegreeFrom_2 ;
+                            owl:allValuesFrom :University_2
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_2 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_2 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasResearchInterest_2 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasID_2 ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_2 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_3
+:Person_3 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_3
+                                          :Woman_3
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDegreeFrom_3 ;
+                            owl:allValuesFrom :University_3
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_3 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_3 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasResearchInterest_3 ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_3 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_4
+:Person_4 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_4
+                                          :Woman_4
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_4 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_4 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_4 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_5
+:Person_5 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_5
+                                          :Woman_5
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_5 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_5 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_5 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_6
+:Person_6 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_6
+                                          :Woman_6
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_6 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_6 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_6 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_7
+:Person_7 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_7
+                                          :Woman_7
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_7 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_7 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_7 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/Person_8
+:Person_8 rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :Man_8
+                                          :Woman_8
+                                        )
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName_8 ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmailAddress_8 ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTitle_8 ;
+                            owl:maxQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://benchmark/OWL2Bench/PhDProgram
+:PhDProgram rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :enrollFor ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PhDStudent
+                            ] .
+
+
+###  http://benchmark/OWL2Bench/PhDProgram_0
+:PhDProgram_0 rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :enrollFor_0 ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PhDStudent_0
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/PhDProgram_1
+:PhDProgram_1 rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :enrollFor_1 ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PhDStudent_1
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/PhDStudent
+:PhDStudent rdf:type owl:Class ;
+            rdfs:subClassOf :Student_0 .
+
+
+###  http://benchmark/OWL2Bench/PhDStudent_0
+:PhDStudent_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PhDStudent_1
+:PhDStudent_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/PhysicalScience
+:PhysicalScience rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:oneOf ( :Astronomy
+                                                   :Chemistry
+                                                   :Geosciences
+                                                   :MarineScience
+                                                   :MaterialsScience
+                                                   :Mathematics
+                                                   :Physics
+                                                   :Statistics
+                                                 )
+                                     ] .
+
+
+###  http://benchmark/OWL2Bench/PrivateOrganization
+:PrivateOrganization rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( :NonProfitOrganization
+                                                       :ProfitOrganization
+                                                     )
+                                         ] .
+
+
+###  http://benchmark/OWL2Bench/Program
+:Program rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasDOI ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ;
+             owl:disjointUnionOf ( :Article
+                                   :Book
+                                   :Manual
+                                   :Software
+                                   :Specification
+                                   :UnofficialPublication
+                                 ) ;
+             owl:hasKey ( :hasDOI
+                        ) .
+
+
+###  http://benchmark/OWL2Bench/Publication_0
+:Publication_0 rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDOI_0 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               owl:disjointUnionOf ( :Article_0
+                                     :Book_0
+                                     :Manual_0
+                                     :Software_0
+                                     :Specification_0
+                                     :UnofficialPublication_0
+                                   ) ;
+               owl:hasKey ( :hasDOI_0
+                          ) .
+
+
+###  http://benchmark/OWL2Bench/Publication_1
+:Publication_1 rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDOI_1 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               owl:disjointUnionOf ( :Article_1
+                                     :Book_1
+                                     :Manual_1
+                                     :Software_1
+                                     :Specification_1
+                                     :UnofficialPublication_1
+                                   ) .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson
+:RetiringPerson rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAge ;
+                                  owl:hasValue "59"
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_0
+:RetiringPerson_0 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_0 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_1
+:RetiringPerson_1 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_1 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_2
+:RetiringPerson_2 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_2 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_3
+:RetiringPerson_3 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_3 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_4
+:RetiringPerson_4 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_4 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_5
+:RetiringPerson_5 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_5 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_6
+:RetiringPerson_6 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_6 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_7
+:RetiringPerson_7 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_7 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/RetiringPerson_8
+:RetiringPerson_8 rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAge_8 ;
+                                    owl:hasValue "59"
+                                  ] .
+
+
+###  http://benchmark/OWL2Bench/School
+:School rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Science
+:Science rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Science_0
+:Science_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/SemiGovernmentOrganization
+:SemiGovernmentOrganization rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                  owl:oneOf ( :NonProfitOrganization
+                                                              :ProfitOrganization
+                                                            )
+                                                ] .
+
+
+###  http://benchmark/OWL2Bench/Soccer
+:Soccer rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/SoccerFan
+:SoccerFan rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :isCrazyAbout ;
+                             owl:hasValue :Soccer
+                           ] .
+
+
+###  http://benchmark/OWL2Bench/SoccerFan_0
+:SoccerFan_0 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :isCrazyAbout_0 ;
+                               owl:hasValue :Soccer_0
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/Soccer_0
+:Soccer_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Software
+:Software rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Software_0
+:Software_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Software_1
+:Software_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Specification
+:Specification rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Specification_0
+:Specification_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Specification_1
+:Specification_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Staff
+:Staff rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :enrollIn ;
+                           owl:someValuesFrom :Department
+                         ] ;
+         owl:hasKey ( :hasID
+                    ) .
+
+
+###  http://benchmark/OWL2Bench/StudentWithBacklog
+:StudentWithBacklog rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasTotalBacklogs ;
+                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
+
+
+###  http://benchmark/OWL2Bench/StudentWithBacklog_0
+:StudentWithBacklog_0 rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTotalBacklogs_0 ;
+                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/StudentWithBacklog_1
+:StudentWithBacklog_1 rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTotalBacklogs_1 ;
+                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/StudentWithBacklog_2
+:StudentWithBacklog_2 rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTotalBacklogs_2 ;
+                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/StudentWithBacklog_3
+:StudentWithBacklog_3 rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTotalBacklogs_3 ;
+                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                      ] .
+
+
+###  http://benchmark/OWL2Bench/Student_0
+:Student_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Student_1
+:Student_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/T20CricketFan
+:T20CricketFan rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isCrazyAbout ;
+                                 owl:hasValue :T20Cricket
+                               ] .
+
+
+###  http://benchmark/OWL2Bench/T20CricketFan_0
+:T20CricketFan_0 rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isCrazyAbout_0 ;
+                                   owl:hasValue :T20Cricket_0
+                                 ] .
+
+
+###  http://benchmark/OWL2Bench/TeachingAssistant
+:TeachingAssistant rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isTeachingAssistantOf ;
+                                     owl:someValuesFrom :Course
+                                   ] .
+
+
+###  http://benchmark/OWL2Bench/TeachingCourse
+:TeachingCourse rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/TeachingCourse_0
+:TeachingCourse_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/TechnicalReport
+:TechnicalReport rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/TechnicalReport_0
+:TechnicalReport_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/TechnicalReport_1
+:TechnicalReport_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/TennisFan
+:TennisFan rdf:type owl:Class ;
+           rdfs:subClassOf :Person_1 ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isCrazyAbout ;
+                             owl:hasValue :Tennis
+                           ] .
+
+
+###  http://benchmark/OWL2Bench/TestCricketFan
+:TestCricketFan rdf:type owl:Class ;
+                rdfs:subClassOf :Person_5 ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isCrazyAbout ;
+                                  owl:hasValue :TestCricket
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/UGCourse
+:UGCourse rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGCourse_0
+:UGCourse_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGCourse_1
+:UGCourse_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGCourse_2
+:UGCourse_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGProgram
+:UGProgram rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :enrollFor ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :UGStudent
+                           ] .
+
+
+###  http://benchmark/OWL2Bench/UGProgram_0
+:UGProgram_0 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :enrollFor_0 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :UGStudent_0
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/UGProgram_1
+:UGProgram_1 rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :enrollFor_1 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :UGStudent_1
+                             ] .
+
+
+###  http://benchmark/OWL2Bench/UGStudent
+:UGStudent rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGStudent_0
+:UGStudent_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UGStudent_1
+:UGStudent_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/University
+:University rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/University_0
+:University_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/University_1
+:University_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/University_2
+:University_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/University_3
+:University_3 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UnofficialPublication
+:UnofficialPublication rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UnofficialPublication_0
+:UnofficialPublication_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/UnofficialPublication_1
+:UnofficialPublication_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman
+:Woman rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_0
+:Woman_0 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_1
+:Woman_1 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_2
+:Woman_2 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_3
+:Woman_3 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_4
+:Woman_4 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_5
+:Woman_5 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_6
+:Woman_6 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_7
+:Woman_7 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/Woman_8
+:Woman_8 rdf:type owl:Class .
+
+
+###  http://benchmark/OWL2Bench/WomenCollege
+:WomenCollege rdf:type owl:Class ;
+              rdfs:subClassOf :College ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasStudent ;
+                                owl:allValuesFrom :Woman
+                              ] .
+
+
+###  http://benchmark/OWL2Bench/WomenCollege_0
+:WomenCollege_0 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStudent_0 ;
+                                  owl:allValuesFrom :Woman_0
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/WomenCollege_1
+:WomenCollege_1 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStudent_1 ;
+                                  owl:allValuesFrom :Woman_1
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/WomenCollege_2
+:WomenCollege_2 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStudent_2 ;
+                                  owl:allValuesFrom :Woman_2
+                                ] .
+
+
+###  http://benchmark/OWL2Bench/WomenCollege_3
+:WomenCollege_3 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStudent_3 ;
+                                  owl:allValuesFrom :Woman_3
+                                ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  Faculty
+<Faculty> rdf:type owl:NamedIndividual ;
+          :isHeadOf <Faculty> .
+
+
+###  course
+<course> rdf:type owl:NamedIndividual .
+
+
+###  department
+<department> rdf:type owl:NamedIndividual .
+
+
+###  employee
+<employee> rdf:type owl:NamedIndividual ;
+           :worksFor_0 <organization> .
+
+
+###  faculty
+<faculty> rdf:type owl:NamedIndividual ;
+          :teachesTo <Faculty> .
+
+
+###  organization
+<organization> rdf:type owl:NamedIndividual ;
+               :isAffiliatedOrganizationOf_1 <organization> .
+
+
+###  person
+<person> rdf:type owl:NamedIndividual ;
+         :advises <person> ;
+         :dislikes <Faculty> ;
+         :hasCollaborationWith_3 <person> ;
+         :hasSameHomeTownWith <person> ;
+         :hasSameHomeTownWith_3 <person> ;
+         :isAlumniOf <Faculty> ;
+         :isDeanOf_0 <organization> .
+
+
+###  program
+<program> rdf:type owl:NamedIndividual .
+
+
+###  student
+<student> rdf:type owl:NamedIndividual ;
+          :enrollFor <program> ;
+          :enrollFor_0 <program> ;
+          :enrollIn_1 <department> ;
+          :registeredTo_0 <course> .
+
+
+###  http://benchmark/OWL2Bench/AeronauticalEngineering
+:AeronauticalEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Anthropology
+:Anthropology rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Architecture
+:Architecture rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/AsianArts
+:AsianArts rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Astronomy
+:Astronomy rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Badminton
+:Badminton rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Badminton_0
+:Badminton_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/BiomedicalEngineering
+:BiomedicalEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Botany
+:Botany rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ChemicalEngineering
+:ChemicalEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Chemistry
+:Chemistry rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/CivilEngineering
+:CivilEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ComputerEngineering
+:ComputerEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/DesignManagement
+:DesignManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/DesignManagement_0
+:DesignManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Drama
+:Drama rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Economics
+:Economics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ElectricalEngineering
+:ElectricalEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/English
+:English rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/FinancialAndAccountingManagement
+:FinancialAndAccountingManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/FinancialAndAccountingManagement_0
+:FinancialAndAccountingManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Genetics
+:Genetics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Geosciences
+:Geosciences rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/History
+:History rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/HumanResourceManagement
+:HumanResourceManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/HumanResourceManagement_0
+:HumanResourceManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Humanities
+:Humanities rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/IndustryEngineering
+:IndustryEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/LatinArts
+:LatinArts rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Linguistics
+:Linguistics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MarineScience
+:MarineScience rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MarketingManagement
+:MarketingManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MarketingManagement_0
+:MarketingManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MaterialScienceEngineering
+:MaterialScienceEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MaterialsScience
+:MaterialsScience rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Mathematics
+:Mathematics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MechanicalEngineering
+:MechanicalEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MediaArtsAndSciences
+:MediaArtsAndSciences rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MedievalArts
+:MedievalArts rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ModernArts
+:ModernArts rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ModernLanguages
+:ModernLanguages rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MolecularBiology
+:MolecularBiology rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/MusicsClass
+:MusicsClass rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/NonProfitOrganization
+:NonProfitOrganization rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/OneDayCricket
+:OneDayCricket rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/OneDayCricket_0
+:OneDayCricket_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/OperationsManagement
+:OperationsManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/OperationsManagement_0
+:OperationsManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Paleontology
+:Paleontology rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/PerformingArts
+:PerformingArts rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/PetroleumEngineering
+:PetroleumEngineering rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Philosophy
+:Philosophy rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Physics
+:Physics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ProfitOrganization
+:ProfitOrganization rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ProjectManagement
+:ProjectManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/ProjectManagement_0
+:ProjectManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Psychology
+:Psychology rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/PublicRelationsManagement
+:PublicRelationsManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/PublicRelationsManagement_0
+:PublicRelationsManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Religions
+:Religions rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/RiskManagement
+:RiskManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/RiskManagement_0
+:RiskManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/SalesManagement
+:SalesManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/SalesManagement_0
+:SalesManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Soccer
+:Soccer rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Soccer_0
+:Soccer_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Statistics
+:Statistics rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/SupplyChainManagement
+:SupplyChainManagement rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/SupplyChainManagement_0
+:SupplyChainManagement_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/T20Cricket
+:T20Cricket rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/T20Cricket_0
+:T20Cricket_0 rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Tennis
+:Tennis rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/TestCricket
+:TestCricket rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/TheatreAndDance
+:TheatreAndDance rdf:type owl:NamedIndividual .
+
+
+###  http://benchmark/OWL2Bench/Zoology
+:Zoology rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 5.1.13.2020-01-27T22:08:36Z) https://github.com/owlcs/owlapi/

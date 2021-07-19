@@ -117,7 +117,7 @@ public class LastDance {
 		
 		for ( String key : globalHashMap.keySet() ) {
 			String obj = key.contains("_") ? key.substring(0,key.indexOf("_")) : key;
-			
+//			System.out.println(key+" | last domain-range ");
 			if ( constructHashMap.containsKey(obj) ) {
 				String value = getRandomTillMaxTerm(constructHashMap.get(obj));
 				
@@ -161,7 +161,7 @@ public class LastDance {
 		while(!subOfTerms.isEmpty()) {
 			String item = subOfTerms.poll();
 			String key = item.contains("_") ? item.substring(0,item.indexOf("_")) : item;
-			
+//			System.out.println(item+" | last sub ");
 			if ( constructHashMap.containsKey(key) && !rdfsSubsOnly.containsKey(item) ) {				
 				String object = getRandomTillMaxTerm(constructHashMap.get(key));
 				
@@ -236,6 +236,7 @@ public class LastDance {
 				" domain "," range "," domain "," range "};
 		
 		for ( int i = 0 ; i < files.length ; i++ ) {
+//			System.out.println(files[i]+" || "+constructs[i]);
 			LinkedHashMap<String,String> constructHashMap = constructAxiomsHashMap(files[i],constructs[i]);
 			if ( i >= 3 ) {
 					addGlobalToOntologyDomainRange(constructHashMap,files[i],false);

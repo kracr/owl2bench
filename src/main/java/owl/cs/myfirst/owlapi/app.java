@@ -233,7 +233,7 @@ public class app
 			cf.addToOntology(FilenameConstructMapping.fileMap.get("DataPropertyDisjointWith"),FilenameConstructMapping.separatorMap.get("DataPropertyDisjointWith"),inputs[reverse_indexes.get("DataPropertyDisjointWith")]);
 		else if ( lastConstructs.containsKey("DisjointWith") ) 
 			cf.addToOntology(FilenameConstructMapping.fileMap.get("DisjointWith"),FilenameConstructMapping.separatorMap.get("DisjointWith"),inputs[reverse_indexes.get("DisjointWith")]);
-		
+		System.out.println(Util.commonConstructs.size()+" || "+Util.underscoreCommonConstructs.size());
 		int classCount = inputs[reverse_indexes.get("ClassAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ClassAssertionAxioms")] : 0;
 		int objectCount = inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] : 0;
 		int dataCount = inputs[reverse_indexes.get("DataPropertyAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("DataPropertyAssertionAxioms")] : 0;

@@ -96,7 +96,7 @@ public class AssertionCategory {
 //		System.out.println(objectDomain);
 //		System.out.println(objectRange);
 //		System.out.println(dataDomain);
-		System.out.println(dataRange);
+//		System.out.println(dataRange);
 		
 		HashMap<String,String> objectPropsDomain = (HashMap<String, String>) tempOntology.getObjectPropertiesInSignature().stream()
 		.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).trim()).collect(Collectors.toMap(Function.identity(),Function.identity()));
@@ -135,7 +135,7 @@ public class AssertionCategory {
 //		System.out.println(objectPropsDomain);
 //		System.out.println(objectPropsRange);
 //		System.out.println(dataPropsDomain);
-		System.out.println(dataPropsRange);
+//		System.out.println(dataPropsRange);
 		
 		if ( classCount > 0 ) {
 			int count = 0;

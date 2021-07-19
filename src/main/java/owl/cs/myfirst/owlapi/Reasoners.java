@@ -28,7 +28,7 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 
 public class Reasoners {
 	
-	public static void jfactReasoner(File c) throws OWLOntologyCreationException {
+	public static void jfactReasoner(File c,String outputFile) throws OWLOntologyCreationException {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		
@@ -44,7 +44,7 @@ public class Reasoners {
         
 //	    System.out.println("Started Consistency Checking");
 	    startTime = System.nanoTime();
-	    System.out.println("JFact Consistency = " + reasoner.isConsistent() );
+	    System.out.println("JFact Consistency = " + reasoner.isConsistent()+" || "+outputFile);
 	    endTime = System.nanoTime();
 	    duration = ((endTime - startTime));
 //	    System.out.println("Time taken for Consistency Check " + duration );
@@ -70,7 +70,7 @@ public class Reasoners {
 //	    System.out.println();
 	}
 	
-	public static void openlletReasoner(File c) throws OWLOntologyCreationException {
+	public static void openlletReasoner(File c,String outputFile) throws OWLOntologyCreationException {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
@@ -84,7 +84,7 @@ public class Reasoners {
         
 //        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println("Openllet Consistency = " + reasoner.isConsistent() );
+        System.out.println("Openllet Consistency = " + reasoner.isConsistent()+" || "+outputFile);
         endTime = System.nanoTime();
         duration = ((endTime - startTime));
 //        System.out.println("Time taken for Consistency Check " + duration );
@@ -111,7 +111,7 @@ public class Reasoners {
 //        System.out.println();
 	}
 	
-	public void hermitReasoner(File c) throws OWLOntologyCreationException {
+	public void hermitReasoner(File c,String outputFile) throws OWLOntologyCreationException {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
@@ -126,7 +126,7 @@ public class Reasoners {
         
 //        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println("Hermit Consistency = " + reasoner.isConsistent() );
+        System.out.println("Hermit Consistency = " + reasoner.isConsistent()+" || "+outputFile);
          endTime = System.nanoTime();
          duration = ((endTime - startTime));
 //        System.out.println("Time taken for Consistency Check " + duration );
@@ -155,10 +155,10 @@ public class Reasoners {
 	
 	public void run(File fileout,String fileName) throws OWLOntologyCreationException {
 //		System.out.println(" ----- JFACT REASONER ----- "+fileName);
-		jfactReasoner(fileout);
+		jfactReasoner(fileout,fileName);
 //		System.out.println();
 //		System.out.println(" -----  OPENLLET REASONER ----- "+fileName);
-		openlletReasoner(fileout);
+		openlletReasoner(fileout,fileName);
 //		System.out.println();
 //	    System.out.println(" ------ HERMIT REASONER ------ "+fileName);
 //	    hermitReasoner(fileout);
