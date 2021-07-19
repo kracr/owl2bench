@@ -36,9 +36,6 @@
         <Class abbreviatedIRI=":Publication_5"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Publication_7"/>
-    </Declaration>
-    <Declaration>
         <DataProperty abbreviatedIRI=":hasPublicationDate"/>
     </Declaration>
     <Declaration>
@@ -75,10 +72,10 @@
         <NamedIndividual abbreviatedIRI=":Architecture"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PhDProgram_0"/>
+        <Class abbreviatedIRI=":Employee"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":PhDProgram_0"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasStudent_0"/>
@@ -144,10 +141,10 @@
         <Class abbreviatedIRI=":Parent_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Course"/>
+        <Class abbreviatedIRI=":Parent_2"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Parent_2"/>
+        <Class abbreviatedIRI=":Course"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasAssociateProfessor"/>
@@ -165,10 +162,10 @@
         <ObjectProperty abbreviatedIRI=":registeredTo_0"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":registeredTo_1"/>
+        <ObjectProperty abbreviatedIRI=":hasMajor_0"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasMajor_0"/>
+        <ObjectProperty abbreviatedIRI=":registeredTo_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":FineArts"/>
@@ -222,10 +219,10 @@
         <Class abbreviatedIRI=":TeachingCourse_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Publication_0"/>
+        <Class abbreviatedIRI=":Sports"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Sports"/>
+        <Class abbreviatedIRI=":Publication_0"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isFullProfessorOf"/>
@@ -315,10 +312,10 @@
         <Class abbreviatedIRI=":Course_9"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PhDProgram"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":PhDProgram"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
@@ -372,9 +369,6 @@
         <Class abbreviatedIRI=":University_5"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":University_6"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":University_3"/>
     </Declaration>
     <Declaration>
@@ -408,10 +402,10 @@
         <ObjectProperty abbreviatedIRI=":isMemberOf_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":RetiringPerson_3"/>
+        <Class abbreviatedIRI=":Football"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Football"/>
+        <Class abbreviatedIRI=":RetiringPerson_3"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isMemberOf_1"/>
@@ -427,6 +421,9 @@
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":UGCourse_5"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollFor_4"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":UGCourse_4"/>
@@ -480,10 +477,10 @@
         <Class abbreviatedIRI=":College_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":College_0"/>
+        <Class abbreviatedIRI=":RetiringPerson"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":RetiringPerson"/>
+        <Class abbreviatedIRI=":College_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":College_3"/>
@@ -555,16 +552,16 @@
         <ObjectProperty abbreviatedIRI=":takesCourse_4"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Specification_1"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":UGProgram_2"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Specification_0"/>
+        <Class abbreviatedIRI=":Specification_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":UGProgram_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Specification_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":UGProgram_0"/>
@@ -579,10 +576,10 @@
         <ObjectProperty abbreviatedIRI=":takesCourse_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Science"/>
+        <Class abbreviatedIRI=":Specification_5"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Specification_5"/>
+        <Class abbreviatedIRI=":Science"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":knows"/>
@@ -744,10 +741,10 @@
         <Class abbreviatedIRI=":PGStudent_1"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":AssociateProfessor"/>
@@ -763,9 +760,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual abbreviatedIRI=":ModernArts"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Article_8"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Article_7"/>
@@ -798,10 +792,10 @@
         <Class abbreviatedIRI=":PGStudent"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":LatinArts"/>
+        <NamedIndividual abbreviatedIRI=":ComputerEngineering"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":ComputerEngineering"/>
+        <NamedIndividual abbreviatedIRI=":LatinArts"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":NonScienceStudent"/>
@@ -885,9 +879,6 @@
         <DataProperty abbreviatedIRI=":hasResearchInterest_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Science_1"/>
-    </Declaration>
-    <Declaration>
         <DataProperty abbreviatedIRI=":hasResearchInterest_0"/>
     </Declaration>
     <Declaration>
@@ -963,28 +954,22 @@
         <Class abbreviatedIRI=":Manual_5"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Course_12"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":Manual_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Course_11"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Course_10"/>
+        <Class abbreviatedIRI=":Manual_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Manual_1"/>
+        <Class abbreviatedIRI=":Course_10"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Manual_2"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isPartOf_1"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Course_13"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasHead"/>
@@ -999,10 +984,10 @@
         <Class abbreviatedIRI=":FullProfessor"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":likes_0"/>
+        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
+        <ObjectProperty abbreviatedIRI=":likes_0"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasAge_0"/>
@@ -1029,10 +1014,10 @@
         <ObjectProperty abbreviatedIRI=":isPartOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_4"/>
+        <DataProperty abbreviatedIRI=":hasEmailAddress_3"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasEmailAddress_3"/>
+        <DataProperty abbreviatedIRI=":hasAge_4"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasAge_5"/>
@@ -1047,10 +1032,10 @@
         <NamedIndividual abbreviatedIRI=":Linguistics"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_3"/>
+        <DataProperty abbreviatedIRI=":hasEmailAddress_2"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasEmailAddress_2"/>
+        <DataProperty abbreviatedIRI=":hasAge_3"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasAge_8"/>
@@ -1095,28 +1080,28 @@
         <Class abbreviatedIRI=":Software_2"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":JournalArticle_1"/>
+        <Class abbreviatedIRI=":Software_5"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Software_5"/>
+        <Class abbreviatedIRI=":JournalArticle_1"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Software_4"/>
+        <Class abbreviatedIRI=":JournalArticle_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":JournalArticle_0"/>
+        <Class abbreviatedIRI=":Software_4"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":JournalArticle_3"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Man_3"/>
+        <Class abbreviatedIRI=":JournalArticle_2"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":JournalArticle_2"/>
+        <Class abbreviatedIRI=":Man_3"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":JournalArticle_5"/>
@@ -1215,10 +1200,10 @@
         <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasPublicationDate_3"/>
@@ -1273,6 +1258,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasProfessor_0"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":StudentWithBacklog_0"/>
@@ -1335,6 +1323,9 @@
         <Class abbreviatedIRI=":Organization"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI=":Student_5"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI=":isHeadOf_2"/>
     </Declaration>
     <Declaration>
@@ -1347,10 +1338,10 @@
         <Class abbreviatedIRI=":Student_3"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":isHeadOf_0"/>
+        <ObjectProperty abbreviatedIRI=":knows_9"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows_9"/>
+        <ObjectProperty abbreviatedIRI=":isHeadOf_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Student_2"/>
@@ -1374,13 +1365,16 @@
         <Class abbreviatedIRI=":Book_0"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI=":knows_5"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI=":Book_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_6"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":knows_6"/>
@@ -1389,10 +1383,16 @@
         <ObjectProperty abbreviatedIRI=":isHeadOf_6"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_1"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI=":Soccer_0"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isHeadOf_4"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Soccer_1"/>
@@ -1494,10 +1494,10 @@
         <Class abbreviatedIRI=":Man"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":LeisureStudent_6"/>
+        <Class abbreviatedIRI=":Human"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Human"/>
+        <Class abbreviatedIRI=":LeisureStudent_6"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasAge_12"/>
@@ -1512,10 +1512,10 @@
         <Class abbreviatedIRI=":LeisureStudent_4"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_10"/>
+        <DataProperty abbreviatedIRI=":hasName_2"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasName_2"/>
+        <DataProperty abbreviatedIRI=":hasAge_10"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":LeisureStudent_3"/>
@@ -1602,9 +1602,6 @@
         <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Person_10"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI=":hasTeacher_0"/>
     </Declaration>
     <Declaration>
@@ -1617,10 +1614,10 @@
         <DataProperty abbreviatedIRI=":hasTitle_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":UGStudent_1"/>
+        <Class abbreviatedIRI=":Faculty_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Faculty_0"/>
+        <Class abbreviatedIRI=":UGStudent_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":UGStudent_0"/>
@@ -1662,6 +1659,9 @@
         <Class abbreviatedIRI=":Person"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasAdvisor_1"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
     </Declaration>
     <Declaration>
@@ -1695,10 +1695,10 @@
         <Class abbreviatedIRI=":TechnicalReport_3"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":TechnicalReport_2"/>
+        <Class abbreviatedIRI=":NonEngineering"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":NonEngineering"/>
+        <Class abbreviatedIRI=":TechnicalReport_2"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":TechnicalReport_1"/>
@@ -1716,10 +1716,10 @@
         <Class abbreviatedIRI=":TechnicalReport_4"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":ChemicalEngineering"/>
+        <NamedIndividual abbreviatedIRI=":CivilEngineering"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":CivilEngineering"/>
+        <NamedIndividual abbreviatedIRI=":ChemicalEngineering"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
@@ -1803,10 +1803,16 @@
         <Class abbreviatedIRI=":SelfAwarePerson_5"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI=":SelfAwarePerson_2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Sports_0"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI=":UnofficialPublication_2"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":SelfAwarePerson_2"/>
+        <Class abbreviatedIRI=":Sports_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":SelfAwarePerson_3"/>
@@ -2098,19 +2104,19 @@
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI=":AcademicStaff"/>
-        <Class abbreviatedIRI=":Employee_0"/>
+        <Class abbreviatedIRI=":Employee_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":AcademicStaff_0"/>
-        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":Employee_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":AcademicStaff_1"/>
-        <Class abbreviatedIRI=":Employee_0"/>
+        <Class abbreviatedIRI=":Employee"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":AcademicStaff_2"/>
-        <Class abbreviatedIRI=":Employee_2"/>
+        <Class abbreviatedIRI=":Employee_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article"/>
@@ -2118,19 +2124,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_0"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_0"/>
         <Class abbreviatedIRI=":Publication_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_0"/>
-        <Class abbreviatedIRI=":Publication_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_0"/>
-        <Class abbreviatedIRI=":Publication_5"/>
+        <Class abbreviatedIRI=":Publication_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_1"/>
@@ -2141,76 +2139,84 @@
         <Class abbreviatedIRI=":Publication_3"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Article_2"/>
-        <Class abbreviatedIRI=":Publication_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_2"/>
+        <Class abbreviatedIRI=":Article_1"/>
         <Class abbreviatedIRI=":Publication_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_2"/>
-        <Class abbreviatedIRI=":Publication_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_3"/>
         <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Article_3"/>
+        <Class abbreviatedIRI=":Article_2"/>
         <Class abbreviatedIRI=":Publication_1"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Article_3"/>
+        <Class abbreviatedIRI=":Article_2"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_2"/>
         <Class abbreviatedIRI=":Publication_5"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Article_4"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_4"/>
-        <Class abbreviatedIRI=":Publication_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_5"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_5"/>
-        <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_5"/>
+        <Class abbreviatedIRI=":Article_2"/>
         <Class abbreviatedIRI=":Publication_6"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_3"/>
+        <Class abbreviatedIRI=":Publication_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_3"/>
+        <Class abbreviatedIRI=":Publication_6"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_4"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_4"/>
+        <Class abbreviatedIRI=":Publication_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_4"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_5"/>
+        <Class abbreviatedIRI=":Publication_0"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_5"/>
+        <Class abbreviatedIRI=":Publication_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_5"/>
+        <Class abbreviatedIRI=":Publication_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_6"/>
+        <Class abbreviatedIRI=":Publication_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Article_6"/>
+        <Class abbreviatedIRI=":Publication_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_6"/>
         <Class abbreviatedIRI=":Publication_4"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Article_6"/>
+        <Class abbreviatedIRI=":Publication_6"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Article_7"/>
         <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Article_7"/>
         <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_7"/>
-        <Class abbreviatedIRI=":Publication_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_7"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_8"/>
-        <Class abbreviatedIRI=":Publication_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Article_8"/>
-        <Class abbreviatedIRI=":Publication_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":BiologicalScience"/>
@@ -2218,7 +2224,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book"/>
-        <Class abbreviatedIRI=":Publication"/>
+        <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_0"/>
@@ -2226,23 +2232,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_1"/>
-        <Class abbreviatedIRI=":Publication_4"/>
+        <Class abbreviatedIRI=":Publication_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_2"/>
-        <Class abbreviatedIRI=":Publication_3"/>
+        <Class abbreviatedIRI=":Publication_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_3"/>
-        <Class abbreviatedIRI=":Publication_5"/>
+        <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_4"/>
-        <Class abbreviatedIRI=":Publication_2"/>
+        <Class abbreviatedIRI=":Publication"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Book_5"/>
-        <Class abbreviatedIRI=":Publication"/>
+        <Class abbreviatedIRI=":Publication_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":CoEdCollege"/>
@@ -2284,35 +2290,35 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ConferencePaper"/>
-        <Class abbreviatedIRI=":Article_6"/>
+        <Class abbreviatedIRI=":Article_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ConferencePaper_0"/>
-        <Class abbreviatedIRI=":Article_0"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ConferencePaper_1"/>
-        <Class abbreviatedIRI=":Article_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ConferencePaper_2"/>
-        <Class abbreviatedIRI=":Article_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ConferencePaper_3"/>
         <Class abbreviatedIRI=":Article_2"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":ConferencePaper_1"/>
+        <Class abbreviatedIRI=":Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ConferencePaper_2"/>
+        <Class abbreviatedIRI=":Article_6"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ConferencePaper_3"/>
+        <Class abbreviatedIRI=":Article_0"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":ConferencePaper_4"/>
-        <Class abbreviatedIRI=":Article_7"/>
+        <Class abbreviatedIRI=":Article_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ConferencePaper_5"/>
-        <Class abbreviatedIRI=":Article_4"/>
+        <Class abbreviatedIRI=":Article"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ConferencePaper_6"/>
-        <Class abbreviatedIRI=":Article_5"/>
+        <Class abbreviatedIRI=":Article_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Course"/>
@@ -2435,67 +2441,75 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ElectiveCourse"/>
-        <Class abbreviatedIRI=":Course_9"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ElectiveCourse_0"/>
-        <Class abbreviatedIRI=":Course_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ElectiveCourse_1"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ElectiveCourse_2"/>
-        <Class abbreviatedIRI=":Course_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ElectiveCourse_3"/>
-        <Class abbreviatedIRI=":Course_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":ElectiveCourse_4"/>
         <Class abbreviatedIRI=":Course_6"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse_0"/>
+        <Class abbreviatedIRI=":Course_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse_1"/>
+        <Class abbreviatedIRI=":Course_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse_2"/>
+        <Class abbreviatedIRI=":Course_10"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse_3"/>
+        <Class abbreviatedIRI=":Course"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse_4"/>
+        <Class abbreviatedIRI=":Course_8"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":ElectiveCourse_5"/>
-        <Class abbreviatedIRI=":Course_4"/>
+        <Class abbreviatedIRI=":Course_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ElectiveCourse_6"/>
-        <Class abbreviatedIRI=":Course_9"/>
+        <Class abbreviatedIRI=":Course"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Employee"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Employee_0"/>
         <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Employee_0"/>
+        <Class abbreviatedIRI=":Employee"/>
         <Class abbreviatedIRI=":Person_1"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Employee_0"/>
-        <Class abbreviatedIRI=":Person_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Employee_1"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Employee_2"/>
         <Class abbreviatedIRI=":Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Employee_2"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Employee_1"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee_1"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Employee_2"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee_2"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee_3"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee_3"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Engineering"/>
@@ -2503,7 +2517,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":EngineeringStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":EngineeringStudent"/>
@@ -2514,7 +2528,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty"/>
-        <Class abbreviatedIRI=":Employee_1"/>
+        <Class abbreviatedIRI=":Employee"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty"/>
@@ -2532,7 +2546,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty_0"/>
-        <Class abbreviatedIRI=":Employee_2"/>
+        <Class abbreviatedIRI=":Employee"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty_0"/>
@@ -2543,7 +2557,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty_1"/>
-        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":Employee_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty_1"/>
@@ -2554,27 +2568,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Faculty_2"/>
-        <Class abbreviatedIRI=":Employee_0"/>
+        <Class abbreviatedIRI=":Employee_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Father"/>
-        <Class abbreviatedIRI=":Parent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Father"/>
-        <Class abbreviatedIRI=":Parent_1"/>
+        <Class abbreviatedIRI=":Parent_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Father_0"/>
-        <Class abbreviatedIRI=":Parent"/>
+        <Class abbreviatedIRI=":Parent_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":FineArts"/>
         <Class abbreviatedIRI=":CollegeDiscipline"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":FineArtsStudent"/>
-        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":FineArtsStudent"/>
@@ -2592,6 +2598,10 @@
         <Class abbreviatedIRI=":Sports"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Football"/>
+        <Class abbreviatedIRI=":Sports_0"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Football_0"/>
         <Class abbreviatedIRI=":Sports"/>
     </SubClassOf>
@@ -2605,7 +2615,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":HumanitiesAndSocialScienceStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":HumanitiesAndSocialScienceStudent"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":HumanitiesAndSocialScienceStudent"/>
@@ -2637,35 +2651,35 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle"/>
-        <Class abbreviatedIRI=":Article_2"/>
+        <Class abbreviatedIRI=":Article"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_0"/>
-        <Class abbreviatedIRI=":Article_8"/>
+        <Class abbreviatedIRI=":Article_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_1"/>
-        <Class abbreviatedIRI=":Article"/>
+        <Class abbreviatedIRI=":Article_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_2"/>
-        <Class abbreviatedIRI=":Article"/>
+        <Class abbreviatedIRI=":Article_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_3"/>
-        <Class abbreviatedIRI=":Article_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":JournalArticle_4"/>
         <Class abbreviatedIRI=":Article_2"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":JournalArticle_4"/>
+        <Class abbreviatedIRI=":Article_7"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_5"/>
-        <Class abbreviatedIRI=":Article_1"/>
+        <Class abbreviatedIRI=":Article_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":JournalArticle_6"/>
-        <Class abbreviatedIRI=":Article_1"/>
+        <Class abbreviatedIRI=":Article_6"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent"/>
@@ -2673,43 +2687,43 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_0"/>
-        <Class abbreviatedIRI=":Student_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":LeisureStudent_1"/>
         <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":LeisureStudent_1"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_10"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_2"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_3"/>
-        <Class abbreviatedIRI=":Student_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":LeisureStudent_4"/>
-        <Class abbreviatedIRI=":Student_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":LeisureStudent_5"/>
         <Class abbreviatedIRI=":Student_1"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":LeisureStudent_6"/>
+        <Class abbreviatedIRI=":LeisureStudent_4"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":LeisureStudent_5"/>
         <Class abbreviatedIRI=":Student_3"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":LeisureStudent_6"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_7"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":LeisureStudent_8"/>
@@ -2751,35 +2765,35 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Manual"/>
-        <Class abbreviatedIRI=":Publication_3"/>
+        <Class abbreviatedIRI=":Publication_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Manual_0"/>
-        <Class abbreviatedIRI=":Publication_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Manual_1"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Manual_2"/>
-        <Class abbreviatedIRI=":Publication_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Manual_3"/>
-        <Class abbreviatedIRI=":Publication_0"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Manual_4"/>
-        <Class abbreviatedIRI=":Publication_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Manual_5"/>
         <Class abbreviatedIRI=":Publication_6"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Manual_1"/>
+        <Class abbreviatedIRI=":Publication_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Manual_2"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Manual_3"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Manual_4"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Manual_5"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Mother"/>
-        <Class abbreviatedIRI=":Parent_2"/>
+        <Class abbreviatedIRI=":Parent_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Mother_0"/>
@@ -2792,10 +2806,6 @@
     <SubClassOf>
         <Class abbreviatedIRI=":NonBiologicalScience"/>
         <Class abbreviatedIRI=":Science"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":NonBiologicalScience"/>
-        <Class abbreviatedIRI=":Science_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonBiologicalScience"/>
@@ -2819,10 +2829,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonEngineeringStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":NonEngineeringStudent"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI=":hasCollegeDiscipline"/>
             <Class abbreviatedIRI=":NonEngineering"/>
@@ -2840,7 +2846,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonFineArtsStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonFineArtsStudent"/>
@@ -2861,11 +2867,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonHumanitiesAndSocialScienceStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonHumanitiesAndSocialScienceStudent"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonHumanitiesAndSocialScienceStudent"/>
@@ -2886,11 +2892,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonScienceStudent"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonScienceStudent"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":NonScienceStudent"/>
@@ -2945,26 +2951,38 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PGStudent"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PGStudent_0"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PGStudent_1"/>
-        <Class abbreviatedIRI=":Student_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":PGStudent_2"/>
         <Class abbreviatedIRI=":Student_2"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":PGStudent_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Parent"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Parent_0"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Parent_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Parent_0"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Parent_1"/>
         <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
@@ -2973,27 +2991,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Parent_1"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Parent_1"/>
-        <Class abbreviatedIRI=":Person_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Parent_2"/>
         <Class abbreviatedIRI=":Person_4"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Parent_2"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":PeopleWithManyHobbies"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PeopleWithManyHobbies_0"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PeopleWithManyHobbies_1"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Person"/>
@@ -3244,7 +3258,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PhDStudent"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":PhDStudent_0"/>
@@ -3278,7 +3292,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_0"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_0"/>
@@ -3300,7 +3314,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_2"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_2"/>
@@ -3311,7 +3325,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_3"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":RetiringPerson_3"/>
@@ -3342,11 +3356,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ScienceStudent"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ScienceStudent"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":ScienceStudent"/>
@@ -3356,20 +3370,16 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Science_1"/>
-        <Class abbreviatedIRI=":CollegeDiscipline"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_0"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_1"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_10"/>
@@ -3377,19 +3387,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_2"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_3"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_4"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_5"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_6"/>
@@ -3397,23 +3407,27 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_7"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":SelfAwarePerson_8"/>
         <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":SelfAwarePerson_8"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":SelfAwarePerson_9"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Soccer"/>
         <Class abbreviatedIRI=":Sports"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Soccer"/>
+        <Class abbreviatedIRI=":Sports_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":SoccerFan"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Soccer_0"/>
@@ -3421,63 +3435,63 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Soccer_1"/>
-        <Class abbreviatedIRI=":Sports"/>
+        <Class abbreviatedIRI=":Sports_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Software"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_0"/>
-        <Class abbreviatedIRI=":Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_1"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_2"/>
-        <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_3"/>
-        <Class abbreviatedIRI=":Publication_0"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_4"/>
-        <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Software_5"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Specification"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Specification_0"/>
         <Class abbreviatedIRI=":Publication_5"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Specification_1"/>
-        <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Specification_2"/>
+        <Class abbreviatedIRI=":Software_0"/>
         <Class abbreviatedIRI=":Publication_2"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Specification_3"/>
+        <Class abbreviatedIRI=":Software_1"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Software_2"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Software_3"/>
         <Class abbreviatedIRI=":Publication_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Software_4"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Software_5"/>
+        <Class abbreviatedIRI=":Publication_0"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Specification"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Specification_0"/>
+        <Class abbreviatedIRI=":Publication_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Specification_1"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Specification_2"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Specification_3"/>
+        <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Specification_4"/>
-        <Class abbreviatedIRI=":Publication_1"/>
+        <Class abbreviatedIRI=":Publication_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Specification_5"/>
-        <Class abbreviatedIRI=":Publication_6"/>
+        <Class abbreviatedIRI=":Publication_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Sports"/>
@@ -3496,32 +3510,40 @@
         <Class abbreviatedIRI=":Interest_2"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Sports_0"/>
+        <Class abbreviatedIRI=":Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Sports_1"/>
+        <Class abbreviatedIRI=":Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Sports_1"/>
+        <Class abbreviatedIRI=":Interest_2"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Staff"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Staff_0"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Staff_1"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Staff_2"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Student"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":StudentWithBacklog"/>
         <Class abbreviatedIRI=":Student_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":StudentWithBacklog"/>
-        <Class abbreviatedIRI=":Student_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":StudentWithBacklog"/>
@@ -3531,7 +3553,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":StudentWithBacklog_0"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":StudentWithBacklog_0"/>
@@ -3541,59 +3563,63 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Student_0"/>
-        <Class abbreviatedIRI=":Person_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_0"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_0"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_1"/>
-        <Class abbreviatedIRI=":Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_1"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_1"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_2"/>
-        <Class abbreviatedIRI=":Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_2"/>
         <Class abbreviatedIRI=":Person_0"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":Student_2"/>
         <Class abbreviatedIRI=":Person_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Student_2"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_2"/>
         <Class abbreviatedIRI=":Person_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_2"/>
-        <Class abbreviatedIRI=":Person_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Student_2"/>
         <Class abbreviatedIRI=":Person_5"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_3"/>
-        <Class abbreviatedIRI=":Person"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Student_3"/>
@@ -3636,31 +3662,31 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport"/>
-        <Class abbreviatedIRI=":Article_0"/>
+        <Class abbreviatedIRI=":Article_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport"/>
-        <Class abbreviatedIRI=":Article_7"/>
+        <Class abbreviatedIRI=":Article_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport_0"/>
-        <Class abbreviatedIRI=":Article_1"/>
+        <Class abbreviatedIRI=":Article_5"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport_1"/>
-        <Class abbreviatedIRI=":Article_0"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":TechnicalReport_2"/>
-        <Class abbreviatedIRI=":Article_8"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":TechnicalReport_3"/>
         <Class abbreviatedIRI=":Article_3"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":TechnicalReport_2"/>
+        <Class abbreviatedIRI=":Article_6"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TechnicalReport_3"/>
+        <Class abbreviatedIRI=":Article_1"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport_4"/>
-        <Class abbreviatedIRI=":Article_0"/>
+        <Class abbreviatedIRI=":Article_4"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport_5"/>
@@ -3668,23 +3694,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":TechnicalReport_6"/>
-        <Class abbreviatedIRI=":Article_2"/>
+        <Class abbreviatedIRI=":Article_1"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":Travelling"/>
-        <Class abbreviatedIRI=":Interest_1"/>
+        <Class abbreviatedIRI=":Interest_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGCourse"/>
-        <Class abbreviatedIRI=":Course_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UGCourse_0"/>
         <Class abbreviatedIRI=":Course_5"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":UGCourse_0"/>
+        <Class abbreviatedIRI=":Course_7"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":UGCourse_1"/>
-        <Class abbreviatedIRI=":Course_6"/>
+        <Class abbreviatedIRI=":Course_8"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGCourse_2"/>
@@ -3692,19 +3718,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGCourse_3"/>
-        <Class abbreviatedIRI=":Course"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UGCourse_4"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UGCourse_5"/>
         <Class abbreviatedIRI=":Course_6"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":UGCourse_4"/>
+        <Class abbreviatedIRI=":Course_1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UGCourse_5"/>
+        <Class abbreviatedIRI=":Course_8"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":UGCourse_6"/>
-        <Class abbreviatedIRI=":Course_0"/>
+        <Class abbreviatedIRI=":Course_7"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGProgram"/>
@@ -3756,11 +3782,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGStudent_0"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGStudent_1"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UGStudent_2"/>
@@ -3792,35 +3818,35 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":UnofficialPublication"/>
-        <Class abbreviatedIRI=":Publication_4"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_0"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_1"/>
-        <Class abbreviatedIRI=":Publication_3"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_2"/>
-        <Class abbreviatedIRI=":Publication_2"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_3"/>
-        <Class abbreviatedIRI=":Publication_1"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_4"/>
         <Class abbreviatedIRI=":Publication"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":UnofficialPublication_5"/>
+        <Class abbreviatedIRI=":UnofficialPublication_0"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UnofficialPublication_1"/>
         <Class abbreviatedIRI=":Publication_6"/>
     </SubClassOf>
     <SubClassOf>
+        <Class abbreviatedIRI=":UnofficialPublication_2"/>
+        <Class abbreviatedIRI=":Publication_0"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UnofficialPublication_3"/>
+        <Class abbreviatedIRI=":Publication_4"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UnofficialPublication_4"/>
+        <Class abbreviatedIRI=":Publication_6"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UnofficialPublication_5"/>
+        <Class abbreviatedIRI=":Publication_2"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege"/>
-        <Class abbreviatedIRI=":College_1"/>
+        <Class abbreviatedIRI=":College_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege"/>
@@ -3831,7 +3857,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_0"/>
-        <Class abbreviatedIRI=":College_3"/>
+        <Class abbreviatedIRI=":College_2"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_0"/>
@@ -3842,7 +3868,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_1"/>
-        <Class abbreviatedIRI=":College_1"/>
+        <Class abbreviatedIRI=":College_0"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_1"/>
@@ -3853,7 +3879,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_2"/>
-        <Class abbreviatedIRI=":College_0"/>
+        <Class abbreviatedIRI=":College"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_2"/>
@@ -3864,7 +3890,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_3"/>
-        <Class abbreviatedIRI=":College_1"/>
+        <Class abbreviatedIRI=":College_3"/>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI=":WomenCollege_3"/>
@@ -4113,19 +4139,19 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
-        <ObjectProperty abbreviatedIRI=":isStudentOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":enrollIn_0"/>
-        <ObjectProperty abbreviatedIRI=":isStudentOf_2"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":enrollIn_1"/>
-        <ObjectProperty abbreviatedIRI=":isStudentOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf_2"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":enrollIn_2"/>
-        <ObjectProperty abbreviatedIRI=":isStudentOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf_2"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":enrollIn_3"/>
@@ -4134,6 +4160,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasAssociateProfessor"/>
         <ObjectProperty abbreviatedIRI=":hasProfessor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasAssociateProfessor"/>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_0"/>
@@ -4193,15 +4223,23 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
-        <ObjectProperty abbreviatedIRI=":hasAdvisor"/>
+        <ObjectProperty abbreviatedIRI=":hasAdvisor_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_0"/>
-        <ObjectProperty abbreviatedIRI=":hasAdvisor_0"/>
+        <ObjectProperty abbreviatedIRI=":hasAdvisor_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_1"/>
-        <ObjectProperty abbreviatedIRI=":hasAdvisor_0"/>
+        <ObjectProperty abbreviatedIRI=":hasAdvisor_1"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_0"/>
+        <ObjectProperty abbreviatedIRI=":hasEmployee"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_1"/>
+        <ObjectProperty abbreviatedIRI=":hasEmployee"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasFullProfessor"/>
@@ -4210,6 +4248,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasFullProfessor"/>
         <ObjectProperty abbreviatedIRI=":hasProfessor_0"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasFullProfessor"/>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasHead"/>
@@ -4232,8 +4274,20 @@
         <ObjectProperty abbreviatedIRI=":hasFaculty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasProfessor"/>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_0"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasProfessor_0"/>
         <ObjectProperty abbreviatedIRI=":hasFaculty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
+        <ObjectProperty abbreviatedIRI=":hasFaculty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":hasStudent"/>
@@ -4281,15 +4335,11 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isAssociateProfessorOf"/>
-        <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isProfessorOf_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
         <ObjectProperty abbreviatedIRI=":worksFor"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
-        <ObjectProperty abbreviatedIRI=":worksFor_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
@@ -4302,6 +4352,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
         <ObjectProperty abbreviatedIRI=":worksFor_0"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
+        <ObjectProperty abbreviatedIRI=":worksFor_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
@@ -4324,8 +4378,8 @@
         <ObjectProperty abbreviatedIRI=":isProfessorOf_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":isFullProfessorOf"/>
-        <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_0"/>
+        <ObjectProperty abbreviatedIRI=":isProfessorOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isFullProfessorOf_0"/>
@@ -4361,15 +4415,15 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isHeadOf_2"/>
-        <ObjectProperty abbreviatedIRI=":isFullProfessorOf"/>
+        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isHeadOf_3"/>
-        <ObjectProperty abbreviatedIRI=":isFullProfessorOf"/>
+        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isHeadOf_4"/>
-        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_0"/>
+        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isHeadOf_5"/>
@@ -4377,7 +4431,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isHeadOf_6"/>
-        <ObjectProperty abbreviatedIRI=":isFullProfessorOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isFullProfessorOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isPartOf"/>
@@ -4397,27 +4451,27 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isProfessorOf"/>
-        <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
+        <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":isProfessorOf_0"/>
-        <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
+        <ObjectProperty abbreviatedIRI=":isProfessorOf"/>
+        <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isProfessorOf_0"/>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":isProfessorOf_0"/>
+        <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":isProfessorOf_1"/>
-        <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":offerCourse"/>
@@ -4812,31 +4866,39 @@
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":advises"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":advises"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":advises_0"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
-        <Class abbreviatedIRI=":Course_6"/>
+        <Class abbreviatedIRI=":Course_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
-        <Class abbreviatedIRI=":Course_8"/>
+        <Class abbreviatedIRI=":Course_10"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
+        <Class abbreviatedIRI=":Course_9"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
         <Class abbreviatedIRI=":Student_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <Class abbreviatedIRI=":Student_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor_0"/>
@@ -4844,27 +4906,31 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor_1"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor_2"/>
-        <Class abbreviatedIRI=":Student_4"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor_3"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
         <Class abbreviatedIRI=":Student_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":enrollIn_0"/>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
         <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":enrollIn_1"/>
+        <ObjectProperty abbreviatedIRI=":enrollIn_0"/>
         <Class abbreviatedIRI=":Student_2"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollIn_1"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollIn_2"/>
@@ -4872,7 +4938,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollIn_3"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasAdvisor"/>
@@ -4884,15 +4950,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
+        <Class abbreviatedIRI=":University_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
+        <Class abbreviatedIRI=":University_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
         <Class abbreviatedIRI=":University_3"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
-        <Class abbreviatedIRI=":University_4"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
-        <Class abbreviatedIRI=":University_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasAssociateProfessor"/>
@@ -4904,27 +4970,27 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":Publication_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":Publication_3"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAuthor_0"/>
-        <Class abbreviatedIRI=":Publication_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAuthor_1"/>
         <Class abbreviatedIRI=":Publication"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
+        <Class abbreviatedIRI=":Publication_5"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasAuthor_0"/>
+        <Class abbreviatedIRI=":Publication_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasAuthor_1"/>
+        <Class abbreviatedIRI=":Publication_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
@@ -4932,27 +4998,27 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_0"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_1"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_2"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_3"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_4"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_5"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_6"/>
@@ -4964,27 +5030,31 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollegeDiscipline"/>
-        <Class abbreviatedIRI=":College_2"/>
+        <Class abbreviatedIRI=":College_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDean"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDean_0"/>
-        <Class abbreviatedIRI=":Organization_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDean_1"/>
+        <ObjectProperty abbreviatedIRI=":hasDean"/>
         <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDean_0"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDean_1"/>
+        <Class abbreviatedIRI=":Organization_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDean_2"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDean_3"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
@@ -4992,31 +5062,27 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
-        <Class abbreviatedIRI=":Person_5"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_0"/>
-        <Class abbreviatedIRI=":Person_6"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_1"/>
-        <Class abbreviatedIRI=":Person_6"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_2"/>
         <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom_2"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_3"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_4"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFaculty"/>
@@ -5028,19 +5094,27 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_0"/>
-        <Class abbreviatedIRI=":Student_4"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_1"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_2"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_0"/>
+        <Class abbreviatedIRI=":Department_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_1"/>
+        <Class abbreviatedIRI=":Department_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasFullProfessor"/>
@@ -5060,59 +5134,59 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <Class abbreviatedIRI=":Organization_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasPart_0"/>
         <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasPart_1"/>
+        <ObjectProperty abbreviatedIRI=":hasPart_0"/>
         <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasPart_1"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasProfessor"/>
         <Class abbreviatedIRI=":Department"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasProfessor"/>
-        <Class abbreviatedIRI=":Department_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasProfessor_0"/>
-        <Class abbreviatedIRI=":Department_1"/>
+        <Class abbreviatedIRI=":Department_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
+        <Class abbreviatedIRI=":Department_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
-        <Class abbreviatedIRI=":Person_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_0"/>
         <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_1"/>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
         <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_2"/>
-        <Class abbreviatedIRI=":Person_6"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_3"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_4"/>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_0"/>
         <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_1"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_2"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_3"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_4"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_5"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent"/>
@@ -5120,7 +5194,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent_0"/>
@@ -5132,7 +5206,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent_2"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent_3"/>
@@ -5140,19 +5214,23 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasStudent_4"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasSubOrganization_0"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasSubOrganization_1"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
@@ -5160,19 +5238,23 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+        <Class abbreviatedIRI=":Person_6"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_0"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_1"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_2"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_3"/>
@@ -5180,7 +5262,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_4"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_5"/>
@@ -5200,19 +5282,19 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_1"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_10"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_11"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_12"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_13"/>
@@ -5220,23 +5302,23 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_2"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_3"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_4"/>
-        <Class abbreviatedIRI=":Organization_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_5"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_5"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_6"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_7"/>
@@ -5244,11 +5326,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_8"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_9"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAlumniOf"/>
@@ -5259,16 +5341,16 @@
         <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAlumniOf"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAlumniOf_0"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
         <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isDeanOf"/>
@@ -5280,11 +5362,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isDeanOf_1"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isDeanOf_2"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isDeanOf_3"/>
@@ -5296,7 +5378,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isDeanOf_5"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
@@ -5304,15 +5386,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
-        <Class abbreviatedIRI=":Faculty_2"/>
+        <Class abbreviatedIRI=":Faculty_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
-        <Class abbreviatedIRI=":Faculty"/>
+        <Class abbreviatedIRI=":Faculty_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
-        <Class abbreviatedIRI=":Faculty_2"/>
+        <Class abbreviatedIRI=":Faculty_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isMemberOf"/>
@@ -5320,7 +5402,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isMemberOf"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isMemberOf_0"/>
@@ -5328,23 +5410,23 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isMemberOf_1"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isPartOf"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isPartOf_0"/>
+        <ObjectProperty abbreviatedIRI=":isPartOf"/>
         <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isPartOf_1"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <ObjectProperty abbreviatedIRI=":isPartOf_0"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <ObjectProperty abbreviatedIRI=":isPartOf_1"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
@@ -5352,47 +5434,39 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
-        <Class abbreviatedIRI=":Student_4"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isStudentOf_0"/>
-        <Class abbreviatedIRI=":Student_4"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isStudentOf_1"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
-        <Class abbreviatedIRI=":Organization_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf_0"/>
-        <Class abbreviatedIRI=":Organization_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf_1"/>
         <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isTaughtBy"/>
-        <Class abbreviatedIRI=":Course_0"/>
+        <Class abbreviatedIRI=":Course_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isTaughtBy"/>
         <Class abbreviatedIRI=":Course_11"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isTaughtBy"/>
-        <Class abbreviatedIRI=":Course_3"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isTaughtBy_0"/>
-        <Class abbreviatedIRI=":Course_5"/>
+        <Class abbreviatedIRI=":Course_10"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isTeachingAssistantOf"/>
@@ -5404,15 +5478,19 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_0"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_6"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_1"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <Class abbreviatedIRI=":Person_6"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_10"/>
@@ -5420,31 +5498,31 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_11"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_12"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_13"/>
-        <Class abbreviatedIRI=":Person_6"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
         <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
+        <ObjectProperty abbreviatedIRI=":knows_13"/>
         <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_4"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_5"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_6"/>
@@ -5452,23 +5530,23 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_7"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_8"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":knows_9"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":leads"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":leads"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":leads"/>
@@ -5480,19 +5558,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":likes"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":likes"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":likes"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":likes_0"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":likes_1"/>
@@ -5503,24 +5577,20 @@
         <Class abbreviatedIRI=":Department"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":offerCourse"/>
-        <Class abbreviatedIRI=":Department_1"/>
+        <ObjectProperty abbreviatedIRI=":registeredBy"/>
+        <Class abbreviatedIRI=":Course_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredBy"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":registeredBy"/>
-        <Class abbreviatedIRI=":Course_2"/>
+        <Class abbreviatedIRI=":Course_6"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredBy_0"/>
-        <Class abbreviatedIRI=":Course_8"/>
+        <Class abbreviatedIRI=":Course_7"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredBy_1"/>
-        <Class abbreviatedIRI=":Course_12"/>
+        <Class abbreviatedIRI=":Course_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredTo"/>
@@ -5536,39 +5606,39 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredTo_0"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":registeredTo_1"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse"/>
         <Class abbreviatedIRI=":Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse"/>
         <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":takesCourse"/>
-        <Class abbreviatedIRI=":Student_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_0"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_1"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_10"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_2"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_3"/>
@@ -5576,15 +5646,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_4"/>
-        <Class abbreviatedIRI=":Student_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":takesCourse_5"/>
         <Class abbreviatedIRI=":Student_4"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":takesCourse_5"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_6"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_7"/>
@@ -5592,35 +5662,35 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_8"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":takesCourse_9"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":teachesCourse"/>
-        <Class abbreviatedIRI=":Faculty_1"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":teachesCourse"/>
-        <Class abbreviatedIRI=":Faculty_2"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
         <Class abbreviatedIRI=":Faculty"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":teachesCourse_1"/>
+        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
         <Class abbreviatedIRI=":Faculty_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":teachesCourse_1"/>
+        <Class abbreviatedIRI=":Faculty_3"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":teachesTo"/>
         <Class abbreviatedIRI=":Faculty"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":teachesTo"/>
+        <Class abbreviatedIRI=":Faculty_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":teachesTo_0"/>
-        <Class abbreviatedIRI=":Faculty_2"/>
+        <Class abbreviatedIRI=":Faculty_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":teachesTo_1"/>
@@ -5628,7 +5698,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":worksFor"/>
-        <Class abbreviatedIRI=":Employee_2"/>
+        <Class abbreviatedIRI=":Employee_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":worksFor"/>
@@ -5636,27 +5706,27 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":worksFor_0"/>
-        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":Employee_0"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":advises"/>
         <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":advises"/>
-        <Class abbreviatedIRI=":Person_8"/>
+        <ObjectProperty abbreviatedIRI=":advises_0"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":advises_0"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
+        <Class abbreviatedIRI=":Department_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
         <Class abbreviatedIRI=":Department_1"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":courseOfferedBy"/>
-        <Class abbreviatedIRI=":Department_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
@@ -5680,27 +5750,35 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
-        <Class abbreviatedIRI=":Department"/>
+        <Class abbreviatedIRI=":Department_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <Class abbreviatedIRI=":Department_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":enrollIn_0"/>
-        <Class abbreviatedIRI=":Department_0"/>
+        <Class abbreviatedIRI=":Department_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":enrollIn_1"/>
-        <Class abbreviatedIRI=":Department_1"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":enrollIn_2"/>
         <Class abbreviatedIRI=":Department_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":enrollIn_3"/>
+        <ObjectProperty abbreviatedIRI=":enrollIn_2"/>
         <Class abbreviatedIRI=":Department_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollIn_3"/>
+        <Class abbreviatedIRI=":Department"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasAlumnus"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAssociateProfessor"/>
@@ -5708,15 +5786,15 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAuthor_0"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasAuthor_1"/>
@@ -5724,11 +5802,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_7"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_0"/>
@@ -5740,23 +5818,23 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_2"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_3"/>
-        <Class abbreviatedIRI=":Person_6"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_4"/>
         <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_5"/>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_3"/>
+        <Class abbreviatedIRI=":Person_7"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_4"/>
         <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith_5"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith_6"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasCollegeDiscipline"/>
@@ -5764,39 +5842,35 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDean"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDean"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasDean_0"/>
         <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasDean_0"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDean_1"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_7"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDean_2"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_8"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDean_3"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
-        <Class abbreviatedIRI=":University_5"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
-        <Class abbreviatedIRI=":University_6"/>
+        <Class abbreviatedIRI=":University"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_0"/>
-        <Class abbreviatedIRI=":University_0"/>
+        <Class abbreviatedIRI=":University_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_1"/>
@@ -5804,7 +5878,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_2"/>
-        <Class abbreviatedIRI=":University_3"/>
+        <Class abbreviatedIRI=":University_4"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_3"/>
@@ -5812,7 +5886,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom_4"/>
-        <Class abbreviatedIRI=":University_4"/>
+        <Class abbreviatedIRI=":University_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasFaculty"/>
@@ -5824,19 +5898,27 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
-        <Class abbreviatedIRI=":Faculty"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
-        <Class abbreviatedIRI=":Faculty_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_0"/>
         <Class abbreviatedIRI=":Faculty_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_1"/>
+        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor"/>
         <Class abbreviatedIRI=":Faculty_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_0"/>
+        <Class abbreviatedIRI=":Faculty_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasFacultyAdvisor_1"/>
+        <Class abbreviatedIRI=":Faculty_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_0"/>
+        <Class abbreviatedIRI=":Faculty_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasFaculty_1"/>
+        <Class abbreviatedIRI=":Faculty_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasFullProfessor"/>
@@ -5844,23 +5926,23 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasMember"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasMember"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_8"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasPart_0"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasPart_1"/>
@@ -5875,24 +5957,28 @@
         <Class abbreviatedIRI=":Professor"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasProfessor_1"/>
+        <Class abbreviatedIRI=":Professor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
         <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
-        <Class abbreviatedIRI=":Person_8"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_0"/>
-        <Class abbreviatedIRI=":Person_4"/>
+        <Class abbreviatedIRI=":Person_6"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_1"/>
-        <Class abbreviatedIRI=":Person_8"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_2"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_3"/>
@@ -5904,27 +5990,27 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith_5"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent_0"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent_1"/>
-        <Class abbreviatedIRI=":Student_3"/>
+        <Class abbreviatedIRI=":Student_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent_2"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent_3"/>
@@ -5932,15 +6018,15 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasStudent_4"/>
-        <Class abbreviatedIRI=":Student"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
         <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":hasSubOrganization_0"/>
@@ -5956,15 +6042,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <Class abbreviatedIRI=":Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <Class abbreviatedIRI=":Person_7"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_0"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_1"/>
@@ -5976,11 +6058,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_3"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_4"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_5"/>
@@ -5988,67 +6070,67 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAdvisedBy_6"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_0"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_1"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_10"/>
-        <Class abbreviatedIRI=":Organization_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_11"/>
-        <Class abbreviatedIRI=":Organization_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_12"/>
-        <Class abbreviatedIRI=":Organization_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_13"/>
-        <Class abbreviatedIRI=":Organization_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_2"/>
-        <Class abbreviatedIRI=":Organization_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_3"/>
         <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_4"/>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_11"/>
         <Class abbreviatedIRI=":Organization_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_12"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_13"/>
+        <Class abbreviatedIRI=":Organization_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_2"/>
+        <Class abbreviatedIRI=":Organization_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_3"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_4"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_5"/>
-        <Class abbreviatedIRI=":Organization_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_6"/>
         <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_6"/>
+        <Class abbreviatedIRI=":Organization_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_7"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_8"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf_9"/>
@@ -6059,12 +6141,16 @@
         <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isDeanOf_0"/>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
         <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isDeanOf_0"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isDeanOf_1"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isDeanOf_2"/>
@@ -6072,11 +6158,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isDeanOf_3"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isDeanOf_4"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isDeanOf_5"/>
@@ -6084,11 +6170,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isFacultyOf"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_0"/>
@@ -6096,39 +6182,39 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isFacultyOf_1"/>
-        <Class abbreviatedIRI=":Organization_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isMemberOf"/>
-        <Class abbreviatedIRI=":Organization_1"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isMemberOf"/>
         <Class abbreviatedIRI=":Organization_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isMemberOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isMemberOf"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isMemberOf_0"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isMemberOf_1"/>
+        <Class abbreviatedIRI=":Organization_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isPartOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isPartOf"/>
         <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isPartOf"/>
-        <Class abbreviatedIRI=":Organization_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isPartOf"/>
-        <Class abbreviatedIRI=":Organization_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isPartOf_0"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isPartOf_1"/>
-        <Class abbreviatedIRI=":Organization_3"/>
+        <Class abbreviatedIRI=":Organization_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
@@ -6136,7 +6222,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isStudentOf_0"/>
@@ -6144,11 +6230,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isStudentOf_1"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
-        <Class abbreviatedIRI=":Organization_2"/>
+        <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf_0"/>
@@ -6156,11 +6242,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf_1"/>
-        <Class abbreviatedIRI=":Organization"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isTaughtBy"/>
-        <Class abbreviatedIRI=":Faculty"/>
+        <Class abbreviatedIRI=":Faculty_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isTaughtBy"/>
@@ -6168,27 +6254,27 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isTaughtBy_0"/>
-        <Class abbreviatedIRI=":Faculty_0"/>
+        <Class abbreviatedIRI=":Faculty"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isTeachingAssistantOf"/>
-        <Class abbreviatedIRI=":Course_12"/>
+        <Class abbreviatedIRI=":Course_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":isTeachingAssistantOf"/>
-        <Class abbreviatedIRI=":Course_4"/>
+        <Class abbreviatedIRI=":Course_7"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person_6"/>
+        <Class abbreviatedIRI=":Person_7"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows_0"/>
-        <Class abbreviatedIRI=":Person_7"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows_1"/>
@@ -6196,59 +6282,55 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows_10"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_11"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_12"/>
-        <Class abbreviatedIRI=":Person_7"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_13"/>
-        <Class abbreviatedIRI=":Person_5"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
         <Class abbreviatedIRI=":Person_6"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
-        <Class abbreviatedIRI=":Person_5"/>
+        <ObjectProperty abbreviatedIRI=":knows_11"/>
+        <Class abbreviatedIRI=":Person_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_4"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <ObjectProperty abbreviatedIRI=":knows_12"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_5"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_6"/>
-        <Class abbreviatedIRI=":Person_8"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_7"/>
+        <ObjectProperty abbreviatedIRI=":knows_13"/>
         <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_8"/>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_4"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_5"/>
+        <Class abbreviatedIRI=":Person_7"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_6"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_7"/>
         <Class abbreviatedIRI=":Person_8"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_8"/>
+        <Class abbreviatedIRI=":Person_5"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows_9"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":leads"/>
         <Class abbreviatedIRI=":Organization"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":leads"/>
-        <Class abbreviatedIRI=":Organization_3"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":leads_0"/>
@@ -6256,115 +6338,115 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":offerCourse"/>
-        <Class abbreviatedIRI=":Course"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":offerCourse"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredBy"/>
-        <Class abbreviatedIRI=":Student_1"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredBy"/>
-        <Class abbreviatedIRI=":Student_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredBy_0"/>
-        <Class abbreviatedIRI=":Student_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredBy_1"/>
-        <Class abbreviatedIRI=":Student_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredTo"/>
         <Class abbreviatedIRI=":Course_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":offerCourse"/>
+        <Class abbreviatedIRI=":Course_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredBy"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredBy"/>
+        <Class abbreviatedIRI=":Student_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredBy_0"/>
+        <Class abbreviatedIRI=":Student_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredBy_1"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":registeredTo"/>
-        <Class abbreviatedIRI=":Course_13"/>
+        <Class abbreviatedIRI=":Course_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredTo"/>
+        <Class abbreviatedIRI=":Course_2"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":registeredTo_0"/>
-        <Class abbreviatedIRI=":Course_6"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":registeredTo_1"/>
-        <Class abbreviatedIRI=":Course_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse"/>
-        <Class abbreviatedIRI=":Course_6"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_0"/>
-        <Class abbreviatedIRI=":Course_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_1"/>
-        <Class abbreviatedIRI=":Course"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_10"/>
-        <Class abbreviatedIRI=":Course_11"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_2"/>
-        <Class abbreviatedIRI=":Course_12"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_3"/>
-        <Class abbreviatedIRI=":Course_12"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_4"/>
-        <Class abbreviatedIRI=":Course_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_5"/>
-        <Class abbreviatedIRI=":Course_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_6"/>
-        <Class abbreviatedIRI=":Course_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_7"/>
-        <Class abbreviatedIRI=":Course_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_8"/>
-        <Class abbreviatedIRI=":Course_4"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":takesCourse_9"/>
-        <Class abbreviatedIRI=":Course_2"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":teachesCourse"/>
-        <Class abbreviatedIRI=":Course_10"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":teachesCourse"/>
-        <Class abbreviatedIRI=":Course_3"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
         <Class abbreviatedIRI=":Course_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":registeredTo_1"/>
+        <Class abbreviatedIRI=":Course_5"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+        <Class abbreviatedIRI=":Course_10"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_0"/>
+        <Class abbreviatedIRI=":Course_11"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_1"/>
+        <Class abbreviatedIRI=":Course_4"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_10"/>
+        <Class abbreviatedIRI=":Course_5"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_2"/>
+        <Class abbreviatedIRI=":Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_3"/>
+        <Class abbreviatedIRI=":Course_3"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_4"/>
+        <Class abbreviatedIRI=":Course_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_5"/>
+        <Class abbreviatedIRI=":Course_5"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_6"/>
+        <Class abbreviatedIRI=":Course_6"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_7"/>
+        <Class abbreviatedIRI=":Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_8"/>
+        <Class abbreviatedIRI=":Course_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":takesCourse_9"/>
+        <Class abbreviatedIRI=":Course_7"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":teachesCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":teachesCourse"/>
+        <Class abbreviatedIRI=":Course_7"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":teachesCourse_0"/>
+        <Class abbreviatedIRI=":Course_8"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":teachesCourse_1"/>
-        <Class abbreviatedIRI=":Course_2"/>
+        <Class abbreviatedIRI=":Course_5"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":worksFor"/>
-        <Class abbreviatedIRI=":Organization_0"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":worksFor"/>
@@ -6372,7 +6454,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":worksFor_0"/>
-        <Class abbreviatedIRI=":Organization_1"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyRange>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI=":advises"/>
@@ -6380,7 +6462,7 @@
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI=":advises"/>
-        <ObjectProperty abbreviatedIRI=":enrollFor_3"/>
+        <ObjectProperty abbreviatedIRI=":enrollFor_4"/>
     </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI=":advises"/>
@@ -6616,55 +6698,55 @@
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge"/>
-        <Class abbreviatedIRI=":Person_9"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_0"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_1"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_10"/>
-        <Class abbreviatedIRI=":Person_4"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_11"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_12"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_13"/>
         <Class abbreviatedIRI=":Person_5"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_2"/>
+        <DataProperty abbreviatedIRI=":hasAge_0"/>
         <Class abbreviatedIRI=":Person_1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_3"/>
-        <Class abbreviatedIRI=":Person_3"/>
+        <DataProperty abbreviatedIRI=":hasAge_1"/>
+        <Class abbreviatedIRI=":Person_9"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_4"/>
+        <DataProperty abbreviatedIRI=":hasAge_10"/>
+        <Class abbreviatedIRI=":Person_8"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_11"/>
         <Class abbreviatedIRI=":Person_7"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_12"/>
+        <Class abbreviatedIRI=":Person_9"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_13"/>
+        <Class abbreviatedIRI=":Person_9"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_2"/>
+        <Class abbreviatedIRI=":Person_9"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_3"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge_4"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge_5"/>
-        <Class abbreviatedIRI=":Person_10"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge_6"/>
-        <Class abbreviatedIRI=":Person_8"/>
+        <Class abbreviatedIRI=":Person_5"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge_7"/>
@@ -6672,43 +6754,43 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge_8"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge_9"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
-        <Class abbreviatedIRI=":Person_10"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
         <Class abbreviatedIRI=":Person_5"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Class abbreviatedIRI=":Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Class abbreviatedIRI=":Person_8"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasEmailAddress_0"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_8"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasEmailAddress_1"/>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":Person_8"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasEmailAddress_2"/>
-        <Class abbreviatedIRI=":Person_9"/>
+        <Class abbreviatedIRI=":Person_2"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasEmailAddress_3"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName"/>
         <Class abbreviatedIRI=":Person_0"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasName"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasName"/>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Person_4"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasName_0"/>
@@ -6716,67 +6798,67 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasName_1"/>
-        <Class abbreviatedIRI=":Person_7"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasName_2"/>
-        <Class abbreviatedIRI=":Person_10"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasName_3"/>
-        <Class abbreviatedIRI=":Person_7"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
-        <Class abbreviatedIRI=":Publication_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
-        <Class abbreviatedIRI=":Publication_6"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
-        <Class abbreviatedIRI=":Publication_3"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
-        <Class abbreviatedIRI=":Publication_7"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
-        <Class abbreviatedIRI=":Publication_4"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasPublicationDate_3"/>
-        <Class abbreviatedIRI=":Publication_4"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle"/>
-        <Class abbreviatedIRI=":Person_3"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle"/>
-        <Class abbreviatedIRI=":Person_9"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_0"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_1"/>
-        <Class abbreviatedIRI=":Person_5"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_2"/>
-        <Class abbreviatedIRI=":Person_9"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_3"/>
         <Class abbreviatedIRI=":Person_8"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName_2"/>
+        <Class abbreviatedIRI=":Person_9"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName_3"/>
+        <Class abbreviatedIRI=":Person_4"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <Class abbreviatedIRI=":Publication_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <Class abbreviatedIRI=":Publication_3"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
+        <Class abbreviatedIRI=":Publication_5"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+        <Class abbreviatedIRI=":Publication_6"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
+        <Class abbreviatedIRI=":Publication_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_3"/>
+        <Class abbreviatedIRI=":Publication_5"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+        <Class abbreviatedIRI=":Person_8"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle_0"/>
+        <Class abbreviatedIRI=":Person_8"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle_1"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle_2"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle_3"/>
+        <Class abbreviatedIRI=":Person_9"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
@@ -6784,59 +6866,59 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_4"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_10"/>
-        <Class abbreviatedIRI=":Student_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_11"/>
         <Class abbreviatedIRI=":Student_3"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_11"/>
+        <Class abbreviatedIRI=":Student_6"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_12"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_13"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_6"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_2"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_6"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_3"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_4"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_5"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_5"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_6"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_6"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_7"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_8"/>
-        <Class abbreviatedIRI=":Student_2"/>
+        <Class abbreviatedIRI=":Student"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_9"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasAge"/>

@@ -86,7 +86,7 @@ public class ClassEnumerationcategory {
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLEquivalentClassesAxiom(oneOfClass, oneOf));
 		
 		addObjectOneOfIndidividuals(allConcepts);
-		app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(oneOfClass, oneOf));
+//		app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(oneOfClass, oneOf));
 	}
 	
 	public void convertLineToObjectUnionOf(ArrayList allConcepts) {

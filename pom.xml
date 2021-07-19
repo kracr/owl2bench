@@ -132,9 +132,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				   <configuration>
+	<!-- 			   <configuration>
             		<skip>true</skip>
-        			</configuration>
+        			</configuration> -->
+        		<configuration>
+                    <fork>true</fork>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                      <goals>
+                        <goal>repackage</goal>
+                      </goals>
+                    </execution>
+                </executions>
 			</plugin>
 			
 </plugins>

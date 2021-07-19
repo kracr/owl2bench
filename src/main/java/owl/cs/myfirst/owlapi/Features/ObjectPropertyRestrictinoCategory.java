@@ -83,6 +83,7 @@ public class ObjectPropertyRestrictinoCategory {
 				namedIndiviMap.put(outputs[1], outputs[0]);
 			}
 		}
+		reader.close();
 		
 		if ( namedIndiviMap.containsKey(classTerm) ) app.alreadyAssertionAxiom.put(indiv, namedIndiviMap.get(classTerm));
 	}
@@ -98,7 +99,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(hasValue, restriction));
 	    
 	    addObjectHasValueIndidividuals(p1,p3);
-	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
+//	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
 	    
 	}
 	
