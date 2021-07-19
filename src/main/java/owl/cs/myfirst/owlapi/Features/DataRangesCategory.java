@@ -22,6 +22,8 @@ import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
+
+import owl.cs.myfirst.owlapi.app;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
 public class DataRangesCategory {
@@ -45,6 +47,8 @@ public class DataRangesCategory {
 //	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyDomainAxiom(factory.getOWLDataProperty(prop, pm), domain));
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyRangeAxiom(factory.getOWLDataProperty(prop, pm), complement));
 	    //addToGenericDomainAndNewRange(factory.getOWLDataProperty(prop, pm), complement);
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLDataPropertyRangeAxiom(factory.getOWLDataProperty(prop, pm), complement));
 	}
 	
 	public static void convertLineToDataIntersectionOf(ArrayList<String> allConcepts) {
@@ -59,6 +63,8 @@ public class DataRangesCategory {
 //	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyDomainAxiom(property, domain));
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyRangeAxiom(property, intersection));
 	    //addToGenericDomainAndNewRange(property, intersection);
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLDataPropertyRangeAxiom(property, intersection));
 	}
 	
 	public static void convertLineToDataOneOf(ArrayList<String> allConcepts) {
@@ -88,6 +94,8 @@ public class DataRangesCategory {
 //	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyDomainAxiom(property, domain));
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyRangeAxiom(property, union));
 //	    addToGenericDomainAndNewRange(property, union);
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLDataPropertyRangeAxiom(property, union));
 	}
 }
 

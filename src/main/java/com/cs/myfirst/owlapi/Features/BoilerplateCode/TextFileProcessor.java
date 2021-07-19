@@ -65,9 +65,7 @@ public class TextFileProcessor {
 		while (line != null) {
 			if ( line.length() > 0 ) {
 				String[] outputs = line.split(construct);
-				if ( outputs.length == 1 ) {
-					axioms.add(outputs[0]);
-				}
+				if ( outputs.length == 1 ) axioms.add(outputs[0]);
 				else if ( outputs.length == 2 ) {
 					if ( outputs[1].contains(",") ) {
 						String[] suboutputs = null;
@@ -77,41 +75,31 @@ public class TextFileProcessor {
 //							suboutputs =outputs;
 //							ax = "";
 //						}
-//						else {
 						suboutputs = outputs[1].split(",");
 						ax = outputs[0]+",";
-//						}
 						for ( int i = 0 ; i < suboutputs.length ; i++ ) {
-							if ( suboutputs[i].length() > 0 ) {
-								ax = ax+suboutputs[i]+",";
-							}
+							if ( suboutputs[i].length() > 0 ) ax = ax+suboutputs[i]+",";
 						}
 						ax = ax.substring(0,ax.lastIndexOf(","));
 						axioms.add(ax);
 					}
-					else {
-						axioms.add(outputs[0]+","+outputs[1]);
-					}
+					else axioms.add(outputs[0]+","+outputs[1]);
 				}
-				else if ( outputs.length == 5 ) {
-					axioms.add(outputs[0]+","+outputs[1]+","+outputs[3]+","+outputs[4]);
-				}
+				else if ( outputs.length == 5 ) axioms.add(outputs[0]+","+outputs[1]+","+outputs[3]+","+outputs[4]);
 				else if ( outputs.length >=3 ) {
 					if ( fileName.equals("OwlPropertyChainAxiomFeature.txt") 
 							|| fileName.equals("OwlObjectHasValueFeature.txt") || fileName.equals("DataHasValue.txt") ) {
 						axioms.add(outputs[0]+","+outputs[1]+","+outputs[2]);
 					}
-					else { axioms.add(outputs[0]+","+outputs[1]+","+outputs[3]); }
+					else axioms.add(outputs[0]+","+outputs[1]+","+outputs[3]);
 				}
 				//System.out.println(outputs[0]+","+outputs[1]);
-				
 			}
 			line = reader.readLine();
 		}
 		reader.close();
 		return axioms;
 	}
-	
 	
 	/**
 	 * @param axioms - ArrayList of axioms, where at each index , we have comma separated words
@@ -128,15 +116,14 @@ public class TextFileProcessor {
 	 * @return Sorted LinkedHashMap with values sorted in DESCENDING order
 	 */
 	public ArrayList<String> rankAxioms(ArrayList<String> axioms) throws IOException, ClassNotFoundException {
-		LinkedHashMap<String, Integer> globalCommons = loadGlobalCommons("commonConstructs.ser");
+		LinkedHashMap<String, Integer> globalCommons = Util.commonConstructs;
 		LinkedHashMap<String,Integer> axiomsRank = new LinkedHashMap<String,Integer>();
 		for ( String ax : axioms ) {
 			String[] contents = ax.split(",");
 			int rank = 0;
 			for ( int i = 0 ; i < contents.length ; i++ ) {
-				if ( !CommonFramework.isIsNumber(contents[i]) && !CommonFramework.isIsLiteral(contents[i]) && globalCommons.containsKey(contents[i]) ) { rank++; }
+				if ( !CommonFramework.isIsNumber(contents[i]) && !CommonFramework.isIsLiteral(contents[i]) && globalCommons.containsKey(contents[i]) ) rank++;
 			}
-			//System.out.println(contents.length+" | "+contents[0]+" | "+contents[1]+" | "+rank);
 			axiomsRank.put(ax,rank);
 		}
 		LinkedHashMap<String, Integer> rankedMap = axiomsRank.entrySet().stream()
@@ -144,120 +131,11 @@ public class TextFileProcessor {
 		.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
 		
 		ArrayList<String> rankedAxioms = rankedMap.keySet().stream().collect(Collectors.toCollection(ArrayList::new));
-//		for ( String kk : rankedMap.keySet() ) {
-//			System.out.println(kk+" | "+rankedMap.get(kk));
-//		}
+//		for ( String kk : rankedMap.keySet() ) System.out.println(kk+" | "+rankedMap.get(kk));
 		return rankedAxioms;
 	}
-	
-	public static LinkedHashMap<String, Integer> globalCommons;
-	public static LinkedHashMap<String, Integer> underscoreGlobalCommons;
-	
-	/**
-	 * @param axioms - ArrayList Of Axioms ( comma separated words ) which were USED for INSERTING into Ontology for that construct.
-	 * @param userInp - user input ( number of axioms ) corresponding that particular construct
-	 * 
-	 * I will explain BRIEFLY, NO NEED to go INTO DETAIL
-	 * 
-	 * Here, we are first loading commonConstructs and underscoreCommonConstructs. 
-	 * Then we are iterating over Axioms ArrayList and inserting into hashmap. 
-	 * How, we are inserting into respective hashmaps of commons and underscore, 
-	 * Will be explained above "insertAxiomIntoOntology" of CommonFramework java file. Head over to that file for DETAILS.
-	 * 
-	 * SAME logic is written as in CommonFramework JAVA file.
-	 * 
-	 * There addToOntology function corresponds to insertIntoGlobalCommons here. They are functioning similar.
-	 * There insertAxiomIntoOntology function corresponds to insertIntoGlobalHashMaps here. They are functioning similar.
-	 */
-	public void insertIntoGlobalCommons(ArrayList<String> axioms,int userInp) throws ClassNotFoundException, IOException {
-		globalCommons = loadGlobalCommons("commonConstructs.ser");
-		underscoreGlobalCommons = loadGlobalCommons("underscoreCommonConstructs.ser");
-		int count = insertIntoGlobalHashMaps(axioms,0,userInp,"first",0);
-        if ( count < userInp ) {
-			int incre = 0;
-			while ( count < userInp ) {
-				count = insertIntoGlobalHashMaps(axioms,count,userInp,"second",incre);
-				if ( count >= userInp ) {
-					break;
-				}
-				incre++;
-			}
-        }
-        saveGlobalCommons(globalCommons,"commonConstructs.ser");
-        saveGlobalCommons(underscoreGlobalCommons,"underscoreCommonConstructs.ser");
-	}
-	
-	/**
-	 * @param rankedAxioms 
-	 * @param count
-	 * @param userInp
-	 * @param phase
-	 * @param incre
-	 * @return
-	 */
-	public static int insertIntoGlobalHashMaps(ArrayList<String> rankedAxioms, int count, int userInp, String phase, int incre) {
-		for( String ax : rankedAxioms ) {
-			String[] contents = ax.split(",");
-			if ( phase.equals("second") ) {
-//				String combine = "";
-				for ( int i = 0 ; i < contents.length ; i++ ) {
-//					if ( FilenameConstructMapping.rootConcepts.containsKey(contents[i]) ) {
-//						underscoreGlobalCommons.put(contents[i], 1);
-//					}else if ( !CommonFramework.isIsNumber(contents[i]) && !CommonFramework.isIsLiteral(contents[i]) ) {
-//						underscoreGlobalCommons.put(contents[i]+"_"+incre, 1);
-//					}
-					
-					if ( !CommonFramework.isIsNumber(contents[i]) && !CommonFramework.isIsLiteral(contents[i]) ) {
-						underscoreGlobalCommons.put(contents[i]+"_"+incre, incre+1);
-						if ( globalCommons.get(contents[i]) < incre+1 ) {
-							globalCommons.put(contents[i], incre+1);
-						}
-					}
-				}
-			}
-			if ( phase.equals("first") ) {
-				for ( int i = 0 ; i < contents.length ; i++ ) {
-					if ( !CommonFramework.isIsNumber(contents[i]) && !CommonFramework.isIsLiteral(contents[i]) ) {
-						globalCommons.put(contents[i], 1);
-					}
-				}
-			}
-			count++;
-			if ( count >= userInp ) {
-				break;
-			}
-		}
-		return count;
-	}
-	
-	/**
-	 * @param fileName - There are two types of globalHashMap present :-
-	 * 			1) - commonConstructs , WITHOUT any UNDERSCORE concepts/properties
-	 * 			2) - underscoreCommonConstructs, WITH UNDERSCORE present in concepts/properties
-	 * 
-	 * We store them in SERIALIZED format in ".ser" extension at ROOT folder.
-	 * Hence we are reading from this ROOT folder , DESERIALIZING it and
-	 * @return it as LinkedHashMap
-	 */
-	public static LinkedHashMap<String, Integer> loadGlobalCommons(String fileName) throws IOException, ClassNotFoundException {
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+File.separator+fileName);
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		LinkedHashMap<String, Integer> globalCommons = (LinkedHashMap) ois.readObject();
-		ois.close();fis.close();
-		return globalCommons;
-	}
-	
-	/**
-	 * @param Commons - globalHashmap that we used to insert ADDITIONAL concepts/properties added in ontology
-	 * for that particular contruct. 
-	 * We load, insert , save into globalHashmap FOR EACH CONSTRUCT while ITERATING after inserting into Ontology.
-	 * 
-	 * @param fileName - fileName where to store, possible values are commonConstructs and underscoreCommonConstructs
-	 */
-	public static void saveGlobalCommons(LinkedHashMap<String,Integer> Commons,String fileName) throws IOException, ClassNotFoundException {		
-		FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir")+File.separator+fileName);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(Commons);
-        oos.close();fos.close();
-	}
+
+//		underscoreGlobalCommons.put(contents[i]+"_"+incre, incre+1);
+//		if ( globalCommons.get(contents[i]) < incre+1 ) globalCommons.put(contents[i], incre+1);
+//if ( phase.equals("first") ) globalCommons.put(contents[i], 1);
 }

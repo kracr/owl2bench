@@ -1,9 +1,13 @@
 package owl.cs.myfirst.owlapi.Features;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -23,6 +27,8 @@ import org.semanticweb.owlapi.model.PrefixManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
+
+import owl.cs.myfirst.owlapi.app;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
 public class ObjectPropertyRestrictinoCategory {
@@ -30,12 +36,15 @@ public class ObjectPropertyRestrictinoCategory {
 	protected static FeaturePool featurePool;
 	protected static PrefixManager pm;
 	protected static OWLOntology ontology;
+	public static HashMap<String, String> namedIndiviMap;
 	
 	public ObjectPropertyRestrictinoCategory(OWLDataFactory factory, PrefixManager pm, FeaturePool featurePool, OWLOntology ontology ) throws ClassNotFoundException, IOException {
 		ObjectPropertyRestrictinoCategory.factory = factory;
 		ObjectPropertyRestrictinoCategory.pm = pm;
 		ObjectPropertyRestrictinoCategory.featurePool = featurePool;
 		ObjectPropertyRestrictinoCategory.ontology = ontology;
+		
+		initializeNamedIndiviMap();
 	}
 	
 	public static void convertLineToObjectAllValuesFrom(ArrayList<String> allConcepts) {
@@ -52,6 +61,8 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLObjectAllValuesFrom restriction = factory.getOWLObjectAllValuesFrom(property, range);
 	    OWLClass allValuesFrom = featurePool.getExclusiveClass(p0);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
 	}
 	
 	public static void convertLineToObjectHasSelf(ArrayList<String> allConcepts) {
@@ -61,9 +72,27 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLClass hasSelf = featurePool.getExclusiveClass(subject);
 	    OWLObjectHasSelf restriction = factory.getOWLObjectHasSelf(property);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLEquivalentClassesAxiom(hasSelf, restriction));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(hasSelf, restriction));
 	}
 	
-	public static void convertLineToObjectHasValue(ArrayList<String> allConcepts) {
+	public void initializeNamedIndiviMap() throws IOException {
+		namedIndiviMap = new HashMap<String,String>();
+		BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/DL/OwlNamedIndividual.txt"));
+		String line = reader.readLine();
+		while (line != null) {
+			if ( line.length() > 0 ) {
+				String[] outputs = line.split(" classAssertion ");
+				namedIndiviMap.put(outputs[1], outputs[0]);
+			}
+		}
+	}
+	
+	public static void addObjectHasValueIndidividuals(String indiv, String classTerm) throws IOException {
+		if ( namedIndiviMap.containsKey(classTerm) ) app.alreadyAssertionAxiom.put(indiv, namedIndiviMap.get(classTerm));
+	}
+	
+	public static void convertLineToObjectHasValue(ArrayList<String> allConcepts) throws IOException {
 		String p1 = allConcepts.get(0);
 		String p2 = allConcepts.get(1);
 		String p3 = allConcepts.get(2);
@@ -72,6 +101,10 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLObjectHasValue restriction = factory.getOWLObjectHasValue(property, value);
 	    OWLClass hasValue = featurePool.getExclusiveClass(p1);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(hasValue, restriction));
+	    
+	    addObjectHasValueIndidividuals(p1,p3);
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
+	    
 	}
 	
 	public static void convertLineToObjectSomeValuesFrom(ArrayList<String> allConcepts) {
@@ -83,6 +116,8 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLClass someValuesFrom = featurePool.getExclusiveClass(p0);
 	    OWLObjectSomeValuesFrom restriction = factory.getOWLObjectSomeValuesFrom(property, range);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
 	}
 	
 	public static void convertLineToObjectMaxQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -98,6 +133,8 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLClass qualifier = featurePool.getExclusiveClass(p0);
 	    OWLObjectMaxCardinality maxCardinality = factory.getOWLObjectMaxCardinality(Integer.parseInt(p3), property, qualifier);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, maxCardinality));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, maxCardinality));
 	}
 	
 	public static void convertLineToObjectMinQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -113,6 +150,8 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLClass qualifier = featurePool.getExclusiveClass(p0);
 	    OWLObjectMinCardinality minCardinality = factory.getOWLObjectMinCardinality(Integer.parseInt(p3), property, qualifier);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, minCardinality));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, minCardinality));
 	}
 	
 	public static void convertLineToObjectQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -128,5 +167,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    OWLClass qualifier = featurePool.getExclusiveClass(p0);
 	    OWLObjectExactCardinality exactCardinality = factory.getOWLObjectExactCardinality(Integer.parseInt(p3), property, qualifier);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, exactCardinality));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, exactCardinality));
 	}
 }

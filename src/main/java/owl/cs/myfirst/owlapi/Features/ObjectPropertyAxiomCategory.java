@@ -91,6 +91,8 @@ public class ObjectPropertyAxiomCategory {
 			OWLObjectProperty p1 = featurePool.getExclusiveProperty(subject);
 			OWLObjectProperty p2 = featurePool.getExclusiveProperty(object);	
 			ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLInverseObjectPropertiesAxiom(p1, p2));
+			
+			app.notToBeIncludedAxioms.add(factory.getOWLInverseObjectPropertiesAxiom(p1, p2));
 		}
 		
 		public static void convertLineToIrreflexiveProperty(ArrayList<String> allConcepts) {

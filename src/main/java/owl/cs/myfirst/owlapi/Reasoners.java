@@ -1,4 +1,4 @@
-package com.cs.myfirst.owlapi.Features.BoilerplateCode;
+package owl.cs.myfirst.owlapi;
 import java.io.File;
 
 import org.semanticweb.HermiT.Reasoner;

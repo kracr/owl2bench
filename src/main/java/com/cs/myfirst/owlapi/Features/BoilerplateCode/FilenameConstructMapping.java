@@ -68,11 +68,6 @@ public class FilenameConstructMapping {
 		 String[] separator7 = {" complementOf "," IntersectionOf "," OneOf "," UnionOf "};
 		 String[] generatedOntologyTerm7 = {"DataComplementOf","DataIntersectionOf","DatatypeDefinition","DataUnionOf"};
 	
-		 String[] construct9 = {"NamedIndividual"}; 
-		 String[] filename9 = {"OwlNamedIndividual.txt"};
-		 String[] separator9 = {" classAssertion "};
-		 String[] generatedOntologyTerm9 = {"ClassAssertion"};
-		 
 		 String[] construct10 = {"HasKey"};
 		 String[] filename10 = {"OwlHasKey.txt"};
 		 String[] separator10 = {" HasKey "};
@@ -101,15 +96,11 @@ public class FilenameConstructMapping {
 		 rootConcepts = new HashMap<String,String>();
 		 ArrayList<String> axioms = pattern.readTxtFile("RootConcepts.txt","\n");
 		 for ( String ax : axioms ) {
-			 if ( !rootConcepts.containsKey(ax) ) {
-				 rootConcepts.put(ax, "");
-			 }
+			 if ( !rootConcepts.containsKey(ax) ) rootConcepts.put(ax, "");
 		 }
 		 
 		String[] lastOnesConstructs = { "RdfsSubClassOf","RdfsDataSubPropertyOf","RdfsObjectSubPropertyOf",
-				
 				"RdfsObjectDomain","RdfsObjectRange","RdfsDataDomain","RdfsDataRange",
-				
 	            "DisjointWith","ObjectPropertyDisjointWith","DataPropertyDisjointWith" };
 		
 		//subClass/subProper all subs -> reason -> all hierarchy get printed/more connected -> MANDATORY, if user selects or NOT
@@ -117,17 +108,12 @@ public class FilenameConstructMapping {
 		//all disjoint ones -> NOT MANDATORY , if user HAS SELECTED then ONLY , reason -> more relations one
 		// REMOVE all disjoint one, then use disjointWith ONLY
 		constructsForLast = new HashMap<String,String>();
-		for( String dr : lastOnesConstructs ) {
-			constructsForLast.put(dr,"");
-		}
-		
+		for( String dr : lastOnesConstructs ) constructsForLast.put(dr,"");
 		
 		String[] constructsDomainRangeDisjoint = {  "RdfsObjectDomain.txt","RdfsObjectRange.txt","RdfsDataDomain.txt","RdfsDataRange.txt",
 				  "OwlObjectPropertyDisjointWith.txt","DataPropertyDisjointWith.txt","OwlDisjointWithFeature.txt" };
 		lastDomainRangeDisjoint = new HashMap<String,String>();
-		for( String dr : constructsDomainRangeDisjoint ) {
-			lastDomainRangeDisjoint.put(dr,"");
-		}
+		for( String dr : constructsDomainRangeDisjoint ) lastDomainRangeDisjoint.put(dr,"");
 	}
 	
 	
@@ -140,18 +126,16 @@ public class FilenameConstructMapping {
 	 * 
 	 * @return
 	 */
-	public ArrayList<String> disjointOnes() {
+	public static ArrayList<String> disjointOnes() {
 		ArrayList<String> genericConstructs = new ArrayList<String>();
 		Collections.addAll(genericConstructs,"DisjointUnionOf",
 				"ObjectIntersection","ObjectOneOf","ObjectUnionOf");
 		
-		//"AllDisjointClasses","AllDisjointDataProperties","AllDisjointObjectProperties",
 		// they wont come "ObjectPropertyDisjointWith","DataPropertyDisjointWith","EquivalentClass","EquivalentDataProperty","EquivalentObjectProperty",
 		// LAST MAIN EVEN AFTER SUBCLASS/SUBPROP -> All Disjoint With CONTAINING "Disjoint" ONLY NAMES ( not including oneOf, intersection, union ), 
 
 		return genericConstructs;
 	}
-	//"DisjointWith" IS NOT
 	// 'empty role chain' 
 	// not enough elements in the n-ary element
 	// Index 1 out of bounds for length 1 -objectoneof, objectunionof, datacomplementof, objectIntersectionOf, alldisjointDataProperties,

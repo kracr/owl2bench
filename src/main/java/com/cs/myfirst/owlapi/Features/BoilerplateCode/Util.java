@@ -11,12 +11,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Util {
 	
-	static LinkedHashMap<String,Integer> commonConstructs;
-	static LinkedHashMap<String,Integer> underscoreCommonConstructs;
+	public static LinkedHashMap<String,Integer> commonConstructs;
+	public static LinkedHashMap<String,Integer> underscoreCommonConstructs;
 	
 	/**
 	 * Sorting on the basis of Axiom Count of construct 
@@ -50,16 +51,15 @@ public class Util {
 					BufferedReader br = new BufferedReader(new FileReader(contructAxioms));
 					String st; 
 					int count = 0;
-					while ((st = br.readLine()) != null && st.length() != 0) {
-						count++;
-					}
+					while ((st = br.readLine()) != null && st.length() != 0) count++;
+					
 					filename = filename.substring(0,filename.length()-4);
-					if ( filename.length() >= 7 && filename.substring(filename.length()-7).equals("Feature") ) {
+					if ( filename.length() >= 7 && filename.substring(filename.length()-7).equals("Feature") ) 
 						filename = filename.substring(0,filename.length()-7);
-					}
-					if ( !filename.equals("OwlClass") && filename.length() >=3 && filename.substring(0,3).equals("Owl") ) {
+					
+					if ( !filename.equals("OwlClass") && filename.length() >=3 && filename.substring(0,3).equals("Owl") ) 
 						filename = filename.substring(3);
-					}
+					
 					contruct_axioms_frequency.put(filename, count);
 					br.close();
 				}
@@ -68,10 +68,7 @@ public class Util {
 		LinkedHashMap<String, Integer> sorted = contruct_axioms_frequency.entrySet().stream()
 			.sorted(Map.Entry.comparingByValue())
 			.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
-		
-//		for ( String key : sorted.keySet() ) {
-//			System.out.println(key+" "+sorted.get(key));
-//		}
+//		for ( String key : sorted.keySet() ) System.out.println(key+" "+sorted.get(key));
 		return sorted;
 	}
 	
@@ -117,13 +114,11 @@ public class Util {
 	 * @return LinkedHashMap , the ORDER in which we ITERATE OVER this, is the order in which we will INSERT into ontology.      
 	 *         But here, we HAVE SHUFFLED the keys, it's values are NO LONGER in any order.
 	 */
-	public LinkedHashMap<String, Integer> randomizeMapping(LinkedHashMap<String, Integer> mappings){
+	public static LinkedHashMap<String, Integer> randomizeMapping(LinkedHashMap<String, Integer> mappings){
 		LinkedHashMap<String,Integer> randomFiller = new LinkedHashMap<String,Integer>();
 		ArrayList<String> onlyKeys = new ArrayList<String>(mappings.keySet());
-		Collections.shuffle(onlyKeys);
-		for( String iter : onlyKeys ) {
-			randomFiller.put(iter, mappings.get(iter));
-		}
+		Collections.shuffle(onlyKeys, new Random(2));
+		for( String iter : onlyKeys ) randomFiller.put(iter, mappings.get(iter));
 		return randomFiller;
 	}
 	
@@ -141,21 +136,9 @@ public class Util {
 	 * Example Key/Value:- ( takesCourse_2, 0 ) , ( Employee_0, 0 ) , ( dislikes_1, 0 ) , ( Man_5, 0 )
 	 */
 	public static void initializeGlobalHashMaps() throws IOException {
-//	      LinkedHashMap<String,Integer> commonConstructs = new LinkedHashMap<String,Integer>();
 	      commonConstructs = new LinkedHashMap<String,Integer>();
 	      
-	      FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir")+File.separator+"commonConstructs.ser");
-	      ObjectOutputStream oos = new ObjectOutputStream(fos);
-	      oos.writeObject(commonConstructs);
-	      oos.close();fos.close();
-	      
-//	      LinkedHashMap<String,Integer> underscoreCommonConstructs = new LinkedHashMap<String,Integer>();
 	      underscoreCommonConstructs = new LinkedHashMap<String,Integer>();
-	      
-	      FileOutputStream fos1 = new FileOutputStream(System.getProperty("user.dir")+File.separator+"underscoreCommonConstructs.ser");
-	      ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
-	      oos1.writeObject(underscoreCommonConstructs);
-	      oos1.close();fos1.close();
 	}
 	
 	public int[] readUserInputFile() throws NumberFormatException, IOException {

@@ -34,37 +34,8 @@ public class CommonFramework {
 	}
 	
 	public static boolean isIsLiteral(String strNum) {
-		if ( strNum.contains("xsd") || strNum.contains("owl") || strNum.contains("rdf") ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	public static String getRandomMaxTerm(String concept,int limit,int userInp) throws ClassNotFoundException, IOException {
-		
-		LinkedHashMap<String, Integer> commonGlobalHashMap = TextFileProcessor.loadGlobalCommons("commonConstructs.ser");
-
-		if ( commonGlobalHashMap.containsKey(concept) ) {
-			int count = commonGlobalHashMap.get(concept);
-//			System.out.println(count+" || globalhashmap count "+limit+" || userInp "+userInp);
-		}
-		
-		String value = "";
-		int upperBound = ((userInp-2)/limit)-1;
-		if ( upperBound > 0 ) {
-			Random r = new Random();
-			int low = -1;
-			int high = upperBound-1;
-			int result = r.nextInt(high-low) + low;
-//			System.out.println(" upper bound "+upperBound+" || "+low+" || "+high+" || "+result+" || "+concept);
-			
-			if ( result != -1 ) { value = concept.substring(0, concept.indexOf("_"))+"_"+String.valueOf(result);
-			} else { value = concept; }
-		} else {
-			value = concept;
-		}
-		return value;
+		if ( strNum.contains("xsd") || strNum.contains("owl") || strNum.contains("rdf") ) return true;
+		else return false;
 	}
 	
 	/**
@@ -75,27 +46,38 @@ public class CommonFramework {
 	 * Here we are implementing to PREVENT INSERTION of Additional Terms in GENERIC constructs.
 	 */
 	public static ArrayList<String> filterGlobalHashMapConcepts(ArrayList<String> rankedAxioms) throws ClassNotFoundException, IOException {
-		TextFileProcessor filterOnly = new TextFileProcessor();
-		LinkedHashMap<String, Integer> globalCommons = filterOnly.loadGlobalCommons("commonConstructs.ser");
+		LinkedHashMap<String, Integer> globalCommons = Util.commonConstructs;
 		ArrayList<String> chosen = new ArrayList<String>();
 		
 		for( String ax : rankedAxioms ) {
 			String[] contents = ax.split(",");
-//			String filterAxiom = contents[0]+",";
 			String filterAxiom = "";
 			for( int i = 0 ; i < contents.length ; i++ ) {
-				if ( isIsNumber(contents[i]) || isIsLiteral(contents[i]) || globalCommons.containsKey(contents[i]) ) {
-					filterAxiom = filterAxiom+contents[i]+",";
-				}
+				if ( isIsNumber(contents[i]) || isIsLiteral(contents[i]) || globalCommons.containsKey(contents[i]) ) filterAxiom = filterAxiom+contents[i]+",";
 			}
 			if(filterAxiom.length() > 0) {
 				filterAxiom = filterAxiom.substring(0,filterAxiom.length()-1);
-				if ( filterAxiom.contains(",") ) {
-					chosen.add(filterAxiom);
-				}
+				if ( filterAxiom.contains(",") ) chosen.add(filterAxiom);
 			}
 		}
 		return chosen;
+	}
+	
+	public static void saveTermsInGlobalHashMap(String term, String phase) {
+		if ( isIsNumber(term) && isIsLiteral(term) ) return ;
+		
+		String ori = new String(term);
+		int incre = term.contains("_") ? Integer.parseInt(term.substring(term.indexOf("_")+1)) : 0;
+		term = term.contains("_") ? term.substring(0,term.indexOf("_")) : term;
+		
+		if( phase.equals("third") ) phase = Util.commonConstructs.containsKey(term) ? "second" : "first";
+		
+		if ( phase.equals("first") ) Util.commonConstructs.putIfAbsent(term, 1);
+		if ( phase.equals("second") ) {
+			if ( Util.commonConstructs.containsKey(term) && Util.commonConstructs.get(term) <=incre+1 ) 
+				Util.commonConstructs.put(term, Util.commonConstructs.get(term)+1);
+			Util.underscoreCommonConstructs.put(ori, incre);
+		}
 	}
 	
 	/**
@@ -133,75 +115,50 @@ public class CommonFramework {
 	 * 
 	 * @return "count" variable, after inserting ONE AXIOM, we increment "count" variable and return it if is >= userCount.
 	 */
-	
-	static LinkedHashMap<String,Integer> rdfsSubsOnly;
-	
 	public static int insertAxiomIntoOntology(ArrayList<String> userAxioms, int count, int userInp, String phase, int incre,String filename) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, OWLOntologyCreationException, ClassNotFoundException, OWLOntologyStorageException, IOException {
 		filename = filename.substring(0,filename.length()-4);
-		if ( filename.length() >= 7 && filename.substring(filename.length()-7).equals("Feature") ) {
-			filename = filename.substring(0,filename.length()-7);
-		}
-		if ( !filename.equals("OwlClass") && filename.length() >=3 && filename.substring(0,3).equals("Owl") ) {
-			filename = filename.substring(3);
-		}
-//		System.out.println(filename);
-		
-//		String globalHashMapName = phase.equals("second") == true ? "underscoreCommonConstructs.ser" : "commonConstructs.ser";
-//		LinkedHashMap<String, Integer> globalHashMap = TextFileProcessor.loadGlobalCommons(globalHashMapName);
-		
+		if ( filename.length() >= 7 && filename.substring(filename.length()-7).equals("Feature") ) filename = filename.substring(0,filename.length()-7);
+		if ( !filename.equals("OwlClass") && filename.length() >=3 && filename.substring(0,3).equals("Owl") ) filename = filename.substring(3);
+
 		ArrayList<String> rankedAxioms = userAxioms;
+		ArrayList<String> genericConstructs = FilenameConstructMapping.disjointOnes();
 		
-		FilenameConstructMapping fcm = new FilenameConstructMapping();
-		ArrayList<String> genericConstructs = fcm.disjointOnes();
 		if ( genericConstructs.contains(filename) ) {
 			rankedAxioms = filterGlobalHashMapConcepts(userAxioms);
-			if ( rankedAxioms.size() == 0 ) {
-				rankedAxioms = userAxioms;
-			}
+			if ( rankedAxioms.size() == 0 ) rankedAxioms = userAxioms;
 		}
 		
 		for( String ax : rankedAxioms ) {
 			String[] contents = ax.split(",");
 			ArrayList<String> allConcepts = new ArrayList<String>();
 			for ( String c : contents ) {
-				String key = "";
-//				if ( FilenameConstructMapping.rootConcepts.containsKey(c) ) {
-//					key = c;
-//				}else {
-//					key = phase.equals("second") == true && !isIsNumber(c) && !isIsLiteral(c) ? c+"_"+incre : c;
-//				}
-					
-				key = phase.equals("second") == true && !isIsNumber(c) && !isIsLiteral(c) ? c+"_"+incre : c;
-//				globalHashMap.put(key,1);
+				String key = phase.equals("second") == true && !isIsNumber(c) && !isIsLiteral(c) ? c+"_"+incre : c;
 				allConcepts.add(key);
+				
+				if ( !FilenameConstructMapping.constructsForLast.containsKey(filename) ) saveTermsInGlobalHashMap(key,phase);
 			}
 			
-//			if ( filename.equals("RdfsSubClassOf") || filename.equals("RdfsObjectSubPropertyOf") || filename.equals("RdfsDataSubPropertyOf") ) { rdfsSubsOnly.put(allConcepts.get(0),1); }
-			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) && phase.equals("second") == true ) {
+			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) ) {
 				if ( !isIsNumber(allConcepts.get(1)) && !isIsLiteral(allConcepts.get(1)) && allConcepts.size() == 2 ) {
-					//((userInp-2)/(sortedUserInput.get(filename))-1)
-					String value = getRandomMaxTerm(allConcepts.get(1),rankedAxioms.size(),userInp);
+					String value = LastDance.getRandomTillMaxTerm(allConcepts.get(1));
+					
 //					System.out.println(filename+" common framework "+value+" || "+allConcepts.get(1)+" || "+userInp+" | axiom size "+rankedAxioms.size());
 					allConcepts.add(1, value);
+					
+					saveTermsInGlobalHashMap(allConcepts.get(0),phase); 
+					saveTermsInGlobalHashMap(allConcepts.get(1),phase);
 				}
 			}
 			
-			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) ) { 
-				rdfsSubsOnly.put(allConcepts.get(0),1); 
-			}
-
-//			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) ) {
-//				System.out.println(allConcepts.get(0)+" || "+allConcepts.get(1)+" || "+count+" || "+userInp+" || "+filename);
-//			}
+			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) && !FilenameConstructMapping.lastDomainRangeDisjoint.containsKey(filename) ) 
+				app.rdfsSubsOnly.put(allConcepts.get(0),1);
 			
+			System.out.println(allConcepts);
 			Method method = app.objectMap.get(filename).getClass().getDeclaredMethod("convertLineTo"+filename, ArrayList.class);
 			method.invoke(app.objectMap.get(filename), allConcepts);
 			
-//			TextFileProcessor.saveGlobalCommons(globalHashMap,globalHashMapName);
 			count++;
-			if ( count >= userInp ) {
-				break;
-			}
+			if ( count >= userInp ) break;
 		}
 		return count;
 	}
@@ -247,26 +204,21 @@ public class CommonFramework {
 	 * Here "insertAxiomIntoOntology" function corresponds to "insertIntoGlobalHashMaps" there. They are functioning similar.
 	 */
 	public void addToOntology(String fileName, String construct,int userInp) throws ClassNotFoundException, IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, OWLOntologyCreationException, OWLOntologyStorageException {		
-		rdfsSubsOnly = new LinkedHashMap<String,Integer>();
 		TextFileProcessor pattern = new TextFileProcessor();
-		ArrayList<String> axioms = pattern.readTxtFile(fileName,construct);
+		ArrayList<String> axioms = TextFileProcessor.readTxtFile(fileName,construct);
 
-		if ( axioms.size() == 0 ) return ;
+		if ( axioms.size() == 0 ) return;
 		
-		Collections.shuffle(axioms);
+		Collections.shuffle(axioms, new Random(2));
 		ArrayList<String> rankedAxioms = pattern.rankAxioms(axioms);
 		int count = insertAxiomIntoOntology(rankedAxioms,0,userInp,"first",0,fileName);
 		if ( count < userInp ) {
 			int incre = 0;
 			while ( count < userInp ) {
 				count = insertAxiomIntoOntology(rankedAxioms,count,userInp,"second",incre,fileName);
-				if ( count >= userInp ) {
-					break;
-				}
+				if ( count >= userInp ) break;
 				incre++;
 			}
 		}
-		if ( !FilenameConstructMapping.lastDomainRangeDisjoint.containsKey(fileName) )
-			pattern.insertIntoGlobalCommons(rankedAxioms,userInp);
 	}
 }

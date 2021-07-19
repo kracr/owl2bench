@@ -23,6 +23,8 @@ import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
+
+import owl.cs.myfirst.owlapi.app;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
 public class DataPropertyRestrictionCategory {
@@ -45,6 +47,8 @@ public class DataPropertyRestrictionCategory {
 		    OWLDataAllValuesFrom restriction = factory.getOWLDataAllValuesFrom(property, value);
 		    OWLClass allValuesFrom = featurePool.getExclusiveClass(allConcepts.get(0));
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
 		}
 		
 		public static void convertLineToDataHasValue(ArrayList<String> allConcepts) {	
@@ -53,6 +57,8 @@ public class DataPropertyRestrictionCategory {
 		    OWLDataHasValue restriction = factory.getOWLDataHasValue(property, factory.getOWLLiteral(allConcepts.get(2)));
 		    OWLClass hasValue = featurePool.getExclusiveClass(allConcepts.get(0));
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(hasValue, restriction));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
 		}
 		
 		public static void convertLineToDataSomeValuesFrom(ArrayList<String> allConcepts) {		
@@ -62,6 +68,8 @@ public class DataPropertyRestrictionCategory {
 		    OWLClass someValuesFrom = featurePool.getExclusiveClass(allConcepts.get(0));
 		    OWLDataSomeValuesFrom restriction = factory.getOWLDataSomeValuesFrom(property, datatype);
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
 		}
 		
 		public static void convertLineToDataMaxQualifiedCardinality(ArrayList<String> allConcepts) {	
@@ -70,6 +78,8 @@ public class DataPropertyRestrictionCategory {
 		    OWLDatatype affectedDatatype = factory.getOWLDatatype(allConcepts.get(3), pm);
 		    OWLDataMaxCardinality cardinality = factory.getOWLDataMaxCardinality(Integer.parseInt(allConcepts.get(2)), property, affectedDatatype);
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
 		}
 		
 		public static void convertLineToDataMinQualifiedCardinality(ArrayList<String> allConcepts) {			
@@ -78,6 +88,8 @@ public class DataPropertyRestrictionCategory {
 		    OWLDatatype affectedDatatype = factory.getOWLDatatype(allConcepts.get(3), pm);
 		    OWLDataMinCardinality cardinality = factory.getOWLDataMinCardinality(Integer.parseInt(allConcepts.get(2)), property, affectedDatatype);
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
 		}
 		
 		public static void convertLineToDataQualifiedCardinality(ArrayList<String> allConcepts) {		
@@ -86,5 +98,7 @@ public class DataPropertyRestrictionCategory {
 		    OWLDatatype affectedDatatype = factory.getOWLDatatype(allConcepts.get(3), pm);
 		    OWLDataExactCardinality cardinality = factory.getOWLDataExactCardinality(Integer.parseInt(allConcepts.get(2)), property, affectedDatatype);
 		    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
+		    
+		    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(featurePool.getExclusiveClass(allConcepts.get(0)), cardinality));
 		}
 }

@@ -1,4 +1,4 @@
-package com.cs.myfirst.owlapi.WriteAxiomsToFolderDL;
+package owl.cs.myfirst.owlapi;
 
 import java.io.BufferedReader;
 import java.io.File;

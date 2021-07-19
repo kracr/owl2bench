@@ -26,50 +26,28 @@ import owl.cs.myfirst.owlapi.Features.DataPropertyAxiomsCategory;
 import owl.cs.myfirst.owlapi.Features.ObjectPropertyAxiomCategory;
 
 public class LastDance {
-
-	public static String getAllSamePrefixTerms(LinkedHashMap<String,Integer> globalHashMap, String toMatchWith) {
-		ArrayList<String> matchingTerms = new ArrayList<String>();
-		for ( String key : globalHashMap.keySet() ) {
-			if ( key.toLowerCase().startsWith(toMatchWith.toLowerCase()) && !key.equals(toMatchWith)) {
-//				System.out.println(key);
-				matchingTerms.add(key);
-			}
-		}
-		matchingTerms.add(toMatchWith);
-		Collections.shuffle(matchingTerms);
-		
-	    Random random = new Random();
-	    int index = random.nextInt(matchingTerms.size() - 0) + 0;
-		//return matchingTerms.get(0);
-	    return matchingTerms.get(index); 
-	}
 	
 	public static String getRandomTillMaxTerm(String concept) throws ClassNotFoundException, IOException {
-		LinkedHashMap<String, Integer> commonGlobalHashMap = TextFileProcessor.loadGlobalCommons("commonConstructs.ser");
+		LinkedHashMap<String, Integer> commonGlobalHashMap = Util.commonConstructs;
 
-		if ( commonGlobalHashMap.containsKey(concept) ) {
+		if ( commonGlobalHashMap.containsKey(concept) && !CommonFramework.isIsLiteral(concept) 
+				&& !CommonFramework.isIsNumber(concept) ) {
+			
 			int count = commonGlobalHashMap.get(concept);
 			String value = "";
-			if ( count == 1 ) {
-				value = concept;
-			} else {
+			if ( count == 1 ) value = concept;
+			else {
 				Random r = new Random();
 				int low = -1;
 				int high = count;
 				int result = r.nextInt(high-low) + low;
 //				System.out.println(" random till max "+result+" || "+count);
-				if ( result != -1 ) {
-					value = concept+"_"+String.valueOf(result);
-				} else {
-					value = concept;
-				}
+				if ( result != -1 ) value = concept+"_"+String.valueOf(result);
+				else value = concept;
 //				System.out.println(value+" || "+result+" || "+count+" || "+concept);
-				
 			}
 			return value;
-		} else {
-			return concept;
-		}
+		} else return concept;
 	}
 	
 	/**
@@ -86,8 +64,7 @@ public class LastDance {
 	 */
 	public static LinkedHashMap<String,String> constructAxiomsHashMap(String fileName,String constructName) throws IOException{
 		LinkedHashMap<String,String> axiomsHashmap = new LinkedHashMap<String,String>();
-		TextFileProcessor pattern = new TextFileProcessor();
-		ArrayList<String> axioms = pattern.readTxtFile(fileName,constructName);
+		ArrayList<String> axioms = TextFileProcessor.readTxtFile(fileName,constructName);
 		for ( String ax : axioms ) {
 			String[] contents = ax.split(",");
 			axiomsHashmap.put(contents[0],contents[1]);
@@ -131,53 +108,30 @@ public class LastDance {
 	 * With 'subject as variable value "key"' and 'object as variable value "sub"'
 	 * Then we call respective ConstructName and INSERT into ONTOLOGY.
 	 */
-	public static void addGlobalToOntologyDomainRangeDisjointWith(LinkedHashMap<String,String> constructHashMap, 
+	public static void addGlobalToOntologyDomainRange(LinkedHashMap<String,String> constructHashMap, 
 			String constructName, boolean whether) throws OWLOntologyCreationException, NoSuchMethodException, SecurityException, ClassNotFoundException, OWLOntologyStorageException, IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {	
 		
-		String globalHashMapName = whether == true ? "underscoreCommonConstructs.ser" : "commonConstructs.ser";
-		LinkedHashMap<String, Integer> globalHashMap = TextFileProcessor.loadGlobalCommons(globalHashMapName);
-		
+		LinkedHashMap<String, Integer> globalHashMap = whether == true ? Util.underscoreCommonConstructs : Util.commonConstructs;
 		constructName = constructName.substring(0,constructName.length()-4);
+		ArrayList<String> extraConcepts = new ArrayList<String>();
 		
 		for ( String key : globalHashMap.keySet() ) {
 			String obj = key.contains("_") ? key.substring(0,key.indexOf("_")) : key;
 			
-			ArrayList<String> allConcepts = new ArrayList<String>();
-			
 			if ( constructHashMap.containsKey(obj) ) {
-				//Logic will change in BELOW two lines
-				//get the value max number used check if it is bigger than 0 then assign random number after underscore, rather than that number only.
-				//make a function , which gets the values, change the if condition below it as well
-				
 				String value = getRandomTillMaxTerm(constructHashMap.get(obj));
 				
-//				String value = key.contains("_") ? constructHashMap.get(obj)+key.substring(key.indexOf("_")) : constructHashMap.get(obj);
-//				if ( globalHashMap.containsKey(value) && !FilenameConstructMapping.rootConcepts.containsKey(value) ) {
-//				if ( globalHashMap.containsKey(value) ) {
-//					allConcepts.add(key);
-//					allConcepts.add(value);
-//				} else {
-//					allConcepts.add(key);
-//					allConcepts.add(constructHashMap.get(obj));
-//				}
+				ArrayList<String> allConcepts = new ArrayList<String>();
+				allConcepts.add(key); allConcepts.add(value);
+				extraConcepts.add(allConcepts.get(0)); extraConcepts.add(allConcepts.get(1));
 				
-				allConcepts.add(key);
-				allConcepts.add(value);
-				
-				if ( constructName.equals("RdfsObjectDomain") ) { ObjectPropertyAxiomCategory.convertLineToRdfsObjectDomain(allConcepts); }
-				if( constructName.equals("RdfsObjectRange") ) { ObjectPropertyAxiomCategory.convertLineToRdfsObjectRange(allConcepts); }
-				if ( constructName.equals("RdfsDataDomain") ) { DataPropertyAxiomsCategory.convertLineToRdfsDataDomain(allConcepts); }
-				if( constructName.equals("RdfsDataRange") ) { DataPropertyAxiomsCategory.convertLineToRdfsDataRange(allConcepts); }
-				
-				if( constructName.equals("OwlObjectPropertyDisjointWith") ) { ObjectPropertyAxiomCategory.convertLineToObjectPropertyDisjointWith(allConcepts); }
-				if ( constructName.equals("DataPropertyDisjointWith") ) { DataPropertyAxiomsCategory.convertLineToDataPropertyDisjointWith(allConcepts); }
-				if( constructName.equals("OwlDisjointWithFeature") ) { ClassExpressionAxiomsCategory.convertLineToDisjointWith(allConcepts); }
+				if ( constructName.equals("RdfsObjectDomain") ) ObjectPropertyAxiomCategory.convertLineToRdfsObjectDomain(allConcepts);
+				if( constructName.equals("RdfsObjectRange") ) ObjectPropertyAxiomCategory.convertLineToRdfsObjectRange(allConcepts);
+				if ( constructName.equals("RdfsDataDomain") ) DataPropertyAxiomsCategory.convertLineToRdfsDataDomain(allConcepts);
+				if( constructName.equals("RdfsDataRange") ) DataPropertyAxiomsCategory.convertLineToRdfsDataRange(allConcepts);
 			}
 		}
-//		for( String extra : extraConcepts ) {
-//			globalHashMap.put(extra,1);
-//		}
-//		TextFileProcessor.saveGlobalCommons(globalHashMap,globalHashMapName);
+		for( String extra : extraConcepts ) CommonFramework.saveTermsInGlobalHashMap(extra,"third");
 	}
 	
 	/**
@@ -196,37 +150,28 @@ public class LastDance {
 	public static void addGlobalToOntologySubOf(LinkedHashMap<String,String> constructHashMap, 
 			String constructName, boolean whether) throws OWLOntologyCreationException, NoSuchMethodException, SecurityException, ClassNotFoundException, OWLOntologyStorageException, IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {	
 		
-		String globalHashMapName = whether == true ? "underscoreCommonConstructs.ser" : "commonConstructs.ser";
-		LinkedHashMap<String, Integer> globalHashMap = TextFileProcessor.loadGlobalCommons(globalHashMapName);
-		LinkedHashMap<String, Integer> rdfsSubsOnly = CommonFramework.rdfsSubsOnly;
+		LinkedHashMap<String, Integer> globalHashMap = whether == true ? Util.underscoreCommonConstructs : Util.commonConstructs;
+		LinkedHashMap<String, Integer> rdfsSubsOnly = app.rdfsSubsOnly;
 
 		constructName = constructName.substring(0,constructName.length()-4);
 		ArrayList<String> extraConcepts = new ArrayList<String>();
-		
-		Queue<String> subOfTerms = new LinkedList<String>();
-		for ( String keys : globalHashMap.keySet() ) { subOfTerms.add(keys); }
+		Queue<String> subOfTerms = new LinkedList<String>(globalHashMap.keySet());
+//		for ( String keys : globalHashMap.keySet() ) subOfTerms.add(keys);
 		
 		while(!subOfTerms.isEmpty()) {
 			String item = subOfTerms.poll();
-			
 			String key = item.contains("_") ? item.substring(0,item.indexOf("_")) : item;
 			
-			if ( constructHashMap.containsKey(key) && !rdfsSubsOnly.containsKey(item) ) {
-//			if ( constructHashMap.containsKey(key) ) {
-					
+			if ( constructHashMap.containsKey(key) && !rdfsSubsOnly.containsKey(item) ) {				
 				String object = getRandomTillMaxTerm(constructHashMap.get(key));
-//				System.out.println(" last dance sub object "+object);
-//				String object = getAllSamePrefixTerms(globalHashMap,constructHashMap.get(key));
 				
-				ArrayList<String> allConcepts = new ArrayList<String>();
-//				System.out.println(item+" || "+constructHashMap.get(key)+" || "+object+" || "+constructName+" || "+subOfTerms.size()+" || "+whether);
 				if ( !item.equals(object) ) {
-					allConcepts.add(item);
-					allConcepts.add(object);
+					ArrayList<String> allConcepts = new ArrayList<String>();
+					allConcepts.add(item); allConcepts.add(object);
 					
-					if ( constructName.equals("RdfsObjectSubPropertyOf") ) { ObjectPropertyAxiomCategory.convertLineToRdfsObjectSubPropertyOf(allConcepts); }
-					if( constructName.equals("RdfsDataSubPropertyOf") ) { DataPropertyAxiomsCategory.convertLineToRdfsDataSubPropertyOf(allConcepts); }
-					if( constructName.equals("RdfsSubClassOfFeature") ) {  ClassExpressionAxiomsCategory.convertLineToRdfsSubClassOf(allConcepts);  }					
+					if ( constructName.equals("RdfsObjectSubPropertyOf") ) ObjectPropertyAxiomCategory.convertLineToRdfsObjectSubPropertyOf(allConcepts);
+					if( constructName.equals("RdfsDataSubPropertyOf") ) DataPropertyAxiomsCategory.convertLineToRdfsDataSubPropertyOf(allConcepts);
+					if( constructName.equals("RdfsSubClassOfFeature") ) ClassExpressionAxiomsCategory.convertLineToRdfsSubClassOf(allConcepts);					
 					
 					key = object.contains("_") ? object.substring(0,object.indexOf("_")) : object;
 					if ( constructHashMap.containsKey(key) ) {
@@ -236,11 +181,7 @@ public class LastDance {
 				}
 			}
 		}
-		
-		for( String extra : extraConcepts ) {
-			globalHashMap.put(extra,1);
-		}
-		TextFileProcessor.saveGlobalCommons(globalHashMap,globalHashMapName);
+		for( String extra : extraConcepts ) CommonFramework.saveTermsInGlobalHashMap(extra,"third");
 	}
 	
 	/**
@@ -287,35 +228,21 @@ public class LastDance {
 	 *Jaise domain/range ko BILKUL end main call kar rhe hain if user has inputted, ussi taraf subClass/subProperty ko bilkul END main call karna hain if user has inputted ??
 	 *
 	 */
-	public void oneLastTime(LinkedHashMap<String, String> lastConstructs, boolean isNonLastConstructsPresent) throws ClassNotFoundException, IOException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, OWLOntologyStorageException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		TextFileProcessor tp = new TextFileProcessor();
-		LinkedHashMap<String, Integer> globalCommons = tp.loadGlobalCommons("commonConstructs.ser");
-		LinkedHashMap<String, Integer> underscoreGlobalCommons = tp.loadGlobalCommons("underscoreCommonConstructs.ser");
+	public void oneLastTime() throws ClassNotFoundException, IOException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, OWLOntologyStorageException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		String[] files = {"RdfsSubClassOfFeature.txt","RdfsDataSubPropertyOf.txt","RdfsObjectSubPropertyOf.txt",
-				
-				"RdfsObjectDomain.txt","RdfsObjectRange.txt","RdfsDataDomain.txt","RdfsDataRange.txt",
-				
-				  "OwlObjectPropertyDisjointWith.txt","DataPropertyDisjointWith.txt","OwlDisjointWithFeature.txt"};
-		
+				"RdfsObjectDomain.txt","RdfsObjectRange.txt","RdfsDataDomain.txt","RdfsDataRange.txt"};
 		String[] constructs = {" SubClassOf "," subpropertyof "," SubPropertyOf ",
-				
-				" domain "," range "," domain "," range ",
-				
-				" disjointWithObject "," disjointWithData "," disjointWith "};
+				" domain "," range "," domain "," range "};
 		
 		for ( int i = 0 ; i < files.length ; i++ ) {
-			String file = files[i];
-			String construct = constructs[i];
-			LinkedHashMap<String,String> constructHashMap = constructAxiomsHashMap(file,construct);
-			if ( i > 3 ) {
-				if ( lastConstructs.containsKey(file.substring(0,file.length()-4)) && isNonLastConstructsPresent ) {
-//					addGlobalToOntologyDomainRangeDisjointWith(constructHashMap,file,false);
-//					addGlobalToOntologyDomainRangeDisjointWith(constructHashMap,file,true);	
-				}		
+			LinkedHashMap<String,String> constructHashMap = constructAxiomsHashMap(files[i],constructs[i]);
+			if ( i >= 3 ) {
+					addGlobalToOntologyDomainRange(constructHashMap,files[i],false);
+					addGlobalToOntologyDomainRange(constructHashMap,files[i],true);			
 			} else {
-				addGlobalToOntologySubOf(constructHashMap,file,false);
-				addGlobalToOntologySubOf(constructHashMap,file,true);
+				addGlobalToOntologySubOf(constructHashMap,files[i],false);
+				addGlobalToOntologySubOf(constructHashMap,files[i],true);
 			}
 		}
 	}

@@ -18,7 +18,7 @@
 		<java.version>1.8</java.version>
 	</properties> -->
 <properties>
-      <start-class>com.cs.myfirst.owlapi.Demo2</start-class>
+      <start-class>owl.cs.myfirst.owlapi.Demo2</start-class>
 </properties>
 
 	<dependencies>

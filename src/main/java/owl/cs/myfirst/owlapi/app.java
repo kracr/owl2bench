@@ -29,9 +29,7 @@ import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.FilenameConstructMapping;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.LastDance;
-import com.cs.myfirst.owlapi.Features.BoilerplateCode.Reasoners;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.Util;
-import com.cs.myfirst.owlapi.WriteAxiomsToFolderDL.GetAxiomsFromOwlFile;
 
 import openllet.owlapi.OpenlletReasoner;
 import openllet.owlapi.OpenlletReasonerFactory;
@@ -70,7 +68,7 @@ public class app
 {	
 	public static Map<String, Object> objectMap;
 	LinkedHashMap<String,Integer> reverse_indexes;
-	OWLOntologyManager man;
+	public static OWLOntologyManager man;
 	OWLOntology my_ontology;
 	
 	TurtleOntologyFormat turtleFormat;
@@ -78,6 +76,10 @@ public class app
 	OWLXMLOntologyFormat xmlFormat;
 	ManchesterOWLSyntaxOntologyFormat manchesterFormat;
 	OWLFunctionalSyntaxOntologyFormat functionalFormat;
+	
+	public static ArrayList<OWLAxiom> notToBeIncludedAxioms;
+	public static HashMap<String,String> alreadyAssertionAxiom;
+	public static LinkedHashMap<String,Integer> rdfsSubsOnly;
 	
 	/**
 	 * This method is responsible for generating OBJECT HASHMAP and INDEX HASHMAP for construct.
@@ -103,10 +105,7 @@ public class app
 		 String[] construct5 = {"EquivalentDataProperty","FunctionalDataProperty","DataPropertyDisjointWith","RdfsDataDomain","RdfsDataRange","RdfsDataSubPropertyOf"}; //"AllDisjointDataProperties",
 		 String[] construct6 = {"DataAllValues","DataHasValue", "DataMaxQualifiedCardinality","DataMinQualifiedCardinality","DataQualifiedCardinality","DataSomeValuesFrom"};
 		 String[] construct7 = {"DataComplementOf","DataIntersectionOf", "DataOneOf","DataUnionOf"};
-		 String[] construct10 = {"HasKey", "AssertionAxioms"};
-		 
-//		 String[] construct9 = {"AnonymousIndividual", "NamedIndividual"};
-		 //String[][] overall = {construct1,construct2,construct3,construct4,construct5,construct6,construct7, construct10};
+		 String[] construct10 = {"HasKey", "ClassAssertionAxioms","ObjectPropertyAssertionAxioms","DataPropertyAssertionAxioms"};
 		 
 		 String[][] overall = {construct1,construct2,construct3,construct4,construct5,construct6,construct7,construct10}; 
 		  int count = 0;
@@ -128,20 +127,11 @@ public class app
 	      PropertyPool propertypool1 = new PropertyPool(factory, pm);
 	      FeaturePool fp1 = new FeaturePool(classpool1, propertypool1);
 	      
-	      rdfFormat = new RDFXMLOntologyFormat();
-	      rdfFormat.copyPrefixesFrom(pm);
-	      
-	      turtleFormat  = new TurtleOntologyFormat();
-	      turtleFormat.copyPrefixesFrom(pm);
-	      
-	      xmlFormat = new OWLXMLOntologyFormat();
-	      xmlFormat.copyPrefixesFrom(pm);
-	      
-	      manchesterFormat = new ManchesterOWLSyntaxOntologyFormat();
-	      manchesterFormat.copyPrefixesFrom(pm);
-	      
-	      functionalFormat = new OWLFunctionalSyntaxOntologyFormat();
-	      functionalFormat.copyPrefixesFrom(pm);
+	      rdfFormat = new RDFXMLOntologyFormat(); rdfFormat.copyPrefixesFrom(pm);
+	      turtleFormat  = new TurtleOntologyFormat(); turtleFormat.copyPrefixesFrom(pm);
+	      xmlFormat = new OWLXMLOntologyFormat(); xmlFormat.copyPrefixesFrom(pm);
+	      manchesterFormat = new ManchesterOWLSyntaxOntologyFormat(); manchesterFormat.copyPrefixesFrom(pm);
+	      functionalFormat = new OWLFunctionalSyntaxOntologyFormat(); functionalFormat.copyPrefixesFrom(pm);
 	      
 	      // 1 - ce | 2 - ca | 3 - oa | 4 - or | 5 - da | 6 - dr | 7 - drc | 8 - ac
 	      ClassEnumerationcategory ce = new ClassEnumerationcategory(factory, pm, fp1, my_ontology);  //1
@@ -153,22 +143,19 @@ public class app
 	      DataRangesCategory drc = new DataRangesCategory(factory, pm, fp1, my_ontology); //7
 	      AssertionCategory ac = new AssertionCategory(factory, pm, fp1, my_ontology); //10
 	      
-	      //Disjoint wala , and Dont input THOSE axioms who DONT have AXIOMS 
-	      
 	      for ( int i = 0 ; i < overall.length ; i++ ) {
 	    	  for ( int j = 0 ; j < overall[i].length ; j++ ) {
-	    		  if ( (i+1) == 1 ) { objectMap.put(overall[i][j], ce); }
-	    		  else if ( (i+1) == 2 ) { objectMap.put(overall[i][j], ca); }
-	    		  else if ( (i+1) == 3 ) { objectMap.put(overall[i][j], oa); }
-	    		  else if ( (i+1) == 4 ) { objectMap.put(overall[i][j], or); }
-	    		  else if ( (i+1) == 5 ) { objectMap.put(overall[i][j], da); }
-	    		  else if ( (i+1) == 6 ) { objectMap.put(overall[i][j], dr); }
-	    		  else if ( (i+1) == 7 ) { objectMap.put(overall[i][j], drc); }
-	    		  else if ( (i+1) == 8 ) { objectMap.put(overall[i][j], ac); }	  
+	    		  if ( (i+1) == 1 ) objectMap.put(overall[i][j], ce);
+	    		  else if ( (i+1) == 2 ) objectMap.put(overall[i][j], ca);
+	    		  else if ( (i+1) == 3 ) objectMap.put(overall[i][j], oa);
+	    		  else if ( (i+1) == 4 ) objectMap.put(overall[i][j], or);
+	    		  else if ( (i+1) == 5 ) objectMap.put(overall[i][j], da);
+	    		  else if ( (i+1) == 6 ) objectMap.put(overall[i][j], dr);
+	    		  else if ( (i+1) == 7 ) objectMap.put(overall[i][j], drc);
+	    		  else if ( (i+1) == 8 ) objectMap.put(overall[i][j], ac);  
 	    	  }
 	      }
 	}
-	
 
 	/**
 	 * @param sorted - Construct Hashmap, THE ORDER in which we ITERATE it is the ORDER in which we insert into ontology.
@@ -199,65 +186,72 @@ public class app
 	 * 'Reasoner' JAVA file is to check CONSISTENCY of the ontology, we just generated using user inputs. 
 	 * Maam's Code copy pasted directly, NO NEED TO READ that java file.
 	 */
-	public void generateOntology(LinkedHashMap<String, Integer> sorted,int[] inputs,String fileName,String resultFormat) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException, IOException, OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException {
-		LinkedHashMap<String, String> lastConstructs = new LinkedHashMap<String,String>();
-		boolean isNonLastConstructsPresent = false;
+	public void generateOntology(LinkedHashMap<String, Integer> sorted,int[] inputs,String fileName,String resultFormat,boolean extraAxioms) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException, IOException, OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException {
+		notToBeIncludedAxioms = new ArrayList<OWLAxiom>();
+		alreadyAssertionAxiom = new HashMap<String,String>();
+		rdfsSubsOnly = new LinkedHashMap<String,Integer>();
 		
-		FilenameConstructMapping filenameSepartor = new FilenameConstructMapping();
-		filenameSepartor.mapping();
-		CommonFramework cf = new CommonFramework();
-		File fileout = new File(fileName);
+		FilenameConstructMapping filenameSepartor = new FilenameConstructMapping(); filenameSepartor.mapping();
+		CommonFramework cf = new CommonFramework(); File fileout = new File(fileName);
+		LinkedHashMap<String, String> lastConstructs = new LinkedHashMap<String,String>();
 		
 		for ( String iter : sorted.keySet() ) {
 			String key = iter;
-			if ( reverse_indexes.containsKey(key) && !key.equals("AssertionAxioms") ) {	//Only for TBox Axioms First
+			if ( reverse_indexes.containsKey(key) && !key.contains("AssertionAxioms") ) {	//Only for TBox Axioms First
 				int index = reverse_indexes.get(key);
 				if ( inputs[index] > 0 ) {
 					if ( !FilenameConstructMapping.constructsForLast.containsKey(key) ) {
 //						System.out.println(key+" | "+sorted.get(key)+" inp-> "+inputs[index]+" || "+fileName);
-						cf.addToOntology(filenameSepartor.fileMap.get(key),filenameSepartor.separatorMap.get(key),inputs[index]);
-						isNonLastConstructsPresent = true;
-					} else {
-						lastConstructs.put(key,"");
-					}
+						cf.addToOntology(FilenameConstructMapping.fileMap.get(key),FilenameConstructMapping.separatorMap.get(key),inputs[index]);
+					} else lastConstructs.put(key,"");
 				}
 			}
-			else {
-//				System.out.println(key+" NOT INPUTTED ");
-			}
-		}
-		for( String key : lastConstructs.keySet() ) {
-			cf.addToOntology(filenameSepartor.fileMap.get(key),filenameSepartor.separatorMap.get(key),inputs[reverse_indexes.get(key)]);
 		}
 		
-		LastDance lastOne = new LastDance();
-		lastOne.oneLastTime(lastConstructs,isNonLastConstructsPresent);
+		if ( lastConstructs.containsKey("RdfsObjectDomain") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsObjectDomain"),FilenameConstructMapping.separatorMap.get("RdfsObjectDomain"),inputs[reverse_indexes.get("RdfsObjectDomain")]);
+		else if ( lastConstructs.containsKey("RdfsObjectRange") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsObjectRange"),FilenameConstructMapping.separatorMap.get("RdfsObjectRange"),inputs[reverse_indexes.get("RdfsObjectRange")]);
+		else if ( lastConstructs.containsKey("RdfsDataDomain") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsDataDomain"),FilenameConstructMapping.separatorMap.get("RdfsDataDomain"),inputs[reverse_indexes.get("RdfsDataDomain")]);
+		else if ( lastConstructs.containsKey("RdfsDataRange") )
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsDataRange"),FilenameConstructMapping.separatorMap.get("RdfsDataRange"),inputs[reverse_indexes.get("RdfsDataRange")]);
 		
+		if ( lastConstructs.containsKey("RdfsSubClassOf") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsSubClassOf"),FilenameConstructMapping.separatorMap.get("RdfsSubClassOf"),inputs[reverse_indexes.get("RdfsSubClassOf")]);
+		else if ( lastConstructs.containsKey("RdfsObjectSubPropertyOf") )
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsObjectSubPropertyOf"),FilenameConstructMapping.separatorMap.get("RdfsObjectSubPropertyOf"),inputs[reverse_indexes.get("RdfsObjectSubPropertyOf")]);
+		else if ( lastConstructs.containsKey("RdfsDataSubPropertyOf") )
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsDataSubPropertyOf"),FilenameConstructMapping.separatorMap.get("RdfsDataSubPropertyOf"),inputs[reverse_indexes.get("RdfsDataSubPropertyOf")]);
+		
+		if ( extraAxioms ) {
+			LastDance lastOne = new LastDance();
+			lastOne.oneLastTime();
+		}
+		
+		if ( lastConstructs.containsKey("ObjectPropertyDisjointWith") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("ObjectPropertyDisjointWith"),FilenameConstructMapping.separatorMap.get("ObjectPropertyDisjointWith"),inputs[reverse_indexes.get("ObjectPropertyDisjointWith")]);
+		else if ( lastConstructs.containsKey("DataPropertyDisjointWith") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("DataPropertyDisjointWith"),FilenameConstructMapping.separatorMap.get("DataPropertyDisjointWith"),inputs[reverse_indexes.get("DataPropertyDisjointWith")]);
+		else if ( lastConstructs.containsKey("DisjointWith") ) 
+			cf.addToOntology(FilenameConstructMapping.fileMap.get("DisjointWith"),FilenameConstructMapping.separatorMap.get("DisjointWith"),inputs[reverse_indexes.get("DisjointWith")]);
+		
+		int classCount = inputs[reverse_indexes.get("ClassAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ClassAssertionAxioms")] : 0;
+		int objectCount = inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] : 0;
+		int dataCount = inputs[reverse_indexes.get("DataPropertyAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("DataPropertyAssertionAxioms")] : 0;
 		
 		//Only For ABox/Asserions Axioms, If Chosen By User.
-		if ( inputs[reverse_indexes.get("AssertionAxioms")] > 0 ) {
-			AssertionCategory.convertLineToAssertionAxiom();			
-		}
-		
-		
+		if ( classCount > 0 || objectCount > 0 || dataCount > 0 ) AssertionCategory.convertLineToAssertionAxiom(classCount,objectCount,dataCount,extraAxioms);
 		
 		//To Save In Different Format
-		if ( resultFormat.equals("rdfFormat") ) {
-			man.saveOntology((OWLOntology) my_ontology, rdfFormat, new FileOutputStream(fileout));
-		} else if ( resultFormat.equals("turtleFormat") ) {
-			man.saveOntology((OWLOntology) my_ontology, turtleFormat, new FileOutputStream(fileout));
-		} else if ( resultFormat.equals("xmlFormat") ) {
-			man.saveOntology((OWLOntology) my_ontology, xmlFormat, new FileOutputStream(fileout));
-		} else if ( resultFormat.equals("manchesterFormat") ) {
-			man.saveOntology((OWLOntology) my_ontology, manchesterFormat, new FileOutputStream(fileout));
-		} else if ( resultFormat.equals("functionalFormat") ) {
-			man.saveOntology((OWLOntology) my_ontology, functionalFormat, new FileOutputStream(fileout));
-		}
+		if ( resultFormat.equals("RDF") ) man.saveOntology((OWLOntology) my_ontology, rdfFormat, new FileOutputStream(fileout));
+		else if ( resultFormat.equals("Turtle") ) man.saveOntology((OWLOntology) my_ontology, turtleFormat, new FileOutputStream(fileout));
+		else if ( resultFormat.equals("XML") ) man.saveOntology((OWLOntology) my_ontology, xmlFormat, new FileOutputStream(fileout));
+		else if ( resultFormat.equals("Manchester") ) man.saveOntology((OWLOntology) my_ontology, manchesterFormat, new FileOutputStream(fileout));
+		else if ( resultFormat.equals("Functional") ) man.saveOntology((OWLOntology) my_ontology, functionalFormat, new FileOutputStream(fileout));
 
 		Reasoners reasoner = new Reasoners();
-//		reasoner.run(fileout, fileName);
-		
-//		GetAxiomsFromOwlFile.getAxiomFromOntology(fileName);
+		reasoner.run(fileout, fileName);
 	}
 	
  /**
@@ -267,8 +261,7 @@ public class app
  *  In Util Class, there is method which INITIALIZES global HashMap to be used further to store 
  *  the occurences of concepts/properties present in each contructs AXIOMS text file.
  */
-public void generate(int[] inputs,String outputFormat) throws OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException{
-	    Util util = new Util();
+public void generate(int[] inputs,String outputFormat,boolean extraAxioms) throws OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException{
 	    /*
 	     * It loads up the OBJECT Hashmap. There are around 50 constructs present. Each of the constructs comes
 	     * under one of the 7 categories present. We store mapping of each construct with its Category.
@@ -276,12 +269,12 @@ public void generate(int[] inputs,String outputFormat) throws OWLOntologyStorage
 	     * It prevents use of writing lots of lots IF/ELSE for each construct. Using this mapping, we can DIRECTLY call the method.
 	     */
 	    loadMainNecessaryThings();
-        
+        System.out.println(" reaching here ");
 	    /*
 	     *  In Util Class, there is method which INITIALIZES global HashMap to be used further to store 
 	     *  the occurences of concepts/properties present in each contructs AXIOMS text file.
 	     */
-	    util.initializeGlobalHashMaps();
+	    Util.initializeGlobalHashMaps();
 	    
 	    /* --> UserCount Minimum
 	     * userCount is first variant of the algorithm 1 based on usage of GlobalHashMap.
@@ -292,31 +285,31 @@ public void generate(int[] inputs,String outputFormat) throws OWLOntologyStorage
 	     * the ONTOLOGIES. That is the construct with lowest user input will be inserted first into ONTOLOGIES
 	     * GlobalHashMap. 
 	     */
-		LinkedHashMap<String, Integer> sortedUserInput = util.initialUserInputCount(inputs,reverse_indexes);
+		LinkedHashMap<String, Integer> sortedUserInput = Util.initialUserInputCount(inputs,reverse_indexes);
 		/*
 		 * This is the main method used for generating ontologies. 
 		 * It takes HashMap , the order in which we will INSERT contructs into Ontologies.
 		 * 'inputs' is an user input array corresponding to each construct.
 		 */
-		generateOntology(sortedUserInput,inputs,"userInputCountOntology.owl", outputFormat);
+		generateOntology(sortedUserInput,inputs,"userInputCountOntology.owl", outputFormat, extraAxioms);
 		
 		/*
 		 * To Re-initialize Global-HashMap for different variant of algo. 
 		 * Because We dont want to use concepts/properties of PREVIOUS variant.
 		 */
 		loadMainNecessaryThings();
-		util.initializeGlobalHashMaps();
+		Util.initializeGlobalHashMaps();
 		/* --> Randomize UserCount Minimum
 		 * Here we are using 'userCount' variant, but this time, instead of traversing it IN ASCENDING ORDER,
 		 * We have SHUFFLED the order of HashMap. To traverse it in Random Order.
 		 */
-		LinkedHashMap<String, Integer> randomUserCount = util.randomizeMapping(sortedUserInput);
-		generateOntology(randomUserCount,inputs,"randomUserInputCountOntology.owl", outputFormat);
+		LinkedHashMap<String, Integer> randomUserCount = Util.randomizeMapping(sortedUserInput);
+		generateOntology(randomUserCount,inputs,"randomUserInputCountOntology.owl", outputFormat, extraAxioms);
 		
 		System.out.println(" ------------------------------------------------------------------------------------------------------   ");
 		
 		loadMainNecessaryThings();
-		util.initializeGlobalHashMaps();
+		Util.initializeGlobalHashMaps();
 		/* --> AxiomCount Minimum
 		 * 'axiomCount' is the second variant of the algorithm, in which we want to CHOOSE, TRAVERSE and INCLUDE
 		 * in the ontologies. The method 'initialAxiomsCount' generates a HASHMAP in order in which keys
@@ -324,17 +317,17 @@ public void generate(int[] inputs,String outputFormat) throws OWLOntologyStorage
 		 * That is, constructs which have less axioms will be at the top. So constructs with less axiom counts
 		 * will be inserted in ontologies and global hashmap first.
 		 */
-        LinkedHashMap<String, Integer> sorted = util.initialAxiomsCount();
-		generateOntology(sorted,inputs,"axiomCountOntology.owl", outputFormat);
+        LinkedHashMap<String, Integer> sorted = Util.initialAxiomsCount();
+		generateOntology(sorted,inputs,"axiomCountOntology.owl", outputFormat, extraAxioms);
 		
         loadMainNecessaryThings();
-		util.initializeGlobalHashMaps();
+		Util.initializeGlobalHashMaps();
 		/* --> Randomize AxiomCount Minimum
 		 * Here we are using 'axiomCount' variant but this time, instead of traversing it in ASCENDING ORDER, 
 		 * We have SHUFFLED the order of HashMap, we are traversing it in Random Order.
 		 */
-		LinkedHashMap<String, Integer> randomAxiomCount = util.randomizeMapping(sorted);
-		generateOntology(randomAxiomCount,inputs,"randomAxiomCountOntology.owl", outputFormat);
+		LinkedHashMap<String, Integer> randomAxiomCount = Util.randomizeMapping(sorted);
+		generateOntology(randomAxiomCount,inputs,"randomAxiomCountOntology.owl", outputFormat, extraAxioms);
 		
 		System.out.println(" ---------------------------------------THE_END---------------------------------------------------   ");
 		

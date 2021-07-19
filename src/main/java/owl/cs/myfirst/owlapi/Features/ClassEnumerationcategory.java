@@ -21,6 +21,8 @@ import org.semanticweb.owlapi.model.PrefixManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
+
+import owl.cs.myfirst.owlapi.app;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
 public class ClassEnumerationcategory {
@@ -51,6 +53,8 @@ public class ClassEnumerationcategory {
 	    OWLObjectComplementOf complement = factory.getOWLObjectComplementOf(nonComplement);
 	    OWLClass owlClass = featurePool.getExclusiveClass(subject);
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(owlClass, complement));
+	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(owlClass, complement));
 	}
 	
 	public void convertLineToObjectIntersection(ArrayList allConcepts) {
@@ -63,6 +67,12 @@ public class ClassEnumerationcategory {
 		OWLClass owlClass = featurePool.getExclusiveClass((String)allConcepts.get(0));
 		OWLAxiom axiom = factory.getOWLEquivalentClassesAxiom(owlClass, spork);
 		ontology.getOWLOntologyManager().addAxiom(ontology, axiom);
+		
+		app.notToBeIncludedAxioms.add(axiom);
+	}
+	
+	public void addObjectOneOfIndidividuals(ArrayList<String> allConcepts) {
+		for ( int i = 1 ; i < allConcepts.size() ; i++ ) app.alreadyAssertionAxiom.put(allConcepts.get(i), allConcepts.get(0));
 	}
 	
 	public void convertLineToObjectOneOf(ArrayList allConcepts) {
@@ -74,6 +84,9 @@ public class ClassEnumerationcategory {
 		OWLObjectOneOf oneOf = factory.getOWLObjectOneOf(props); 
 		OWLClass oneOfClass = featurePool.getExclusiveClass((String)allConcepts.get(0));
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLEquivalentClassesAxiom(oneOfClass, oneOf));
+		
+		addObjectOneOfIndidividuals(allConcepts);
+		app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(oneOfClass, oneOf));
 	}
 	
 	public void convertLineToObjectUnionOf(ArrayList allConcepts) {
@@ -85,5 +98,7 @@ public class ClassEnumerationcategory {
 		OWLObjectUnionOf unionOf = factory.getOWLObjectUnionOf(props); 
 		OWLClass unionClass = featurePool.getExclusiveClass((String)allConcepts.get(0));
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(unionClass, unionOf));
+		
+		app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(unionClass, unionOf));
 	}
 }

@@ -19,18 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-//<dependency>
-//<groupId>org.slf4j</groupId>
-//<artifactId>slf4j-log4j12</artifactId>
-//<version>1.7.5</version>
-//	    <exclusions>
-// <exclusion>
-//     <groupId>org.slf4j</groupId>
-//     <artifactId>slf4j-log4j12</artifactId>
-// </exclusion>
-//</exclusions>
-//</dependency>
-
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @SpringBootApplication
@@ -41,27 +29,21 @@ public class Demo2 {
 	}
 	
 	@RequestMapping(value="/send", method = RequestMethod.POST)
-	//@PostMapping(path = "/send")
 	//public void frontendValue(@RequestBody UserData params) {
 	public void frontendValue(@RequestBody com.fasterxml.jackson.databind.JsonNode params ) throws OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException {
-		//List len = params.getValues();
-		//System.out.println();
 		JsonNode arrNode = params.get("userValues");
 		int[] userval = new int[arrNode.size()];
 		int i = 0;
 		if (arrNode.isArray()) {
 		    for ( JsonNode objNode : arrNode) {
 		    	userval[i] = objNode.asInt();
-		    	i++;
-//		    	if( objNode.asInt() != 0 ) {
-//		    		System.out.println(objNode.asInt());
-//		    	}   
+		    	i++;  
 		    }
 		}
 		String format = params.get("format").asText();
-		System.out.println("                            STARTING                              format "+format);
-		System.out.println("                            STARTING                              len "+userval.length);
-		app App = new app();
-		App.generate(userval,format);
+		boolean extraAxioms = params.get("extra").asBoolean();
+		System.out.println("                      STARTING                      "+format+" || "+extraAxioms+" || "+userval.length);
+		owl.cs.myfirst.owlapi.app App = new owl.cs.myfirst.owlapi.app();
+		App.generate(userval,format,extraAxioms);
 	}
 }
