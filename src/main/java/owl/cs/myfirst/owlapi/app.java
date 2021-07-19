@@ -111,10 +111,7 @@ public class app
 		  int count = 0;
 		  reverse_indexes = new LinkedHashMap<String,Integer>();
 		  for ( int i = 0 ; i < overall.length ; i++ ) {
-			  for( int j = 0 ; j < overall[i].length ; j++ ) {
-				  reverse_indexes.put(overall[i][j],count);
-				  count++;
-			  }
+			  for( int j = 0 ; j < overall[i].length ; j++ ) reverse_indexes.put(overall[i][j],count++);
 		  }
 		  
 		  String IOR = "http://benchmark/OWL2Bench/";
@@ -126,13 +123,13 @@ public class app
 	      ClassPool classpool1 = new ClassPool(factory, pm);
 	      PropertyPool propertypool1 = new PropertyPool(factory, pm);
 	      FeaturePool fp1 = new FeaturePool(classpool1, propertypool1);
-	      
+		  
 	      rdfFormat = new RDFXMLOntologyFormat(); rdfFormat.copyPrefixesFrom(pm);
 	      turtleFormat  = new TurtleOntologyFormat(); turtleFormat.copyPrefixesFrom(pm);
 	      xmlFormat = new OWLXMLOntologyFormat(); xmlFormat.copyPrefixesFrom(pm);
 	      manchesterFormat = new ManchesterOWLSyntaxOntologyFormat(); manchesterFormat.copyPrefixesFrom(pm);
 	      functionalFormat = new OWLFunctionalSyntaxOntologyFormat(); functionalFormat.copyPrefixesFrom(pm);
-	      
+
 	      // 1 - ce | 2 - ca | 3 - oa | 4 - or | 5 - da | 6 - dr | 7 - drc | 8 - ac
 	      ClassEnumerationcategory ce = new ClassEnumerationcategory(factory, pm, fp1, my_ontology);  //1
 	      ClassExpressionAxiomsCategory ca = new ClassExpressionAxiomsCategory(factory, pm, fp1, my_ontology); //2
@@ -142,7 +139,7 @@ public class app
 	      DataPropertyRestrictionCategory dr = new DataPropertyRestrictionCategory(factory, pm, fp1, my_ontology); //6
 	      DataRangesCategory drc = new DataRangesCategory(factory, pm, fp1, my_ontology); //7
 	      AssertionCategory ac = new AssertionCategory(factory, pm, fp1, my_ontology); //10
-	      
+
 	      for ( int i = 0 ; i < overall.length ; i++ ) {
 	    	  for ( int j = 0 ; j < overall[i].length ; j++ ) {
 	    		  if ( (i+1) == 1 ) objectMap.put(overall[i][j], ce);
@@ -155,6 +152,7 @@ public class app
 	    		  else if ( (i+1) == 8 ) objectMap.put(overall[i][j], ac);  
 	    	  }
 	      }
+
 	}
 
 	/**
@@ -262,14 +260,14 @@ public class app
  *  the occurences of concepts/properties present in each contructs AXIOMS text file.
  */
 public void generate(int[] inputs,String outputFormat,boolean extraAxioms) throws OWLOntologyStorageException, OWLOntologyCreationException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException{
-	    /*
+		/*
 	     * It loads up the OBJECT Hashmap. There are around 50 constructs present. Each of the constructs comes
 	     * under one of the 7 categories present. We store mapping of each construct with its Category.
 	     * This Object hashmap will later be used to DIRECTLY call the construct using Reflection concept. 
 	     * It prevents use of writing lots of lots IF/ELSE for each construct. Using this mapping, we can DIRECTLY call the method.
 	     */
 	    loadMainNecessaryThings();
-        System.out.println(" reaching here ");
+
 	    /*
 	     *  In Util Class, there is method which INITIALIZES global HashMap to be used further to store 
 	     *  the occurences of concepts/properties present in each contructs AXIOMS text file.
@@ -306,7 +304,7 @@ public void generate(int[] inputs,String outputFormat,boolean extraAxioms) throw
 		LinkedHashMap<String, Integer> randomUserCount = Util.randomizeMapping(sortedUserInput);
 		generateOntology(randomUserCount,inputs,"randomUserInputCountOntology.owl", outputFormat, extraAxioms);
 		
-		System.out.println(" ------------------------------------------------------------------------------------------------------   ");
+		System.out.println(" -------------------------------------------------------------------------------------------------- ");
 		
 		loadMainNecessaryThings();
 		Util.initializeGlobalHashMaps();
@@ -329,7 +327,7 @@ public void generate(int[] inputs,String outputFormat,boolean extraAxioms) throw
 		LinkedHashMap<String, Integer> randomAxiomCount = Util.randomizeMapping(sorted);
 		generateOntology(randomAxiomCount,inputs,"randomAxiomCountOntology.owl", outputFormat, extraAxioms);
 		
-		System.out.println(" ---------------------------------------THE_END---------------------------------------------------   ");
+		System.out.println(" ---------------------------------------THE_END--------------------------------------------------- ");
 		
 		//problematic constructs -> objectHasSelf and objectHasValue.
 		//randomAxiomCount giving FALSE for DataAllValues, DataMax/Min/Cardinality

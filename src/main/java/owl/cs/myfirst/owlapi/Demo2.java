@@ -43,7 +43,7 @@ public class Demo2 {
 		String format = params.get("format").asText();
 		boolean extraAxioms = params.get("extra").asBoolean();
 		System.out.println("                      STARTING                      "+format+" || "+extraAxioms+" || "+userval.length);
-		owl.cs.myfirst.owlapi.app App = new owl.cs.myfirst.owlapi.app();
+		app App = new app();
 		App.generate(userval,format,extraAxioms);
 	}
 }

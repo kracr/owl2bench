@@ -33,22 +33,22 @@ public class Reasoners {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);	
-		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+//		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
 		OWLReasonerFactory reasonerFactory = new JFactFactory();
 		long startTime = System.nanoTime();
 		OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);	
 		long endTime = System.nanoTime();
         long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
-        System.out.println();
+//        System.out.println("Time taken for Reasoner Creation " + duration );
+//        System.out.println();
         
-	    System.out.println("Started Consistency Checking");
+//	    System.out.println("Started Consistency Checking");
 	    startTime = System.nanoTime();
-	    System.out.println(" " + reasoner.isConsistent() );
+	    System.out.println("Consistency = " + reasoner.isConsistent() );
 	    endTime = System.nanoTime();
 	    duration = ((endTime - startTime));
-	    System.out.println("Time taken for Consistency Check " + duration );
-	    System.out.println();
+//	    System.out.println("Time taken for Consistency Check " + duration );
+//	    System.out.println();
 	        
 //	    System.out.println("Started Instance Checking");
 //	    startTime = System.nanoTime();
@@ -74,21 +74,21 @@ public class Reasoners {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
-		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+//		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
 		long startTime = System.nanoTime();
         final OpenlletReasoner reasoner = OpenlletReasonerFactory.getInstance().createReasoner(ontology);
         long endTime = System.nanoTime();
         long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
-        System.out.println();
+//        System.out.println("Time taken for Reasoner Creation " + duration );
+//        System.out.println();
         
-        System.out.println("Started Consistency Checking");
+//        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println(" " + reasoner.isConsistent() );
+        System.out.println("Consistency = " + reasoner.isConsistent() );
         endTime = System.nanoTime();
         duration = ((endTime - startTime));
-        System.out.println("Time taken for Consistency Check " + duration );
-        System.out.println();    
+//        System.out.println("Time taken for Consistency Check " + duration );
+//        System.out.println();    
             
 //        System.out.println("Started Instance Checking");
 //        startTime = System.nanoTime();
@@ -115,22 +115,22 @@ public class Reasoners {
 		IRI physicalIRI = IRI.create(c);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(physicalIRI);
-		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
+//		System.out.println("Total Logical Axiom Count......."+ ontology.getLogicalAxiomCount());
 		long startTime = System.nanoTime();
         Reasoner reasoner=new Reasoner(ontology);
         
         long endTime = System.nanoTime();
         long duration = ((endTime - startTime));
-        System.out.println("Time taken for Reasoner Creation " + duration );
-        System.out.println();
+//        System.out.println("Time taken for Reasoner Creation " + duration );
+//        System.out.println();
         
-        System.out.println("Started Consistency Checking");
+//        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println(" " + reasoner.isConsistent() );
+        System.out.println("Consistency = " + reasoner.isConsistent() );
          endTime = System.nanoTime();
          duration = ((endTime - startTime));
-        System.out.println("Time taken for Consistency Check " + duration );
-        System.out.println();
+//        System.out.println("Time taken for Consistency Check " + duration );
+//        System.out.println();
 
 //        System.out.println("Started Instance Checking");
 //         startTime = System.nanoTime();
@@ -156,10 +156,10 @@ public class Reasoners {
 	public void run(File fileout,String fileName) throws OWLOntologyCreationException {
 		System.out.println(" ----- JFACT REASONER ----- "+fileName);
 		jfactReasoner(fileout);
-		System.out.println();
+//		System.out.println();
 		System.out.println(" -----  OPENLLET REASONER ----- "+fileName);
 		openlletReasoner(fileout);
-		System.out.println();
+//		System.out.println();
 //	    System.out.println(" ------ HERMIT REASONER ------ "+fileName);
 //	    hermitReasoner(fileout);
 	}

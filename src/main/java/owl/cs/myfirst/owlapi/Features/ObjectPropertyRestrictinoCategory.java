@@ -36,15 +36,12 @@ public class ObjectPropertyRestrictinoCategory {
 	protected static FeaturePool featurePool;
 	protected static PrefixManager pm;
 	protected static OWLOntology ontology;
-	public static HashMap<String, String> namedIndiviMap;
 	
 	public ObjectPropertyRestrictinoCategory(OWLDataFactory factory, PrefixManager pm, FeaturePool featurePool, OWLOntology ontology ) throws ClassNotFoundException, IOException {
 		ObjectPropertyRestrictinoCategory.factory = factory;
 		ObjectPropertyRestrictinoCategory.pm = pm;
 		ObjectPropertyRestrictinoCategory.featurePool = featurePool;
 		ObjectPropertyRestrictinoCategory.ontology = ontology;
-		
-		initializeNamedIndiviMap();
 	}
 	
 	public static void convertLineToObjectAllValuesFrom(ArrayList<String> allConcepts) {
@@ -76,8 +73,8 @@ public class ObjectPropertyRestrictinoCategory {
 	    app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(hasSelf, restriction));
 	}
 	
-	public void initializeNamedIndiviMap() throws IOException {
-		namedIndiviMap = new HashMap<String,String>();
+	public static void addObjectHasValueIndidividuals(String indiv, String classTerm) throws IOException {
+		HashMap<String, String> namedIndiviMap = new HashMap<String,String>();
 		BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/DL/OwlNamedIndividual.txt"));
 		String line = reader.readLine();
 		while (line != null) {
@@ -86,9 +83,7 @@ public class ObjectPropertyRestrictinoCategory {
 				namedIndiviMap.put(outputs[1], outputs[0]);
 			}
 		}
-	}
-	
-	public static void addObjectHasValueIndidividuals(String indiv, String classTerm) throws IOException {
+		
 		if ( namedIndiviMap.containsKey(classTerm) ) app.alreadyAssertionAxiom.put(indiv, namedIndiviMap.get(classTerm));
 	}
 	

@@ -361,7 +361,7 @@ public class WriteAxiomsFromOwlApi {
         return contentBuilder.toString();
     }
     
-	static String totriple(String test) {
+	public static String totriple(String test) {
 		test = test.replace("#", "/");
 		test = test.replace("\"", "");
 //		test = test.replace("(\"", " ");

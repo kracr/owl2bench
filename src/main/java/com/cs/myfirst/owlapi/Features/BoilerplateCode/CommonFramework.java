@@ -152,8 +152,7 @@ public class CommonFramework {
 			
 			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) && !FilenameConstructMapping.lastDomainRangeDisjoint.containsKey(filename) ) 
 				app.rdfsSubsOnly.put(allConcepts.get(0),1);
-			
-			System.out.println(allConcepts);
+//			System.out.println(allConcepts);
 			Method method = app.objectMap.get(filename).getClass().getDeclaredMethod("convertLineTo"+filename, ArrayList.class);
 			method.invoke(app.objectMap.get(filename), allConcepts);
 			

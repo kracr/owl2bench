@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -26,6 +28,7 @@ import org.semanticweb.owlapi.model.parameters.Imports;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.LastDance;
 
+import owl.cs.myfirst.owlapi.WriteAxiomsFromOwlApi;
 import owl.cs.myfirst.owlapi.app;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
@@ -58,7 +61,21 @@ public class AssertionCategory {
 		HashMap<String,String> objectDomain; HashMap<String,String> objectRange; HashMap<String,String> dataDomain; HashMap<String,String> dataRange;
 		if (extraAxioms) {
 			objectDomain = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.OBJECT_PROPERTY_DOMAIN).stream()
-					.map(props -> props.toString()).collect(Collectors.toMap(Function.identity(), Function.identity()));
+					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+					.collect(Collectors.toMap(props -> props[1],props -> props[2],(prop1,prop2) -> prop1));
+			
+			objectRange = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.OBJECT_PROPERTY_RANGE).stream()
+					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+					.collect(Collectors.toMap(props -> props[1],props -> props[2],(prop1,prop2) -> prop1));
+			
+			dataDomain = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.DATA_PROPERTY_DOMAIN).stream()
+					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+					.collect(Collectors.toMap(props -> props[1],props -> props[2],(prop1,prop2) -> prop1));
+			
+			dataRange = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.DATA_PROPERTY_RANGE).stream()
+					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+					.collect(Collectors.toMap(props -> props[1],props -> props[2],(prop1,prop2) -> prop1));
+			
 		} else {
 			objectDomain = LastDance.constructAxiomsHashMap("RdfsObjectDomain.txt", " domain ");
 			objectRange = LastDance.constructAxiomsHashMap("RdfsObjectRange.txt", " range ");
@@ -66,47 +83,41 @@ public class AssertionCategory {
 			dataRange = LastDance.constructAxiomsHashMap("RdfsDataRange.txt", " range ");
 		}
 		
+//		System.out.println(objectDomain);
+//		System.out.println(objectRange);
+//		System.out.println(dataDomain);
+//		System.out.println(dataRange);
+		
+		System.out.println(tempOntology.getAxiomCount()+" || "+ontology.getAxiomCount());
 		HashMap<String,String> objectPropsDomain; HashMap<String,String> objectPropsRange; HashMap<String,String> dataPropsDomain; HashMap<String,String> dataPropsRange;
 		
-		System.out.println(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
-		System.out.println();
-		System.out.println(ontology.getAxioms(AxiomType.DATA_PROPERTY_ASSERTION));
-		System.out.println();
-		System.out.println(ontology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION));
-		System.out.println();
-	
-	}
-	
-	
-//	protected void addProperty(OWLClass domain, OWLObjectProperty property, OWLClassExpression range) {
-//	   addAxiomToOntology(factory.getOWLObjectPropertyDomainAxiom(property, domain));
-//	   addAxiomToOntology(factory.getOWLObjectPropertyRangeAxiom(property, range));
-//	}
-//	protected void addProperty(OWLClass domain, OWLDataProperty property, OWLDataRange range) {
-//	   addAxiomToOntology(factory.getOWLDataPropertyDomainAxiom(property, domain));
-//	   addAxiomToOntology(factory.getOWLDataPropertyRangeAxiom(property, range));
-//	}
-//	protected void addAxiomToOntology(OWLAxiom axiom) {
-//	    ontology.getOWLOntologyManager().addAxiom(ontology, axiom);
-//	}
-//	public void initDL() {
-//		String construct = " hasKey ";
-//		String constructpath = "/DL/OwlHasKeyFeature.txt";
-//		BufferedReader reader;
-//		try {
-//			reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+constructpath));
-//			String line = reader.readLine();
-//			while (line != null) {
-//				String[] contents = line.split(construct);
-//				OWLClass hasKeyClass = featurePool.getExclusiveClass(contents[0]);
-//			    OWLDataProperty hasKeyProperty1 = factory.getOWLDataProperty(contents[1], pm);
-//			    //OWLDatatype hasKeyRange1 = OWL2Datatype.XSD_STRING.getDatatype(factory);
-//			    addAxiomToOntology(factory.getOWLHasKeyAxiom(hasKeyClass, hasKeyProperty1));
-//				line = reader.readLine();
-//			}
-//			reader.close();
-//		} catch (IOException e) { e.printStackTrace(); }
-//	}
-//	
+//		HashMap<String,String> objectPropsDomain = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION).stream()
+//				.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+//				.collect(Collectors.toMap(props -> props[1],props -> props[2],(prop1,prop2) -> prop1));
 
+		System.out.println(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
+		System.out.println(ontology.getAxioms(AxiomType.DATA_PROPERTY_ASSERTION));
+		System.out.println(ontology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION));
+	
+		if ( classCount > 0 ) {
+			
+		}
+		
+		//&& objectPropsDomain.size() > 0 && objectPropsRange.size() > 0
+//		if ( objectCount > 0 ) {
+//			int count = 0;
+//			while ( count < objectCount ) {
+//				ArrayList<String> terms = new ArrayList<String>(objectPropsDomain.keySet());
+//				Collections.shuffle(terms, new Random(2));
+//				for ( String item : terms ) {
+//					
+//					if ( count >= objectCount ) break;
+//				}
+//			}
+//		}
+		
+		if ( dataCount > 0 ) {
+			
+		}
+	}
 }
