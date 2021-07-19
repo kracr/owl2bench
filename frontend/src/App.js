@@ -1024,6 +1024,15 @@ function App() {
           Generate{" "}
         </button>
       </div>
+      <hr></hr>
+      <div className="row justify-content-center">
+        © Made at&nbsp;
+        <a href="https://kracr.iiitd.edu.in/" target="_blank">
+          KRaCR Lab
+        </a>
+        , 2021
+      </div>
+      <hr></hr>
     </div>
   );
 }

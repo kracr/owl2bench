@@ -1,0 +1,3 @@
+hasCode UnionOf rdfs:Literal,xsd:string
+hasTotalBacklogs UnionOf rdfs:Literal,xsd:nonNegativeInteger,xsd:string
+hasPublicationDate UnionOf xsd:dateTime,xsd:dateTimeStamp

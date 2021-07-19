@@ -1,0 +1,2 @@
+Organization UnionOf GovernmentOrganization,PrivateOrganization,SemiGovernmentOrganization
+Person UnionOf Man,Woman

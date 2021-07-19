@@ -44,7 +44,7 @@ public class Reasoners {
         
 //	    System.out.println("Started Consistency Checking");
 	    startTime = System.nanoTime();
-	    System.out.println("Consistency = " + reasoner.isConsistent() );
+	    System.out.println("JFact Consistency = " + reasoner.isConsistent() );
 	    endTime = System.nanoTime();
 	    duration = ((endTime - startTime));
 //	    System.out.println("Time taken for Consistency Check " + duration );
@@ -84,7 +84,7 @@ public class Reasoners {
         
 //        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println("Consistency = " + reasoner.isConsistent() );
+        System.out.println("Openllet Consistency = " + reasoner.isConsistent() );
         endTime = System.nanoTime();
         duration = ((endTime - startTime));
 //        System.out.println("Time taken for Consistency Check " + duration );
@@ -126,7 +126,7 @@ public class Reasoners {
         
 //        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println("Consistency = " + reasoner.isConsistent() );
+        System.out.println("Hermit Consistency = " + reasoner.isConsistent() );
          endTime = System.nanoTime();
          duration = ((endTime - startTime));
 //        System.out.println("Time taken for Consistency Check " + duration );
@@ -154,10 +154,10 @@ public class Reasoners {
 	}
 	
 	public void run(File fileout,String fileName) throws OWLOntologyCreationException {
-		System.out.println(" ----- JFACT REASONER ----- "+fileName);
+//		System.out.println(" ----- JFACT REASONER ----- "+fileName);
 		jfactReasoner(fileout);
 //		System.out.println();
-		System.out.println(" -----  OPENLLET REASONER ----- "+fileName);
+//		System.out.println(" -----  OPENLLET REASONER ----- "+fileName);
 		openlletReasoner(fileout);
 //		System.out.println();
 //	    System.out.println(" ------ HERMIT REASONER ------ "+fileName);

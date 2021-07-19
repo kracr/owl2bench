@@ -1,0 +1,3 @@
+hasTenure subpropertyof owl:topDataProperty
+hasCode subpropertyof owl:topDataProperty
+hasID subpropertyof owl:topDataProperty

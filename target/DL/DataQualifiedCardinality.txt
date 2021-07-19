@@ -1,0 +1,3 @@
+Person hasID exactly 1 xsd:string 
+Course hasCode exactly 1 xsd:string 
+Publication hasDOI exactly 1 xsd:string 

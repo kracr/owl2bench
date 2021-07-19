@@ -77,7 +77,7 @@ public class ObjectPropertyRestrictinoCategory {
 		HashMap<String, String> namedIndiviMap = new HashMap<String,String>();
 		BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/DL/OwlNamedIndividual.txt"));
 		String line = reader.readLine();
-		while (line != null) {
+		while ( (line = reader.readLine()) != null ) {
 			if ( line.length() > 0 ) {
 				String[] outputs = line.split(" classAssertion ");
 				namedIndiviMap.put(outputs[1], outputs[0]);
@@ -99,8 +99,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(hasValue, restriction));
 	    
 	    addObjectHasValueIndidividuals(p1,p3);
-//	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
-	    
+	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(hasValue, restriction));
 	}
 	
 	public static void convertLineToObjectSomeValuesFrom(ArrayList<String> allConcepts) {

@@ -1,0 +1,1 @@
+Person hasEmailAddress only xsd:string 

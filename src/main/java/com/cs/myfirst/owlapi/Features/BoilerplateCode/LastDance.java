@@ -41,7 +41,7 @@ public class LastDance {
 				int low = -1;
 				int high = count;
 				int result = r.nextInt(high-low) + low;
-//				System.out.println(" random till max "+result+" || "+count);
+
 				if ( result != -1 ) value = concept+"_"+String.valueOf(result);
 				else value = concept;
 //				System.out.println(value+" || "+result+" || "+count+" || "+concept);

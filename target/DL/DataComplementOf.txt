@@ -1,0 +1,1 @@
+hasAge complementOf xsd:negativeInteger

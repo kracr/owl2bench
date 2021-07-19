@@ -1,0 +1,1 @@
+Person hasName some xsd:string 

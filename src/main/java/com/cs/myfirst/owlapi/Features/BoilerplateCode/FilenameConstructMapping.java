@@ -10,7 +10,6 @@ import java.util.HashMap;
 public class FilenameConstructMapping {
 	public static HashMap<String,String> fileMap;
 	public static HashMap<String,String> separatorMap ;
-	public static HashMap<String,String> rootConcepts;
 	public static HashMap<String,String> constructsForLast;
 	public static HashMap<String,String> ontologyTerm;
 	public static HashMap<String,String> lastDomainRangeDisjoint;
@@ -90,13 +89,6 @@ public class FilenameConstructMapping {
 				 separatorMap.put(construct[i][j], separator[i][j]);
 				 ontologyTerm.put(generatedOntologyTerm[i][j],construct[i][j]);
 			 }
-		 }
-		 
-		 TextFileProcessor pattern = new TextFileProcessor();
-		 rootConcepts = new HashMap<String,String>();
-		 ArrayList<String> axioms = pattern.readTxtFile("RootConcepts.txt","\n");
-		 for ( String ax : axioms ) {
-			 if ( !rootConcepts.containsKey(ax) ) rootConcepts.put(ax, "");
 		 }
 		 
 		String[] lastOnesConstructs = { "RdfsSubClassOf","RdfsDataSubPropertyOf","RdfsObjectSubPropertyOf",
