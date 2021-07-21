@@ -108,7 +108,7 @@ public class LastDance {
 		for ( String key : globalHashMap.keySet() ) {
 			String obj = key.contains("_") ? key.substring(0,key.indexOf("_")) : key;
 //			System.out.println(key+" | last domain-range ");
-			if ( constructHashMap.containsKey(obj) ) {
+			if ( constructHashMap.containsKey(obj) && !app.domainRangeOnly.containsKey(key) ) {
 				String value = getRandomTillMaxTerm(constructHashMap.get(obj));
 				
 				ArrayList<String> allConcepts = new ArrayList<String>();
@@ -141,7 +141,6 @@ public class LastDance {
 			String constructName, boolean whether) throws OWLOntologyCreationException, NoSuchMethodException, SecurityException, ClassNotFoundException, OWLOntologyStorageException, IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {	
 		
 		LinkedHashMap<String, Integer> globalHashMap = whether == true ? Util.underscoreCommonConstructs : Util.commonConstructs;
-		LinkedHashMap<String, Integer> rdfsSubsOnly = app.rdfsSubsOnly;
 
 		constructName = constructName.substring(0,constructName.length()-4);
 		ArrayList<String> extraConcepts = new ArrayList<String>();
@@ -152,7 +151,7 @@ public class LastDance {
 			String item = subOfTerms.poll();
 			String key = item.contains("_") ? item.substring(0,item.indexOf("_")) : item;
 //			System.out.println(item+" | last sub ");
-			if ( constructHashMap.containsKey(key) && !rdfsSubsOnly.containsKey(item) ) {				
+			if ( constructHashMap.containsKey(key) && !app.rdfsSubsOnly.containsKey(item) ) {				
 				String object = getRandomTillMaxTerm(constructHashMap.get(key));
 				
 				if ( !item.equals(object) ) {

@@ -1,1584 +1,2359 @@
-Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
-Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
-Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
-Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-
-
-Ontology(
-Declaration(Class(<http://benchmark/OWL2Bench/AcademicStaff>))
-Declaration(Class(<http://benchmark/OWL2Bench/Article>))
-Declaration(Class(<http://benchmark/OWL2Bench/Article_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Article_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Badminton>))
-Declaration(Class(<http://benchmark/OWL2Bench/BadmintonFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/Book>))
-Declaration(Class(<http://benchmark/OWL2Bench/Book_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/CoEdCollege>))
-Declaration(Class(<http://benchmark/OWL2Bench/College>))
-Declaration(Class(<http://benchmark/OWL2Bench/CollegeDiscipline>))
-Declaration(Class(<http://benchmark/OWL2Bench/College_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/College_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/ConferencePaper>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_4>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course_5>))
-Declaration(Class(<http://benchmark/OWL2Bench/Department>))
-Declaration(Class(<http://benchmark/OWL2Bench/ElectiveCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/ElectiveCourse_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Employee>))
-Declaration(Class(<http://benchmark/OWL2Bench/Employee_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Employee_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Employee_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Engineering>))
-Declaration(Class(<http://benchmark/OWL2Bench/Faculty>))
-Declaration(Class(<http://benchmark/OWL2Bench/Faculty_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Faculty_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Father>))
-Declaration(Class(<http://benchmark/OWL2Bench/Father_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/FineArts>))
-Declaration(Class(<http://benchmark/OWL2Bench/Football>))
-Declaration(Class(<http://benchmark/OWL2Bench/GovernmentOrganization>))
-Declaration(Class(<http://benchmark/OWL2Bench/GovernmentOrganization_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/GovernmentOrganization_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Human>))
-Declaration(Class(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>))
-Declaration(Class(<http://benchmark/OWL2Bench/Interest>))
-Declaration(Class(<http://benchmark/OWL2Bench/JournalArticle>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Man>))
-Declaration(Class(<http://benchmark/OWL2Bench/Man_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Management>))
-Declaration(Class(<http://benchmark/OWL2Bench/Manual>))
-Declaration(Class(<http://benchmark/OWL2Bench/Manual_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Mother>))
-Declaration(Class(<http://benchmark/OWL2Bench/Mother_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Mother_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonEngineering>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonFineArts>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonManagement>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonScience>))
-Declaration(Class(<http://benchmark/OWL2Bench/OneDayCricketFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_4>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_5>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGProgram>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGProgram_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGStudent_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Parent>))
-Declaration(Class(<http://benchmark/OWL2Bench/Parent_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Parent_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Parent_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/PeopleWithHobby>))
-Declaration(Class(<http://benchmark/OWL2Bench/PeopleWithManyHobbies>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_4>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_5>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_6>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_7>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_8>))
-Declaration(Class(<http://benchmark/OWL2Bench/PhDProgram>))
-Declaration(Class(<http://benchmark/OWL2Bench/PhDStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/PrivateOrganization>))
-Declaration(Class(<http://benchmark/OWL2Bench/PrivateOrganization_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/PrivateOrganization_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Program>))
-Declaration(Class(<http://benchmark/OWL2Bench/Publication>))
-Declaration(Class(<http://benchmark/OWL2Bench/Publication_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Publication_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Science>))
-Declaration(Class(<http://benchmark/OWL2Bench/Soccer>))
-Declaration(Class(<http://benchmark/OWL2Bench/SoccerFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/Software>))
-Declaration(Class(<http://benchmark/OWL2Bench/Software_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Specification>))
-Declaration(Class(<http://benchmark/OWL2Bench/Specification_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Sports>))
-Declaration(Class(<http://benchmark/OWL2Bench/Sports_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Staff>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student>))
-Declaration(Class(<http://benchmark/OWL2Bench/StudentWithBacklog>))
-Declaration(Class(<http://benchmark/OWL2Bench/StudentWithBacklog_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_4>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_5>))
-Declaration(Class(<http://benchmark/OWL2Bench/T20CricketFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/TeachingCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/TechnicalReport>))
-Declaration(Class(<http://benchmark/OWL2Bench/Tennis>))
-Declaration(Class(<http://benchmark/OWL2Bench/TennisFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGCourse_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGProgram>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGProgram_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGStudent_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/University>))
-Declaration(Class(<http://benchmark/OWL2Bench/University_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/University_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/UnofficialPublication>))
-Declaration(Class(<http://benchmark/OWL2Bench/UnofficialPublication_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Woman>))
-Declaration(Class(<http://benchmark/OWL2Bench/Woman_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Woman_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/WomenCollege>))
-Declaration(Class(<http://benchmark/OWL2Bench/WomenCollege_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Work>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/advises>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/advises_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/courseOfferedBy>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/dislikes>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollFor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollFor_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollIn>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollIn_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasAdvisor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasAuthor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasDean>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasDegreeFrom>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasDegreeFrom_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasDegreeFrom_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasFacultyAdvisor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasMajor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasMember>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasPart>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasStudent>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasStudent_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasSubOrganization>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasTeacher>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasWork>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisorOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAlumniOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isCrazyAbout>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isDeanOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isDeanOf_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isDeanOf_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isFacultyOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isFullProfessorOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isFullProfessorOf_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isFullProfessorOf_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isHeadOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isHeadOf_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isMemberOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isPartOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isProfessorOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isProfessorOf_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isProfessorOf_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isStudentOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isSubOrganizationOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isTaughtBy>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows_2>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows_3>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/likes>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/loves>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/registeredTo>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse_0>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse_1>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse_2>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse_3>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/teachesCourse>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/teachesTo>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/worksFor>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasDOI>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasDOI_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasPublicationDate>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasResearchInterest>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasResearchInterest_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasResearchInterest_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_3>))
-Declaration(NamedIndividual(<course_1_0>))
-Declaration(NamedIndividual(<course_1_1>))
-Declaration(NamedIndividual(<course_1_2>))
-Declaration(NamedIndividual(<faculty_03_2>))
-Declaration(NamedIndividual(<organization_37_2>))
-Declaration(NamedIndividual(<organization_47_4>))
-Declaration(NamedIndividual(<person_010_1>))
-Declaration(NamedIndividual(<person_010_3>))
-Declaration(NamedIndividual(<person_210_4>))
-Declaration(NamedIndividual(<person_410_0>))
-Declaration(NamedIndividual(<person_610_3>))
-Declaration(NamedIndividual(<publication_13_4>))
-Declaration(NamedIndividual(<work2_1>))
-Declaration(NamedIndividual(< Course_1_0>))
-Declaration(NamedIndividual(< Course_1_3>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/AeronauticalEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Architecture>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/AsianArts>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Badminton>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/BiomedicalEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ChemicalEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/CivilEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ComputerEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/DesignManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Drama>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ElectricalEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/FinancialAndAccountingManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/HumanResourceManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/IndustryEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/LatinArts>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MarketingManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MaterialScienceEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MechanicalEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MediaArtsAndSciences>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MedievalArts>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ModernArts>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/MusicsClass>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/NonProfitOrganization>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/OneDayCricket>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/OperationsManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/PerformingArts>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/PetroleumEngineering>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ProfitOrganization>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ProjectManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/PublicRelationsManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/RiskManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/SalesManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Soccer>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/SupplyChainManagement>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/T20Cricket>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Tennis>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/TheatreAndDance>))
-############################
-#   Object Properties
-############################
-
-# Object Property: <http://benchmark/OWL2Bench/advises> (<http://benchmark/OWL2Bench/advises>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/isAdvisorOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/Person_6>)
-DisjointObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/courseOfferedBy>)
-DisjointObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/enrollFor>)
-DisjointObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/hasMajor>)
-
-# Object Property: <http://benchmark/OWL2Bench/advises_0> (<http://benchmark/OWL2Bench/advises_0>)
-
-DisjointObjectProperties(<http://benchmark/OWL2Bench/advises_0> <http://benchmark/OWL2Bench/enrollFor_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/dislikes> (<http://benchmark/OWL2Bench/dislikes>)
-
-DisjointObjectProperties(<http://benchmark/OWL2Bench/dislikes> <http://benchmark/OWL2Bench/likes>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollFor> (<http://benchmark/OWL2Bench/enrollFor>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollFor> owl:topObjectProperty)
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/enrollFor>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/Student_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/Program>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollFor_0> (<http://benchmark/OWL2Bench/enrollFor_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollFor_0> owl:topObjectProperty)
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/enrollFor_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollFor_0> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollFor_0> <http://benchmark/OWL2Bench/Program>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollIn> (<http://benchmark/OWL2Bench/enrollIn>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/isStudentOf>)
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/enrollIn>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/Department>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollIn_0> (<http://benchmark/OWL2Bench/enrollIn_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollIn_0> <http://benchmark/OWL2Bench/isStudentOf>)
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/enrollIn_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollIn_0> <http://benchmark/OWL2Bench/Student_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollIn_0> <http://benchmark/OWL2Bench/Department>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasAdvisor> (<http://benchmark/OWL2Bench/hasAdvisor>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/hasAdvisor> <http://benchmark/OWL2Bench/isAdvisedBy>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasAdvisor> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasAdvisor> <http://benchmark/OWL2Bench/Person_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasAuthor> (<http://benchmark/OWL2Bench/hasAuthor>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasAuthor> <http://benchmark/OWL2Bench/Publication>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasAuthor> <http://benchmark/OWL2Bench/Publication_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasAuthor> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasAuthor> <http://benchmark/OWL2Bench/Person_7>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasCollaborationWith> (<http://benchmark/OWL2Bench/hasCollaborationWith>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasCollaborationWith> owl:topObjectProperty)
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasCollaborationWith_0> (<http://benchmark/OWL2Bench/hasCollaborationWith_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasCollaborationWith_0> owl:topObjectProperty)
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasCollaborationWith_0> <http://benchmark/OWL2Bench/Person_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasCollaborationWith_0> <http://benchmark/OWL2Bench/Person_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasCollaborationWith_1> (<http://benchmark/OWL2Bench/hasCollaborationWith_1>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasCollaborationWith_1> owl:topObjectProperty)
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasCollaborationWith_1> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasCollaborationWith_1> <http://benchmark/OWL2Bench/Person_7>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasDean> (<http://benchmark/OWL2Bench/hasDean>)
-
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/hasDean>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDean> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDean> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDean> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDean> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDean> <http://benchmark/OWL2Bench/Person_7>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasDegreeFrom> (<http://benchmark/OWL2Bench/hasDegreeFrom>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/isAlumniOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/Person_2>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/University>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/University_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasDegreeFrom_0> (<http://benchmark/OWL2Bench/hasDegreeFrom_0>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDegreeFrom_0> <http://benchmark/OWL2Bench/Person_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDegreeFrom_0> <http://benchmark/OWL2Bench/University_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasDegreeFrom_1> (<http://benchmark/OWL2Bench/hasDegreeFrom_1>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasDegreeFrom_1> <http://benchmark/OWL2Bench/Person_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasDegreeFrom_1> <http://benchmark/OWL2Bench/University_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasFacultyAdvisor> (<http://benchmark/OWL2Bench/hasFacultyAdvisor>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/hasAdvisor>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/Student_2>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/Faculty>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/Faculty_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasMember> (<http://benchmark/OWL2Bench/hasMember>)
-
-InverseObjectProperties(<http://benchmark/OWL2Bench/hasMember> <http://benchmark/OWL2Bench/isMemberOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasMember> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasMember> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasMember> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasMember> <http://benchmark/OWL2Bench/Person_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasPart> (<http://benchmark/OWL2Bench/hasPart>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasPart> owl:topObjectProperty)
-InverseObjectProperties(<http://benchmark/OWL2Bench/hasPart> <http://benchmark/OWL2Bench/isPartOf>)
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/hasPart>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasPart> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasPart> <http://benchmark/OWL2Bench/Organization_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasPart> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasPart> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasSameHomeTownWith> (<http://benchmark/OWL2Bench/hasSameHomeTownWith>)
-
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith>)
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person_3>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasSameHomeTownWith_0> (<http://benchmark/OWL2Bench/hasSameHomeTownWith_0>)
-
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSameHomeTownWith_0> <http://benchmark/OWL2Bench/Person_5>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSameHomeTownWith_0> <http://benchmark/OWL2Bench/Person_6>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasStudent> (<http://benchmark/OWL2Bench/hasStudent>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/hasMember>)
-InverseObjectProperties(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/isStudentOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Student_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasStudent_0> (<http://benchmark/OWL2Bench/hasStudent_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasStudent_0> <http://benchmark/OWL2Bench/hasMember>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasStudent_0> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasStudent_0> <http://benchmark/OWL2Bench/Student_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasSubOrganization> (<http://benchmark/OWL2Bench/hasSubOrganization>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasSubOrganization> owl:topObjectProperty)
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/hasSubOrganization>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSubOrganization> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSubOrganization> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSubOrganization> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSubOrganization> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSubOrganization> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasTeacher> (<http://benchmark/OWL2Bench/hasTeacher>)
-
-InverseObjectProperties(<http://benchmark/OWL2Bench/hasTeacher> <http://benchmark/OWL2Bench/teachesTo>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasWork> (<http://benchmark/OWL2Bench/hasWork>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasWork> owl:topObjectProperty)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasWork> <http://benchmark/OWL2Bench/Work>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAdvisedBy> (<http://benchmark/OWL2Bench/isAdvisedBy>)
-
-InverseObjectProperties(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/isAdvisorOf>)
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person_6>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAdvisedBy_0> (<http://benchmark/OWL2Bench/isAdvisedBy_0>)
-
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAdvisedBy_0> <http://benchmark/OWL2Bench/Person_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAdvisedBy_0> <http://benchmark/OWL2Bench/Person_6>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAdvisedBy_1> (<http://benchmark/OWL2Bench/isAdvisedBy_1>)
-
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAdvisedBy_1> <http://benchmark/OWL2Bench/Person_5>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAdvisedBy_1> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>)
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> <http://benchmark/OWL2Bench/Organization_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> <http://benchmark/OWL2Bench/Organization_5>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0>)
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0> <http://benchmark/OWL2Bench/Organization_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_0> <http://benchmark/OWL2Bench/Organization_3>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_1> <http://benchmark/OWL2Bench/Organization_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_2> <http://benchmark/OWL2Bench/Organization>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf_3> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAlumniOf> (<http://benchmark/OWL2Bench/isAlumniOf>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAlumniOf> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAlumniOf> <http://benchmark/OWL2Bench/Person_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/isCrazyAbout> (<http://benchmark/OWL2Bench/isCrazyAbout>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/loves>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Person_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isDeanOf> (<http://benchmark/OWL2Bench/isDeanOf>)
-
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isDeanOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Person_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/isDeanOf_0> (<http://benchmark/OWL2Bench/isDeanOf_0>)
-
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isDeanOf_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isDeanOf_0> <http://benchmark/OWL2Bench/Person_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isDeanOf_0> <http://benchmark/OWL2Bench/Organization_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/isDeanOf_1> (<http://benchmark/OWL2Bench/isDeanOf_1>)
-
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isDeanOf_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isDeanOf_1> <http://benchmark/OWL2Bench/Person_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isDeanOf_1> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isFacultyOf> (<http://benchmark/OWL2Bench/isFacultyOf>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isFacultyOf> <http://benchmark/OWL2Bench/worksFor>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isFacultyOf> <http://benchmark/OWL2Bench/Faculty_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isFacultyOf> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isFacultyOf> <http://benchmark/OWL2Bench/Organization_3>)
-
-# Object Property: <http://benchmark/OWL2Bench/isFullProfessorOf> (<http://benchmark/OWL2Bench/isFullProfessorOf>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isFullProfessorOf> <http://benchmark/OWL2Bench/isProfessorOf>)
-
-# Object Property: <http://benchmark/OWL2Bench/isFullProfessorOf_0> (<http://benchmark/OWL2Bench/isFullProfessorOf_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isFullProfessorOf_0> <http://benchmark/OWL2Bench/isProfessorOf_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isFullProfessorOf_1> (<http://benchmark/OWL2Bench/isFullProfessorOf_1>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isFullProfessorOf_1> <http://benchmark/OWL2Bench/isProfessorOf_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/isHeadOf> (<http://benchmark/OWL2Bench/isHeadOf>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isHeadOf> <http://benchmark/OWL2Bench/isFullProfessorOf>)
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isHeadOf> <http://benchmark/OWL2Bench/isFullProfessorOf_1>)
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isHeadOf>)
-
-# Object Property: <http://benchmark/OWL2Bench/isHeadOf_0> (<http://benchmark/OWL2Bench/isHeadOf_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isHeadOf_0> <http://benchmark/OWL2Bench/isFullProfessorOf_0>)
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isHeadOf_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isMemberOf> (<http://benchmark/OWL2Bench/isMemberOf>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isMemberOf> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isMemberOf> <http://benchmark/OWL2Bench/Person_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isMemberOf> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isMemberOf> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/isPartOf> (<http://benchmark/OWL2Bench/isPartOf>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/isPartOf> <http://benchmark/OWL2Bench/isSubOrganizationOf>)
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isPartOf> owl:topObjectProperty)
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/isPartOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isPartOf> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isPartOf> <http://benchmark/OWL2Bench/Organization_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isPartOf> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isPartOf> <http://benchmark/OWL2Bench/Organization_3>)
-
-# Object Property: <http://benchmark/OWL2Bench/isProfessorOf> (<http://benchmark/OWL2Bench/isProfessorOf>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isProfessorOf> <http://benchmark/OWL2Bench/isFacultyOf>)
-
-# Object Property: <http://benchmark/OWL2Bench/isProfessorOf_0> (<http://benchmark/OWL2Bench/isProfessorOf_0>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isProfessorOf_0> <http://benchmark/OWL2Bench/isFacultyOf>)
-
-# Object Property: <http://benchmark/OWL2Bench/isProfessorOf_1> (<http://benchmark/OWL2Bench/isProfessorOf_1>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isProfessorOf_1> <http://benchmark/OWL2Bench/isFacultyOf>)
-
-# Object Property: <http://benchmark/OWL2Bench/isStudentOf> (<http://benchmark/OWL2Bench/isStudentOf>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isStudentOf> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isStudentOf> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isStudentOf> <http://benchmark/OWL2Bench/Organization_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/isSubOrganizationOf> (<http://benchmark/OWL2Bench/isSubOrganizationOf>)
-
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/isSubOrganizationOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/isTaughtBy> (<http://benchmark/OWL2Bench/isTaughtBy>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isTaughtBy> <http://benchmark/OWL2Bench/Course_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isTaughtBy> <http://benchmark/OWL2Bench/Course_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isTaughtBy> <http://benchmark/OWL2Bench/Faculty_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isTaughtBy> <http://benchmark/OWL2Bench/Faculty_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows> (<http://benchmark/OWL2Bench/knows>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows_0> (<http://benchmark/OWL2Bench/knows_0>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows_0> <http://benchmark/OWL2Bench/Person_5>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows_0> <http://benchmark/OWL2Bench/Person_3>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows_1> (<http://benchmark/OWL2Bench/knows_1>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows_1> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows_1> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows_2> (<http://benchmark/OWL2Bench/knows_2>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows_2>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows_2> <http://benchmark/OWL2Bench/Person_5>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows_2> <http://benchmark/OWL2Bench/Person_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows_3> (<http://benchmark/OWL2Bench/knows_3>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows_3>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows_3> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows_3> <http://benchmark/OWL2Bench/Person_7>)
-
-# Object Property: <http://benchmark/OWL2Bench/likes> (<http://benchmark/OWL2Bench/likes>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/likes> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/likes> <http://benchmark/OWL2Bench/Person_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/loves> (<http://benchmark/OWL2Bench/loves>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/loves> <http://benchmark/OWL2Bench/likes>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/loves> <http://benchmark/OWL2Bench/Person_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/loves> <http://benchmark/OWL2Bench/Person_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/registeredTo> (<http://benchmark/OWL2Bench/registeredTo>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/takesCourse>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/Student_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/Student_4>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/Course_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/Course_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse> (<http://benchmark/OWL2Bench/takesCourse>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student_1>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Course_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Course_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse_0> (<http://benchmark/OWL2Bench/takesCourse_0>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse_0> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse_0> <http://benchmark/OWL2Bench/Course_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse_1> (<http://benchmark/OWL2Bench/takesCourse_1>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse_1> <http://benchmark/OWL2Bench/Student_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse_1> <http://benchmark/OWL2Bench/Course_5>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse_2> (<http://benchmark/OWL2Bench/takesCourse_2>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse_2> <http://benchmark/OWL2Bench/Student_3>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse_2> <http://benchmark/OWL2Bench/Course_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse_3> (<http://benchmark/OWL2Bench/takesCourse_3>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse_3> <http://benchmark/OWL2Bench/Student_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/takesCourse_3> <http://benchmark/OWL2Bench/Course_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/teachesCourse> (<http://benchmark/OWL2Bench/teachesCourse>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/hasWork>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/Faculty>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/Faculty_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/Course_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/Course_4>)
-
-# Object Property: <http://benchmark/OWL2Bench/teachesTo> (<http://benchmark/OWL2Bench/teachesTo>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/teachesTo> <http://benchmark/OWL2Bench/Faculty>)
-
-# Object Property: <http://benchmark/OWL2Bench/worksFor> (<http://benchmark/OWL2Bench/worksFor>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Employee_0>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Employee_2>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Organization_2>)
-
-
-############################
-#   Data Properties
-############################
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge> (<http://benchmark/OWL2Bench/hasAge>)
-
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasAge>)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge> <http://benchmark/OWL2Bench/Person_0>)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge> <http://benchmark/OWL2Bench/Person_2>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_0> (<http://benchmark/OWL2Bench/hasAge_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_0> <http://benchmark/OWL2Bench/Person_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_0> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_1> (<http://benchmark/OWL2Bench/hasAge_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_1> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_1> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_2> (<http://benchmark/OWL2Bench/hasAge_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_2> <http://benchmark/OWL2Bench/Person_2>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_2> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_3> (<http://benchmark/OWL2Bench/hasAge_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_3> <http://benchmark/OWL2Bench/Person_4>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_3> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode> (<http://benchmark/OWL2Bench/hasCode>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode> <http://benchmark/OWL2Bench/hasID>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode> owl:topDataProperty)
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasCode>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasCode> DataUnionOf(rdfs:Literal xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode_0> (<http://benchmark/OWL2Bench/hasCode_0>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode_0> <http://benchmark/OWL2Bench/hasID_0>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode_0> owl:topDataProperty)
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasCode_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasCode_0> DataUnionOf(rdfs:Literal xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode_1> (<http://benchmark/OWL2Bench/hasCode_1>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode_1> <http://benchmark/OWL2Bench/hasID_1>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode_1> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode_2> (<http://benchmark/OWL2Bench/hasCode_2>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode_2> <http://benchmark/OWL2Bench/hasID_2>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode_2> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode_3> (<http://benchmark/OWL2Bench/hasCode_3>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode_3> <http://benchmark/OWL2Bench/hasID_3>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode_3> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasDOI> (<http://benchmark/OWL2Bench/hasDOI>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasDOI> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasDOI_0> (<http://benchmark/OWL2Bench/hasDOI_0>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasDOI_0> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress> (<http://benchmark/OWL2Bench/hasEmailAddress>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress> <http://benchmark/OWL2Bench/Person_6>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress_0> (<http://benchmark/OWL2Bench/hasEmailAddress_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress_0> <http://benchmark/OWL2Bench/Person>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress_0> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress_1> (<http://benchmark/OWL2Bench/hasEmailAddress_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress_1> <http://benchmark/OWL2Bench/Person_8>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress_1> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress_2> (<http://benchmark/OWL2Bench/hasEmailAddress_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress_2> <http://benchmark/OWL2Bench/Person_6>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress_2> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress_3> (<http://benchmark/OWL2Bench/hasEmailAddress_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress_3> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress_3> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID> (<http://benchmark/OWL2Bench/hasID>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID> owl:topDataProperty)
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasID>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID_0> (<http://benchmark/OWL2Bench/hasID_0>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID_0> owl:topDataProperty)
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasID_0>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID_1> (<http://benchmark/OWL2Bench/hasID_1>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID_1> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID_2> (<http://benchmark/OWL2Bench/hasID_2>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID_2> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID_3> (<http://benchmark/OWL2Bench/hasID_3>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID_3> owl:topDataProperty)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName> (<http://benchmark/OWL2Bench/hasName>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName> <http://benchmark/OWL2Bench/Person_6>)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName> <http://benchmark/OWL2Bench/Person_8>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasName> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName_0> (<http://benchmark/OWL2Bench/hasName_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName_0> <http://benchmark/OWL2Bench/Person_2>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasName_0> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName_1> (<http://benchmark/OWL2Bench/hasName_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName_1> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasName_1> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName_2> (<http://benchmark/OWL2Bench/hasName_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName_2> <http://benchmark/OWL2Bench/Person_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasName_2> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName_3> (<http://benchmark/OWL2Bench/hasName_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName_3> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasName_3> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasPublicationDate> (<http://benchmark/OWL2Bench/hasPublicationDate>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasPublicationDate> <http://benchmark/OWL2Bench/Publication_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasPublicationDate> DataUnionOf(xsd:dateTime xsd:dateTimeStamp))
-
-# Data Property: <http://benchmark/OWL2Bench/hasResearchInterest> (<http://benchmark/OWL2Bench/hasResearchInterest>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasResearchInterest> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasResearchInterest_0> (<http://benchmark/OWL2Bench/hasResearchInterest_0>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasResearchInterest_0> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasResearchInterest_1> (<http://benchmark/OWL2Bench/hasResearchInterest_1>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasResearchInterest_1> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle> (<http://benchmark/OWL2Bench/hasTitle>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle> <http://benchmark/OWL2Bench/Person>)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle> <http://benchmark/OWL2Bench/Person_2>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_0> (<http://benchmark/OWL2Bench/hasTitle_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_0> <http://benchmark/OWL2Bench/Person_0>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_1> (<http://benchmark/OWL2Bench/hasTitle_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_1> <http://benchmark/OWL2Bench/Person_0>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_2> (<http://benchmark/OWL2Bench/hasTitle_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_2> <http://benchmark/OWL2Bench/Person_1>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_3> (<http://benchmark/OWL2Bench/hasTitle_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_3> <http://benchmark/OWL2Bench/Person_5>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs> (<http://benchmark/OWL2Bench/hasTotalBacklogs>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs> <http://benchmark/OWL2Bench/Student_1>)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs> <http://benchmark/OWL2Bench/Student_3>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs> DataUnionOf(rdfs:Literal xsd:nonNegativeInteger xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_0> (<http://benchmark/OWL2Bench/hasTotalBacklogs_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> <http://benchmark/OWL2Bench/Student_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> DataUnionOf(rdfs:Literal xsd:nonNegativeInteger xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_1> (<http://benchmark/OWL2Bench/hasTotalBacklogs_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_1> <http://benchmark/OWL2Bench/Student_5>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_1> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_2> (<http://benchmark/OWL2Bench/hasTotalBacklogs_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_2> <http://benchmark/OWL2Bench/Student_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_2> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_3> (<http://benchmark/OWL2Bench/hasTotalBacklogs_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_3> <http://benchmark/OWL2Bench/Student_5>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_3> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-
-
-############################
-#   Classes
-############################
-
-# Class: <http://benchmark/OWL2Bench/AcademicStaff> (<http://benchmark/OWL2Bench/AcademicStaff>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/AcademicStaff> <http://benchmark/OWL2Bench/Faculty>)
-SubClassOf(<http://benchmark/OWL2Bench/AcademicStaff> <http://benchmark/OWL2Bench/Employee>)
-SubClassOf(<http://benchmark/OWL2Bench/AcademicStaff> <http://benchmark/OWL2Bench/Employee_1>)
-
-# Class: <http://benchmark/OWL2Bench/Article> (<http://benchmark/OWL2Bench/Article>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Article> <http://benchmark/OWL2Bench/Publication_0>)
-DisjointUnion(<http://benchmark/OWL2Bench/Article> <http://benchmark/OWL2Bench/ConferencePaper> <http://benchmark/OWL2Bench/JournalArticle> <http://benchmark/OWL2Bench/TechnicalReport>)
-
-# Class: <http://benchmark/OWL2Bench/Article_0> (<http://benchmark/OWL2Bench/Article_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Article_0> <http://benchmark/OWL2Bench/Publication_0>)
-
-# Class: <http://benchmark/OWL2Bench/Article_1> (<http://benchmark/OWL2Bench/Article_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Article_1> <http://benchmark/OWL2Bench/Publication>)
-SubClassOf(<http://benchmark/OWL2Bench/Article_1> <http://benchmark/OWL2Bench/Publication_0>)
-
-# Class: <http://benchmark/OWL2Bench/Badminton> (<http://benchmark/OWL2Bench/Badminton>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Badminton> <http://benchmark/OWL2Bench/Sports>)
-
-# Class: <http://benchmark/OWL2Bench/BadmintonFan> (<http://benchmark/OWL2Bench/BadmintonFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/BadmintonFan> <http://benchmark/OWL2Bench/Person_4>)
-SubClassOf(<http://benchmark/OWL2Bench/BadmintonFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Badminton>))
-
-# Class: <http://benchmark/OWL2Bench/Book> (<http://benchmark/OWL2Bench/Book>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Book> <http://benchmark/OWL2Bench/Publication>)
-
-# Class: <http://benchmark/OWL2Bench/Book_0> (<http://benchmark/OWL2Bench/Book_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Book_0> <http://benchmark/OWL2Bench/Publication_0>)
-
-# Class: <http://benchmark/OWL2Bench/CoEdCollege> (<http://benchmark/OWL2Bench/CoEdCollege>)
-
-SubClassOf(<http://benchmark/OWL2Bench/CoEdCollege> <http://benchmark/OWL2Bench/College>)
-SubClassOf(<http://benchmark/OWL2Bench/CoEdCollege> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Person>))
-
-# Class: <http://benchmark/OWL2Bench/College> (<http://benchmark/OWL2Bench/College>)
-
-SubClassOf(<http://benchmark/OWL2Bench/College> <http://benchmark/OWL2Bench/Organization>)
-SubClassOf(<http://benchmark/OWL2Bench/College> <http://benchmark/OWL2Bench/Organization_0>)
-SubClassOf(<http://benchmark/OWL2Bench/College> <http://benchmark/OWL2Bench/Organization_2>)
-SubClassOf(<http://benchmark/OWL2Bench/College> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Person>))
-
-# Class: <http://benchmark/OWL2Bench/College_0> (<http://benchmark/OWL2Bench/College_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/College_0> <http://benchmark/OWL2Bench/Organization_2>)
-
-# Class: <http://benchmark/OWL2Bench/College_1> (<http://benchmark/OWL2Bench/College_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/College_1> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Class: <http://benchmark/OWL2Bench/ConferencePaper> (<http://benchmark/OWL2Bench/ConferencePaper>)
-
-SubClassOf(<http://benchmark/OWL2Bench/ConferencePaper> <http://benchmark/OWL2Bench/Article>)
-
-# Class: <http://benchmark/OWL2Bench/Course> (<http://benchmark/OWL2Bench/Course>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Course> <http://benchmark/OWL2Bench/TeachingCourse>)
-SubClassOf(<http://benchmark/OWL2Bench/Course> ObjectMinCardinality(1 <http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student>))
-SubClassOf(<http://benchmark/OWL2Bench/Course> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/LeisureStudent>))
-SubClassOf(<http://benchmark/OWL2Bench/Course> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasCode> xsd:string))
-DisjointUnion(<http://benchmark/OWL2Bench/Course> <http://benchmark/OWL2Bench/ElectiveCourse> <http://benchmark/OWL2Bench/UGCourse>)
-
-# Class: <http://benchmark/OWL2Bench/Course_0> (<http://benchmark/OWL2Bench/Course_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Course_0> ObjectMinCardinality(1 <http://benchmark/OWL2Bench/takesCourse_0> <http://benchmark/OWL2Bench/Student_0>))
-SubClassOf(<http://benchmark/OWL2Bench/Course_0> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse_0> <http://benchmark/OWL2Bench/LeisureStudent_0>))
-DisjointUnion(<http://benchmark/OWL2Bench/Course_0> <http://benchmark/OWL2Bench/ElectiveCourse_0> <http://benchmark/OWL2Bench/UGCourse_0>)
-
-# Class: <http://benchmark/OWL2Bench/Course_1> (<http://benchmark/OWL2Bench/Course_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Course_1> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse_1> <http://benchmark/OWL2Bench/LeisureStudent_1>))
-
-# Class: <http://benchmark/OWL2Bench/Course_2> (<http://benchmark/OWL2Bench/Course_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Course_2> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse_2> <http://benchmark/OWL2Bench/LeisureStudent_2>))
-
-# Class: <http://benchmark/OWL2Bench/Course_3> (<http://benchmark/OWL2Bench/Course_3>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Course_3> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse_3> <http://benchmark/OWL2Bench/LeisureStudent_3>))
-
-# Class: <http://benchmark/OWL2Bench/ElectiveCourse> (<http://benchmark/OWL2Bench/ElectiveCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/ElectiveCourse> <http://benchmark/OWL2Bench/Course_3>)
-
-# Class: <http://benchmark/OWL2Bench/ElectiveCourse_0> (<http://benchmark/OWL2Bench/ElectiveCourse_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/ElectiveCourse_0> <http://benchmark/OWL2Bench/Course_1>)
-
-# Class: <http://benchmark/OWL2Bench/Employee> (<http://benchmark/OWL2Bench/Employee>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Staff>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Person_2>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Person_4>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Organization>))
-
-# Class: <http://benchmark/OWL2Bench/Employee_1> (<http://benchmark/OWL2Bench/Employee_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Employee_1> <http://benchmark/OWL2Bench/Person_0>)
-
-# Class: <http://benchmark/OWL2Bench/Engineering> (<http://benchmark/OWL2Bench/Engineering>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Engineering> ObjectOneOf(<http://benchmark/OWL2Bench/AeronauticalEngineering> <http://benchmark/OWL2Bench/BiomedicalEngineering> <http://benchmark/OWL2Bench/ChemicalEngineering> <http://benchmark/OWL2Bench/CivilEngineering> <http://benchmark/OWL2Bench/ComputerEngineering> <http://benchmark/OWL2Bench/ElectricalEngineering> <http://benchmark/OWL2Bench/IndustryEngineering> <http://benchmark/OWL2Bench/MaterialScienceEngineering> <http://benchmark/OWL2Bench/MechanicalEngineering> <http://benchmark/OWL2Bench/PetroleumEngineering>))
-SubClassOf(<http://benchmark/OWL2Bench/Engineering> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/Faculty> (<http://benchmark/OWL2Bench/Faculty>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Faculty> <http://benchmark/OWL2Bench/Employee>)
-SubClassOf(<http://benchmark/OWL2Bench/Faculty> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/teachesCourse> <http://benchmark/OWL2Bench/Course>))
-SubClassOf(<http://benchmark/OWL2Bench/Faculty> ObjectMinCardinality(1 <http://benchmark/OWL2Bench/hasFacultyAdvisor> <http://benchmark/OWL2Bench/Student>))
-
-# Class: <http://benchmark/OWL2Bench/Father> (<http://benchmark/OWL2Bench/Father>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Father> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Man> <http://benchmark/OWL2Bench/Parent>))
-SubClassOf(<http://benchmark/OWL2Bench/Father> <http://benchmark/OWL2Bench/Parent>)
-
-# Class: <http://benchmark/OWL2Bench/Father_0> (<http://benchmark/OWL2Bench/Father_0>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Father_0> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Man_0> <http://benchmark/OWL2Bench/Parent_0>))
-SubClassOf(<http://benchmark/OWL2Bench/Father_0> <http://benchmark/OWL2Bench/Parent_1>)
-
-# Class: <http://benchmark/OWL2Bench/FineArts> (<http://benchmark/OWL2Bench/FineArts>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/FineArts> ObjectOneOf(<http://benchmark/OWL2Bench/Architecture> <http://benchmark/OWL2Bench/AsianArts> <http://benchmark/OWL2Bench/Drama> <http://benchmark/OWL2Bench/LatinArts> <http://benchmark/OWL2Bench/MediaArtsAndSciences> <http://benchmark/OWL2Bench/MedievalArts> <http://benchmark/OWL2Bench/ModernArts> <http://benchmark/OWL2Bench/MusicsClass> <http://benchmark/OWL2Bench/PerformingArts> <http://benchmark/OWL2Bench/TheatreAndDance>))
-SubClassOf(<http://benchmark/OWL2Bench/FineArts> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/Football> (<http://benchmark/OWL2Bench/Football>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Football> <http://benchmark/OWL2Bench/Soccer>)
-SubClassOf(<http://benchmark/OWL2Bench/Football> <http://benchmark/OWL2Bench/Sports>)
-SubClassOf(<http://benchmark/OWL2Bench/Football> <http://benchmark/OWL2Bench/Sports_1>)
-
-# Class: <http://benchmark/OWL2Bench/GovernmentOrganization> (<http://benchmark/OWL2Bench/GovernmentOrganization>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/GovernmentOrganization> ObjectOneOf(<http://benchmark/OWL2Bench/NonProfitOrganization> <http://benchmark/OWL2Bench/ProfitOrganization>))
-
-# Class: <http://benchmark/OWL2Bench/Human> (<http://benchmark/OWL2Bench/Human>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Human> <http://benchmark/OWL2Bench/Person>)
-
-# Class: <http://benchmark/OWL2Bench/HumanitiesAndSocialScience> (<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>)
-
-SubClassOf(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/Interest> (<http://benchmark/OWL2Bench/Interest>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Interest> ObjectMinCardinality(3 <http://benchmark/OWL2Bench/likes> <http://benchmark/OWL2Bench/PeopleWithManyHobbies>))
-
-# Class: <http://benchmark/OWL2Bench/JournalArticle> (<http://benchmark/OWL2Bench/JournalArticle>)
-
-SubClassOf(<http://benchmark/OWL2Bench/JournalArticle> <http://benchmark/OWL2Bench/Article>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent> (<http://benchmark/OWL2Bench/LeisureStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent> <http://benchmark/OWL2Bench/Student>)
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent> <http://benchmark/OWL2Bench/Student_0>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent_0> (<http://benchmark/OWL2Bench/LeisureStudent_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent_0> <http://benchmark/OWL2Bench/Student_1>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent_1> (<http://benchmark/OWL2Bench/LeisureStudent_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent_1> <http://benchmark/OWL2Bench/Student_0>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent_2> (<http://benchmark/OWL2Bench/LeisureStudent_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent_2> <http://benchmark/OWL2Bench/Student_1>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent_3> (<http://benchmark/OWL2Bench/LeisureStudent_3>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent_3> <http://benchmark/OWL2Bench/Student_1>)
-
-# Class: <http://benchmark/OWL2Bench/Management> (<http://benchmark/OWL2Bench/Management>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Management> ObjectOneOf(<http://benchmark/OWL2Bench/DesignManagement> <http://benchmark/OWL2Bench/FinancialAndAccountingManagement> <http://benchmark/OWL2Bench/HumanResourceManagement> <http://benchmark/OWL2Bench/MarketingManagement> <http://benchmark/OWL2Bench/OperationsManagement> <http://benchmark/OWL2Bench/ProjectManagement> <http://benchmark/OWL2Bench/PublicRelationsManagement> <http://benchmark/OWL2Bench/RiskManagement> <http://benchmark/OWL2Bench/SalesManagement> <http://benchmark/OWL2Bench/SupplyChainManagement>))
-SubClassOf(<http://benchmark/OWL2Bench/Management> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/Manual> (<http://benchmark/OWL2Bench/Manual>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Manual> <http://benchmark/OWL2Bench/Publication_1>)
-
-# Class: <http://benchmark/OWL2Bench/Manual_0> (<http://benchmark/OWL2Bench/Manual_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Manual_0> <http://benchmark/OWL2Bench/Publication_1>)
-
-# Class: <http://benchmark/OWL2Bench/Mother> (<http://benchmark/OWL2Bench/Mother>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Mother> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Woman>))
-SubClassOf(<http://benchmark/OWL2Bench/Mother> <http://benchmark/OWL2Bench/Parent>)
-SubClassOf(<http://benchmark/OWL2Bench/Mother> <http://benchmark/OWL2Bench/Parent_1>)
-
-# Class: <http://benchmark/OWL2Bench/Mother_0> (<http://benchmark/OWL2Bench/Mother_0>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Mother_0> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Parent_0> <http://benchmark/OWL2Bench/Woman_0>))
-SubClassOf(<http://benchmark/OWL2Bench/Mother_0> <http://benchmark/OWL2Bench/Parent_2>)
-
-# Class: <http://benchmark/OWL2Bench/Mother_1> (<http://benchmark/OWL2Bench/Mother_1>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Mother_1> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Parent_1> <http://benchmark/OWL2Bench/Woman_1>))
-SubClassOf(<http://benchmark/OWL2Bench/Mother_1> <http://benchmark/OWL2Bench/Parent_2>)
-
-# Class: <http://benchmark/OWL2Bench/NonEngineering> (<http://benchmark/OWL2Bench/NonEngineering>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonEngineering> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonEngineering> ObjectComplementOf(<http://benchmark/OWL2Bench/Engineering>))
-
-# Class: <http://benchmark/OWL2Bench/NonFineArts> (<http://benchmark/OWL2Bench/NonFineArts>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonFineArts> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonFineArts> ObjectComplementOf(<http://benchmark/OWL2Bench/FineArts>))
-
-# Class: <http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> (<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> ObjectComplementOf(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>))
-
-# Class: <http://benchmark/OWL2Bench/NonManagement> (<http://benchmark/OWL2Bench/NonManagement>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonManagement> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonManagement> ObjectComplementOf(<http://benchmark/OWL2Bench/Management>))
-
-# Class: <http://benchmark/OWL2Bench/NonScience> (<http://benchmark/OWL2Bench/NonScience>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonScience> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonScience> ObjectComplementOf(<http://benchmark/OWL2Bench/Science>))
-
-# Class: <http://benchmark/OWL2Bench/OneDayCricketFan> (<http://benchmark/OWL2Bench/OneDayCricketFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/OneDayCricketFan> <http://benchmark/OWL2Bench/Person_4>)
-SubClassOf(<http://benchmark/OWL2Bench/OneDayCricketFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/OneDayCricket>))
-
-# Class: <http://benchmark/OWL2Bench/Organization> (<http://benchmark/OWL2Bench/Organization>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Organization> ObjectUnionOf(<http://benchmark/OWL2Bench/GovernmentOrganization> <http://benchmark/OWL2Bench/PrivateOrganization>))
-
-# Class: <http://benchmark/OWL2Bench/Organization_0> (<http://benchmark/OWL2Bench/Organization_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Organization_0> ObjectUnionOf(<http://benchmark/OWL2Bench/GovernmentOrganization_0> <http://benchmark/OWL2Bench/PrivateOrganization_0>))
-
-# Class: <http://benchmark/OWL2Bench/Organization_1> (<http://benchmark/OWL2Bench/Organization_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Organization_1> ObjectUnionOf(<http://benchmark/OWL2Bench/GovernmentOrganization_1> <http://benchmark/OWL2Bench/PrivateOrganization_1>))
-
-# Class: <http://benchmark/OWL2Bench/PGProgram> (<http://benchmark/OWL2Bench/PGProgram>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/PGStudent>))
-
-# Class: <http://benchmark/OWL2Bench/PGProgram_0> (<http://benchmark/OWL2Bench/PGProgram_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram_0> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram_0> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor_0> <http://benchmark/OWL2Bench/PGStudent_0>))
-
-# Class: <http://benchmark/OWL2Bench/PGStudent> (<http://benchmark/OWL2Bench/PGStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGStudent> <http://benchmark/OWL2Bench/Student_0>)
-SubClassOf(<http://benchmark/OWL2Bench/PGStudent> <http://benchmark/OWL2Bench/Student_2>)
-
-# Class: <http://benchmark/OWL2Bench/PGStudent_0> (<http://benchmark/OWL2Bench/PGStudent_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGStudent_0> <http://benchmark/OWL2Bench/Student_2>)
-
-# Class: <http://benchmark/OWL2Bench/Parent> (<http://benchmark/OWL2Bench/Parent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person_3>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person_4>)
-
-# Class: <http://benchmark/OWL2Bench/Parent_0> (<http://benchmark/OWL2Bench/Parent_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Parent_0> <http://benchmark/OWL2Bench/Person_4>)
-
-# Class: <http://benchmark/OWL2Bench/Parent_1> (<http://benchmark/OWL2Bench/Parent_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Parent_1> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent_1> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent_1> <http://benchmark/OWL2Bench/Person_4>)
-
-# Class: <http://benchmark/OWL2Bench/Parent_2> (<http://benchmark/OWL2Bench/Parent_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Parent_2> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Parent_2> <http://benchmark/OWL2Bench/Person_0>)
-
-# Class: <http://benchmark/OWL2Bench/PeopleWithHobby> (<http://benchmark/OWL2Bench/PeopleWithHobby>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PeopleWithHobby> <http://benchmark/OWL2Bench/Person_2>)
-SubClassOf(<http://benchmark/OWL2Bench/PeopleWithHobby> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/likes> <http://benchmark/OWL2Bench/Interest>))
-
-# Class: <http://benchmark/OWL2Bench/PeopleWithManyHobbies> (<http://benchmark/OWL2Bench/PeopleWithManyHobbies>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PeopleWithManyHobbies> <http://benchmark/OWL2Bench/Person_2>)
-
-# Class: <http://benchmark/OWL2Bench/Person> (<http://benchmark/OWL2Bench/Person>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person> <http://benchmark/OWL2Bench/Woman>)
-SubClassOf(<http://benchmark/OWL2Bench/Person> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasDegreeFrom> <http://benchmark/OWL2Bench/University>))
-SubClassOf(<http://benchmark/OWL2Bench/Person> ObjectMinCardinality(1 <http://benchmark/OWL2Bench/hasAuthor> <http://benchmark/OWL2Bench/Publication>))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasResearchInterest> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasID> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/Person_0> (<http://benchmark/OWL2Bench/Person_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> <http://benchmark/OWL2Bench/Woman_0>)
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasDegreeFrom_0> <http://benchmark/OWL2Bench/University_0>))
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName_0> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress_0> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasResearchInterest_0> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasID_0> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_0> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle_0> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/Person_1> (<http://benchmark/OWL2Bench/Person_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person_1> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasDegreeFrom_1> <http://benchmark/OWL2Bench/University_1>))
-SubClassOf(<http://benchmark/OWL2Bench/Person_1> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName_1> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_1> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress_1> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_1> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasResearchInterest_1> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_1> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle_1> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/Person_2> (<http://benchmark/OWL2Bench/Person_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person_2> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName_2> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_2> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress_2> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_2> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle_2> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/Person_3> (<http://benchmark/OWL2Bench/Person_3>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person_3> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName_3> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_3> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress_3> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person_3> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle_3> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/PhDProgram> (<http://benchmark/OWL2Bench/PhDProgram>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PhDProgram> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/PhDProgram> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/PhDStudent>))
-
-# Class: <http://benchmark/OWL2Bench/PhDStudent> (<http://benchmark/OWL2Bench/PhDStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PhDStudent> <http://benchmark/OWL2Bench/Student>)
-
-# Class: <http://benchmark/OWL2Bench/PrivateOrganization> (<http://benchmark/OWL2Bench/PrivateOrganization>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/PrivateOrganization> ObjectOneOf(<http://benchmark/OWL2Bench/NonProfitOrganization> <http://benchmark/OWL2Bench/ProfitOrganization>))
-
-# Class: <http://benchmark/OWL2Bench/Publication> (<http://benchmark/OWL2Bench/Publication>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Publication> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasDOI> xsd:string))
-DisjointUnion(<http://benchmark/OWL2Bench/Publication> <http://benchmark/OWL2Bench/Article> <http://benchmark/OWL2Bench/Book> <http://benchmark/OWL2Bench/Manual> <http://benchmark/OWL2Bench/Software> <http://benchmark/OWL2Bench/Specification> <http://benchmark/OWL2Bench/UnofficialPublication>)
-
-# Class: <http://benchmark/OWL2Bench/Publication_0> (<http://benchmark/OWL2Bench/Publication_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Publication_0> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasDOI_0> xsd:string))
-DisjointUnion(<http://benchmark/OWL2Bench/Publication_0> <http://benchmark/OWL2Bench/Article_0> <http://benchmark/OWL2Bench/Book_0> <http://benchmark/OWL2Bench/Manual_0> <http://benchmark/OWL2Bench/Software_0> <http://benchmark/OWL2Bench/Specification_0> <http://benchmark/OWL2Bench/UnofficialPublication_0>)
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson> (<http://benchmark/OWL2Bench/RetiringPerson>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson> <http://benchmark/OWL2Bench/Person_3>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson> DataHasValue(<http://benchmark/OWL2Bench/hasAge> "59"))
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson_0> (<http://benchmark/OWL2Bench/RetiringPerson_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_0> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_0> DataHasValue(<http://benchmark/OWL2Bench/hasAge_0> "59"))
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson_1> (<http://benchmark/OWL2Bench/RetiringPerson_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_1> <http://benchmark/OWL2Bench/Person_4>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_1> DataHasValue(<http://benchmark/OWL2Bench/hasAge_1> "59"))
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson_2> (<http://benchmark/OWL2Bench/RetiringPerson_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_2> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_2> DataHasValue(<http://benchmark/OWL2Bench/hasAge_2> "59"))
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson_3> (<http://benchmark/OWL2Bench/RetiringPerson_3>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_3> <http://benchmark/OWL2Bench/Person_3>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson_3> DataHasValue(<http://benchmark/OWL2Bench/hasAge_3> "59"))
-
-# Class: <http://benchmark/OWL2Bench/Science> (<http://benchmark/OWL2Bench/Science>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Science> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/Soccer> (<http://benchmark/OWL2Bench/Soccer>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Soccer> <http://benchmark/OWL2Bench/Sports>)
-
-# Class: <http://benchmark/OWL2Bench/SoccerFan> (<http://benchmark/OWL2Bench/SoccerFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/SoccerFan> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/SoccerFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Soccer>))
-
-# Class: <http://benchmark/OWL2Bench/Software> (<http://benchmark/OWL2Bench/Software>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Software> <http://benchmark/OWL2Bench/Publication>)
-
-# Class: <http://benchmark/OWL2Bench/Software_0> (<http://benchmark/OWL2Bench/Software_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Software_0> <http://benchmark/OWL2Bench/Publication_1>)
-
-# Class: <http://benchmark/OWL2Bench/Specification> (<http://benchmark/OWL2Bench/Specification>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Specification> <http://benchmark/OWL2Bench/Publication_1>)
-
-# Class: <http://benchmark/OWL2Bench/Specification_0> (<http://benchmark/OWL2Bench/Specification_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Specification_0> <http://benchmark/OWL2Bench/Publication>)
-
-# Class: <http://benchmark/OWL2Bench/Sports> (<http://benchmark/OWL2Bench/Sports>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Sports> <http://benchmark/OWL2Bench/Interest>)
-
-# Class: <http://benchmark/OWL2Bench/Sports_1> (<http://benchmark/OWL2Bench/Sports_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Sports_1> <http://benchmark/OWL2Bench/Interest>)
-
-# Class: <http://benchmark/OWL2Bench/Staff> (<http://benchmark/OWL2Bench/Staff>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Staff> <http://benchmark/OWL2Bench/Person_0>)
-
-# Class: <http://benchmark/OWL2Bench/Student> (<http://benchmark/OWL2Bench/Student>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Student> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/Student> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Student> <http://benchmark/OWL2Bench/Person_3>)
-SubClassOf(<http://benchmark/OWL2Bench/Student> <http://benchmark/OWL2Bench/Person_4>)
-
-# Class: <http://benchmark/OWL2Bench/StudentWithBacklog> (<http://benchmark/OWL2Bench/StudentWithBacklog>)
-
-SubClassOf(<http://benchmark/OWL2Bench/StudentWithBacklog> <http://benchmark/OWL2Bench/Student>)
-SubClassOf(<http://benchmark/OWL2Bench/StudentWithBacklog> <http://benchmark/OWL2Bench/Student_1>)
-SubClassOf(<http://benchmark/OWL2Bench/StudentWithBacklog> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasTotalBacklogs>))
-
-# Class: <http://benchmark/OWL2Bench/StudentWithBacklog_0> (<http://benchmark/OWL2Bench/StudentWithBacklog_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/StudentWithBacklog_0> <http://benchmark/OWL2Bench/Student_2>)
-SubClassOf(<http://benchmark/OWL2Bench/StudentWithBacklog_0> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasTotalBacklogs_0>))
-
-# Class: <http://benchmark/OWL2Bench/Student_0> (<http://benchmark/OWL2Bench/Student_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Student_0> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Student_0> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Student_0> <http://benchmark/OWL2Bench/Person_3>)
-
-# Class: <http://benchmark/OWL2Bench/Student_1> (<http://benchmark/OWL2Bench/Student_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Student_1> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/Student_1> <http://benchmark/OWL2Bench/Person_1>)
-SubClassOf(<http://benchmark/OWL2Bench/Student_1> <http://benchmark/OWL2Bench/Person_2>)
-
-# Class: <http://benchmark/OWL2Bench/Student_2> (<http://benchmark/OWL2Bench/Student_2>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Student_2> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Student_2> <http://benchmark/OWL2Bench/Person_4>)
-
-# Class: <http://benchmark/OWL2Bench/T20CricketFan> (<http://benchmark/OWL2Bench/T20CricketFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/T20CricketFan> <http://benchmark/OWL2Bench/Person_0>)
-SubClassOf(<http://benchmark/OWL2Bench/T20CricketFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/T20Cricket>))
-
-# Class: <http://benchmark/OWL2Bench/TeachingCourse> (<http://benchmark/OWL2Bench/TeachingCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/TeachingCourse> <http://benchmark/OWL2Bench/Work>)
-
-# Class: <http://benchmark/OWL2Bench/TechnicalReport> (<http://benchmark/OWL2Bench/TechnicalReport>)
-
-SubClassOf(<http://benchmark/OWL2Bench/TechnicalReport> <http://benchmark/OWL2Bench/Article_0>)
-SubClassOf(<http://benchmark/OWL2Bench/TechnicalReport> <http://benchmark/OWL2Bench/Article_1>)
-
-# Class: <http://benchmark/OWL2Bench/Tennis> (<http://benchmark/OWL2Bench/Tennis>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Tennis> <http://benchmark/OWL2Bench/Sports>)
-SubClassOf(<http://benchmark/OWL2Bench/Tennis> <http://benchmark/OWL2Bench/Sports_1>)
-
-# Class: <http://benchmark/OWL2Bench/TennisFan> (<http://benchmark/OWL2Bench/TennisFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/TennisFan> <http://benchmark/OWL2Bench/Person_4>)
-SubClassOf(<http://benchmark/OWL2Bench/TennisFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Tennis>))
-
-# Class: <http://benchmark/OWL2Bench/UGCourse> (<http://benchmark/OWL2Bench/UGCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGCourse> <http://benchmark/OWL2Bench/Course_3>)
-
-# Class: <http://benchmark/OWL2Bench/UGCourse_0> (<http://benchmark/OWL2Bench/UGCourse_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGCourse_0> <http://benchmark/OWL2Bench/Course_3>)
-
-# Class: <http://benchmark/OWL2Bench/UGProgram> (<http://benchmark/OWL2Bench/UGProgram>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGProgram> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/UGProgram> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/UGStudent>))
-
-# Class: <http://benchmark/OWL2Bench/UGProgram_0> (<http://benchmark/OWL2Bench/UGProgram_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGProgram_0> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/UGProgram_0> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor_0> <http://benchmark/OWL2Bench/UGStudent_0>))
-
-# Class: <http://benchmark/OWL2Bench/UGStudent> (<http://benchmark/OWL2Bench/UGStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGStudent> <http://benchmark/OWL2Bench/Student>)
-SubClassOf(<http://benchmark/OWL2Bench/UGStudent> <http://benchmark/OWL2Bench/Student_0>)
-
-# Class: <http://benchmark/OWL2Bench/UGStudent_0> (<http://benchmark/OWL2Bench/UGStudent_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGStudent_0> <http://benchmark/OWL2Bench/Student>)
-
-# Class: <http://benchmark/OWL2Bench/University> (<http://benchmark/OWL2Bench/University>)
-
-SubClassOf(<http://benchmark/OWL2Bench/University> <http://benchmark/OWL2Bench/Organization_1>)
-
-# Class: <http://benchmark/OWL2Bench/University_0> (<http://benchmark/OWL2Bench/University_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/University_0> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Class: <http://benchmark/OWL2Bench/University_1> (<http://benchmark/OWL2Bench/University_1>)
-
-SubClassOf(<http://benchmark/OWL2Bench/University_1> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Class: <http://benchmark/OWL2Bench/UnofficialPublication> (<http://benchmark/OWL2Bench/UnofficialPublication>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UnofficialPublication> <http://benchmark/OWL2Bench/Publication>)
-
-# Class: <http://benchmark/OWL2Bench/UnofficialPublication_0> (<http://benchmark/OWL2Bench/UnofficialPublication_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UnofficialPublication_0> <http://benchmark/OWL2Bench/Publication>)
-
-# Class: <http://benchmark/OWL2Bench/WomenCollege> (<http://benchmark/OWL2Bench/WomenCollege>)
-
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege> <http://benchmark/OWL2Bench/College>)
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege> <http://benchmark/OWL2Bench/College_1>)
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Woman>))
-
-# Class: <http://benchmark/OWL2Bench/WomenCollege_0> (<http://benchmark/OWL2Bench/WomenCollege_0>)
-
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege_0> <http://benchmark/OWL2Bench/College_0>)
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege_0> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasStudent_0> <http://benchmark/OWL2Bench/Woman_0>))
-
-
-############################
-#   Named Individuals
-############################
-
-# Individual: <course_1_0> (<course_1_0>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasCode_2> <course_1_0> "mLqipL")
-
-# Individual: <course_1_1> (<course_1_1>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/hasWork> <course_1_1> <work2_1>)
-
-# Individual: <course_1_2> (<course_1_2>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasDOI_0> <course_1_2> "false"^^xsd:boolean)
-
-# Individual: <faculty_03_2> (<faculty_03_2>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/isFacultyOf> <faculty_03_2> <organization_37_2>)
-
-# Individual: <person_010_1> (<person_010_1>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasName_2> <person_010_1> "0.9221257"^^xsd:float)
-
-# Individual: <person_010_3> (<person_010_3>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/advises> <person_010_3> < Course_1_3>)
-
-# Individual: <person_210_4> (<person_210_4>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/isDeanOf_0> <person_210_4> <organization_47_4>)
-
-# Individual: <person_410_0> (<person_410_0>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/hasCollaborationWith> <person_410_0> < Course_1_0>)
-
-# Individual: <person_610_3> (<person_610_3>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasEmailAddress> <person_610_3> "595"^^xsd:integer)
-
-# Individual: <publication_13_4> (<publication_13_4>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasPublicationDate> <publication_13_4> "0.38081338868638603"^^xsd:double)
-
-
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/isPartOf>) <http://benchmark/OWL2Bench/isMemberOf>)
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/isSubOrganizationOf>) <http://benchmark/OWL2Bench/isStudentOf>)
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/registeredTo> <http://benchmark/OWL2Bench/isTaughtBy>) <http://benchmark/OWL2Bench/hasTeacher>)
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/isPartOf>) <http://benchmark/OWL2Bench/isMemberOf>)
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/isSubOrganizationOf>) <http://benchmark/OWL2Bench/worksFor>)
-)
+Prefix: : <http://benchmark/OWL2Bench/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: 
+
+Datatype: rdfs:Literal
+
+    
+Datatype: xsd:dateTime
+
+    
+Datatype: xsd:dateTimeStamp
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:negativeInteger
+
+    
+Datatype: xsd:nonNegativeInteger
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: advises
+
+    EquivalentTo: 
+        isAdvisorOf
+    
+    DisjointWith: 
+        courseOfferedBy,
+        enrollFor_1,
+        hasMajor
+    
+    Domain: 
+        Person_3,
+        Person_4
+    
+    Range: 
+        Person_1,
+        Person_3
+    
+    
+ObjectProperty: advises_0
+
+    DisjointWith: 
+        enrollFor_0
+    
+    
+ObjectProperty: courseOfferedBy
+
+    DisjointWith: 
+        advises
+    
+    
+ObjectProperty: dislikes
+
+    DisjointWith: 
+        likes
+    
+    
+ObjectProperty: enrollFor
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Student_3
+    
+    Range: 
+        Program
+    
+    
+ObjectProperty: enrollFor_0
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    DisjointWith: 
+        advises_0
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Student_0
+    
+    Range: 
+        Program
+    
+    
+ObjectProperty: enrollFor_1
+
+    DisjointWith: 
+        advises
+    
+    
+ObjectProperty: enrollIn
+
+    SubPropertyOf: 
+        isStudentOf
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Student_1
+    
+    Range: 
+        Department
+    
+    
+ObjectProperty: enrollIn_0
+
+    SubPropertyOf: 
+        isStudentOf
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Student_1
+    
+    Range: 
+        Department
+    
+    
+ObjectProperty: hasAdvisor
+
+    EquivalentTo: 
+        isAdvisedBy
+    
+    Domain: 
+        Person,
+        Person_3
+    
+    
+ObjectProperty: hasAuthor
+
+    Domain: 
+        Publication_0
+    
+    Range: 
+        Person_3
+    
+    
+ObjectProperty: hasCollaborationWith
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Symmetric
+    
+    Domain: 
+        Person
+    
+    
+ObjectProperty: hasCollaborationWith_0
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Symmetric
+    
+    Domain: 
+        Person_0
+    
+    Range: 
+        Person_1
+    
+    
+ObjectProperty: hasCollaborationWith_1
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Symmetric
+    
+    Domain: 
+        Person_3
+    
+    Range: 
+        Person_2
+    
+    
+ObjectProperty: hasDean
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Organization_1
+    
+    
+ObjectProperty: hasDegreeFrom
+
+    EquivalentTo: 
+        isAlumniOf
+    
+    Domain: 
+        Person_3,
+        Person_4
+    
+    Range: 
+        University_0,
+        University_2
+    
+    
+ObjectProperty: hasDegreeFrom_0
+
+    Domain: 
+        Person_2
+    
+    Range: 
+        University_0
+    
+    
+ObjectProperty: hasDegreeFrom_1
+
+    Domain: 
+        Person_0
+    
+    Range: 
+        University_0
+    
+    
+ObjectProperty: hasFacultyAdvisor
+
+    SubPropertyOf: 
+        hasAdvisor
+    
+    Domain: 
+        Student_1,
+        Student_3
+    
+    Range: 
+        Faculty,
+        Faculty_0
+    
+    
+ObjectProperty: hasMajor
+
+    DisjointWith: 
+        advises
+    
+    
+ObjectProperty: hasMember
+
+    Domain: 
+        Organization_2
+    
+    Range: 
+        Person_2,
+        Person_4
+    
+    InverseOf: 
+        isMemberOf
+    
+    
+ObjectProperty: hasPart
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        Organization,
+        Organization_1
+    
+    Range: 
+        Organization_4,
+        Organization_5
+    
+    InverseOf: 
+        isPartOf
+    
+    
+ObjectProperty: hasSameHomeTownWith
+
+    Characteristics: 
+        Symmetric,
+        Transitive
+    
+    Domain: 
+        Person_1,
+        Person_5
+    
+    Range: 
+        Person_0,
+        Person_2
+    
+    
+ObjectProperty: hasSameHomeTownWith_0
+
+    Characteristics: 
+        Symmetric
+    
+    Domain: 
+        Person_0
+    
+    Range: 
+        Person_4
+    
+    
+ObjectProperty: hasStudent
+
+    SubPropertyOf: 
+        hasMember
+    
+    Domain: 
+        Organization_2,
+        Organization_3
+    
+    Range: 
+        Student_1,
+        Student_4
+    
+    InverseOf: 
+        isStudentOf
+    
+    
+ObjectProperty: hasStudent_0
+
+    SubPropertyOf: 
+        hasMember
+    
+    Domain: 
+        Organization_0
+    
+    Range: 
+        Student_1
+    
+    
+ObjectProperty: hasSubOrganization
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        Organization
+    
+    
+ObjectProperty: hasTeacher
+
+    SubPropertyChain: 
+        registeredTo o isTaughtBy
+    
+    InverseOf: 
+        teachesTo
+    
+    
+ObjectProperty: hasWork
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Range: 
+        Work
+    
+    
+ObjectProperty: isAdvisedBy
+
+    EquivalentTo: 
+        hasAdvisor
+    
+    Characteristics: 
+        Irreflexive
+    
+    Domain: 
+        Person_2,
+        Person_4
+    
+    Range: 
+        Person_1,
+        Person_6
+    
+    InverseOf: 
+        isAdvisorOf
+    
+    
+ObjectProperty: isAdvisedBy_0
+
+    Characteristics: 
+        Irreflexive
+    
+    Domain: 
+        Person_3
+    
+    Range: 
+        Person
+    
+    
+ObjectProperty: isAdvisedBy_1
+
+    Characteristics: 
+        Irreflexive
+    
+    Domain: 
+        Person_0
+    
+    Range: 
+        Person_6
+    
+    
+ObjectProperty: isAdvisorOf
+
+    EquivalentTo: 
+        advises
+    
+    InverseOf: 
+        isAdvisedBy
+    
+    
+ObjectProperty: isAffiliatedOrganizationOf
+
+    Characteristics: 
+        Irreflexive,
+        Asymmetric
+    
+    Domain: 
+        Organization,
+        Organization_1
+    
+    Range: 
+        Organization_3
+    
+    
+ObjectProperty: isAffiliatedOrganizationOf_0
+
+    Characteristics: 
+        Irreflexive,
+        Asymmetric
+    
+    Domain: 
+        Organization
+    
+    Range: 
+        Organization_0
+    
+    
+ObjectProperty: isAffiliatedOrganizationOf_1
+
+    Characteristics: 
+        Asymmetric
+    
+    Domain: 
+        Organization_1
+    
+    Range: 
+        Organization_2
+    
+    
+ObjectProperty: isAffiliatedOrganizationOf_2
+
+    Characteristics: 
+        Asymmetric
+    
+    Domain: 
+        Organization_3
+    
+    Range: 
+        Organization_0
+    
+    
+ObjectProperty: isAffiliatedOrganizationOf_3
+
+    Characteristics: 
+        Asymmetric
+    
+    Domain: 
+        Organization_2
+    
+    Range: 
+        Organization
+    
+    
+ObjectProperty: isAlumniOf
+
+    EquivalentTo: 
+        hasDegreeFrom
+    
+    Domain: 
+        Person_0,
+        Person_4
+    
+    
+ObjectProperty: isCrazyAbout
+
+    SubPropertyOf: 
+        loves
+    
+    Domain: 
+        Person_1,
+        Person_5
+    
+    
+ObjectProperty: isDeanOf
+
+    Characteristics: 
+        InverseFunctional
+    
+    Domain: 
+        Person_2,
+        Person_4
+    
+    Range: 
+        Organization,
+        Organization_5
+    
+    
+ObjectProperty: isDeanOf_0
+
+    Characteristics: 
+        InverseFunctional
+    
+    Domain: 
+        Person
+    
+    Range: 
+        Organization_2
+    
+    
+ObjectProperty: isDeanOf_1
+
+    Characteristics: 
+        InverseFunctional
+    
+    Domain: 
+        Person_0
+    
+    Range: 
+        Organization
+    
+    
+ObjectProperty: isFacultyOf
+
+    SubPropertyOf: 
+        worksFor
+    
+    Domain: 
+        Faculty,
+        Faculty_0
+    
+    Range: 
+        Organization_1,
+        Organization_4
+    
+    
+ObjectProperty: isFullProfessorOf
+
+    SubPropertyOf: 
+        isProfessorOf,
+        isProfessorOf_0,
+        isProfessorOf_1
+    
+    
+ObjectProperty: isFullProfessorOf_0
+
+    SubPropertyOf: 
+        isProfessorOf
+    
+    
+ObjectProperty: isHeadOf
+
+    SubPropertyOf: 
+        isFullProfessorOf,
+        isFullProfessorOf_0
+    
+    Characteristics: 
+        InverseFunctional
+    
+    
+ObjectProperty: isHeadOf_0
+
+    SubPropertyOf: 
+        isFullProfessorOf
+    
+    Characteristics: 
+        InverseFunctional
+    
+    
+ObjectProperty: isMemberOf
+
+    SubPropertyChain: 
+        enrollIn o isPartOf
+    
+    SubPropertyChain: 
+        worksFor o isPartOf
+    
+    Domain: 
+        Person
+    
+    Range: 
+        Organization_0,
+        Organization_4
+    
+    InverseOf: 
+        hasMember
+    
+    
+ObjectProperty: isPartOf
+
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    EquivalentTo: 
+        isSubOrganizationOf
+    
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        Organization,
+        Organization_3
+    
+    Range: 
+        Organization_3,
+        Organization_4
+    
+    InverseOf: 
+        hasPart
+    
+    
+ObjectProperty: isProfessorOf
+
+    SubPropertyOf: 
+        isFacultyOf
+    
+    
+ObjectProperty: isProfessorOf_0
+
+    SubPropertyOf: 
+        isFacultyOf
+    
+    
+ObjectProperty: isProfessorOf_1
+
+    SubPropertyOf: 
+        isFacultyOf
+    
+    
+ObjectProperty: isStudentOf
+
+    SubPropertyChain: 
+        enrollIn o isSubOrganizationOf
+    
+    Domain: 
+        Student
+    
+    InverseOf: 
+        hasStudent
+    
+    
+ObjectProperty: isSubOrganizationOf
+
+    EquivalentTo: 
+        isPartOf
+    
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        Organization,
+        Organization_0
+    
+    Range: 
+        Organization,
+        Organization_2
+    
+    
+ObjectProperty: isTaughtBy
+
+    Domain: 
+        Course,
+        Course_2
+    
+    Range: 
+        Faculty_1
+    
+    
+ObjectProperty: knows
+
+    Characteristics: 
+        Reflexive
+    
+    Domain: 
+        Person_2,
+        Person_3
+    
+    Range: 
+        Person_1,
+        Person_6
+    
+    
+ObjectProperty: knows_0
+
+    Characteristics: 
+        Reflexive
+    
+    Domain: 
+        Person_5
+    
+    Range: 
+        Person_1
+    
+    
+ObjectProperty: knows_1
+
+    Characteristics: 
+        Reflexive
+    
+    Domain: 
+        Person_2
+    
+    Range: 
+        Person_4
+    
+    
+ObjectProperty: knows_2
+
+    Characteristics: 
+        Reflexive
+    
+    Domain: 
+        Person
+    
+    Range: 
+        Person_3
+    
+    
+ObjectProperty: knows_3
+
+    Characteristics: 
+        Reflexive
+    
+    Domain: 
+        Person_4
+    
+    Range: 
+        Person_2
+    
+    
+ObjectProperty: likes
+
+    DisjointWith: 
+        dislikes
+    
+    Domain: 
+        Person_1,
+        Person_4
+    
+    
+ObjectProperty: loves
+
+    SubPropertyOf: 
+        likes
+    
+    Domain: 
+        Person_0,
+        Person_4
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+ObjectProperty: registeredTo
+
+    EquivalentTo: 
+        takesCourse
+    
+    Domain: 
+        Student_0
+    
+    Range: 
+        Course_1
+    
+    
+ObjectProperty: takesCourse
+
+    EquivalentTo: 
+        registeredTo
+    
+    Domain: 
+        Student
+    
+    
+ObjectProperty: takesCourse_0
+
+    Domain: 
+        Student_1
+    
+    Range: 
+        Course_3
+    
+    
+ObjectProperty: takesCourse_1
+
+    Domain: 
+        Student_0
+    
+    Range: 
+        Course_4
+    
+    
+ObjectProperty: takesCourse_2
+
+    Domain: 
+        Student_3
+    
+    Range: 
+        Course
+    
+    
+ObjectProperty: takesCourse_3
+
+    Domain: 
+        Student_2
+    
+    Range: 
+        Course_2
+    
+    
+ObjectProperty: teachesCourse
+
+    SubPropertyOf: 
+        hasWork
+    
+    Domain: 
+        Faculty_0,
+        Faculty_1
+    
+    Range: 
+        Course
+    
+    
+ObjectProperty: teachesTo
+
+    Domain: 
+        Faculty,
+        Faculty_0
+    
+    InverseOf: 
+        hasTeacher
+    
+    
+ObjectProperty: worksFor
+
+    SubPropertyChain: 
+        worksFor o isSubOrganizationOf
+    
+    Domain: 
+        Employee_0,
+        Employee_1
+    
+    Range: 
+        Organization_0,
+        Organization_4
+    
+    
+DataProperty: hasAge
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Person,
+        Person_4
+    
+    Range: 
+         not xsd:negativeInteger
+    
+    
+DataProperty: hasAge_0
+
+    Domain: 
+        Person_5
+    
+    Range: 
+         not xsd:negativeInteger
+    
+    
+DataProperty: hasAge_1
+
+    Domain: 
+        Person
+    
+    Range: 
+         not xsd:negativeInteger
+    
+    
+DataProperty: hasAge_2
+
+    Domain: 
+        Person_2
+    
+    Range: 
+         not xsd:negativeInteger
+    
+    
+DataProperty: hasAge_3
+
+    Domain: 
+        Person_8
+    
+    Range: 
+         not xsd:negativeInteger
+    
+    
+DataProperty: hasCode
+
+    Characteristics: 
+        Functional
+    
+    Range: 
+        (rdfs:Literal or xsd:string)
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasID
+    
+    
+DataProperty: hasCode_0
+
+    Characteristics: 
+        Functional
+    
+    Range: 
+        (rdfs:Literal or xsd:string)
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasID_0
+    
+    
+DataProperty: hasCode_1
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasID_1
+    
+    
+DataProperty: hasCode_2
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasID_2
+    
+    
+DataProperty: hasCode_3
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasID_3
+    
+    
+DataProperty: hasDOI
+
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasDOI_0
+
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasEmailAddress
+
+    Domain: 
+        Person_6,
+        Person_7
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasEmailAddress_0
+
+    Domain: 
+        Person_2
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasEmailAddress_1
+
+    Domain: 
+        Person_4
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasEmailAddress_2
+
+    Domain: 
+        Person_3
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasEmailAddress_3
+
+    Domain: 
+        Person_7
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasID
+
+    Characteristics: 
+        Functional
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasCode
+    
+    
+DataProperty: hasID_0
+
+    Characteristics: 
+        Functional
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasCode_0
+    
+    
+DataProperty: hasID_1
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasCode_1
+    
+    
+DataProperty: hasID_2
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasCode_2
+    
+    
+DataProperty: hasID_3
+
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    EquivalentTo: 
+        hasCode_3
+    
+    
+DataProperty: hasName
+
+    Domain: 
+        Person_0,
+        Person_4
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasName_0
+
+    Domain: 
+        Person_6
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasName_1
+
+    Domain: 
+        Person_1
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasName_2
+
+    Domain: 
+        Person_3
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasName_3
+
+    Domain: 
+        Person_8
+    
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasPublicationDate
+
+    Domain: 
+        Publication,
+        Publication_0
+    
+    Range: 
+        (xsd:dateTime or xsd:dateTimeStamp)
+    
+    
+DataProperty: hasResearchInterest
+
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasResearchInterest_0
+
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasResearchInterest_1
+
+    Range: 
+        rdfs:Literal
+    
+    
+DataProperty: hasTitle
+
+    Domain: 
+        Person_4,
+        Person_6
+    
+    
+DataProperty: hasTitle_0
+
+    Domain: 
+        Person_4
+    
+    
+DataProperty: hasTitle_1
+
+    Domain: 
+        Person_5
+    
+    
+DataProperty: hasTitle_2
+
+    Domain: 
+        Person_7
+    
+    
+DataProperty: hasTitle_3
+
+    Domain: 
+        Person_4
+    
+    
+DataProperty: hasTotalBacklogs
+
+    Domain: 
+        Student,
+        Student_0
+    
+    Range: 
+        (xsd:integer and xsd:nonNegativeInteger),
+        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
+    
+    
+DataProperty: hasTotalBacklogs_0
+
+    Domain: 
+        Student_3
+    
+    Range: 
+        (xsd:integer and xsd:nonNegativeInteger),
+        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
+    
+    
+DataProperty: hasTotalBacklogs_1
+
+    Domain: 
+        Student_0
+    
+    Range: 
+        (xsd:integer and xsd:nonNegativeInteger)
+    
+    
+DataProperty: hasTotalBacklogs_2
+
+    Domain: 
+        Student_0
+    
+    Range: 
+        (xsd:integer and xsd:nonNegativeInteger)
+    
+    
+DataProperty: hasTotalBacklogs_3
+
+    Domain: 
+        Student
+    
+    Range: 
+        (xsd:integer and xsd:nonNegativeInteger)
+    
+    
+DataProperty: owl:topDataProperty
+
+    
+Class: AcademicStaff
+
+    EquivalentTo: 
+        Faculty
+    
+    SubClassOf: 
+        Employee,
+        Employee_1
+    
+    
+Class: Article
+
+    SubClassOf: 
+        Publication_1
+    
+    DisjointUnionOf: 
+        ConferencePaper, JournalArticle, TechnicalReport
+    
+    
+Class: Article_0
+
+    SubClassOf: 
+        Publication_0
+    
+    
+Class: Article_1
+
+    SubClassOf: 
+        Publication_0
+    
+    
+Class: Badminton
+
+    SubClassOf: 
+        Sports,
+        Sports_0
+    
+    
+Class: BadmintonFan
+
+    SubClassOf: 
+        Person_1,
+        isCrazyAbout value Badminton
+    
+    
+Class: Book
+
+    SubClassOf: 
+        Publication
+    
+    
+Class: Book_0
+
+    SubClassOf: 
+        Publication_1
+    
+    
+Class: CoEdCollege
+
+    SubClassOf: 
+        College,
+        College_0,
+        hasStudent some Person
+    
+    
+Class: College
+
+    SubClassOf: 
+        Organization_0,
+        Organization_1,
+        Organization_2,
+        hasStudent some Person
+    
+    
+Class: CollegeDiscipline
+
+    
+Class: College_0
+
+    SubClassOf: 
+        Organization_0
+    
+    
+Class: College_1
+
+    SubClassOf: 
+        Organization_2
+    
+    
+Class: ConferencePaper
+
+    SubClassOf: 
+        Article_0
+    
+    
+Class: Course
+
+    EquivalentTo: 
+        TeachingCourse
+    
+    SubClassOf: 
+        takesCourse min 1 Student,
+        takesCourse max 1 LeisureStudent,
+        hasCode exactly 1 xsd:string
+    
+    DisjointUnionOf: 
+        ElectiveCourse, UGCourse
+    
+    
+Class: Course_0
+
+    SubClassOf: 
+        takesCourse_0 min 1 Student_0,
+        takesCourse_0 max 1 LeisureStudent_0
+    
+    DisjointUnionOf: 
+        ElectiveCourse_0, UGCourse_0
+    
+    
+Class: Course_1
+
+    SubClassOf: 
+        takesCourse_1 max 1 LeisureStudent_1
+    
+    
+Class: Course_2
+
+    SubClassOf: 
+        takesCourse_2 max 1 LeisureStudent_2
+    
+    
+Class: Course_3
+
+    SubClassOf: 
+        takesCourse_3 max 1 LeisureStudent_3
+    
+    
+Class: Course_4
+
+    
+Class: Department
+
+    
+Class: ElectiveCourse
+
+    SubClassOf: 
+        Course_4
+    
+    
+Class: ElectiveCourse_0
+
+    SubClassOf: 
+        Course_4
+    
+    
+Class: Employee
+
+    EquivalentTo: 
+        Staff
+    
+    SubClassOf: 
+        Person_0,
+        Person_2,
+        Person_3,
+        Person_4,
+        worksFor some Organization
+    
+    
+Class: Employee_0
+
+    SubClassOf: 
+        Person_3
+    
+    
+Class: Employee_1
+
+    SubClassOf: 
+        Person_4
+    
+    
+Class: Engineering
+
+    EquivalentTo: 
+        {AeronauticalEngineering , BiomedicalEngineering , ChemicalEngineering , CivilEngineering , ComputerEngineering , ElectricalEngineering , IndustryEngineering , MaterialScienceEngineering , MechanicalEngineering , PetroleumEngineering}
+    
+    SubClassOf: 
+        CollegeDiscipline
+    
+    
+Class: Faculty
+
+    EquivalentTo: 
+        AcademicStaff
+    
+    SubClassOf: 
+        Employee,
+        Employee_0,
+        teachesCourse some Course,
+        hasFacultyAdvisor min 1 Student
+    
+    
+Class: Faculty_0
+
+    
+Class: Faculty_1
+
+    
+Class: Father
+
+    EquivalentTo: 
+        Man
+         and Parent
+    
+    SubClassOf: 
+        Parent_0,
+        Parent_2
+    
+    
+Class: Father_0
+
+    EquivalentTo: 
+        Man_0
+         and Parent_0
+    
+    SubClassOf: 
+        Parent
+    
+    
+Class: FineArts
+
+    EquivalentTo: 
+        {Architecture , AsianArts , Drama , LatinArts , MediaArtsAndSciences , MedievalArts , ModernArts , MusicsClass , PerformingArts , TheatreAndDance}
+    
+    SubClassOf: 
+        CollegeDiscipline
+    
+    
+Class: Football
+
+    EquivalentTo: 
+        Soccer
+    
+    SubClassOf: 
+        Sports,
+        Sports_1
+    
+    
+Class: GovernmentOrganization
+
+    EquivalentTo: 
+        {NonProfitOrganization , ProfitOrganization}
+    
+    
+Class: GovernmentOrganization_0
+
+    
+Class: GovernmentOrganization_1
+
+    
+Class: Human
+
+    EquivalentTo: 
+        Person
+    
+    
+Class: HumanitiesAndSocialScience
+
+    SubClassOf: 
+        CollegeDiscipline
+    
+    
+Class: Interest
+
+    SubClassOf: 
+        likes min 3 PeopleWithManyHobbies
+    
+    
+Class: JournalArticle
+
+    SubClassOf: 
+        Article,
+        Article_1
+    
+    
+Class: LeisureStudent
+
+    SubClassOf: 
+        Student_1
+    
+    
+Class: LeisureStudent_0
+
+    SubClassOf: 
+        Student_2
+    
+    
+Class: LeisureStudent_1
+
+    SubClassOf: 
+        Student_2
+    
+    
+Class: LeisureStudent_2
+
+    SubClassOf: 
+        Student_0
+    
+    
+Class: LeisureStudent_3
+
+    SubClassOf: 
+        Student
+    
+    
+Class: Man
+
+    
+Class: Man_0
+
+    
+Class: Management
+
+    EquivalentTo: 
+        {DesignManagement , FinancialAndAccountingManagement , HumanResourceManagement , MarketingManagement , OperationsManagement , ProjectManagement , PublicRelationsManagement , RiskManagement , SalesManagement , SupplyChainManagement}
+    
+    SubClassOf: 
+        CollegeDiscipline
+    
+    
+Class: Manual
+
+    SubClassOf: 
+        Publication_1
+    
+    
+Class: Manual_0
+
+    SubClassOf: 
+        Publication_1
+    
+    
+Class: Mother
+
+    EquivalentTo: 
+        Parent
+         and Woman
+    
+    SubClassOf: 
+        Parent
+    
+    
+Class: Mother_0
+
+    EquivalentTo: 
+        Parent_0
+         and Woman_0
+    
+    SubClassOf: 
+        Parent_1
+    
+    
+Class: Mother_1
+
+    EquivalentTo: 
+        Parent_1
+         and Woman_1
+    
+    SubClassOf: 
+        Parent_0
+    
+    
+Class: NonEngineering
+
+    SubClassOf: 
+        CollegeDiscipline,
+        not (Engineering)
+    
+    
+Class: NonFineArts
+
+    SubClassOf: 
+        CollegeDiscipline,
+        not (FineArts)
+    
+    
+Class: NonHumanitiesAndSocialScience
+
+    SubClassOf: 
+        CollegeDiscipline,
+        not (HumanitiesAndSocialScience)
+    
+    
+Class: NonManagement
+
+    SubClassOf: 
+        CollegeDiscipline,
+        not (Management)
+    
+    
+Class: NonScience
+
+    SubClassOf: 
+        CollegeDiscipline,
+        not (Science)
+    
+    
+Class: OneDayCricketFan
+
+    SubClassOf: 
+        Person,
+        isCrazyAbout value OneDayCricket
+    
+    
+Class: Organization
+
+    SubClassOf: 
+        GovernmentOrganization or PrivateOrganization
+    
+    
+Class: Organization_0
+
+    SubClassOf: 
+        GovernmentOrganization_0 or PrivateOrganization_0
+    
+    
+Class: Organization_1
+
+    SubClassOf: 
+        GovernmentOrganization_1 or PrivateOrganization_1
+    
+    
+Class: Organization_2
+
+    
+Class: Organization_3
+
+    
+Class: Organization_4
+
+    
+Class: Organization_5
+
+    
+Class: PGProgram
+
+    SubClassOf: 
+        Program,
+        enrollFor exactly 1 PGStudent
+    
+    
+Class: PGProgram_0
+
+    SubClassOf: 
+        Program,
+        enrollFor_0 exactly 1 PGStudent_0
+    
+    
+Class: PGStudent
+
+    SubClassOf: 
+        Student,
+        Student_1
+    
+    
+Class: PGStudent_0
+
+    SubClassOf: 
+        Student
+    
+    
+Class: Parent
+
+    SubClassOf: 
+        Person,
+        Person_2,
+        Person_3
+    
+    
+Class: Parent_0
+
+    SubClassOf: 
+        Person,
+        Person_0,
+        Person_4
+    
+    
+Class: Parent_1
+
+    SubClassOf: 
+        Person_0,
+        Person_4
+    
+    
+Class: Parent_2
+
+    SubClassOf: 
+        Person
+    
+    
+Class: PeopleWithHobby
+
+    SubClassOf: 
+        Person_3,
+        likes some Interest
+    
+    
+Class: PeopleWithManyHobbies
+
+    SubClassOf: 
+        Person
+    
+    
+Class: Person
+
+    EquivalentTo: 
+        Human
+    
+    SubClassOf: 
+        Woman,
+        hasDegreeFrom only University,
+        hasAuthor min 1 Publication,
+        hasName some xsd:string,
+        hasEmailAddress only xsd:string,
+        hasResearchInterest min 1 xsd:string,
+        hasID exactly 1 xsd:string,
+        hasTitle max 5 xsd:string
+    
+    
+Class: Person_0
+
+    SubClassOf: 
+        Woman_0,
+        hasDegreeFrom_0 only University_0,
+        hasName_0 some xsd:string,
+        hasEmailAddress_0 only xsd:string,
+        hasResearchInterest_0 min 1 xsd:string,
+        hasID_0 exactly 1 xsd:string,
+        hasTitle_0 max 5 xsd:string
+    
+    
+Class: Person_1
+
+    SubClassOf: 
+        hasDegreeFrom_1 only University_1,
+        hasName_1 some xsd:string,
+        hasEmailAddress_1 only xsd:string,
+        hasResearchInterest_1 min 1 xsd:string,
+        hasTitle_1 max 5 xsd:string
+    
+    
+Class: Person_2
+
+    SubClassOf: 
+        hasName_2 some xsd:string,
+        hasEmailAddress_2 only xsd:string,
+        hasTitle_2 max 5 xsd:string
+    
+    
+Class: Person_3
+
+    SubClassOf: 
+        hasName_3 some xsd:string,
+        hasEmailAddress_3 only xsd:string,
+        hasTitle_3 max 5 xsd:string
+    
+    
+Class: Person_4
+
+    
+Class: Person_5
+
+    
+Class: Person_6
+
+    
+Class: Person_7
+
+    
+Class: Person_8
+
+    
+Class: PhDProgram
+
+    SubClassOf: 
+        Program,
+        enrollFor exactly 1 PhDStudent
+    
+    
+Class: PhDStudent
+
+    SubClassOf: 
+        Student_0
+    
+    
+Class: PrivateOrganization
+
+    EquivalentTo: 
+        {NonProfitOrganization , ProfitOrganization}
+    
+    
+Class: PrivateOrganization_0
+
+    
+Class: PrivateOrganization_1
+
+    
+Class: Program
+
+    
+Class: Publication
+
+    SubClassOf: 
+        hasDOI exactly 1 xsd:string
+    
+    DisjointUnionOf: 
+        Article, Book, Manual, Software, Specification, UnofficialPublication
+    
+    
+Class: Publication_0
+
+    SubClassOf: 
+        hasDOI_0 exactly 1 xsd:string
+    
+    DisjointUnionOf: 
+        Article_0, Book_0, Manual_0, Software_0, Specification_0, UnofficialPublication_0
+    
+    
+Class: Publication_1
+
+    
+Class: RetiringPerson
+
+    SubClassOf: 
+        Person_1,
+        hasAge value "59"
+    
+    
+Class: RetiringPerson_0
+
+    SubClassOf: 
+        Person_3,
+        hasAge_0 value "59"
+    
+    
+Class: RetiringPerson_1
+
+    SubClassOf: 
+        Person_0,
+        hasAge_1 value "59"
+    
+    
+Class: RetiringPerson_2
+
+    SubClassOf: 
+        Person_2,
+        hasAge_2 value "59"
+    
+    
+Class: RetiringPerson_3
+
+    SubClassOf: 
+        Person_3,
+        hasAge_3 value "59"
+    
+    
+Class: Science
+
+    SubClassOf: 
+        CollegeDiscipline
+    
+    
+Class: Soccer
+
+    EquivalentTo: 
+        Football
+    
+    SubClassOf: 
+        Sports
+    
+    
+Class: SoccerFan
+
+    SubClassOf: 
+        Person,
+        isCrazyAbout value Soccer
+    
+    
+Class: Software
+
+    SubClassOf: 
+        Publication_1
+    
+    
+Class: Software_0
+
+    SubClassOf: 
+        Publication
+    
+    
+Class: Specification
+
+    SubClassOf: 
+        Publication_0
+    
+    
+Class: Specification_0
+
+    SubClassOf: 
+        Publication_0
+    
+    
+Class: Sports
+
+    SubClassOf: 
+        Interest
+    
+    
+Class: Sports_0
+
+    SubClassOf: 
+        Interest
+    
+    
+Class: Sports_1
+
+    SubClassOf: 
+        Interest
+    
+    
+Class: Staff
+
+    EquivalentTo: 
+        Employee
+    
+    SubClassOf: 
+        Person_2
+    
+    
+Class: Student
+
+    SubClassOf: 
+        Person,
+        Person_0
+    
+    
+Class: StudentWithBacklog
+
+    SubClassOf: 
+        Student_0,
+        Student_2,
+        hasTotalBacklogs min 1 rdfs:Literal
+    
+    
+Class: StudentWithBacklog_0
+
+    SubClassOf: 
+        Student_1,
+        hasTotalBacklogs_0 min 1 rdfs:Literal
+    
+    
+Class: Student_0
+
+    SubClassOf: 
+        Person_2,
+        Person_3
+    
+    
+Class: Student_1
+
+    SubClassOf: 
+        Person,
+        Person_0,
+        Person_1,
+        Person_4
+    
+    
+Class: Student_2
+
+    SubClassOf: 
+        Person,
+        Person_1,
+        Person_3,
+        Person_4
+    
+    
+Class: Student_3
+
+    
+Class: Student_4
+
+    
+Class: T20CricketFan
+
+    SubClassOf: 
+        Person_3,
+        isCrazyAbout value T20Cricket
+    
+    
+Class: TeachingCourse
+
+    EquivalentTo: 
+        Course
+    
+    SubClassOf: 
+        Work
+    
+    
+Class: TechnicalReport
+
+    SubClassOf: 
+        Article_0,
+        Article_1
+    
+    
+Class: Tennis
+
+    SubClassOf: 
+        Sports,
+        Sports_1
+    
+    
+Class: TennisFan
+
+    SubClassOf: 
+        Person_1,
+        isCrazyAbout value Tennis
+    
+    
+Class: UGCourse
+
+    SubClassOf: 
+        Course_4
+    
+    
+Class: UGCourse_0
+
+    SubClassOf: 
+        Course_2
+    
+    
+Class: UGProgram
+
+    SubClassOf: 
+        Program,
+        enrollFor exactly 1 UGStudent
+    
+    
+Class: UGProgram_0
+
+    SubClassOf: 
+        Program,
+        enrollFor_0 exactly 1 UGStudent_0
+    
+    
+Class: UGStudent
+
+    SubClassOf: 
+        Student_1,
+        Student_2
+    
+    
+Class: UGStudent_0
+
+    SubClassOf: 
+        Student_1
+    
+    
+Class: University
+
+    SubClassOf: 
+        Organization_0
+    
+    
+Class: University_0
+
+    SubClassOf: 
+        Organization_1
+    
+    
+Class: University_1
+
+    SubClassOf: 
+        Organization_1
+    
+    
+Class: University_2
+
+    
+Class: UnofficialPublication
+
+    SubClassOf: 
+        Publication
+    
+    
+Class: UnofficialPublication_0
+
+    SubClassOf: 
+        Publication
+    
+    
+Class: Woman
+
+    
+Class: Woman_0
+
+    
+Class: Woman_1
+
+    
+Class: WomenCollege
+
+    SubClassOf: 
+        College,
+        College_1,
+        hasStudent only Woman
+    
+    
+Class: WomenCollege_0
+
+    SubClassOf: 
+        College_0,
+        hasStudent_0 only Woman_0
+    
+    
+Class: Work
+
+    
+Individual: < TechnicalReport_3>
+
+    
+Individual: <faculty3_2>
+
+    Facts:  
+     isFacultyOf  <organization_17_2>
+    
+    
+Individual: <organization_17_2>
+
+    
+Individual: <organization_27_4>
+
+    
+Individual: <person10_0>
+
+    Facts:  
+     hasCollaborationWith  <technicalreport_0>
+    
+    
+Individual: <person10_4>
+
+    Facts:  
+     isDeanOf_0  <organization_27_4>
+    
+    
+Individual: <person_310_1>
+
+    Facts:  
+     hasName_2  "TSRrsE"
+    
+    
+Individual: <person_410_3>
+
+    Facts:  
+     advises  < TechnicalReport_3>
+    
+    
+Individual: <person_610_3>
+
+    Facts:  
+     hasEmailAddress  47
+    
+    
+Individual: <publication2_4>
+
+    Facts:  
+     hasPublicationDate  162
+    
+    
+Individual: <technicalreport_0>
+
+    Facts:  
+     hasCode_2  "iQIaTt"
+    
+    
+Individual: <technicalreport_1>
+
+    Facts:  
+     hasWork  <work2_1>
+    
+    
+Individual: <technicalreport_2>
+
+    Facts:  
+     hasDOI_0  807
+    
+    
+Individual: <work2_1>
+
+    
+Individual: AeronauticalEngineering
+
+    
+Individual: Architecture
+
+    
+Individual: AsianArts
+
+    
+Individual: Badminton
+
+    
+Individual: BiomedicalEngineering
+
+    
+Individual: ChemicalEngineering
+
+    
+Individual: CivilEngineering
+
+    
+Individual: ComputerEngineering
+
+    
+Individual: DesignManagement
+
+    
+Individual: Drama
+
+    
+Individual: ElectricalEngineering
+
+    
+Individual: FinancialAndAccountingManagement
+
+    
+Individual: HumanResourceManagement
+
+    
+Individual: IndustryEngineering
+
+    
+Individual: LatinArts
+
+    
+Individual: MarketingManagement
+
+    
+Individual: MaterialScienceEngineering
+
+    
+Individual: MechanicalEngineering
+
+    
+Individual: MediaArtsAndSciences
+
+    
+Individual: MedievalArts
+
+    
+Individual: ModernArts
+
+    
+Individual: MusicsClass
+
+    
+Individual: NonProfitOrganization
+
+    
+Individual: OneDayCricket
+
+    
+Individual: OperationsManagement
+
+    
+Individual: PerformingArts
+
+    
+Individual: PetroleumEngineering
+
+    
+Individual: ProfitOrganization
+
+    
+Individual: ProjectManagement
+
+    
+Individual: PublicRelationsManagement
+
+    
+Individual: RiskManagement
+
+    
+Individual: SalesManagement
+
+    
+Individual: Soccer
+
+    
+Individual: SupplyChainManagement
+
+    
+Individual: T20Cricket
+
+    
+Individual: Tennis
+
+    
+Individual: TheatreAndDance
+
+    
