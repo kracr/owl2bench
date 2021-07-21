@@ -1,38 +1,23 @@
 package owl.cs.myfirst.owlapi;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-
-import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLFunctionalSyntaxOntologyFormat;
 import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
 import org.semanticweb.owlapi.io.RDFXMLOntologyFormat;
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.reasoner.InferenceType;
-import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.reasoner.Node;
-import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.FilenameConstructMapping;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.LastDance;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.Util;
-
-import openllet.owlapi.OpenlletReasoner;
-import openllet.owlapi.OpenlletReasonerFactory;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
 import org.coode.owlapi.turtle.TurtleOntologyFormat;
@@ -48,20 +33,11 @@ import owl.cs.myfirst.owlapi.Features.ObjectPropertyRestrictinoCategory;
 import owl.cs.myfirst.owlapi.Generator.ClassPool;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 import owl.cs.myfirst.owlapi.Generator.PropertyPool;
-import uk.ac.manchester.cs.jfact.JFactFactory;
-
-import java.awt.event.*; 
-import java.awt.*; 
-import javax.swing.*;
 import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
 public class app 
@@ -233,6 +209,7 @@ public class app
 			cf.addToOntology(FilenameConstructMapping.fileMap.get("DataPropertyDisjointWith"),FilenameConstructMapping.separatorMap.get("DataPropertyDisjointWith"),inputs[reverse_indexes.get("DataPropertyDisjointWith")]);
 		else if ( lastConstructs.containsKey("DisjointWith") ) 
 			cf.addToOntology(FilenameConstructMapping.fileMap.get("DisjointWith"),FilenameConstructMapping.separatorMap.get("DisjointWith"),inputs[reverse_indexes.get("DisjointWith")]);
+		
 //		System.out.println(Util.commonConstructs.size()+" || "+Util.underscoreCommonConstructs.size());
 		int classCount = inputs[reverse_indexes.get("ClassAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ClassAssertionAxioms")] : 0;
 		int objectCount = inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] > 0 ? inputs[reverse_indexes.get("ObjectPropertyAssertionAxioms")] : 0;

@@ -578,7 +578,7 @@ function App() {
   const [checkbox9, setCheck9] = useState(initally9);
   const [checkbox10, setCheck10] = useState(initally10);
   const [checkbox11, setCheck11] = useState(initally11);
-  const [extra, setExtra] = useState(false);
+  const [extra, setExtra] = useState(true);
   const [format, setFormat] = useState("XML");
 
   const fxns = [
@@ -1011,9 +1011,10 @@ function App() {
           <input
             class="form-check-input"
             type="checkbox"
-            value=""
+            value={extra}
             id="flexCheckChecked"
             onChange={extraHierarchyDomainRange}
+            // checked
           ></input>
           <label class="form-check-label" for="flexCheckChecked">
             Extra Hierarchy, Domain And Range

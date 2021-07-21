@@ -1,24 +1,15 @@
 package owl.cs.myfirst.owlapi.Features;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collections;
-
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDatatype;
 import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.vocab.OWL2Datatype;
 
-import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
-
-import owl.cs.myfirst.owlapi.Features.ClassEnumerationcategory;
 import owl.cs.myfirst.owlapi.Generator.FeaturePool;
 
 public class DataPropertyAxiomsCategory {
