@@ -143,8 +143,16 @@ public class CommonFramework {
 				}
 			}
 			
-			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) && !FilenameConstructMapping.lastDomainRangeDisjoint.containsKey(filename) ) 
+			//&& !FilenameConstructMapping.lastDomainRangeDisjoint.containsKey(filename)
+//			if ( FilenameConstructMapping.constructsForLast.containsKey(filename) ) 
+//				app.rdfsSubsOnly.put(allConcepts.get(0),1);
+			
+			if (filename.contains("Rdfs") && filename.contains("Sub") && filename.contains("Of")) 
 				app.rdfsSubsOnly.put(allConcepts.get(0),1);
+			
+			if (filename.contains("Rdfs") && (filename.contains("Domain") || filename.contains("Range"))) 
+				app.domainRangeOnly.put(allConcepts.get(0),"");
+			
 //			System.out.println(allConcepts);
 			Method method = app.objectMap.get(filename).getClass().getDeclaredMethod("convertLineTo"+filename, ArrayList.class);
 			method.invoke(app.objectMap.get(filename), allConcepts);

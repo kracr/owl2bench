@@ -2,3 +2,5 @@ hasDOI range xsd:string
 publicationTitle range xsd:string
 hasResearchInterest range rdfs:Literal
 hasOfficeNumber range xsd:string
+hasName range xsd:string
+hasEmailAddress range xsd:string

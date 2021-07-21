@@ -55,6 +55,7 @@ public class app
 	
 	public static ArrayList<OWLAxiom> notToBeIncludedAxioms;
 	public static HashMap<String,String> alreadyAssertionAxiom;
+	public static HashMap<String,String> domainRangeOnly;
 	public static LinkedHashMap<String,Integer> rdfsSubsOnly;
 	
 	/**
@@ -164,6 +165,7 @@ public class app
 		notToBeIncludedAxioms = new ArrayList<OWLAxiom>();
 		alreadyAssertionAxiom = new HashMap<String,String>();
 		rdfsSubsOnly = new LinkedHashMap<String,Integer>();
+		domainRangeOnly = new HashMap<String,String>();
 		
 		FilenameConstructMapping filenameSepartor = new FilenameConstructMapping(); filenameSepartor.mapping();
 		CommonFramework cf = new CommonFramework(); File fileout = new File(fileName);

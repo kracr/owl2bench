@@ -171,7 +171,7 @@ public class AssertionCategory {
 							objectPropsRange.get(item).substring(0,objectPropsRange.get(item).indexOf("_")).toLowerCase() 
 							: objectPropsRange.get(item).toLowerCase();
 
-					System.out.println(item+" || "+chosenDomain+" || "+domainRoot+" || "+rangeRoot);
+//					System.out.println(item+" || "+chosenDomain+" || "+domainRoot+" || "+rangeRoot);
 
 					if ( domainRoot.contains(rangeRoot) ) object = factory.getOWLNamedIndividual(chooseDifferent(domainRoot, count));	
 					else object = factory.getOWLNamedIndividual(randomInvidual(objectPropsRange.get(item),count));
@@ -187,10 +187,11 @@ public class AssertionCategory {
 		System.out.println(" -------------------------------------------------------------- ");
 		if ( dataCount > 0 && dataPropsDomain.size() > 0 && dataPropsRange.size() > 0 ) {
 			int count = 0;
-			while ( count < objectCount ) {
+			while ( count < dataCount ) {
 				ArrayList<String> terms = new ArrayList<String>(dataPropsDomain.keySet());
 				Collections.shuffle(terms, new Random(2));
 				for ( String item : terms ) {
+					if ( CommonFramework.isIsLiteral(item) ) continue;
 					
 					OWLIndividual subject = factory.getOWLNamedIndividual(randomInvidual(dataPropsDomain.get(item),count));
 					OWLDataProperty property = factory.getOWLDataProperty(item.trim(), pm);
