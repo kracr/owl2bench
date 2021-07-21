@@ -12,10 +12,7 @@ Ontology:
 Datatype: rdfs:Literal
 
     
-Datatype: xsd:dateTime
-
-    
-Datatype: xsd:dateTimeStamp
+Datatype: xsd:boolean
 
     
 Datatype: xsd:double
@@ -27,759 +24,8 @@ Datatype: xsd:float
 Datatype: xsd:integer
 
     
-Datatype: xsd:negativeInteger
-
-    
-Datatype: xsd:nonNegativeInteger
-
-    
 Datatype: xsd:string
 
-    
-ObjectProperty: advises
-
-    EquivalentTo: 
-        isAdvisorOf
-    
-    DisjointWith: 
-        courseOfferedBy,
-        enrollFor,
-        hasMajor
-    
-    Domain: 
-        Person_3,
-        Person_4
-    
-    Range: 
-        Person_4
-    
-    
-ObjectProperty: advises_0
-
-    DisjointWith: 
-        enrollFor_0
-    
-    
-ObjectProperty: courseOfferedBy
-
-    DisjointWith: 
-        advises
-    
-    
-ObjectProperty: dislikes
-
-    DisjointWith: 
-        likes_0
-    
-    
-ObjectProperty: enrollFor
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    DisjointWith: 
-        advises
-    
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Student_2
-    
-    Range: 
-        Program
-    
-    
-ObjectProperty: enrollFor_0
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    DisjointWith: 
-        advises_0
-    
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Student
-    
-    Range: 
-        Program
-    
-    
-ObjectProperty: enrollIn
-
-    SubPropertyOf: 
-        isStudentOf
-    
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Student_0
-    
-    Range: 
-        Department_0,
-        Department_2
-    
-    
-ObjectProperty: enrollIn_0
-
-    SubPropertyOf: 
-        isStudentOf
-    
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Student_0
-    
-    Range: 
-        Department_1
-    
-    
-ObjectProperty: hasAdvisor
-
-    EquivalentTo: 
-        isAdvisedBy
-    
-    Domain: 
-        Person_2,
-        Person_5
-    
-    
-ObjectProperty: hasAuthor
-
-    Domain: 
-        Publication,
-        Publication_0
-    
-    Range: 
-        Person,
-        Person_2
-    
-    
-ObjectProperty: hasCollaborationWith
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    Characteristics: 
-        Symmetric
-    
-    Domain: 
-        Person_0
-    
-    
-ObjectProperty: hasCollaborationWith_0
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    Characteristics: 
-        Symmetric
-    
-    Domain: 
-        Person
-    
-    Range: 
-        Person_5
-    
-    
-ObjectProperty: hasCollaborationWith_1
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    Characteristics: 
-        Symmetric
-    
-    Domain: 
-        Person_2
-    
-    Range: 
-        Person_4
-    
-    
-ObjectProperty: hasDean
-
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Organization
-    
-    InverseOf: 
-        isDeanOf
-    
-    
-ObjectProperty: hasDegreeFrom
-
-    Domain: 
-        Person
-    
-    Range: 
-        University
-    
-    
-ObjectProperty: hasDegreeFrom_0
-
-    Domain: 
-        Person_4
-    
-    Range: 
-        University_2
-    
-    
-ObjectProperty: hasDegreeFrom_1
-
-    Domain: 
-        Person_5
-    
-    Range: 
-        University_1
-    
-    
-ObjectProperty: hasEmployee
-
-    SubPropertyOf: 
-        hasMember
-    
-    
-ObjectProperty: hasFaculty
-
-    SubPropertyOf: 
-        hasEmployee
-    
-    Domain: 
-        Department
-    
-    Range: 
-        Faculty,
-        Faculty_3
-    
-    
-ObjectProperty: hasFacultyAdvisor
-
-    SubPropertyOf: 
-        hasAdvisor
-    
-    Domain: 
-        Student_0,
-        Student_3
-    
-    Range: 
-        Faculty,
-        Faculty_0
-    
-    
-ObjectProperty: hasFaculty_0
-
-    SubPropertyOf: 
-        hasEmployee
-    
-    Domain: 
-        Department
-    
-    Range: 
-        Faculty_1
-    
-    
-ObjectProperty: hasFullProfessor
-
-    SubPropertyOf: 
-        hasProfessor,
-        hasProfessor_1
-    
-    Domain: 
-        Department
-    
-    Range: 
-        FullProfessor,
-        FullProfessor_1
-    
-    
-ObjectProperty: hasFullProfessor_0
-
-    SubPropertyOf: 
-        hasProfessor
-    
-    Domain: 
-        Department
-    
-    Range: 
-        FullProfessor
-    
-    
-ObjectProperty: hasHead
-
-    SubPropertyOf: 
-        hasFullProfessor,
-        hasFullProfessor_0
-    
-    InverseOf: 
-        isHeadOf
-    
-    
-ObjectProperty: hasMajor
-
-    DisjointWith: 
-        advises
-    
-    
-ObjectProperty: hasMember
-
-    
-ObjectProperty: hasPart
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    EquivalentTo: 
-        hasSubOrganization
-    
-    Characteristics: 
-        Transitive
-    
-    Domain: 
-        Organization,
-        Organization_0
-    
-    Range: 
-        Organization,
-        Organization_0
-    
-    InverseOf: 
-        isPartOf
-    
-    
-ObjectProperty: hasProfessor
-
-    SubPropertyOf: 
-        hasFaculty,
-        hasFaculty_0
-    
-    Domain: 
-        Department,
-        Department_1
-    
-    Range: 
-        Professor,
-        Professor_0
-    
-    
-ObjectProperty: hasProfessor_1
-
-    SubPropertyOf: 
-        hasFaculty
-    
-    Domain: 
-        Department_0
-    
-    Range: 
-        Professor
-    
-    
-ObjectProperty: hasSameHomeTownWith
-
-    Characteristics: 
-        Symmetric,
-        Transitive
-    
-    Domain: 
-        Person_2,
-        Person_3
-    
-    Range: 
-        Person_0,
-        Person_6
-    
-    
-ObjectProperty: hasSameHomeTownWith_0
-
-    Characteristics: 
-        Symmetric
-    
-    Domain: 
-        Person
-    
-    Range: 
-        Person_4
-    
-    
-ObjectProperty: hasStudent
-
-    SubPropertyOf: 
-        hasMember
-    
-    Domain: 
-        Organization,
-        Organization_0
-    
-    Range: 
-        Student_0,
-        Student_2
-    
-    
-ObjectProperty: hasStudent_0
-
-    SubPropertyOf: 
-        hasMember
-    
-    Domain: 
-        Organization_0
-    
-    Range: 
-        Student_0
-    
-    
-ObjectProperty: hasSubOrganization
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    EquivalentTo: 
-        hasPart
-    
-    Characteristics: 
-        Transitive
-    
-    Domain: 
-        Organization
-    
-    InverseOf: 
-        isSubOrganizationOf
-    
-    
-ObjectProperty: hasTeacher
-
-    SubPropertyChain: 
-        registeredTo o isTaughtBy
-    
-    
-ObjectProperty: hasWork
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    Range: 
-        Work
-    
-    
-ObjectProperty: isAdvisedBy
-
-    EquivalentTo: 
-        hasAdvisor
-    
-    Characteristics: 
-        Irreflexive
-    
-    Domain: 
-        Person_4,
-        Person_5
-    
-    Range: 
-        Person_0,
-        Person_4
-    
-    InverseOf: 
-        isAdvisorOf
-    
-    
-ObjectProperty: isAdvisedBy_0
-
-    Characteristics: 
-        Irreflexive
-    
-    Domain: 
-        Person
-    
-    Range: 
-        Person_6
-    
-    
-ObjectProperty: isAdvisedBy_1
-
-    Characteristics: 
-        Irreflexive
-    
-    Domain: 
-        Person_3
-    
-    Range: 
-        Person_4
-    
-    
-ObjectProperty: isAdvisorOf
-
-    EquivalentTo: 
-        advises
-    
-    InverseOf: 
-        isAdvisedBy
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf
-
-    Characteristics: 
-        Irreflexive,
-        Asymmetric
-    
-    Domain: 
-        Organization,
-        Organization_1
-    
-    Range: 
-        Organization_1
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_0
-
-    Characteristics: 
-        Irreflexive,
-        Asymmetric
-    
-    Domain: 
-        Organization
-    
-    Range: 
-        Organization
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_1
-
-    Characteristics: 
-        Asymmetric
-    
-    Domain: 
-        Organization_1
-    
-    Range: 
-        Organization_0
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_2
-
-    Characteristics: 
-        Asymmetric
-    
-    Domain: 
-        Organization_1
-    
-    Range: 
-        Organization_1
-    
-    
-ObjectProperty: isAffiliatedOrganizationOf_3
-
-    Characteristics: 
-        Asymmetric
-    
-    Domain: 
-        Organization_1
-    
-    Range: 
-        Organization_0
-    
-    
-ObjectProperty: isCrazyAbout
-
-    SubPropertyOf: 
-        loves
-    
-    Domain: 
-        Person_3,
-        Person_5
-    
-    
-ObjectProperty: isDeanOf
-
-    Characteristics: 
-        InverseFunctional
-    
-    Domain: 
-        Person_3,
-        Person_4
-    
-    Range: 
-        Organization_0,
-        Organization_1
-    
-    InverseOf: 
-        hasDean
-    
-    
-ObjectProperty: isDeanOf_0
-
-    Characteristics: 
-        InverseFunctional
-    
-    Domain: 
-        Person
-    
-    Range: 
-        Organization
-    
-    
-ObjectProperty: isDeanOf_1
-
-    Characteristics: 
-        InverseFunctional
-    
-    Domain: 
-        Person_2
-    
-    Range: 
-        Organization_0
-    
-    
-ObjectProperty: isFacultyOf
-
-    SubPropertyOf: 
-        worksFor
-    
-    Domain: 
-        Faculty_0,
-        Faculty_2
-    
-    Range: 
-        Organization,
-        Organization_1
-    
-    
-ObjectProperty: isFullProfessorOf
-
-    SubPropertyOf: 
-        isProfessorOf,
-        isProfessorOf_0,
-        isProfessorOf_1
-    
-    
-ObjectProperty: isFullProfessorOf_1
-
-    SubPropertyOf: 
-        isProfessorOf
-    
-    
-ObjectProperty: isHeadOf
-
-    SubPropertyOf: 
-        isFullProfessorOf,
-        isFullProfessorOf_1
-    
-    Characteristics: 
-        InverseFunctional
-    
-    InverseOf: 
-        hasHead
-    
-    
-ObjectProperty: isHeadOf_0
-
-    SubPropertyOf: 
-        isFullProfessorOf
-    
-    Characteristics: 
-        InverseFunctional
-    
-    
-ObjectProperty: isMemberOf
-
-    SubPropertyChain: 
-        enrollIn o isPartOf
-    
-    SubPropertyChain: 
-        worksFor o isPartOf
-    
-    Domain: 
-        Person_0,
-        Person_2
-    
-    Range: 
-        Organization
-    
-    
-ObjectProperty: isPartOf
-
-    SubPropertyOf: 
-        owl:topObjectProperty
-    
-    EquivalentTo: 
-        isSubOrganizationOf
-    
-    Characteristics: 
-        Transitive
-    
-    Domain: 
-        Organization,
-        Organization_0
-    
-    Range: 
-        Organization,
-        Organization_0
-    
-    InverseOf: 
-        hasPart
-    
-    
-ObjectProperty: isProfessorOf
-
-    SubPropertyOf: 
-        isFacultyOf
-    
-    
-ObjectProperty: isProfessorOf_0
-
-    SubPropertyOf: 
-        isFacultyOf
-    
-    
-ObjectProperty: isProfessorOf_1
-
-    SubPropertyOf: 
-        isFacultyOf
-    
-    
-ObjectProperty: isStudentOf
-
-    SubPropertyChain: 
-        enrollIn o isSubOrganizationOf
-    
-    Domain: 
-        Student
-    
-    
-ObjectProperty: isSubOrganizationOf
-
-    EquivalentTo: 
-        isPartOf
-    
-    Characteristics: 
-        Transitive
-    
-    Domain: 
-        Organization,
-        Organization_1
-    
-    Range: 
-        Organization,
-        Organization_2
-    
-    InverseOf: 
-        hasSubOrganization
-    
-    
-ObjectProperty: isTaughtBy
-
-    Domain: 
-        Course,
-        Course_3
-    
-    Range: 
-        Faculty_1,
-        Faculty_2
-    
     
 ObjectProperty: knows
 
@@ -787,12 +33,12 @@ ObjectProperty: knows
         Reflexive
     
     Domain: 
-        Person_2,
-        Person_3
+        Person,
+        Person_0
     
     Range: 
-        Person_2,
-        Person_4
+        Person,
+        Person_2
     
     
 ObjectProperty: knows_0
@@ -804,7 +50,7 @@ ObjectProperty: knows_0
         Person_1
     
     Range: 
-        Person_0
+        Person_1
     
     
 ObjectProperty: knows_1
@@ -825,10 +71,10 @@ ObjectProperty: knows_2
         Reflexive
     
     Domain: 
-        Person_5
+        Person
     
     Range: 
-        Person_0
+        Person
     
     
 ObjectProperty: knows_3
@@ -840,224 +86,13 @@ ObjectProperty: knows_3
         Person_0
     
     Range: 
-        Person_4
-    
-    
-ObjectProperty: likes
-
-    Domain: 
-        Person_0,
-        Person_1
-    
-    
-ObjectProperty: likes_0
-
-    DisjointWith: 
-        dislikes
-    
-    
-ObjectProperty: loves
-
-    SubPropertyOf: 
-        likes
-    
-    Domain: 
-        Person_3,
-        Person_5
-    
-    
-ObjectProperty: owl:topObjectProperty
-
-    
-ObjectProperty: registeredTo
-
-    EquivalentTo: 
-        takesCourse
-    
-    Domain: 
-        Student_0
-    
-    Range: 
-        Course_2,
-        Course_3
-    
-    
-ObjectProperty: takesCourse
-
-    EquivalentTo: 
-        registeredTo
-    
-    Domain: 
-        Student_1
-    
-    
-ObjectProperty: takesCourse_0
-
-    Domain: 
-        Student_0
-    
-    Range: 
-        Course_2
-    
-    
-ObjectProperty: takesCourse_1
-
-    Domain: 
-        Student_3
-    
-    Range: 
-        Course
-    
-    
-ObjectProperty: takesCourse_2
-
-    Domain: 
-        Student_3
-    
-    Range: 
-        Course_0
-    
-    
-ObjectProperty: takesCourse_3
-
-    Domain: 
-        Student
-    
-    Range: 
-        Course_2
-    
-    
-ObjectProperty: teachesCourse
-
-    SubPropertyOf: 
-        hasWork
-    
-    Domain: 
-        Faculty_0,
-        Faculty_1
-    
-    Range: 
-        Course,
-        Course_0
-    
-    
-ObjectProperty: worksFor
-
-    SubPropertyChain: 
-        worksFor o isSubOrganizationOf
-    
-    Domain: 
-        Employee_0
-    
-    Range: 
-        Organization_0,
-        Organization_2
-    
-    
-DataProperty: hasAge
-
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        Person_0,
-        Person_4
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_0
-
-    Domain: 
-        Person_4
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_1
-
-    Domain: 
-        Person
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_2
-
-    Domain: 
-        Person_6
-    
-    Range: 
-         not xsd:negativeInteger
-    
-    
-DataProperty: hasAge_3
-
-    Domain: 
-        Person_6
-    
-    Range: 
-         not xsd:negativeInteger
+        Person_0
     
     
 DataProperty: hasCode
 
-    Characteristics: 
-        Functional
-    
-    Range: 
-        (rdfs:Literal or xsd:string)
-    
     SubPropertyOf: 
         owl:topDataProperty
-    
-    EquivalentTo: 
-        hasID
-    
-    
-DataProperty: hasCode_0
-
-    Characteristics: 
-        Functional
-    
-    Range: 
-        (rdfs:Literal or xsd:string)
-    
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasID_0
-    
-    
-DataProperty: hasCode_1
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasID_1
-    
-    
-DataProperty: hasCode_2
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasID_2
-    
-    
-DataProperty: hasCode_3
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasID_3
     
     
 DataProperty: hasDOI
@@ -1066,1400 +101,477 @@ DataProperty: hasDOI
         rdfs:Literal
     
     
-DataProperty: hasEmailAddress
-
-    Domain: 
-        Person,
-        Person_4
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasEmailAddress_0
-
-    Domain: 
-        Person
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasEmailAddress_1
-
-    Domain: 
-        Person_4
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasEmailAddress_2
-
-    Domain: 
-        Person_2
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasEmailAddress_3
-
-    Domain: 
-        Person_6
-    
-    Range: 
-        rdfs:Literal
-    
-    
 DataProperty: hasID
 
-    Characteristics: 
-        Functional
-    
     SubPropertyOf: 
         owl:topDataProperty
-    
-    EquivalentTo: 
-        hasCode
     
     
 DataProperty: hasID_0
 
-    Characteristics: 
-        Functional
-    
     SubPropertyOf: 
         owl:topDataProperty
-    
-    EquivalentTo: 
-        hasCode_0
-    
-    
-DataProperty: hasID_1
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasCode_1
-    
-    
-DataProperty: hasID_2
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasCode_2
-    
-    
-DataProperty: hasID_3
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    EquivalentTo: 
-        hasCode_3
-    
-    
-DataProperty: hasName
-
-    Domain: 
-        Person,
-        Person_2
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasName_0
-
-    Domain: 
-        Person_1
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasName_1
-
-    Domain: 
-        Person_6
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasName_2
-
-    Domain: 
-        Person_1
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasName_3
-
-    Domain: 
-        Person_5
-    
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasPublicationDate
-
-    Domain: 
-        Publication,
-        Publication_1
-    
-    Range: 
-        (xsd:dateTime or xsd:dateTimeStamp)
-    
-    
-DataProperty: hasResearchInterest
-
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasResearchInterest_0
-
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasResearchInterest_1
-
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasTitle
-
-    Domain: 
-        Person_1
-    
-    
-DataProperty: hasTitle_0
-
-    Domain: 
-        Person_7
-    
-    
-DataProperty: hasTitle_1
-
-    Domain: 
-        Person
-    
-    
-DataProperty: hasTitle_2
-
-    Domain: 
-        Person_3
-    
-    
-DataProperty: hasTitle_3
-
-    Domain: 
-        Person_2
-    
-    
-DataProperty: hasTotalBacklogs
-
-    Domain: 
-        Student,
-        Student_2
-    
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger),
-        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
-    
-    
-DataProperty: hasTotalBacklogs_0
-
-    Domain: 
-        Student_4
-    
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger),
-        (rdfs:Literal or xsd:nonNegativeInteger or xsd:string)
-    
-    
-DataProperty: hasTotalBacklogs_1
-
-    Domain: 
-        Student_2
-    
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
-    
-    
-DataProperty: hasTotalBacklogs_2
-
-    Domain: 
-        Student_2
-    
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
-    
-    
-DataProperty: hasTotalBacklogs_3
-
-    Domain: 
-        Student_4
-    
-    Range: 
-        (xsd:integer and xsd:nonNegativeInteger)
     
     
 DataProperty: owl:topDataProperty
 
     
-Class: AcademicStaff
-
-    EquivalentTo: 
-        Faculty
-    
-    SubClassOf: 
-        Employee,
-        Employee_1
-    
-    
-Class: Article
-
-    SubClassOf: 
-        Publication
-    
-    DisjointUnionOf: 
-        ConferencePaper, JournalArticle, TechnicalReport
-    
-    
-Class: Article_0
-
-    SubClassOf: 
-        Publication
-    
-    DisjointUnionOf: 
-        ConferencePaper_0, JournalArticle_0, TechnicalReport_0
-    
-    
-Class: Article_1
-
-    SubClassOf: 
-        Publication
-    
-    
-Class: Badminton
-
-    SubClassOf: 
-        Sports,
-        Sports_1
-    
-    
-Class: BadmintonFan
-
-    SubClassOf: 
-        Person,
-        isCrazyAbout value Badminton
-    
-    
-Class: BiologicalScience
-
-    EquivalentTo: 
-        {Botany , Genetics , MolecularBiology , Paleontology , Zoology}
-    
-    SubClassOf: 
-        Science,
-        Science_1
-    
-    
-Class: Book
-
-    SubClassOf: 
-        Publication
-    
-    
-Class: CoEdCollege
-
-    SubClassOf: 
-        College,
-        hasStudent some Person
-    
-    
-Class: College
-
-    SubClassOf: 
-        Organization,
-        hasStudent some Person
-    
-    
-Class: CollegeDiscipline
-
-    
-Class: ConferencePaper
-
-    SubClassOf: 
-        Article
-    
-    
-Class: ConferencePaper_0
-
-    SubClassOf: 
-        Article_1
-    
-    
 Class: Course
 
-    EquivalentTo: 
-        TeachingCourse
-    
-    SubClassOf: 
-        takesCourse min 1 Student,
-        takesCourse max 1 LeisureStudent,
-        hasCode exactly 1 xsd:string
-    
-    DisjointUnionOf: 
-        ElectiveCourse, UGCourse
-    
-    
-Class: Course_0
-
-    SubClassOf: 
-        takesCourse_0 min 1 Student_0,
-        takesCourse_0 max 1 LeisureStudent_0,
-        hasCode_0 exactly 1 xsd:string
-    
-    DisjointUnionOf: 
-        ElectiveCourse_0, UGCourse_0
-    
-    
-Class: Course_1
-
-    SubClassOf: 
-        takesCourse_1 max 1 LeisureStudent_1
-    
-    
-Class: Course_2
-
-    SubClassOf: 
-        takesCourse_2 max 1 LeisureStudent_2
-    
-    
-Class: Course_3
-
-    SubClassOf: 
-        takesCourse_3 max 1 LeisureStudent_3
-    
-    
-Class: Course_4
-
-    
-Class: Dean
-
-    SubClassOf: 
-        FullProfessor,
-        FullProfessor_0,
-        isHeadOf some College
-    
-    
-Class: Department
-
-    
-Class: Department_0
-
-    
-Class: Department_1
-
-    
-Class: Department_2
-
-    
-Class: ElectiveCourse
-
-    SubClassOf: 
-        Course_3
-    
-    
-Class: ElectiveCourse_0
-
-    SubClassOf: 
-        Course_4
-    
-    
-Class: Employee
-
-    EquivalentTo: 
-        Staff
-    
-    SubClassOf: 
-        Person,
-        Person_0,
-        Person_2,
-        Person_3,
-        Person_4,
-        worksFor some Organization
-    
-    
-Class: Employee_0
-
-    SubClassOf: 
-        Person,
-        Person_2
-    
-    
-Class: Employee_1
-
-    SubClassOf: 
-        Person_3,
-        Person_4
-    
-    
-Class: Engineering
-
-    EquivalentTo: 
-        {AeronauticalEngineering , BiomedicalEngineering , ChemicalEngineering , CivilEngineering , ComputerEngineering , ElectricalEngineering , IndustryEngineering , MaterialScienceEngineering , MechanicalEngineering , PetroleumEngineering}
-    
-    SubClassOf: 
-        CollegeDiscipline
-    
-    
-Class: Faculty
-
-    EquivalentTo: 
-        AcademicStaff
-    
-    SubClassOf: 
-        Employee,
-        Employee_0,
-        teachesCourse some Course,
-        hasFacultyAdvisor min 1 Student
-    
-    
-Class: Faculty_0
-
-    
-Class: Faculty_1
-
-    SubClassOf: 
-        Employee_0,
-        Employee_1
-    
-    
-Class: Faculty_2
-
-    
-Class: Faculty_3
-
-    
-Class: Father
-
-    EquivalentTo: 
-        Man
-         and Parent
-    
-    SubClassOf: 
-        Parent
-    
-    
-Class: Father_0
-
-    EquivalentTo: 
-        Man_0
-         and Parent_0
-    
-    SubClassOf: 
-        Parent
-    
-    
-Class: FineArts
-
-    EquivalentTo: 
-        {Architecture , AsianArts , Drama , LatinArts , MediaArtsAndSciences , MedievalArts , ModernArts , MusicsClass , PerformingArts , TheatreAndDance}
-    
-    SubClassOf: 
-        CollegeDiscipline
-    
-    
-Class: Football
-
-    EquivalentTo: 
-        Soccer
-    
-    SubClassOf: 
-        Sports,
-        Sports_0
-    
-    
-Class: FullProfessor
-
-    SubClassOf: 
-        Professor,
-        Professor_0
-    
-    
-Class: FullProfessor_0
-
-    SubClassOf: 
-        Professor_0
-    
-    
-Class: FullProfessor_1
-
-    
-Class: Human
-
-    EquivalentTo: 
-        Person
-    
-    
-Class: HumanitiesAndSocialScience
-
-    EquivalentTo: 
-        {Anthropology , Economics , English , History , Humanities , Linguistics , ModernLanguages , Philosophy , Psychology , Religions}
-    
-    SubClassOf: 
-        CollegeDiscipline
-    
-    
-Class: Interest
-
-    SubClassOf: 
-        likes min 3 PeopleWithManyHobbies
-    
-    
-Class: JournalArticle
-
-    SubClassOf: 
-        Article
-    
-    
-Class: JournalArticle_0
-
-    SubClassOf: 
-        Article_0
-    
-    
-Class: LeisureStudent
-
-    SubClassOf: 
-        Student,
-        Student_0
-    
-    
-Class: LeisureStudent_0
-
-    SubClassOf: 
-        Student_1
-    
-    
-Class: LeisureStudent_1
-
-    SubClassOf: 
-        Student_1
-    
-    
-Class: LeisureStudent_2
-
-    SubClassOf: 
-        Student
-    
-    
-Class: LeisureStudent_3
-
-    SubClassOf: 
-        Student_1
-    
-    
-Class: Man
-
-    SubClassOf: 
-        Woman
-    
-    
-Class: Man_0
-
-    SubClassOf: 
-        Woman_0
-    
-    
-Class: Man_1
-
-    SubClassOf: 
-        Woman_1
-    
-    
-Class: Man_2
-
-    SubClassOf: 
-        Woman_2
-    
-    
-Class: Man_3
-
-    SubClassOf: 
-        Woman_3
-    
-    
-Class: Manual
-
-    SubClassOf: 
-        Publication
-    
-    
-Class: Mother
-
-    EquivalentTo: 
-        Parent
-         and Woman
-    
-    SubClassOf: 
-        Parent_0,
-        Parent_1
-    
-    
-Class: Mother_0
-
-    EquivalentTo: 
-        Parent_0
-         and Woman_0
-    
-    SubClassOf: 
-        Parent_2
-    
-    
-Class: Mother_1
-
-    EquivalentTo: 
-        Parent_1
-         and Woman_1
-    
-    SubClassOf: 
-        Parent_2
-    
-    
-Class: NonBiologicalScience
-
-    SubClassOf: 
-        Science,
-        not (BiologicalScience)
-    
-    
-Class: NonEngineering
-
-    SubClassOf: 
-        CollegeDiscipline,
-        not (Engineering)
-    
-    
-Class: NonFineArts
-
-    SubClassOf: 
-        CollegeDiscipline,
-        not (FineArts)
-    
-    
-Class: NonHumanitiesAndSocialScience
-
-    SubClassOf: 
-        CollegeDiscipline,
-        not (HumanitiesAndSocialScience)
-    
-    
-Class: NonScience
-
-    SubClassOf: 
-        CollegeDiscipline,
-        not (Science)
-    
-    
-Class: OneDayCricketFan
-
-    SubClassOf: 
-        Person_0,
-        isCrazyAbout value OneDayCricket
-    
-    
-Class: Organization
-
-    
-Class: Organization_0
-
-    
-Class: Organization_1
-
-    
-Class: Organization_2
-
-    
-Class: PGProgram
-
-    SubClassOf: 
-        Program,
-        enrollFor exactly 1 PGStudent
-    
-    
-Class: PGProgram_0
-
-    SubClassOf: 
-        Program,
-        enrollFor_0 exactly 1 PGStudent_0
-    
-    
-Class: PGStudent
-
-    SubClassOf: 
-        Student,
-        Student_0
-    
-    
-Class: PGStudent_0
-
-    SubClassOf: 
-        Student_0
-    
-    
-Class: Parent
-
-    SubClassOf: 
-        Person,
-        Person_2,
-        Person_4
-    
-    
-Class: Parent_0
-
-    SubClassOf: 
-        Person_3
-    
-    
-Class: Parent_1
-
-    SubClassOf: 
-        Person_1,
-        Person_3
-    
-    
-Class: Parent_2
-
-    SubClassOf: 
-        Person_0,
-        Person_4
-    
-    
-Class: PeopleWithManyHobbies
-
-    SubClassOf: 
-        Person_4
+    HasKey: 
+        hasCode
     
     
 Class: Person
 
-    EquivalentTo: 
-        Human
-    
-    SubClassOf: 
-        hasDegreeFrom only University,
-        hasAuthor min 1 Publication,
-        hasName some xsd:string,
-        hasEmailAddress only xsd:string,
-        hasResearchInterest min 1 xsd:string,
-        hasID exactly 1 xsd:string,
-        hasTitle max 5 xsd:string
+    HasKey: 
+        hasID
     
     
 Class: Person_0
 
-    SubClassOf: 
-        hasDegreeFrom_0 only University_0,
-        hasName_0 some xsd:string,
-        hasEmailAddress_0 only xsd:string,
-        hasResearchInterest_0 min 1 xsd:string,
-        hasID_0 exactly 1 xsd:string,
-        hasTitle_0 max 5 xsd:string
-    
     
 Class: Person_1
 
-    SubClassOf: 
-        hasDegreeFrom_1 only University_1,
-        hasName_1 some xsd:string,
-        hasEmailAddress_1 only xsd:string,
-        hasResearchInterest_1 min 1 xsd:string,
-        hasTitle_1 max 5 xsd:string
-    
     
 Class: Person_2
-
-    SubClassOf: 
-        hasName_2 some xsd:string,
-        hasEmailAddress_2 only xsd:string,
-        hasTitle_2 max 5 xsd:string
-    
-    
-Class: Person_3
-
-    SubClassOf: 
-        hasName_3 some xsd:string,
-        hasEmailAddress_3 only xsd:string,
-        hasTitle_3 max 5 xsd:string
-    
-    
-Class: Person_4
-
-    
-Class: Person_5
-
-    
-Class: Person_6
-
-    
-Class: Person_7
-
-    
-Class: PhDProgram
-
-    SubClassOf: 
-        Program,
-        enrollFor exactly 1 PhDStudent
-    
-    
-Class: PhDProgram_0
-
-    SubClassOf: 
-        Program,
-        enrollFor_0 exactly 1 PhDStudent_0
-    
-    
-Class: PhDStudent
-
-    SubClassOf: 
-        Student
-    
-    
-Class: PhDStudent_0
-
-    SubClassOf: 
-        Student_1
-    
-    
-Class: PrivateOrganization
-
-    EquivalentTo: 
-        {NonProfitOrganization , ProfitOrganization}
-    
-    
-Class: Professor
-
-    SubClassOf: 
-        Faculty,
-        Faculty_1
-    
-    
-Class: Professor_0
-
-    SubClassOf: 
-        Faculty,
-        Faculty_1
-    
-    
-Class: Program
 
     
 Class: Publication
 
-    SubClassOf: 
-        hasDOI exactly 1 xsd:string
-    
-    DisjointUnionOf: 
-        Article, Book, Manual, Software, Specification, UnofficialPublication
-    
-    
-Class: Publication_0
-
-    
-Class: Publication_1
-
-    
-Class: RetiringPerson
-
-    SubClassOf: 
-        Person_2,
-        hasAge value "59"
-    
-    
-Class: RetiringPerson_0
-
-    SubClassOf: 
-        Person_0,
-        hasAge_0 value "59"
-    
-    
-Class: RetiringPerson_1
-
-    SubClassOf: 
-        Person_2,
-        hasAge_1 value "59"
-    
-    
-Class: RetiringPerson_2
-
-    SubClassOf: 
-        Person,
-        hasAge_2 value "59"
-    
-    
-Class: RetiringPerson_3
-
-    SubClassOf: 
-        Person_3,
-        hasAge_3 value "59"
-    
-    
-Class: Science
-
-    SubClassOf: 
-        CollegeDiscipline
-    
-    
-Class: Science_1
-
-    SubClassOf: 
-        CollegeDiscipline
-    
-    
-Class: Soccer
-
-    EquivalentTo: 
-        Football
-    
-    SubClassOf: 
-        Sports,
-        Sports_1
-    
-    
-Class: SoccerFan
-
-    SubClassOf: 
-        Person_4,
-        isCrazyAbout value Soccer
-    
-    
-Class: Software
-
-    SubClassOf: 
-        Publication
-    
-    
-Class: Specification
-
-    SubClassOf: 
-        Publication
-    
-    
-Class: Sports
-
-    SubClassOf: 
-        Interest
-    
-    
-Class: Sports_0
-
-    SubClassOf: 
-        Interest
-    
-    
-Class: Sports_1
-
-    SubClassOf: 
-        Interest
-    
-    
-Class: Staff
-
-    EquivalentTo: 
-        Employee
-    
-    SubClassOf: 
-        Person
+    HasKey: 
+        hasDOI
     
     
 Class: Student
 
     SubClassOf: 
-        Person,
-        Person_1,
-        Person_4
+        Person
     
-    
-Class: StudentWithBacklog
-
-    SubClassOf: 
-        Student,
-        Student_0,
-        hasTotalBacklogs min 1 rdfs:Literal
-    
-    
-Class: StudentWithBacklog_0
-
-    SubClassOf: 
-        Student,
-        hasTotalBacklogs_0 min 1 rdfs:Literal
+    HasKey: 
+        hasID
     
     
 Class: Student_0
 
     SubClassOf: 
-        Person,
-        Person_1,
-        Person_2,
-        Person_3,
-        Person_4
+        Person
+    
+    HasKey: 
+        hasID_0
     
     
-Class: Student_1
-
-    SubClassOf: 
-        Person,
-        Person_1,
-        Person_3,
-        Person_4
-    
-    
-Class: Student_2
+Individual: < Person_0_0>
 
     
-Class: Student_3
+Individual: < Person_0_10>
 
     
-Class: Student_4
+Individual: < Person_0_11>
 
     
-Class: T20CricketFan
+Individual: < Person_0_12>
 
-    SubClassOf: 
-        Person_0,
-        isCrazyAbout value T20Cricket
     
-    
-Class: TeachingCourse
+Individual: < Person_0_13>
 
-    EquivalentTo: 
-        Course
     
-    SubClassOf: 
-        Work
-    
-    
-Class: TechnicalReport
+Individual: < Person_0_14>
 
-    SubClassOf: 
-        Article,
-        Article_0
     
-    
-Class: TechnicalReport_0
+Individual: < Person_0_15>
 
-    SubClassOf: 
-        Article_0
     
-    
-Class: Tennis
+Individual: < Person_0_16>
 
-    SubClassOf: 
-        Sports
     
-    
-Class: TennisFan
+Individual: < Person_0_17>
 
-    SubClassOf: 
-        Person_2,
-        isCrazyAbout value Tennis
     
-    
-Class: Travelling
+Individual: < Person_0_18>
 
-    SubClassOf: 
-        Interest
     
-    
-Class: UGCourse
+Individual: < Person_0_19>
 
-    SubClassOf: 
-        Course_0
     
-    
-Class: UGCourse_0
+Individual: < Person_0_1>
 
-    SubClassOf: 
+    
+Individual: < Person_0_2>
+
+    
+Individual: < Person_0_3>
+
+    
+Individual: < Person_0_4>
+
+    
+Individual: < Person_0_5>
+
+    
+Individual: < Person_0_6>
+
+    
+Individual: < Person_0_7>
+
+    
+Individual: < Person_0_8>
+
+    
+Individual: < Person_0_9>
+
+    
+Individual: <course_13>
+
+    Types: 
         Course
     
     
-Class: UGProgram
+Individual: <course_2>
 
-    SubClassOf: 
-        Program,
-        enrollFor exactly 1 UGStudent
+    Types: 
+        Course
     
     
-Class: UGStudent
+Individual: <person4_11>
 
-    SubClassOf: 
-        Student,
-        Student_0
+    Facts:  
+     knows_2  < Person_0_11>
     
     
-Class: University
+Individual: <person4_16>
 
-    SubClassOf: 
-        Organization
+    Facts:  
+     knows_2  < Person_0_16>
     
     
-Class: University_0
+Individual: <person4_1>
 
-    SubClassOf: 
-        Organization
+    Facts:  
+     knows_2  < Person_0_1>
     
     
-Class: University_1
+Individual: <person4_6>
 
-    SubClassOf: 
-        Organization
+    Facts:  
+     knows_2  < Person_0_6>
     
     
-Class: University_2
+Individual: <person_04_0>
 
+    Facts:  
+     knows_3  < Person_0_0>
     
-Class: UnofficialPublication
+    
+Individual: <person_04_10>
 
-    SubClassOf: 
+    Facts:  
+     knows_3  < Person_0_10>
+    
+    
+Individual: <person_04_14>
+
+    Facts:  
+     knows  < Person_0_14>
+    
+    
+Individual: <person_04_15>
+
+    Facts:  
+     knows_3  < Person_0_15>
+    
+    
+Individual: <person_04_19>
+
+    Facts:  
+     knows  < Person_0_19>
+    
+    
+Individual: <person_04_4>
+
+    Facts:  
+     knows  < Person_0_4>
+    
+    
+Individual: <person_04_5>
+
+    Facts:  
+     knows_3  < Person_0_5>
+    
+    
+Individual: <person_04_9>
+
+    Facts:  
+     knows  < Person_0_9>
+    
+    
+Individual: <person_0_0>
+
+    Facts:  
+     hasDOI  true
+    
+    
+Individual: <person_0_10>
+
+    Facts:  
+     hasID  true
+    
+    
+Individual: <person_0_11>
+
+    Facts:  
+     hasCode  "ghzYYi"
+    
+    
+Individual: <person_0_12>
+
+    Facts:  
+     hasDOI  948
+    
+    
+Individual: <person_0_13>
+
+    Facts:  
+     hasID_0  -1.60367729E18f
+    
+    
+Individual: <person_0_14>
+
+    Facts:  
+     hasID  914
+    
+    
+Individual: <person_0_15>
+
+    Types: 
+        Person_0
+    
+    Facts:  
+     hasCode  false
+    
+    
+Individual: <person_0_16>
+
+    Facts:  
+     hasDOI  0.61636055f
+    
+    
+Individual: <person_0_17>
+
+    Facts:  
+     hasID_0  0.19778287f
+    
+    
+Individual: <person_0_18>
+
+    Facts:  
+     hasID  "cUIHQp"
+    
+    
+Individual: <person_0_19>
+
+    Facts:  
+     hasCode  "0.9879693046178655"^^xsd:double
+    
+    
+Individual: <person_0_1>
+
+    Facts:  
+     hasID_0  -7.8583036E18f
+    
+    
+Individual: <person_0_2>
+
+    Facts:  
+     hasID  500
+    
+    
+Individual: <person_0_3>
+
+    Facts:  
+     hasCode  108
+    
+    
+Individual: <person_0_4>
+
+    Facts:  
+     hasDOI  "FyoLnf"
+    
+    
+Individual: <person_0_5>
+
+    Types: 
+        Person_0
+    
+    Facts:  
+     hasID_0  "UbJjdC"
+    
+    
+Individual: <person_0_6>
+
+    Facts:  
+     hasID  672
+    
+    
+Individual: <person_0_7>
+
+    Facts:  
+     hasCode  174
+    
+    
+Individual: <person_0_8>
+
+    Facts:  
+     hasDOI  "0.9893356252073036"^^xsd:double
+    
+    
+Individual: <person_0_9>
+
+    Facts:  
+     hasID_0  8.7882233E18f
+    
+    
+Individual: <person_11>
+
+    Types: 
+        Person
+    
+    
+Individual: <person_14_12>
+
+    Facts:  
+     knows_0  < Person_0_12>
+    
+    
+Individual: <person_14_13>
+
+    Facts:  
+     knows_1  < Person_0_13>
+    
+    
+Individual: <person_14_17>
+
+    Facts:  
+     knows_0  < Person_0_17>
+    
+    
+Individual: <person_14_18>
+
+    Facts:  
+     knows_1  < Person_0_18>
+    
+    
+Individual: <person_14_2>
+
+    Facts:  
+     knows_0  < Person_0_2>
+    
+    
+Individual: <person_14_3>
+
+    Facts:  
+     knows_1  < Person_0_3>
+    
+    
+Individual: <person_14_7>
+
+    Facts:  
+     knows_0  < Person_0_7>
+    
+    
+Individual: <person_14_8>
+
+    Facts:  
+     knows_1  < Person_0_8>
+    
+    
+Individual: <person_17>
+
+    Types: 
+        Person
+    
+    
+Individual: <person_1_14>
+
+    Types: 
+        Person_1
+    
+    
+Individual: <person_1_19>
+
+    Types: 
+        Person_1
+    
+    
+Individual: <person_1_1>
+
+    Types: 
+        Person_1
+    
+    
+Individual: <person_2_0>
+
+    Types: 
+        Person_2
+    
+    
+Individual: <person_2_10>
+
+    Types: 
+        Person_2
+    
+    
+Individual: <person_6>
+
+    Types: 
+        Person
+    
+    
+Individual: <publication_12>
+
+    Types: 
         Publication
     
     
-Class: Woman
+Individual: <publication_16>
 
+    Types: 
+        Publication
     
-Class: Woman_0
+    
+Individual: <publication_7>
 
+    Types: 
+        Publication
     
-Class: Woman_1
+    
+Individual: <student_0_18>
 
+    Types: 
+        Student_0
     
-Class: Woman_2
+    
+Individual: <student_0_4>
 
+    Types: 
+        Student_0
     
-Class: Woman_3
+    
+Individual: <student_0_8>
 
+    Types: 
+        Student_0
     
-Class: WomenCollege
+    
+Individual: <student_3>
 
-    SubClassOf: 
-        College,
-        hasStudent only Woman
+    Types: 
+        Student
     
     
-Class: WomenCollege_0
+Individual: <student_9>
 
-    SubClassOf: 
-        College,
-        hasStudent_0 only Woman_0
+    Types: 
+        Student
     
-    
-Class: Work
-
-    
-Individual: < BiologicalScience_2>
-
-    
-Individual: < BiologicalScience_4>
-
-    
-Individual: <biologicalscience_0>
-
-    Facts:  
-     hasMember  <biologicalscience_0>
-    
-    
-Individual: <biologicalscience_2>
-
-    Facts:  
-     hasDOI  5.4152817E18f
-    
-    
-Individual: <department4_1>
-
-    Facts:  
-     hasFullProfessor  <fullprofessor_13_1>
-    
-    
-Individual: <fullprofessor_13_1>
-
-    
-Individual: <organization_04_2>
-
-    Facts:  
-     isPartOf  < BiologicalScience_2>
-    
-    
-Individual: <organization_04_3>
-
-    Facts:  
-     hasStudent  <student_06_3>
-    
-    
-Individual: <person9_1>
-
-    Facts:  
-     hasEmailAddress  305
-    
-    
-Individual: <person9_4>
-
-    Facts:  
-     hasCollaborationWith_0  < BiologicalScience_4>,
-     hasEmailAddress_0  "0.14684450559796325"^^xsd:double
-    
-    
-Individual: <person_79_3>
-
-    Facts:  
-     hasTitle_0  590
-    
-    
-Individual: <student_06_3>
-
-    
-Individual: <student_46_0>
-
-    Facts:  
-     hasTotalBacklogs_3  "0.0014848450954902948"^^xsd:double
-    
-    
-Individual: AeronauticalEngineering
-
-    
-Individual: Anthropology
-
-    
-Individual: Architecture
-
-    
-Individual: AsianArts
-
-    
-Individual: Badminton
-
-    
-Individual: BiomedicalEngineering
-
-    
-Individual: Botany
-
-    
-Individual: ChemicalEngineering
-
-    
-Individual: CivilEngineering
-
-    
-Individual: ComputerEngineering
-
-    
-Individual: Drama
-
-    
-Individual: Economics
-
-    
-Individual: ElectricalEngineering
-
-    
-Individual: English
-
-    
-Individual: Genetics
-
-    
-Individual: History
-
-    
-Individual: Humanities
-
-    
-Individual: IndustryEngineering
-
-    
-Individual: LatinArts
-
-    
-Individual: Linguistics
-
-    
-Individual: MaterialScienceEngineering
-
-    
-Individual: MechanicalEngineering
-
-    
-Individual: MediaArtsAndSciences
-
-    
-Individual: MedievalArts
-
-    
-Individual: ModernArts
-
-    
-Individual: ModernLanguages
-
-    
-Individual: MolecularBiology
-
-    
-Individual: MusicsClass
-
-    
-Individual: NonProfitOrganization
-
-    
-Individual: OneDayCricket
-
-    
-Individual: Paleontology
-
-    
-Individual: PerformingArts
-
-    
-Individual: PetroleumEngineering
-
-    
-Individual: Philosophy
-
-    
-Individual: ProfitOrganization
-
-    
-Individual: Psychology
-
-    
-Individual: Religions
-
-    
-Individual: Soccer
-
-    
-Individual: T20Cricket
-
-    
-Individual: Tennis
-
-    
-Individual: TheatreAndDance
-
-    
-Individual: Zoology
-
     

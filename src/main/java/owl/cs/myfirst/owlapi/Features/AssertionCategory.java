@@ -92,6 +92,7 @@ public class AssertionCategory {
 //		System.out.println(objectRange);
 //		System.out.println(dataDomain);
 //		System.out.println(dataRange);
+//		System.out.println(tempOntology.getAxioms(AxiomType.DATA_PROPERTY_RANGE));
 		
 		HashMap<String,String> objectPropsDomain = (HashMap<String, String>) tempOntology.getObjectPropertiesInSignature().stream()
 		.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).trim()).collect(Collectors.toMap(Function.identity(),Function.identity()));
