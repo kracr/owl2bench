@@ -2,6 +2,7 @@ package owl.cs.myfirst.owlapi.Features;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -14,12 +15,14 @@ import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyRangeAxiom;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.vocab.OWL2Datatype;
 
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.CommonFramework;
 import com.cs.myfirst.owlapi.Features.BoilerplateCode.LastDance;
@@ -61,7 +64,7 @@ public class AssertionCategory {
 		tempOntology.add(ontology.getAxioms());
 		tempOntology.remove(app.notToBeIncludedAxioms);
 		
-		HashMap<String,String> objectDomain; HashMap<String,String> objectRange; HashMap<String,String> dataDomain; HashMap<String,String> dataRange;
+		HashMap<String,String> objectDomain; HashMap<String,String> objectRange; HashMap<String,String> dataDomain; HashMap<String,String> dataRange = null;
 		if (extraAxioms) {
 			objectDomain = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.OBJECT_PROPERTY_DOMAIN).stream()
 					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
@@ -75,12 +78,29 @@ public class AssertionCategory {
 					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
 					.collect(Collectors.toMap(props -> props[1].toString(),props -> props[2].toString(),(prop1,prop2) -> prop1));
 			
-			dataRange = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.DATA_PROPERTY_RANGE).stream()
-					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
-					.collect(Collectors.toMap(props -> props[1].toString(),props -> props[2].toString(),(prop1,prop2) -> prop1));
+//			dataRange = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.DATA_PROPERTY_RANGE).stream()
+//					.map( axiom -> WriteAxiomsFromOwlApi.totriple( Arrays.asList( axiom.toString().split(" ") ) )
+//					.map(props -> WriteAxiomsFromOwlApi.totriple(props.toString()).split(" "))
+//					.collect(Collectors.toMap(props -> props[0].split(" ")[1], 
+//							props -> props[1].split(" ").length == 2 ? props[0].split(" ")[1] : props[0].split(" ")[0]);
 			
-			//DataComplement, DataOneOf, , instances ???
-			//rdf:Literla, xsd:string,  mai KOI BHI RANDOM STRING 
+			//There are 2 types of axioms we GENERATE - 
+			//1 - DataPropertyRange(<http://benchmark/OWL2Bench/hasAge> DataComplementOf(xsd:negativeInteger))
+			//  - components array = DataPropertyRange hasAge DataComplementOf xsd:negativeInteger ( Length 4 )
+			//2 - DataPropertyRange(<http://benchmark/OWL2Bench/hasEmailAddress_6> rdfs:Literal)
+			//  - components array = DataPropertyRange hasEmailAddress_6 rdfs:Literal ( Length 3 ) 
+			dataRange = new HashMap<String, String>();
+			
+			for ( OWLDataPropertyRangeAxiom testing : tempOntology.getAxioms(AxiomType.DATA_PROPERTY_RANGE) ) {
+				String[] components = WriteAxiomsFromOwlApi.totriple(testing.toString()).split(" ");
+				if ( components.length < 3 ) continue;
+				
+				String property = components[1];
+				String propRange = components[components.length-1];
+				if ( property.contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+propRange);
+				
+				dataRange.put(property, propRange);
+			}
 		} else {
 			objectDomain = LastDance.constructAxiomsHashMap("RdfsObjectDomain.txt", " domain ");
 			objectRange = LastDance.constructAxiomsHashMap("RdfsObjectRange.txt", " range ");
@@ -131,7 +151,7 @@ public class AssertionCategory {
 //		System.out.println(objectPropsDomain);
 //		System.out.println(objectPropsRange);
 //		System.out.println(dataPropsDomain);
-//		System.out.println(dataPropsRange);
+//		System.out.println(dataPropsRange.values());
 		
 		if ( classCount > 0 ) {
 			int count = 0;
@@ -151,7 +171,7 @@ public class AssertionCategory {
 				}
 			}	
 		}
-		System.out.println(" -------------------------------------------------------------- ");
+
 		if ( objectCount > 0 && objectPropsDomain.size() > 0 && objectPropsRange.size() > 0 ) {
 			int count = 0;
 			while ( count < objectCount ) {
@@ -188,7 +208,7 @@ public class AssertionCategory {
 				}
 			}
 		}
-		System.out.println(" -------------------------------------------------------------- ");
+		
 		if ( dataCount > 0 && dataPropsDomain.size() > 0 && dataPropsRange.size() > 0 ) {
 			int count = 0;
 			while ( count < dataCount ) {
@@ -203,6 +223,8 @@ public class AssertionCategory {
 					
 					if ( CommonFramework.isIsLiteral(dataPropsDomain.get(item)) ) object = randomDataRange(dataPropsRange.get(item),true);
 					else object = randomDataRange(dataPropsRange.get(item),false);
+					
+					if ( property.toString().contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+object);
 					
 					ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyAssertionAxiom(property,subject,object));
 //					System.out.println(factory.getOWLDataPropertyAssertionAxiom(property,subject,object));
@@ -245,7 +267,8 @@ public class AssertionCategory {
 	public static OWLLiteral randomDataRange(String key, boolean known) {
 		Random random = new Random();
 		OWLLiteral result = null;
-		int caseDataType = known == false ? random.nextInt(9) : -1;
+		int caseDataType = key.equals("anyInstance") ? random.nextInt(10) : -1;
+//		System.out.println(key);
 		
 		if ( caseDataType == 0 || caseDataType == 1 || key.equals("xsd:integer") || key.equals("xsd:int") || key.equals("xsd:positiveInteger") 
 				|| key.equals("xsd:nonNegativeInteger") || key.equals("xsd:unsignedInt") 
@@ -259,7 +282,14 @@ public class AssertionCategory {
 			result = factory.getOWLLiteral(random.nextLong());
 		
 		else if ( caseDataType == 4 || key.equals("xsd:double") ) result = factory.getOWLLiteral(random.nextDouble());
-		else if ( caseDataType == 5 || key.equals("xsd:boolean") ) result = factory.getOWLLiteral(random.nextBoolean()); 
+		else if ( caseDataType == 5 || key.equals("xsd:boolean") ) result = factory.getOWLLiteral(random.nextBoolean());
+		
+		else if ( caseDataType == 6 || key.equals("xsd:dateTimeStamp") || key.equals("xsd:dateTime") ) 
+			result = factory.getOWLLiteral("2004-04-12T13:20:00Z", OWL2Datatype.XSD_DATE_TIME_STAMP);
+		
+		else if ( caseDataType == 7 || key.equals("rdfs:Literal") || key.equals("rdfs:PlainLiteral") ) 
+			result = factory.getOWLLiteral(RandomStringUtils.randomAlphabetic(6), OWL2Datatype.RDFS_LITERAL);
+		
 		else result = factory.getOWLLiteral(RandomStringUtils.randomAlphabetic(6));
 		
 		return result;

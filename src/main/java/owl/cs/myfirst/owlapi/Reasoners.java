@@ -7,18 +7,13 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 
 import openllet.owlapi.OpenlletReasoner;
 import openllet.owlapi.OpenlletReasonerFactory;
 import uk.ac.manchester.cs.jfact.JFactFactory;
-
-//<dependency>
-//  <groupId>commons-io</groupId>
-//  <artifactId>commons-io</artifactId>
-//  <version>${version.commons-io}</version>
-//</dependency>
 
 //<dependency>
 //<groupId>com.hermit-reasoner</groupId>
@@ -47,6 +42,7 @@ public class Reasoners {
 	    System.out.println("JFact Consistency = " + reasoner.isConsistent()+" || "+outputFile);
 	    endTime = System.nanoTime();
 	    duration = ((endTime - startTime));
+//	    System.out.println("JFact Consistency = " + reasoner.isConsistent()+" || "+outputFile+" |Time taken (in nano sec.) " + duration);
 //	    System.out.println("Time taken for Consistency Check " + duration );
 //	    System.out.println();
 	        
@@ -65,7 +61,7 @@ public class Reasoners {
 //	    reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 //	    endTime = System.nanoTime();
 //	    duration = ((endTime - startTime));
-//	    System.out.println("Time taken for Classification " + duration );
+//	    System.out.println("JFact Time taken for Classification " + duration );
 //	    System.out.println();
 //	    System.out.println();
 	}
@@ -87,6 +83,7 @@ public class Reasoners {
         System.out.println("Openllet Consistency = " + reasoner.isConsistent()+" || "+outputFile);
         endTime = System.nanoTime();
         duration = ((endTime - startTime));
+//        System.out.println("Openllet Consistency = " + reasoner.isConsistent()+" || "+outputFile+ " |Time taken (in nano sec.) " + duration);
 //        System.out.println("Time taken for Consistency Check " + duration );
 //        System.out.println();    
             
@@ -106,7 +103,7 @@ public class Reasoners {
 //        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 //        endTime = System.nanoTime();
 //        duration = ((endTime - startTime));
-//        System.out.println("Time taken for Classification " + duration );
+//        System.out.println("Openllet Time taken for Classification " + duration );
 //        System.out.println();
 //        System.out.println();
 	}
@@ -126,9 +123,11 @@ public class Reasoners {
         
 //        System.out.println("Started Consistency Checking");
         startTime = System.nanoTime();
-        System.out.println("Hermit Consistency = " + reasoner.isConsistent()+" || "+outputFile);
+//        System.out.println("Hermit Consistency = " + reasoner.isConsistent()+" || "+outputFile+" Time taken " + duration);
          endTime = System.nanoTime();
          duration = ((endTime - startTime));
+         
+         System.out.println("Hermit Consistency = " + reasoner.isConsistent()+" || "+outputFile+" |Time taken (in nano sec.) " + duration);
 //        System.out.println("Time taken for Consistency Check " + duration );
 //        System.out.println();
 
@@ -143,11 +142,11 @@ public class Reasoners {
 //        System.out.println();
 //        
 //        System.out.println("Started Classification Time");
-//         startTime = System.nanoTime();
-//        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
-//         endTime = System.nanoTime();
-//        duration = ((endTime - startTime));
-//        System.out.println("Time taken for Classification " + duration );
+         startTime = System.nanoTime();
+        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+         endTime = System.nanoTime();
+        duration = ((endTime - startTime));
+        System.out.println("Hermit Time taken for Classification " + duration );
 //        System.out.println();
 //        System.out.println();
         
