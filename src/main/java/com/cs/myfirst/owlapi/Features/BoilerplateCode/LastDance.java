@@ -104,12 +104,15 @@ public class LastDance {
 		LinkedHashMap<String, Integer> globalHashMap = whether == true ? Util.underscoreCommonConstructs : Util.commonConstructs;
 		constructName = constructName.substring(0,constructName.length()-4);
 		ArrayList<String> extraConcepts = new ArrayList<String>();
+//		System.out.println(globalHashMap);
 		
 		for ( String key : globalHashMap.keySet() ) {
 			String obj = key.contains("_") ? key.substring(0,key.indexOf("_")) : key;
-//			System.out.println(key+" | last domain-range ");
+
 			if ( constructHashMap.containsKey(obj) && !app.domainRangeOnly.containsKey(key) ) {
 				String value = getRandomTillMaxTerm(constructHashMap.get(obj));
+				
+//				System.out.println(key+" || "+obj+" || "+value+" || "+whether+" || "+constructName);
 				
 				ArrayList<String> allConcepts = new ArrayList<String>();
 				allConcepts.add(key); allConcepts.add(value);
@@ -145,8 +148,7 @@ public class LastDance {
 		constructName = constructName.substring(0,constructName.length()-4);
 		ArrayList<String> extraConcepts = new ArrayList<String>();
 		Queue<String> subOfTerms = new LinkedList<String>(globalHashMap.keySet());
-//		for ( String keys : globalHashMap.keySet() ) subOfTerms.add(keys);
-		
+
 		while(!subOfTerms.isEmpty()) {
 			String item = subOfTerms.poll();
 			String key = item.contains("_") ? item.substring(0,item.indexOf("_")) : item;

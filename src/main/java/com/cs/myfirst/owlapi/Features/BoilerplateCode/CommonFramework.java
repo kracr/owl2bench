@@ -69,7 +69,7 @@ public class CommonFramework {
 		if ( phase.equals("second") ) {
 			if ( Util.commonConstructs.containsKey(term) && Util.commonConstructs.get(term) <=incre+1 ) 
 				Util.commonConstructs.put(term, Util.commonConstructs.get(term)+1);
-			Util.underscoreCommonConstructs.put(ori, incre);
+			if ( !ori.equals(term) ) Util.underscoreCommonConstructs.put(ori, incre);
 		}
 	}
 	

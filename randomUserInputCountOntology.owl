@@ -1,168 +1,218 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://benchmark/OWL2Bench/"
+     xml:base="http://benchmark/OWL2Bench/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <Prefix name="" IRI="http://benchmark/OWL2Bench/"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class abbreviatedIRI=":Student_0"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Course"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasID_0"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasDOI"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasCode"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Person"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows_1"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Student"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasID"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows_0"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":knows"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Publication"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Person_0"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Person_1"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student"/>
-        <Class abbreviatedIRI=":Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":Student_0"/>
-        <Class abbreviatedIRI=":Person"/>
-    </SubClassOf>
-    <ReflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":knows"/>
-    </ReflexiveObjectProperty>
-    <ReflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":knows_0"/>
-    </ReflexiveObjectProperty>
-    <ReflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":knows_1"/>
-    </ReflexiveObjectProperty>
-    <ReflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
-    </ReflexiveObjectProperty>
-    <ReflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
-    </ReflexiveObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_0"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_1"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
-        <Class abbreviatedIRI=":Person"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows"/>
-        <Class abbreviatedIRI=":Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_0"/>
-        <Class abbreviatedIRI=":Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_1"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_2"/>
-        <Class abbreviatedIRI=":Person_1"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":knows_3"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI=":hasCode"/>
-        <DataProperty IRI="topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI=":hasID"/>
-        <DataProperty IRI="topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI=":hasID_0"/>
-        <DataProperty IRI="topDataProperty"/>
-    </SubDataPropertyOf>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasDOI"/>
-        <Datatype abbreviatedIRI="rdfs:Literal"/>
-    </DataPropertyRange>
-    <HasKey>
-        <Class abbreviatedIRI=":Course"/>
-        <DataProperty abbreviatedIRI=":hasCode"/>
-    </HasKey>
-    <HasKey>
-        <Class abbreviatedIRI=":Person"/>
-        <DataProperty abbreviatedIRI=":hasID"/>
-    </HasKey>
-    <HasKey>
-        <Class abbreviatedIRI=":Publication"/>
-        <DataProperty abbreviatedIRI=":hasDOI"/>
-    </HasKey>
-    <HasKey>
-        <Class abbreviatedIRI=":Student"/>
-        <DataProperty abbreviatedIRI=":hasID"/>
-    </HasKey>
-    <HasKey>
-        <Class abbreviatedIRI=":Student_0"/>
-        <DataProperty abbreviatedIRI=":hasID_0"/>
-    </HasKey>
-</Ontology>
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://benchmark/OWL2Bench/knows -->
+
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench/knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench/Person"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench/Person_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/knows_0 -->
+
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench/knows_0">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench/Person_0"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench/Person_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/knows_1 -->
+
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench/knows_1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench/Person_1"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench/Person_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/knows_2 -->
+
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench/knows_2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench/Person_1"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench/Person_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/knows_3 -->
+
+
+    <owl:ObjectProperty rdf:about="http://benchmark/OWL2Bench/knows_3">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://benchmark/OWL2Bench/Person_1"/>
+        <rdfs:range rdf:resource="http://benchmark/OWL2Bench/Person_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://benchmark/OWL2Bench/hasCode -->
+
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench/hasCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/hasDOI -->
+
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench/hasDOI">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/hasID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench/hasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/hasID_0 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://benchmark/OWL2Bench/hasID_0">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Course -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Course">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench/hasCode"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Person -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Person">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench/hasID"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Person_0 -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Person_0"/>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Person_1 -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Person_1"/>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Person_2 -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Person_2"/>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Publication -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Publication">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench/hasDOI"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Student -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Student">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench/Person"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench/hasID"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://benchmark/OWL2Bench/Student_0 -->
+
+
+    <owl:Class rdf:about="http://benchmark/OWL2Bench/Student_0">
+        <rdfs:subClassOf rdf:resource="http://benchmark/OWL2Bench/Person"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://benchmark/OWL2Bench/hasID_0"/>
+        </owl:hasKey>
+    </owl:Class>
+</rdf:RDF>
 
 
 
