@@ -138,7 +138,7 @@ public class AssertionCategory {
 			while ( count < classCount ) {
 				Collections.shuffle(allConcepts, new Random(2));
 				for ( String item : allConcepts ) {
-					if ( CommonFramework.isIsLiteral(item) ) continue;
+					if ( CommonFramework.isIsLiteral(item) && app.discardConcepts.containsKey(item) ) continue;
 					
 					OWLClass classExpression = featurePool.getExclusiveClass(item.trim());
 					OWLIndividual individual = factory.getOWLNamedIndividual(randomInvidual(item,count));
@@ -158,7 +158,10 @@ public class AssertionCategory {
 				ArrayList<String> terms = new ArrayList<String>(objectPropsDomain.keySet());
 				Collections.shuffle(terms, new Random(2));
 				for ( String item : terms ) {
-					if ( CommonFramework.isIsLiteral(item) ) continue;
+					if ( CommonFramework.isIsLiteral(item) && app.discardProperties.containsKey(item) ) {
+//						System.out.println(item);
+						continue;
+					}
 					OWLIndividual object = null; String chosenDomain = "";
 						
 					if ( hasKeyPropMap.containsKey(item.trim()) ) chosenDomain = randomInvidual(hasKeyPropMap.get(item.trim()),count);

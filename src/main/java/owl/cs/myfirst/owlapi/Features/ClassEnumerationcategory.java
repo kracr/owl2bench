@@ -45,6 +45,7 @@ public class ClassEnumerationcategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(owlClass, complement));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(owlClass, complement));
+	    app.discardConcepts.put((String) allConcepts.get(0), "ObjectComplement");
 	}
 	
 	public void convertLineToObjectIntersection(ArrayList allConcepts) {
@@ -59,6 +60,7 @@ public class ClassEnumerationcategory {
 		ontology.getOWLOntologyManager().addAxiom(ontology, axiom);
 		
 		app.notToBeIncludedAxioms.add(axiom);
+		app.discardConcepts.put((String) allConcepts.get(0), "ObjectIntersection");
 	}
 	
 	public void addObjectOneOfIndidividuals(ArrayList<String> allConcepts) {
@@ -90,5 +92,6 @@ public class ClassEnumerationcategory {
 		ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(unionClass, unionOf));
 		
 		app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(unionClass, unionOf));
+		app.discardConcepts.put((String) allConcepts.get(0), "ObjectUnionOf");
 	}
 }

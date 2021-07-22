@@ -87,6 +87,7 @@ public class ObjectPropertyAxiomCategory {
 			ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLInverseObjectPropertiesAxiom(p1, p2));
 			
 			app.notToBeIncludedAxioms.add(factory.getOWLInverseObjectPropertiesAxiom(p1, p2));
+			app.discardProperties.put((String) allConcepts.get(0), "InverseOfProperty");
 		}
 		
 		public static void convertLineToIrreflexiveProperty(ArrayList<String> allConcepts) {

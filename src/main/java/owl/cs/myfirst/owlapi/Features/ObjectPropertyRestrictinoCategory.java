@@ -51,6 +51,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(allValuesFrom, restriction));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectAllValuesFrom");
 	}
 	
 	public static void convertLineToObjectHasSelf(ArrayList<String> allConcepts) {
@@ -62,6 +63,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLEquivalentClassesAxiom(hasSelf, restriction));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLEquivalentClassesAxiom(hasSelf, restriction));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectHasSelf");
 	}
 	
 	public static void addObjectHasValueIndidividuals(String indiv, String classTerm) throws IOException {
@@ -104,6 +106,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(someValuesFrom, restriction));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectSomeValuesFrom");
 	}
 	
 	public static void convertLineToObjectMaxQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -121,6 +124,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, maxCardinality));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, maxCardinality));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectMaxQualifiedCardinality");
 	}
 	
 	public static void convertLineToObjectMinQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -138,6 +142,7 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, minCardinality));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, minCardinality));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectMinQualifiedCardinality");
 	}
 	
 	public static void convertLineToObjectQualifiedCardinality(ArrayList<String> allConcepts) {
@@ -155,5 +160,6 @@ public class ObjectPropertyRestrictinoCategory {
 	    ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLSubClassOfAxiom(range, exactCardinality));
 	    
 	    app.notToBeIncludedAxioms.add(factory.getOWLSubClassOfAxiom(range, exactCardinality));
+	    app.discardConcepts.put(allConcepts.get(0), "ObjectQualifiedCardinality");
 	}
 }

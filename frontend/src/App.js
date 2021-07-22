@@ -1001,8 +1001,8 @@ function App() {
       <hr></hr>
       <div className="row justify-content-around">
         <select onChange={selectOutputFormat}>
-          <option value="XML">XML</option>
-          <option value="RDF">RDF</option>
+          <option value="XML">OWL/XML</option>
+          <option value="RDF">RDF/XML</option>
           <option value="Manchester">Manchester</option>
           <option value="Functional">Functional</option>
           <option value="Turtle">Turtle</option>

@@ -1,577 +1,178 @@
-Prefix: : <http://benchmark/OWL2Bench/>
-Prefix: owl: <http://www.w3.org/2002/07/owl#>
-Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix: xml: <http://www.w3.org/XML/1998/namespace>
-Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://benchmark/OWL2Bench/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Course"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasID_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasDOI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows_1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows_0"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_1"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows_0"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows_1"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+    </ReflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_0"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_1"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_0"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_1"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_2"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows_3"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasID"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasID_0"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasDOI"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <HasKey>
+        <Class abbreviatedIRI=":Course"/>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Person"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Publication"/>
+        <DataProperty abbreviatedIRI=":hasDOI"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Student"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </HasKey>
+    <HasKey>
+        <Class abbreviatedIRI=":Student_0"/>
+        <DataProperty abbreviatedIRI=":hasID_0"/>
+    </HasKey>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 5.1.13.2020-01-27T22:08:36Z) https://github.com/owlcs/owlapi/ -->
 
 
-
-Ontology: 
-
-Datatype: rdfs:Literal
-
-    
-Datatype: xsd:boolean
-
-    
-Datatype: xsd:double
-
-    
-Datatype: xsd:float
-
-    
-Datatype: xsd:integer
-
-    
-Datatype: xsd:string
-
-    
-ObjectProperty: knows
-
-    Characteristics: 
-        Reflexive
-    
-    Domain: 
-        Person,
-        Person_0
-    
-    Range: 
-        Person,
-        Person_2
-    
-    
-ObjectProperty: knows_0
-
-    Characteristics: 
-        Reflexive
-    
-    Domain: 
-        Person_1
-    
-    Range: 
-        Person_1
-    
-    
-ObjectProperty: knows_1
-
-    Characteristics: 
-        Reflexive
-    
-    Domain: 
-        Person_1
-    
-    Range: 
-        Person
-    
-    
-ObjectProperty: knows_2
-
-    Characteristics: 
-        Reflexive
-    
-    Domain: 
-        Person
-    
-    Range: 
-        Person
-    
-    
-ObjectProperty: knows_3
-
-    Characteristics: 
-        Reflexive
-    
-    Domain: 
-        Person_0
-    
-    Range: 
-        Person_0
-    
-    
-DataProperty: hasCode
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    
-DataProperty: hasDOI
-
-    Range: 
-        rdfs:Literal
-    
-    
-DataProperty: hasID
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    
-DataProperty: hasID_0
-
-    SubPropertyOf: 
-        owl:topDataProperty
-    
-    
-DataProperty: owl:topDataProperty
-
-    
-Class: Course
-
-    HasKey: 
-        hasCode
-    
-    
-Class: Person
-
-    HasKey: 
-        hasID
-    
-    
-Class: Person_0
-
-    
-Class: Person_1
-
-    
-Class: Person_2
-
-    
-Class: Publication
-
-    HasKey: 
-        hasDOI
-    
-    
-Class: Student
-
-    SubClassOf: 
-        Person
-    
-    HasKey: 
-        hasID
-    
-    
-Class: Student_0
-
-    SubClassOf: 
-        Person
-    
-    HasKey: 
-        hasID_0
-    
-    
-Individual: < Person_0_0>
-
-    
-Individual: < Person_0_10>
-
-    
-Individual: < Person_0_11>
-
-    
-Individual: < Person_0_12>
-
-    
-Individual: < Person_0_13>
-
-    
-Individual: < Person_0_14>
-
-    
-Individual: < Person_0_15>
-
-    
-Individual: < Person_0_16>
-
-    
-Individual: < Person_0_17>
-
-    
-Individual: < Person_0_18>
-
-    
-Individual: < Person_0_19>
-
-    
-Individual: < Person_0_1>
-
-    
-Individual: < Person_0_2>
-
-    
-Individual: < Person_0_3>
-
-    
-Individual: < Person_0_4>
-
-    
-Individual: < Person_0_5>
-
-    
-Individual: < Person_0_6>
-
-    
-Individual: < Person_0_7>
-
-    
-Individual: < Person_0_8>
-
-    
-Individual: < Person_0_9>
-
-    
-Individual: <course_13>
-
-    Types: 
-        Course
-    
-    
-Individual: <course_2>
-
-    Types: 
-        Course
-    
-    
-Individual: <person4_11>
-
-    Facts:  
-     knows_2  < Person_0_11>
-    
-    
-Individual: <person4_16>
-
-    Facts:  
-     knows_2  < Person_0_16>
-    
-    
-Individual: <person4_1>
-
-    Facts:  
-     knows_2  < Person_0_1>
-    
-    
-Individual: <person4_6>
-
-    Facts:  
-     knows_2  < Person_0_6>
-    
-    
-Individual: <person_04_0>
-
-    Facts:  
-     knows_3  < Person_0_0>
-    
-    
-Individual: <person_04_10>
-
-    Facts:  
-     knows_3  < Person_0_10>
-    
-    
-Individual: <person_04_14>
-
-    Facts:  
-     knows  < Person_0_14>
-    
-    
-Individual: <person_04_15>
-
-    Facts:  
-     knows_3  < Person_0_15>
-    
-    
-Individual: <person_04_19>
-
-    Facts:  
-     knows  < Person_0_19>
-    
-    
-Individual: <person_04_4>
-
-    Facts:  
-     knows  < Person_0_4>
-    
-    
-Individual: <person_04_5>
-
-    Facts:  
-     knows_3  < Person_0_5>
-    
-    
-Individual: <person_04_9>
-
-    Facts:  
-     knows  < Person_0_9>
-    
-    
-Individual: <person_0_0>
-
-    Facts:  
-     hasDOI  true
-    
-    
-Individual: <person_0_10>
-
-    Facts:  
-     hasID  true
-    
-    
-Individual: <person_0_11>
-
-    Facts:  
-     hasCode  "ghzYYi"
-    
-    
-Individual: <person_0_12>
-
-    Facts:  
-     hasDOI  948
-    
-    
-Individual: <person_0_13>
-
-    Facts:  
-     hasID_0  -1.60367729E18f
-    
-    
-Individual: <person_0_14>
-
-    Facts:  
-     hasID  914
-    
-    
-Individual: <person_0_15>
-
-    Types: 
-        Person_0
-    
-    Facts:  
-     hasCode  false
-    
-    
-Individual: <person_0_16>
-
-    Facts:  
-     hasDOI  0.61636055f
-    
-    
-Individual: <person_0_17>
-
-    Facts:  
-     hasID_0  0.19778287f
-    
-    
-Individual: <person_0_18>
-
-    Facts:  
-     hasID  "cUIHQp"
-    
-    
-Individual: <person_0_19>
-
-    Facts:  
-     hasCode  "0.9879693046178655"^^xsd:double
-    
-    
-Individual: <person_0_1>
-
-    Facts:  
-     hasID_0  -7.8583036E18f
-    
-    
-Individual: <person_0_2>
-
-    Facts:  
-     hasID  500
-    
-    
-Individual: <person_0_3>
-
-    Facts:  
-     hasCode  108
-    
-    
-Individual: <person_0_4>
-
-    Facts:  
-     hasDOI  "FyoLnf"
-    
-    
-Individual: <person_0_5>
-
-    Types: 
-        Person_0
-    
-    Facts:  
-     hasID_0  "UbJjdC"
-    
-    
-Individual: <person_0_6>
-
-    Facts:  
-     hasID  672
-    
-    
-Individual: <person_0_7>
-
-    Facts:  
-     hasCode  174
-    
-    
-Individual: <person_0_8>
-
-    Facts:  
-     hasDOI  "0.9893356252073036"^^xsd:double
-    
-    
-Individual: <person_0_9>
-
-    Facts:  
-     hasID_0  8.7882233E18f
-    
-    
-Individual: <person_11>
-
-    Types: 
-        Person
-    
-    
-Individual: <person_14_12>
-
-    Facts:  
-     knows_0  < Person_0_12>
-    
-    
-Individual: <person_14_13>
-
-    Facts:  
-     knows_1  < Person_0_13>
-    
-    
-Individual: <person_14_17>
-
-    Facts:  
-     knows_0  < Person_0_17>
-    
-    
-Individual: <person_14_18>
-
-    Facts:  
-     knows_1  < Person_0_18>
-    
-    
-Individual: <person_14_2>
-
-    Facts:  
-     knows_0  < Person_0_2>
-    
-    
-Individual: <person_14_3>
-
-    Facts:  
-     knows_1  < Person_0_3>
-    
-    
-Individual: <person_14_7>
-
-    Facts:  
-     knows_0  < Person_0_7>
-    
-    
-Individual: <person_14_8>
-
-    Facts:  
-     knows_1  < Person_0_8>
-    
-    
-Individual: <person_17>
-
-    Types: 
-        Person
-    
-    
-Individual: <person_1_14>
-
-    Types: 
-        Person_1
-    
-    
-Individual: <person_1_19>
-
-    Types: 
-        Person_1
-    
-    
-Individual: <person_1_1>
-
-    Types: 
-        Person_1
-    
-    
-Individual: <person_2_0>
-
-    Types: 
-        Person_2
-    
-    
-Individual: <person_2_10>
-
-    Types: 
-        Person_2
-    
-    
-Individual: <person_6>
-
-    Types: 
-        Person
-    
-    
-Individual: <publication_12>
-
-    Types: 
-        Publication
-    
-    
-Individual: <publication_16>
-
-    Types: 
-        Publication
-    
-    
-Individual: <publication_7>
-
-    Types: 
-        Publication
-    
-    
-Individual: <student_0_18>
-
-    Types: 
-        Student_0
-    
-    
-Individual: <student_0_4>
-
-    Types: 
-        Student_0
-    
-    
-Individual: <student_0_8>
-
-    Types: 
-        Student_0
-    
-    
-Individual: <student_3>
-
-    Types: 
-        Student
-    
-    
-Individual: <student_9>
-
-    Types: 
-        Student
-    
-    

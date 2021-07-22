@@ -57,6 +57,8 @@ public class app
 	public static HashMap<String,String> alreadyAssertionAxiom;
 	public static HashMap<String,String> domainRangeOnly;
 	public static LinkedHashMap<String,Integer> rdfsSubsOnly;
+	public static HashMap<String,String> discardConcepts;
+	public static HashMap<String,String> discardProperties;
 	
 	/**
 	 * This method is responsible for generating OBJECT HASHMAP and INDEX HASHMAP for construct.
@@ -166,6 +168,8 @@ public class app
 		alreadyAssertionAxiom = new HashMap<String,String>();
 		rdfsSubsOnly = new LinkedHashMap<String,Integer>();
 		domainRangeOnly = new HashMap<String,String>();
+		discardProperties = new HashMap<String,String>();
+		discardConcepts = new HashMap<String,String>();
 		
 		FilenameConstructMapping filenameSepartor = new FilenameConstructMapping(); filenameSepartor.mapping();
 		CommonFramework cf = new CommonFramework(); File fileout = new File(fileName);
