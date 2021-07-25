@@ -204,6 +204,12 @@ public class app
 		else if ( lastConstructs.containsKey("RdfsDataSubPropertyOf") )
 			cf.addToOntology(FilenameConstructMapping.fileMap.get("RdfsDataSubPropertyOf"),FilenameConstructMapping.separatorMap.get("RdfsDataSubPropertyOf"),inputs[reverse_indexes.get("RdfsDataSubPropertyOf")]);
 		
+		/*
+		 * This extra axioms does is "Suppose EXTRA axiom" check mark is clicked.
+		 * Then we will make EXTRA domain-range, subclass/subprop axioms for Roles/Concepts which we are storing
+		 * Util.commonConstructs hashmap ( common hashmap to store each roles/concepts, as they are coming ).
+		 * Which can be used for RANKING in further contructs's axioms after reading them from txt file.
+		 */
 		if ( extraAxioms ) {
 			LastDance lastOne = new LastDance();
 			lastOne.oneLastTime();
@@ -223,7 +229,7 @@ public class app
 		
 		//Only For ABox/Asserions Axioms, If Chosen By User.
 		if ( classCount > 0 || objectCount > 0 || dataCount > 0 ) AssertionCategory.convertLineToAssertionAxiom(classCount,objectCount,dataCount,extraAxioms);
-		
+
 		//To Save In Different Format
 		if ( resultFormat.equals("RDF") ) man.saveOntology((OWLOntology) my_ontology, rdfFormat, new FileOutputStream(fileout));
 		else if ( resultFormat.equals("Turtle") ) man.saveOntology((OWLOntology) my_ontology, turtleFormat, new FileOutputStream(fileout));

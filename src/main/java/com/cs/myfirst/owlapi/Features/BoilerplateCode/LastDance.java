@@ -172,6 +172,7 @@ public class LastDance {
 				}
 			}
 		}
+		//Maybe unneccessary :P 
 		for( String extra : extraConcepts ) CommonFramework.saveTermsInGlobalHashMap(extra,"third");
 	}
 	

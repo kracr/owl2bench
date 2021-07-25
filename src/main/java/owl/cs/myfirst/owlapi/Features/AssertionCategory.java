@@ -11,6 +11,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.semanticweb.owlapi.io.StringDocumentSource;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -64,6 +65,15 @@ public class AssertionCategory {
 		tempOntology.add(ontology.getAxioms());
 		tempOntology.remove(app.notToBeIncludedAxioms);
 		
+		//The case where TBOX Constructs were NOT Selected, So in order to generate ABox, 
+		//we will use ORIGINAL University Ontology to generate ABox
+		if ( tempOntology.getAxiomCount() == 0 ) {
+			extraAxioms = false;
+			
+	        String ontoResult = WriteAxiomsFromOwlApi.readTxtFiles("UNIV-BENCH-OWL2DL.owl"); 
+	        tempOntology = app.man.loadOntologyFromOntologyDocument(new StringDocumentSource(ontoResult));
+		}
+		
 		HashMap<String,String> objectDomain; HashMap<String,String> objectRange; HashMap<String,String> dataDomain; HashMap<String,String> dataRange = null;
 		if (extraAxioms) {
 			objectDomain = (HashMap<String, String>) tempOntology.getAxioms(AxiomType.OBJECT_PROPERTY_DOMAIN).stream()
@@ -97,9 +107,9 @@ public class AssertionCategory {
 				
 				String property = components[1];
 				String propRange = components[components.length-1];
-				if ( property.contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+propRange);
+//				if ( property.contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+propRange+" || "+dataRange.getOrDefault(property, "default"));
 				
-				dataRange.put(property, propRange);
+				dataRange.putIfAbsent(property, propRange);
 			}
 		} else {
 			objectDomain = LastDance.constructAxiomsHashMap("RdfsObjectDomain.txt", " domain ");
@@ -153,7 +163,7 @@ public class AssertionCategory {
 //		System.out.println(dataPropsDomain);
 //		System.out.println(dataPropsRange.values());
 		
-		if ( classCount > 0 ) {
+		if ( classCount > 0 && allConcepts.size() > 0 ) {
 			int count = 0;
 			while ( count < classCount ) {
 				Collections.shuffle(allConcepts, new Random(2));
@@ -171,7 +181,7 @@ public class AssertionCategory {
 				}
 			}	
 		}
-
+		
 		if ( objectCount > 0 && objectPropsDomain.size() > 0 && objectPropsRange.size() > 0 ) {
 			int count = 0;
 			while ( count < objectCount ) {
@@ -223,8 +233,7 @@ public class AssertionCategory {
 					
 					if ( CommonFramework.isIsLiteral(dataPropsDomain.get(item)) ) object = randomDataRange(dataPropsRange.get(item),true);
 					else object = randomDataRange(dataPropsRange.get(item),false);
-					
-					if ( property.toString().contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+object);
+//					if ( property.toString().contains("hasTotalBacklogs" ) ) System.out.println(property+" || "+object);
 					
 					ontology.getOWLOntologyManager().addAxiom(ontology, factory.getOWLDataPropertyAssertionAxiom(property,subject,object));
 //					System.out.println(factory.getOWLDataPropertyAssertionAxiom(property,subject,object));

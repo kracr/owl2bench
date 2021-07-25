@@ -1,2 +1,2 @@
 Person hasResearchInterest min 1 xsd:string 
-StudentWithBacklog hasTotalBacklogs min 1 rdfs:Literal 
+StudentWithBacklog hasTotalBacklogs min 1 xsd:nonNegativeInteger

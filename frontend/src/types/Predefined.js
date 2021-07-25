@@ -87,31 +87,3 @@ function Predefined(props) {
 }
 
 export default Predefined;
-
-//  selectAll.bind(this);selectNone.bind(this);
-// let invertToggle = (e) => {
-//     let allCheck = [];
-//     for(let i = 0 ; i < checked.length ; i++ ){
-//         allCheck[i] = !checked[i];
-//     }
-//     setCheck(allCheck);
-// }
-// let toggle = (e,boolVal) => {
-//     console.log(e.target.id);
-//     let allCheck = [];
-//     for(let i = 0 ; i < checked.length ; i++ ){
-//         allCheck[i] = boolVal;
-//     }
-//     setCheck(allCheck);
-//     props.toggleParent(e.target.id,boolVal);
-// }
-// let handleCheckboxChange = (e) => {
-//     const nameclicked = e.target.name;
-//     if ( e.target.checked == false ){
-//         document.getElementById(nameclicked+"Text").value = "";
-//     }
-//     let allCheck = [...checked];
-//     allCheck[props.indexes[nameclicked]] = !checked[props.indexes[nameclicked]];
-//     setCheck(allCheck);
-//     //console.log(nameclicked+" "+e.target.checked+" "+document.getElementById(nameclicked+"Text").value+" value "+indexes[nameclicked]+" "+!checked[indexes[nameclicked]]);
-// }
