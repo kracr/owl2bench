@@ -1,0 +1,15 @@
+file,size_kb,consistency_time_milsecs,consistency_size_kb,realisation_time_milsecs,realisation_size_kb,classification_time_milsecs,classification_size_kb
+syn.sage-bionetworks-synapse-ontology.3.owl.xml_functional.owl,5924,269,52012,455,104044,431,98840
+tao.teleost-anatomy-ontology.135.owl.xml_functional.owl,1265,85,24408,154,42848,151,41836
+teddy.terminology-for-the-description-of-dynamics.11.owl.xml_functional.owl,1384,148,33088,229,48392,219,48644
+tgma.mosquito-gross-anatomy-ontology.9.owl.xml_functional.owl,812,58,20752,93,28712,87,27956
+tto.teleost-taxonomy-ontology.43.owl.xml_functional.owl,10364,632,99676,1113,242612,1061,228192
+typon.microbial-typing-ontology.9.owl.xml_functional.owl,2201,257,54172,925,156260,925,153200
+uberon.uber-anatomy-ontology.210.owl.xml_functional.owl,8339,935,141072,21602030,99365540,21602117,102216936
+vienna.owl_functional.owl,123701,9245,1229308,9508,1276992,9222,1231196
+vo.vaccine-ontology.182.owl.xml_functional.owl,2805,294,59136,9681,350208,11238,360748
+vto.vertebrate-taxonomy-ontology.8.owl.xml_functional.owl,28863,1763,246528,3338,662600,3148,624688
+vt.vertebrate-trait-ontology.42.owl.xml_functional.owl,933,65,22228,117,34600,108,33548
+wb-bt.c-elegans-gross-anatomy-vocabulary.95.owl.xml_functional.owl,2913,187,38140,340,82716,333,80536
+xao.xenopus-anatomy-and-development-ontology.21.owl.xml_functional.owl,1131,75,23512,110,30864,106,30308
+zfa.zebrafish-anatomy-and-development-ontology.36.owl.xml_functional.owl,2193,187,39332,209,48212,196,47028
