@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ontology xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2002/07/owl#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#rna"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#externalReferenceUtilityClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#openControlledVocabulary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#relationshipXref"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#transport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#confidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#publicationXref"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#xref"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2002/07/owl#Nothing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#bioSource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2002/07/owl#Thing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceSite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#conversion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#biochemicalReaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceParticipant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#pathway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#utilityClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#transportWithBiochemicalReaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#chemicalStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#pathwayStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#complexAssembly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#evidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#experimentalForm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#kPrime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#unificationXref"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalEntityParticipant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#complex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#dna"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#catalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#deltaGprimeO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#modulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#smallMolecule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#dataSource"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#rna"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#externalReferenceUtilityClass"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#openControlledVocabulary"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#relationshipXref"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#transport"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#confidence"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#publicationXref"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#xref"/>
+        <Class IRI="http://www.w3.org/2002/07/owl#Nothing"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#bioSource"/>
+        <Class IRI="http://www.w3.org/2002/07/owl#Thing"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#interaction"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceSite"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceLocation"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#conversion"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#biochemicalReaction"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceParticipant"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalInteraction"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#pathway"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#utilityClass"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#transportWithBiochemicalReaction"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#chemicalStructure"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#control"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalEntity"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#pathwayStep"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#complexAssembly"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#evidence"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#experimentalForm"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#kPrime"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#unificationXref"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#protein"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#physicalEntityParticipant"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#complex"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceFeature"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#entity"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#dna"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#catalysis"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#deltaGprimeO"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#modulation"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#sequenceInterval"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#smallMolecule"/>
+        <Class IRI="http://www.biopax.org/release/biopax-level2.owl#dataSource"/>
+    </EquivalentClasses>
+</Ontology>
