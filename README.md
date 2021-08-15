@@ -29,7 +29,7 @@ Both of these contains merging of all the ontologies present in all csv files in
 
 **ranges_result** this folder contains mainly the range of features for all 9 categories.
 
-
+**pickles_file**
 
 
                 
