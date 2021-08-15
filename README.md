@@ -14,7 +14,9 @@ Run the file **./kon_resoner_new.sh** to generate the consistency, classificatio
 **csv_features_108** contains again 59 files. Each csv file contains the same set of ontologies. For each ontology, metrics are calculated and stored.
 
 **full_processed_csv** folder contains two csv files :-
-- a
+Both of these contains merging of all the ontologies present in all csv files in **dataset** folder with all csv files in **csv_features_108** folder
+- a_new_more.csv  - contains all features along with some non numeric feature values like Expressivity, EL , DL and more
+- final_new_more.csv - contains same as a_new_more.csv but excluding non numeric features. This files is mainly used for further processing.
 
 
 
