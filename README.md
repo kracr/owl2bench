@@ -13,8 +13,8 @@ Run the file **./kon_resoner_new.sh** to generate the consistency, classificatio
 **dataset** folder contains 59 csv files. In each csv file we have group of ontologies for which reasoning tasks and memory consumption are caluated ans stored
 **csv_features_108** contains again 59 files. Each csv file contains the same set of ontologies. For each ontology, metrics are calculated and stored.
 
-**full_processed_csv** contains two csv files :-
-
+**full_processed_csv** folder contains two csv files :-
+- a
 
 
 
