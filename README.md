@@ -22,7 +22,7 @@ Both of these contains merging of all the ontologies present in all csv files in
 -check_clustering_methods.py this is used for finding the efficient clustering method for our experiment.</br>
 -merging_90_features_&_reasoning_tasks.py  - these generates the file **a_new_more.csv**  and **final_new_more.csv**. </br>
 -ontology_hardness.py : this is the main file. Run this for generating the ranges.</br>
--plot_generation.py - this is used for generating the zoomed plots for common features in easy, medium and hard time category. Zoomed plots are present in <\br>
+-plot_generation.py - this is used for generating the zoomed plots for common features in easy, medium and hard time category. Zoomed plots are present in
   **plots_for_comparison_with_all_category** folder. The plots are can be used for analysis of a feature among 9 categories.
   
 **normal_curve_&_skewness** this folder contains the plots for all 9 categories. Each subfolder represents 1 category. A single plot is respect to one feature with its **approximately normal curve and skewness**. Depending on the skewness value two different formulas are applied for calculating range of a feature. Explained in the report , follow there.
