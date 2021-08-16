@@ -42,4 +42,7 @@ There are 9 pickle files corresponding to each of the 9 category:-
 - hard_time_hard_memory : contain set of of ontologies in hard_time_easy_memory category
 - rows : it contains the common features of these 9 categories
 
-                
+**How to run the main file ontology_hardness.py**:
+1. Make a folder by any name, suppose **ontology hardness**. 
+2. Place the folder **directory** and **csv_features_108** inside this folder.
+3. 
