@@ -30,6 +30,16 @@ Both of these contains merging of all the ontologies present in all csv files in
 **ranges_result** this folder contains mainly the range of features for all 9 categories.
 
 **pickles_file**
-
+There are 9 pickle files corresponding to each of the 9 category:-
+- easy_time_easy_memory :  contain set of of ontologies in easy_time_easy_memory category
+- easy_time_medium_memory : contain set of of ontologies in easy_time_medium_memory category
+- easy_time_hard_memory : contain set of of ontologies in easy_time_hard_memory category
+- medium_time_easy_memory : contain set of of ontologies in medium_time_easy_memory category
+- medium_time_medium_memory : contain set of of ontologies in medium_time_medium_memory category
+- medium_time_hard_memory : contain set of of ontologies in medium_time_hard_memory category
+- hard_time_easy_memory : contain set of of ontologies in hard_time_easy_memory category
+- hard_time_medium_memory : contain set of of ontologies in hard_time_medium_memory category
+- hard_time_hard_memory : contain set of of ontologies in hard_time_easy_memory category
+- rows : it contains the common features of these 9 categories
 
                 
