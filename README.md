@@ -51,6 +51,13 @@ There are 9 pickle files corresponding to each of the 9 category:-
 4. Run the script now.
 5. This will generate the csv file **final_new_more.csv** which needs to be placed in the main folder **ontology_hardness**
 
+
+**How to run checking_clustering_methods.py**:-</br>
+1. First place this python script in the **ontology_hardness** folder.
+2. Set **directory_path_1** to directory of **dataset** folder.
+3. Then run the script.
+
+
 **How to run the main file ontology_hardness.py**:
 1. Make a main folder by any name, suppose **ontology hardness**. 
 2. Place the folder **dataset** and **csv_features_108** inside this folder.
@@ -59,8 +66,8 @@ There are 9 pickle files corresponding to each of the 9 category:-
 5. Run the python file then. It will generate the ranges . </br>
 
 **How to run plot_generation.py**:
-1. First place all the pickle files in the folder **ontology hardness**
+1. First place all the pickle files in the folder **ontology hardness**.
 2. Then place the **plot_generation.py** here.
-3. Run the file , it will generate the zoomed plots
+3. Run the file , it will generate the zoomed plots.
 
  
