@@ -1,8 +1,9 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import Predefined from "./types/Predefined.js";
+import Predefined from "./types/Predefined";
 import axios from "axios";
 import "./bootstrap.min.css";
+import "./App.css"
 
 const constructs1 = [
   "OwlClass",
@@ -51,6 +52,7 @@ const constructs3 = [
   "RdfsObjectSubPropertyOf",
   "ObjectProperty",
 ];
+
 let initally3 = [];
 const indexes3 = new Map();
 for (let i = 0; i < constructs3.length; i++) {
@@ -244,7 +246,7 @@ function App() {
         .then((response) => {
           alert(
             response.status +
-              " All Non - User Input Checkboxes have been set 1 valaue by default " +
+              " All Non - User Input Checkboxes have been set 1 value by default " +
               total
           );
         });
@@ -359,32 +361,34 @@ function App() {
   };
 
   return (
-    <div className="App">
+    
+    <div className="App container-fluid">
+                            <hr/>
+
       <div className="row justify-content-center">
-        <h1>OWL2Bench</h1>
+        <h1 className="mt-4">OWL2Bench : Variable TBox </h1>
       </div>
       <hr></hr>
       <hr></hr>
       <div className="row">
         <div className=" col-md-3"></div>
-        <div className=" col-md-4">
-          {" "}
-          <button class="btn btn-success" onClick={selectAll}>
-            {" "}
-            Select All{" "}
-          </button>{" "}
-          <input
-            type="text"
-            class="col-md-3 mb-3"
-            id="selectAllInput"
-            placeholder="All Input"
-          ></input>
+        <div className=" col-md-5">
+          <div className="input-group-append">
+            <button class="btn btn-success m-2 mr-4 " onClick={selectAll}>
+              Select All
+            </button>
+            <input
+              type="text"
+              class="col-md-3 m-2 rounded"
+              id="selectAllInput"
+              placeholder="All Input"
+            ></input>
+          </div>
         </div>
-        <div className=" col-md-4">
-          {" "}
-          <button class="btn btn-success" onClick={selectNone}>
+        <div className=" col-md-4 input-group-append">
+          <button class="btn btn-secondary m-2" onClick={selectNone}>
             Select None
-          </button>{" "}
+          </button>
         </div>
       </div>
       <hr></hr>

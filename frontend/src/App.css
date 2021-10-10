@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.border-3 {
+  border-width:3px !important;
+}
+.bg-cyan{
+  background-color: #4cecac !important;
+}
+
+.big-checkbox {
+  width:25px;
+  height:25px;
 }
