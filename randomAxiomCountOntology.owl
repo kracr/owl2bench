@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://benchmark/OWL2Bench/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="selfawareperson_0"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI=":hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":GovernmentOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organization_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":likes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":PGStudent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SoccerFan"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Parent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Woman"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="person4_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Department"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Course"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":UGCourse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":ProfitOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":University"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Interest"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollFor_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Man"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Mother"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Human"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Sports"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":LeisureStudent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":NonProfitOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Publication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Program"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":PGProgram"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":GovernmentOrganization"/>
+        <ObjectOneOf>
+            <NamedIndividual abbreviatedIRI=":NonProfitOrganization"/>
+            <NamedIndividual abbreviatedIRI=":ProfitOrganization"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Human"/>
+        <Class abbreviatedIRI=":Person"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Mother"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":Parent"/>
+            <Class abbreviatedIRI=":Woman"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+        <ObjectHasSelf>
+            <ObjectProperty abbreviatedIRI=":knows"/>
+        </ObjectHasSelf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Course"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":takesCourse"/>
+            <Class abbreviatedIRI=":Student"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Course"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":takesCourse"/>
+            <Class abbreviatedIRI=":LeisureStudent"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Department"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":LeisureStudent"/>
+        <Class abbreviatedIRI=":Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Mother"/>
+        <Class abbreviatedIRI=":Parent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+        <ObjectComplementOf>
+            <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGProgram"/>
+        <Class abbreviatedIRI=":Program"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGProgram"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":enrollFor"/>
+            <Class abbreviatedIRI=":PGStudent"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGStudent"/>
+        <Class abbreviatedIRI=":Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Parent"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Man"/>
+            <Class abbreviatedIRI=":Woman"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
+            <Class abbreviatedIRI=":University"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI=":hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI=":hasID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataMaxCardinality cardinality="5">
+            <DataProperty abbreviatedIRI=":hasTitle"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+        <DataHasValue>
+            <DataProperty abbreviatedIRI=":hasAge"/>
+            <Literal>59</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Soccer"/>
+        <Class abbreviatedIRI=":Sports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SoccerFan"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SoccerFan"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+            <NamedIndividual abbreviatedIRI=":Soccer"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Sports"/>
+        <Class abbreviatedIRI=":Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI=":enrollIn"/>
+            <Class abbreviatedIRI=":Department"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UGCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":University"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </SubClassOf>
+    <DisjointUnion>
+        <Class abbreviatedIRI=":Course"/>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+        <Class abbreviatedIRI=":UGCourse"/>
+    </DisjointUnion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+        <NamedIndividual IRI="person4_0"/>
+        <NamedIndividual IRI="selfawareperson_0"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+        <NamedIndividual IRI="person4_0"/>
+        <Literal>qfEYQT</Literal>
+    </DataPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+        <ObjectProperty abbreviatedIRI=":likes"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+    </TransitiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </ReflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <Class abbreviatedIRI=":Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+        <Class abbreviatedIRI=":Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <Class abbreviatedIRI=":Program"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <Class abbreviatedIRI=":Department"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
+        <Class abbreviatedIRI=":University"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+        <Class abbreviatedIRI=":Organization_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <ObjectProperty abbreviatedIRI=":enrollFor_0"/>
+    </DisjointObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":enrollIn"/>
+            <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </SubObjectPropertyOf>
+    <EquivalentDataProperties>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </EquivalentDataProperties>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasID"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+        <Class abbreviatedIRI=":Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Class abbreviatedIRI=":Person_2"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+        <DataComplementOf>
+            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
+        </DataComplementOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+        <DataIntersectionOf>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataIntersectionOf>
+    </DataPropertyRange>
+    <HasKey>
+        <Class abbreviatedIRI=":Student"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </HasKey>
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI=":hasTitle"/>
+        <DataOneOf>
+            <Literal xml:lang="xsd:string">Dr.</Literal>
+            <Literal xml:lang="xsd:string">Miss.</Literal>
+            <Literal xml:lang="xsd:string">Mr.</Literal>
+            <Literal xml:lang="xsd:string">Prof.</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 5.1.13.2020-01-27T22:08:36Z) https://github.com/owlcs/owlapi/ -->
+
+

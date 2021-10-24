@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
-import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Switch,
     Route,
-    Link
+    Link,
+    HashRouter,
 } from "react-router-dom";
-
+import { createBrowserHistory, createHashHistory } from 'history';
+import { isElectron } from './utils';
 import Home from './Home';
 import App from '../App';
 import VersionPicker from './VersionPicker';
 // import About from './About'
-
+export const history = isElectron()
+  ? createHashHistory()
+  : createBrowserHistory();
+const Router = isElectron() ? HashRouter : BrowserRouter;
 export default class BenchNav extends Component {
     render() {
         return (
-            <Router>
+            <Router history={history}>
                 <div>
                     <Navbar bg="dark" variant={"dark"} expand="lg">
                         <div className="container">

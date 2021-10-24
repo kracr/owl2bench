@@ -53,7 +53,7 @@ function Predefined(props) {
               </button>
               <input
                 type="text"
-                className="col-md-4 p-1 m-1 ml-5 rounded"
+                className="col-md-4 p-1 m-1 ml-5 rounded form-control"
                 height = "40"
                 id={"selectAllInput" + props.heading}
                 placeholder="Input"

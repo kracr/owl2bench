@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, Card } from "react-bootstrap";
 
 export default class FixedTBox extends Component {
   state = {
@@ -21,6 +20,32 @@ export default class FixedTBox extends Component {
     }
   }
 
+  generateOntology(){
+    let univ = 1
+    let profile = "EL"
+    let seed = null
+    univ = document.getElementById("universities").value
+    profile = document.getElementById("profile").value
+    seed = document.getElementById("seed").value
+    seed = seed ? seed : -1
+    console.log(univ,profile,seed)
+
+    const { ipcRenderer } = window.require('electron');
+
+    let Data = {
+        univ : univ,
+        profile : profile,
+        seed : seed
+    };
+
+    console.log(Data)
+
+    // Send information to the main process
+    // if a listener has been set, then the main process
+    // will react to the request !
+    ipcRenderer.send('generate-FixedTbox', Data);
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -34,23 +59,23 @@ export default class FixedTBox extends Component {
             <form className="form-horizontal">
                 <div className="form-row">
                     <div className="col">
-                        <label for="universities">Number of Universities</label>
+                        <label>Number of Universities</label>
                         <input type="number" className="form-control"  id="universities" />
                     </div>
                     <div className="col">
                         <label>Owl 2 Profile</label>
-                        <select className="form-control" >
+                        <select className="form-control" id="profile" >
                             <option value="EL">OWL2 EL</option>
                             <option value="RL">OWL2 RL</option>
                             <option value="DL">OWL2 DL</option>
                         </select>
                     </div>
                     <div className="col">
-                        <label for="seed">Seed Value <span className="text-muted">(Optional)</span></label>
-                        <input type="number" className="form-control" />
+                        <label >Seed Value <span className="text-muted">(Optional)</span></label>
+                        <input type="number" className="form-control" id="seed" />
                     </div>
                     <div className="pt-3">
-                        <button type="submit" className="btn btn-primary mt-3"> Submit </button>
+                        <button type="submit" className="btn btn-primary mt-3" onClick={this.generateOntology} > Submit </button>
                     </div>
                 </div>
             </form>

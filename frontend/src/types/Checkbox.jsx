@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+const electron = window.require('electron');
+// const {dialog} = electron;
+
+// Importing dialog module using remote
 
 const Checkbox = ({ label, isSelected, onCheckboxChange, heading }) => {
   const [textInput, setText] = useState("");
@@ -19,9 +23,9 @@ const Checkbox = ({ label, isSelected, onCheckboxChange, heading }) => {
         {label}
       </label>
       <label className="col-3"></label>
-      <label className="col-2 mb-0">
+      <label className="col-2 mb-0 ">
         <input
-          class="form-group col-12 mr-5 rounded"
+          class="form-group form-control col-12 mr-5 rounded"
           // class="col-md-12"
           type="text"
           id={label + "Text"}
@@ -39,6 +43,22 @@ const Checkbox = ({ label, isSelected, onCheckboxChange, heading }) => {
               }
             } else {
               alert("First Tick Checkbox");
+              // dialog.showMessageBox({
+              //   // option Object
+              //   type: 'warning',
+              //   buttons: [],
+              //   defaultId: 0,
+              //   icon: '',
+              //   title: 'Alert',
+              //   message: 'First Tick Checkbox',
+              //   checkboxLabel: 'Checkbox',
+              //   checkboxChecked: false,
+              //   cancelId: 0,
+              //   noLink: false,
+              //   normalizeAccessKeys: false,
+              // });
+              console.log(electron)
+              // dialog.showErrorBox("Error","First Tick Checkbox")
             }
           }}
         />

@@ -43,7 +43,7 @@ class Hardness extends React.Component {
               </div>
               <div className="row m-5">
                 <div className="col">
-                  <label className="ml-4 h4">Number of Ontologies</label>
+                  <label className="ml-4 h4">Ontology Size</label>
                 </div>
                 <div className="col">
                   <input type="number" className="form-control" />
