@@ -1,466 +1,828 @@
-Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
-Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
-Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
-Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://benchmark/OWL2Bench/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class abbreviatedIRI=":PrivateOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="humanitiesandsocialscience_0"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI=":hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI=" HumanitiesAndSocialScience_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":GovernmentOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":likes"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TeachingCourse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":PGStudent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SemiGovernmentOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Employee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasStudent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode_2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SoccerFan"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Parent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Woman"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Organization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Student_2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Department"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Course"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Work"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":UGCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":College"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":ProfitOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Interest"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":worksFor"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":WomenCollege"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Mother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Sports"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":LeisureStudent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":NonProfitOrganization"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="person3_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Publication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Program"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_0"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Person_1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":PGProgram"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Course"/>
+        <Class abbreviatedIRI=":TeachingCourse"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Mother"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":Parent"/>
+            <Class abbreviatedIRI=":Woman"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":PrivateOrganization"/>
+        <ObjectOneOf>
+            <NamedIndividual abbreviatedIRI=":NonProfitOrganization"/>
+            <NamedIndividual abbreviatedIRI=":ProfitOrganization"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+        <ObjectHasSelf>
+            <ObjectProperty abbreviatedIRI=":knows"/>
+        </ObjectHasSelf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI=":College"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Course"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":takesCourse"/>
+            <Class abbreviatedIRI=":Student"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Course"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":takesCourse"/>
+            <Class abbreviatedIRI=":LeisureStudent"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Employee"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI=":worksFor"/>
+            <Class abbreviatedIRI=":Organization"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":LeisureStudent"/>
+        <Class abbreviatedIRI=":Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Mother"/>
+        <Class abbreviatedIRI=":Parent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+        <Class abbreviatedIRI=":CollegeDiscipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":NonHumanitiesAndSocialScience"/>
+        <ObjectComplementOf>
+            <Class abbreviatedIRI=":HumanitiesAndSocialScience"/>
+        </ObjectComplementOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Organization"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":GovernmentOrganization"/>
+            <Class abbreviatedIRI=":PrivateOrganization"/>
+            <Class abbreviatedIRI=":SemiGovernmentOrganization"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGProgram"/>
+        <Class abbreviatedIRI=":Program"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGProgram"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI=":enrollFor"/>
+            <Class abbreviatedIRI=":PGStudent"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":PGStudent"/>
+        <Class abbreviatedIRI=":Student"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Parent"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI=":hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataAllValuesFrom>
+            <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI=":hasID"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Person"/>
+        <DataMaxCardinality cardinality="5">
+            <DataProperty abbreviatedIRI=":hasTitle"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":RetiringPerson"/>
+        <DataHasValue>
+            <DataProperty abbreviatedIRI=":hasAge"/>
+            <Literal>59</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SelfAwarePerson"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Soccer"/>
+        <Class abbreviatedIRI=":Sports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SoccerFan"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SoccerFan"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+            <NamedIndividual abbreviatedIRI=":Soccer"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Sports"/>
+        <Class abbreviatedIRI=":Interest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TeachingCourse"/>
+        <Class abbreviatedIRI=":Work"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UGCourse"/>
+        <Class abbreviatedIRI=":Course"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":WomenCollege"/>
+        <Class abbreviatedIRI=":College"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":WomenCollege"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI=":hasStudent"/>
+            <Class abbreviatedIRI=":Woman"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <DisjointUnion>
+        <Class abbreviatedIRI=":Course"/>
+        <Class abbreviatedIRI=":ElectiveCourse"/>
+        <Class abbreviatedIRI=":UGCourse"/>
+    </DisjointUnion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+        <NamedIndividual IRI="person3_0"/>
+        <NamedIndividual IRI=" HumanitiesAndSocialScience_0"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+        <NamedIndividual IRI="humanitiesandsocialscience_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">gvqXun</Literal>
+    </DataPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasStudent"/>
+        <ObjectProperty abbreviatedIRI=":hasMember"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+        <ObjectProperty abbreviatedIRI=":likes"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+    </TransitiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+    </ReflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":hasStudent"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":loves"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":takesCourse"/>
+        <Class abbreviatedIRI=":Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":worksFor"/>
+        <Class abbreviatedIRI=":Employee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <Class abbreviatedIRI=":Person_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+        <Class abbreviatedIRI=":Program"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":enrollIn"/>
+        <Class abbreviatedIRI=":Department"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasSameHomeTownWith"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":hasStudent"/>
+        <Class abbreviatedIRI=":Student_2"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":knows"/>
+        <Class abbreviatedIRI=":Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":worksFor"/>
+        <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI=":advises"/>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
+    </DisjointObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":enrollIn"/>
+            <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+    </SubObjectPropertyOf>
+    <EquivalentDataProperties>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </EquivalentDataProperties>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode_0"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode_2"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasID"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Class abbreviatedIRI=":Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+        <Class abbreviatedIRI=":Publication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTitle"/>
+        <Class abbreviatedIRI=":Person_1"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
+        <Class abbreviatedIRI=":Student_0"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
+        <Class abbreviatedIRI=":Student_1"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasAge"/>
+        <DataComplementOf>
+            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
+        </DataComplementOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasCode"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasCode_0"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasCode_2"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+        <DataIntersectionOf>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataIntersectionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:int"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:int"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:int"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <HasKey>
+        <Class abbreviatedIRI=":Student"/>
+        <DataProperty abbreviatedIRI=":hasID"/>
+    </HasKey>
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI=":hasTitle"/>
+        <DataOneOf>
+            <Literal xml:lang="xsd:string">Dr.</Literal>
+            <Literal xml:lang="xsd:string">Miss.</Literal>
+            <Literal xml:lang="xsd:string">Mr.</Literal>
+            <Literal xml:lang="xsd:string">Prof.</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 5.1.13.2020-01-27T22:08:36Z) https://github.com/owlcs/owlapi/ -->
 
 
-Ontology(
-Declaration(Class(<http://benchmark/OWL2Bench/College>))
-Declaration(Class(<http://benchmark/OWL2Bench/CollegeDiscipline>))
-Declaration(Class(<http://benchmark/OWL2Bench/Course>))
-Declaration(Class(<http://benchmark/OWL2Bench/Department>))
-Declaration(Class(<http://benchmark/OWL2Bench/ElectiveCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/Employee>))
-Declaration(Class(<http://benchmark/OWL2Bench/Faculty>))
-Declaration(Class(<http://benchmark/OWL2Bench/GovernmentOrganization>))
-Declaration(Class(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>))
-Declaration(Class(<http://benchmark/OWL2Bench/Interest>))
-Declaration(Class(<http://benchmark/OWL2Bench/LeisureStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/Mother>))
-Declaration(Class(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization>))
-Declaration(Class(<http://benchmark/OWL2Bench/Organization_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGProgram>))
-Declaration(Class(<http://benchmark/OWL2Bench/PGStudent>))
-Declaration(Class(<http://benchmark/OWL2Bench/Parent>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Person_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/PrivateOrganization>))
-Declaration(Class(<http://benchmark/OWL2Bench/Program>))
-Declaration(Class(<http://benchmark/OWL2Bench/Publication>))
-Declaration(Class(<http://benchmark/OWL2Bench/RetiringPerson>))
-Declaration(Class(<http://benchmark/OWL2Bench/SelfAwarePerson>))
-Declaration(Class(<http://benchmark/OWL2Bench/SemiGovernmentOrganization>))
-Declaration(Class(<http://benchmark/OWL2Bench/Soccer>))
-Declaration(Class(<http://benchmark/OWL2Bench/SoccerFan>))
-Declaration(Class(<http://benchmark/OWL2Bench/Sports>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_0>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_1>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_2>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_3>))
-Declaration(Class(<http://benchmark/OWL2Bench/Student_4>))
-Declaration(Class(<http://benchmark/OWL2Bench/TeachingCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/UGCourse>))
-Declaration(Class(<http://benchmark/OWL2Bench/Woman>))
-Declaration(Class(<http://benchmark/OWL2Bench/WomenCollege>))
-Declaration(Class(<http://benchmark/OWL2Bench/Work>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/advises>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollFor>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/enrollIn>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasMember>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/hasStudent>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAdvisorOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isCrazyAbout>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isDeanOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isStudentOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/isSubOrganizationOf>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/knows>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/likes>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/loves>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/takesCourse>))
-Declaration(ObjectProperty(<http://benchmark/OWL2Bench/worksFor>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasAge_3>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasCode_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasEmailAddress>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasID>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasName>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasPublicationDate>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasResearchInterest>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTenure>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTenure_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTitle_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_0>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_1>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_2>))
-Declaration(DataProperty(<http://benchmark/OWL2Bench/hasTotalBacklogs_3>))
-Declaration(NamedIndividual(<person5_0>))
-Declaration(NamedIndividual(<person_15_0>))
-Declaration(NamedIndividual(< UGCourse_0>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/NonProfitOrganization>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/ProfitOrganization>))
-Declaration(NamedIndividual(<http://benchmark/OWL2Bench/Soccer>))
-Declaration(Datatype(<http://benchmark/OWL2Bench/hasTenure>))
-Declaration(Datatype(<http://benchmark/OWL2Bench/hasTenure_0>))
-Declaration(Datatype(<http://benchmark/OWL2Bench/hasTitle>))
-Declaration(Datatype(<http://benchmark/OWL2Bench/hasTitle_0>))
-Declaration(Datatype(<http://benchmark/OWL2Bench/hasTitle_1>))
-############################
-#   Object Properties
-############################
-
-# Object Property: <http://benchmark/OWL2Bench/advises> (<http://benchmark/OWL2Bench/advises>)
-
-EquivalentObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/isAdvisorOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/Person_0>)
-DisjointObjectProperties(<http://benchmark/OWL2Bench/advises> <http://benchmark/OWL2Bench/enrollFor>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollFor> (<http://benchmark/OWL2Bench/enrollFor>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollFor> owl:topObjectProperty)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/Student>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/Program>)
-
-# Object Property: <http://benchmark/OWL2Bench/enrollIn> (<http://benchmark/OWL2Bench/enrollIn>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/isStudentOf>)
-FunctionalObjectProperty(<http://benchmark/OWL2Bench/enrollIn>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/Student_1>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/Department>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasCollaborationWith> (<http://benchmark/OWL2Bench/hasCollaborationWith>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasCollaborationWith> owl:topObjectProperty)
-SymmetricObjectProperty(<http://benchmark/OWL2Bench/hasCollaborationWith>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasCollaborationWith> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasSameHomeTownWith> (<http://benchmark/OWL2Bench/hasSameHomeTownWith>)
-
-TransitiveObjectProperty(<http://benchmark/OWL2Bench/hasSameHomeTownWith>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <http://benchmark/OWL2Bench/Person_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/hasStudent> (<http://benchmark/OWL2Bench/hasStudent>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/hasMember>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Student_2>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAdvisedBy> (<http://benchmark/OWL2Bench/isAdvisedBy>)
-
-InverseObjectProperties(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/isAdvisorOf>)
-IrreflexiveObjectProperty(<http://benchmark/OWL2Bench/isAdvisedBy>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAdvisedBy> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> (<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>)
-
-AsymmetricObjectProperty(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isAffiliatedOrganizationOf> <http://benchmark/OWL2Bench/Organization>)
-
-# Object Property: <http://benchmark/OWL2Bench/isCrazyAbout> (<http://benchmark/OWL2Bench/isCrazyAbout>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/loves>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/isDeanOf> (<http://benchmark/OWL2Bench/isDeanOf>)
-
-InverseFunctionalObjectProperty(<http://benchmark/OWL2Bench/isDeanOf>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isDeanOf> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isStudentOf> (<http://benchmark/OWL2Bench/isStudentOf>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isStudentOf> <http://benchmark/OWL2Bench/Student_0>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isStudentOf> <http://benchmark/OWL2Bench/Organization_0>)
-
-# Object Property: <http://benchmark/OWL2Bench/isSubOrganizationOf> (<http://benchmark/OWL2Bench/isSubOrganizationOf>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/isSubOrganizationOf> <http://benchmark/OWL2Bench/Organization>)
-
-# Object Property: <http://benchmark/OWL2Bench/knows> (<http://benchmark/OWL2Bench/knows>)
-
-ReflexiveObjectProperty(<http://benchmark/OWL2Bench/knows>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/knows> <http://benchmark/OWL2Bench/Person>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/knows> <http://benchmark/OWL2Bench/Person_1>)
-
-# Object Property: <http://benchmark/OWL2Bench/loves> (<http://benchmark/OWL2Bench/loves>)
-
-SubObjectPropertyOf(<http://benchmark/OWL2Bench/loves> <http://benchmark/OWL2Bench/likes>)
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/loves> <http://benchmark/OWL2Bench/Person>)
-
-# Object Property: <http://benchmark/OWL2Bench/takesCourse> (<http://benchmark/OWL2Bench/takesCourse>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student>)
-
-# Object Property: <http://benchmark/OWL2Bench/worksFor> (<http://benchmark/OWL2Bench/worksFor>)
-
-ObjectPropertyDomain(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Employee>)
-ObjectPropertyRange(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Organization_0>)
-
-
-############################
-#   Data Properties
-############################
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge> (<http://benchmark/OWL2Bench/hasAge>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge> <http://benchmark/OWL2Bench/Person_2>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_0> (<http://benchmark/OWL2Bench/hasAge_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_0> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_0> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_1> (<http://benchmark/OWL2Bench/hasAge_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_1> <http://benchmark/OWL2Bench/Person_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_1> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_2> (<http://benchmark/OWL2Bench/hasAge_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_2> <http://benchmark/OWL2Bench/Person_3>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_2> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasAge_3> (<http://benchmark/OWL2Bench/hasAge_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasAge_3> <http://benchmark/OWL2Bench/Person_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasAge_3> DataComplementOf(xsd:negativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode> (<http://benchmark/OWL2Bench/hasCode>)
-
-EquivalentDataProperties(<http://benchmark/OWL2Bench/hasCode> <http://benchmark/OWL2Bench/hasID>)
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode> owl:topDataProperty)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasCode> DataUnionOf(rdfs:Literal xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasCode_0> (<http://benchmark/OWL2Bench/hasCode_0>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasCode_0> owl:topDataProperty)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasCode_0> DataUnionOf(rdfs:Literal xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasEmailAddress> (<http://benchmark/OWL2Bench/hasEmailAddress>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasEmailAddress> <http://benchmark/OWL2Bench/Person>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasID> (<http://benchmark/OWL2Bench/hasID>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasID> owl:topDataProperty)
-FunctionalDataProperty(<http://benchmark/OWL2Bench/hasID>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasName> (<http://benchmark/OWL2Bench/hasName>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasName> <http://benchmark/OWL2Bench/Person_2>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasPublicationDate> (<http://benchmark/OWL2Bench/hasPublicationDate>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasPublicationDate> <http://benchmark/OWL2Bench/Publication>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasPublicationDate> DataUnionOf(xsd:dateTime xsd:dateTimeStamp))
-
-# Data Property: <http://benchmark/OWL2Bench/hasResearchInterest> (<http://benchmark/OWL2Bench/hasResearchInterest>)
-
-DataPropertyRange(<http://benchmark/OWL2Bench/hasResearchInterest> rdfs:Literal)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTenure> (<http://benchmark/OWL2Bench/hasTenure>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasTenure> owl:topDataProperty)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTenure> <http://benchmark/OWL2Bench/Faculty>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTenure_0> (<http://benchmark/OWL2Bench/hasTenure_0>)
-
-SubDataPropertyOf(<http://benchmark/OWL2Bench/hasTenure_0> owl:topDataProperty)
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTenure_0> <http://benchmark/OWL2Bench/Faculty>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle> (<http://benchmark/OWL2Bench/hasTitle>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle> <http://benchmark/OWL2Bench/Person>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_0> (<http://benchmark/OWL2Bench/hasTitle_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_0> <http://benchmark/OWL2Bench/Person>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTitle_1> (<http://benchmark/OWL2Bench/hasTitle_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTitle_1> <http://benchmark/OWL2Bench/Person_0>)
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs> (<http://benchmark/OWL2Bench/hasTotalBacklogs>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs> <http://benchmark/OWL2Bench/Student_3>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs> DataUnionOf(rdfs:Literal xsd:nonNegativeInteger xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_0> (<http://benchmark/OWL2Bench/hasTotalBacklogs_0>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> <http://benchmark/OWL2Bench/Student_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_0> DataUnionOf(rdfs:Literal xsd:nonNegativeInteger xsd:string))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_1> (<http://benchmark/OWL2Bench/hasTotalBacklogs_1>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_1> <http://benchmark/OWL2Bench/Student_4>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_1> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_2> (<http://benchmark/OWL2Bench/hasTotalBacklogs_2>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_2> <http://benchmark/OWL2Bench/Student_1>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_2> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-# Data Property: <http://benchmark/OWL2Bench/hasTotalBacklogs_3> (<http://benchmark/OWL2Bench/hasTotalBacklogs_3>)
-
-DataPropertyDomain(<http://benchmark/OWL2Bench/hasTotalBacklogs_3> <http://benchmark/OWL2Bench/Student_0>)
-DataPropertyRange(<http://benchmark/OWL2Bench/hasTotalBacklogs_3> DataIntersectionOf(xsd:integer xsd:nonNegativeInteger))
-
-
-############################
-#   Datatypes
-############################
-
-# Datatype: <http://benchmark/OWL2Bench/hasTenure> (<http://benchmark/OWL2Bench/hasTenure>)
-
-DatatypeDefinition(<http://benchmark/OWL2Bench/hasTenure> DataOneOf("indefinite"@xsd:string "probationary"@xsd:string))
-
-# Datatype: <http://benchmark/OWL2Bench/hasTenure_0> (<http://benchmark/OWL2Bench/hasTenure_0>)
-
-DatatypeDefinition(<http://benchmark/OWL2Bench/hasTenure_0> DataOneOf("indefinite_0"@xsd:string "probationary_0"@xsd:string))
-
-# Datatype: <http://benchmark/OWL2Bench/hasTitle> (<http://benchmark/OWL2Bench/hasTitle>)
-
-DatatypeDefinition(<http://benchmark/OWL2Bench/hasTitle> DataOneOf("Dr."@xsd:string "Miss."@xsd:string "Mr."@xsd:string "Prof."@xsd:string))
-
-# Datatype: <http://benchmark/OWL2Bench/hasTitle_0> (<http://benchmark/OWL2Bench/hasTitle_0>)
-
-DatatypeDefinition(<http://benchmark/OWL2Bench/hasTitle_0> DataOneOf("Dr._0"@xsd:string "Miss._0"@xsd:string "Mr._0"@xsd:string "Prof._0"@xsd:string))
-
-# Datatype: <http://benchmark/OWL2Bench/hasTitle_1> (<http://benchmark/OWL2Bench/hasTitle_1>)
-
-DatatypeDefinition(<http://benchmark/OWL2Bench/hasTitle_1> DataOneOf("Dr._1"@xsd:string "Miss._1"@xsd:string "Mr._1"@xsd:string "Prof._1"@xsd:string))
-
-
-############################
-#   Classes
-############################
-
-# Class: <http://benchmark/OWL2Bench/College> (<http://benchmark/OWL2Bench/College>)
-
-SubClassOf(<http://benchmark/OWL2Bench/College> <http://benchmark/OWL2Bench/Organization>)
-
-# Class: <http://benchmark/OWL2Bench/Course> (<http://benchmark/OWL2Bench/Course>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Course> <http://benchmark/OWL2Bench/TeachingCourse>)
-SubClassOf(<http://benchmark/OWL2Bench/Course> ObjectMinCardinality(1 <http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/Student>))
-SubClassOf(<http://benchmark/OWL2Bench/Course> ObjectMaxCardinality(1 <http://benchmark/OWL2Bench/takesCourse> <http://benchmark/OWL2Bench/LeisureStudent>))
-DisjointUnion(<http://benchmark/OWL2Bench/Course> <http://benchmark/OWL2Bench/ElectiveCourse> <http://benchmark/OWL2Bench/UGCourse>)
-
-# Class: <http://benchmark/OWL2Bench/ElectiveCourse> (<http://benchmark/OWL2Bench/ElectiveCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/ElectiveCourse> <http://benchmark/OWL2Bench/Course>)
-
-# Class: <http://benchmark/OWL2Bench/Employee> (<http://benchmark/OWL2Bench/Employee>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Employee> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/Employee> ObjectSomeValuesFrom(<http://benchmark/OWL2Bench/worksFor> <http://benchmark/OWL2Bench/Organization>))
-
-# Class: <http://benchmark/OWL2Bench/HumanitiesAndSocialScience> (<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>)
-
-SubClassOf(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-
-# Class: <http://benchmark/OWL2Bench/LeisureStudent> (<http://benchmark/OWL2Bench/LeisureStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/LeisureStudent> <http://benchmark/OWL2Bench/Student>)
-
-# Class: <http://benchmark/OWL2Bench/Mother> (<http://benchmark/OWL2Bench/Mother>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/Mother> ObjectIntersectionOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Woman>))
-SubClassOf(<http://benchmark/OWL2Bench/Mother> <http://benchmark/OWL2Bench/Parent>)
-
-# Class: <http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> (<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience>)
-
-SubClassOf(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> <http://benchmark/OWL2Bench/CollegeDiscipline>)
-SubClassOf(<http://benchmark/OWL2Bench/NonHumanitiesAndSocialScience> ObjectComplementOf(<http://benchmark/OWL2Bench/HumanitiesAndSocialScience>))
-
-# Class: <http://benchmark/OWL2Bench/Organization> (<http://benchmark/OWL2Bench/Organization>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Organization> ObjectUnionOf(<http://benchmark/OWL2Bench/GovernmentOrganization> <http://benchmark/OWL2Bench/PrivateOrganization> <http://benchmark/OWL2Bench/SemiGovernmentOrganization>))
-
-# Class: <http://benchmark/OWL2Bench/PGProgram> (<http://benchmark/OWL2Bench/PGProgram>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram> <http://benchmark/OWL2Bench/Program>)
-SubClassOf(<http://benchmark/OWL2Bench/PGProgram> ObjectExactCardinality(1 <http://benchmark/OWL2Bench/enrollFor> <http://benchmark/OWL2Bench/PGStudent>))
-
-# Class: <http://benchmark/OWL2Bench/PGStudent> (<http://benchmark/OWL2Bench/PGStudent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/PGStudent> <http://benchmark/OWL2Bench/Student>)
-
-# Class: <http://benchmark/OWL2Bench/Parent> (<http://benchmark/OWL2Bench/Parent>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Parent> <http://benchmark/OWL2Bench/Person>)
-
-# Class: <http://benchmark/OWL2Bench/Person> (<http://benchmark/OWL2Bench/Person>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataSomeValuesFrom(<http://benchmark/OWL2Bench/hasName> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataAllValuesFrom(<http://benchmark/OWL2Bench/hasEmailAddress> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataMinCardinality(1 <http://benchmark/OWL2Bench/hasResearchInterest> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataExactCardinality(1 <http://benchmark/OWL2Bench/hasID> xsd:string))
-SubClassOf(<http://benchmark/OWL2Bench/Person> DataMaxCardinality(5 <http://benchmark/OWL2Bench/hasTitle> xsd:string))
-
-# Class: <http://benchmark/OWL2Bench/PrivateOrganization> (<http://benchmark/OWL2Bench/PrivateOrganization>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/PrivateOrganization> ObjectOneOf(<http://benchmark/OWL2Bench/NonProfitOrganization> <http://benchmark/OWL2Bench/ProfitOrganization>))
-
-# Class: <http://benchmark/OWL2Bench/RetiringPerson> (<http://benchmark/OWL2Bench/RetiringPerson>)
-
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/RetiringPerson> DataHasValue(<http://benchmark/OWL2Bench/hasAge> "59"))
-
-# Class: <http://benchmark/OWL2Bench/SelfAwarePerson> (<http://benchmark/OWL2Bench/SelfAwarePerson>)
-
-EquivalentClasses(<http://benchmark/OWL2Bench/SelfAwarePerson> ObjectHasSelf(<http://benchmark/OWL2Bench/knows>))
-SubClassOf(<http://benchmark/OWL2Bench/SelfAwarePerson> <http://benchmark/OWL2Bench/Person>)
-
-# Class: <http://benchmark/OWL2Bench/Soccer> (<http://benchmark/OWL2Bench/Soccer>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Soccer> <http://benchmark/OWL2Bench/Sports>)
-
-# Class: <http://benchmark/OWL2Bench/SoccerFan> (<http://benchmark/OWL2Bench/SoccerFan>)
-
-SubClassOf(<http://benchmark/OWL2Bench/SoccerFan> <http://benchmark/OWL2Bench/Person>)
-SubClassOf(<http://benchmark/OWL2Bench/SoccerFan> ObjectHasValue(<http://benchmark/OWL2Bench/isCrazyAbout> <http://benchmark/OWL2Bench/Soccer>))
-
-# Class: <http://benchmark/OWL2Bench/Sports> (<http://benchmark/OWL2Bench/Sports>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Sports> <http://benchmark/OWL2Bench/Interest>)
-
-# Class: <http://benchmark/OWL2Bench/Student> (<http://benchmark/OWL2Bench/Student>)
-
-SubClassOf(<http://benchmark/OWL2Bench/Student> <http://benchmark/OWL2Bench/Person>)
-
-# Class: <http://benchmark/OWL2Bench/TeachingCourse> (<http://benchmark/OWL2Bench/TeachingCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/TeachingCourse> <http://benchmark/OWL2Bench/Work>)
-
-# Class: <http://benchmark/OWL2Bench/UGCourse> (<http://benchmark/OWL2Bench/UGCourse>)
-
-SubClassOf(<http://benchmark/OWL2Bench/UGCourse> <http://benchmark/OWL2Bench/Course>)
-
-# Class: <http://benchmark/OWL2Bench/WomenCollege> (<http://benchmark/OWL2Bench/WomenCollege>)
-
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege> <http://benchmark/OWL2Bench/College>)
-SubClassOf(<http://benchmark/OWL2Bench/WomenCollege> ObjectAllValuesFrom(<http://benchmark/OWL2Bench/hasStudent> <http://benchmark/OWL2Bench/Woman>))
-
-
-############################
-#   Named Individuals
-############################
-
-# Individual: <person5_0> (<person5_0>)
-
-ObjectPropertyAssertion(<http://benchmark/OWL2Bench/hasSameHomeTownWith> <person5_0> < UGCourse_0>)
-
-# Individual: <person_15_0> (<person_15_0>)
-
-DataPropertyAssertion(<http://benchmark/OWL2Bench/hasAge_0> <person_15_0> "xnSlLA")
-
-
-SubObjectPropertyOf(ObjectPropertyChain(<http://benchmark/OWL2Bench/enrollIn> <http://benchmark/OWL2Bench/isSubOrganizationOf>) <http://benchmark/OWL2Bench/isStudentOf>)
-HasKey(<http://benchmark/OWL2Bench/Student> () (<http://benchmark/OWL2Bench/hasID>))
-)

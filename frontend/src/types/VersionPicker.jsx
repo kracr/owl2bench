@@ -3,13 +3,34 @@ import { Button , Card } from "react-bootstrap";
 import App from '../App'
 import FixedTBox from "./FixedTBox"
 import Hardness from "./Hardness"
+const { ipcRenderer } = window.require('electron')
 
 export default class VersionPicker extends Component {
-    state = {
-        showv1: false,
-        showv2: false,
-        showv3: false,
+    constructor(props){
+        super(props)
+        this.state = {
+            showv1: false,
+            showv2: false,
+            showv3: false,
+            outputPath : "",
+        }
+
+        ipcRenderer.on("directorySelection", (event,message) =>{
+            console.log(message);
+            this.setState({
+                outputPath : message.Path,
+            })
+        }) 
     }
+
+    handleFileSelection(){
+        console.log("Handling Directory");
+        // console.log("dialog")
+        ipcRenderer.send('select-dirs');      
+    }
+
+     
+    
     
     toggleView(val){
         if (val===1){
@@ -25,6 +46,9 @@ export default class VersionPicker extends Component {
                 showv2: !this.state.showv2,
                 showv3: false,
             })
+            const { ipcRenderer } = window.require('electron');
+            console.log("Sending")
+            ipcRenderer.send('start-VariableTBox',null);
         }
         else if (val===3){
             this.setState({
@@ -83,6 +107,8 @@ export default class VersionPicker extends Component {
                             </Card>
                         </div>
                     </div>
+                <button className="btn btn-info m-5" onClick={() => this.handleFileSelection() }>Select OUTPUT Directory</button>
+                <span>{this.state.outputPath}</span>
                 </div>
                 {(this.state.showv1) ? <FixedTBox /> : ' ' }
                 {(this.state.showv2) ? <App /> : ' ' }

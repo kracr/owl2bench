@@ -1,0 +1,6 @@
+worksFor , isSubOrganizationOf,worksFor
+teachesCourse , registeredBy,teachesTo
+enrollIn , isPartOf,isMemberOf
+worksFor , isPartOf,isMemberOf
+registeredTo , isTaughtBy,hasTeacher
+enrollIn , isSubOrganizationOf,isStudentOf

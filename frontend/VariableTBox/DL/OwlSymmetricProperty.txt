@@ -1,0 +1,2 @@
+hasCollaborationWith Symmetrical
+hasSameHomeTownWith Symmetrical

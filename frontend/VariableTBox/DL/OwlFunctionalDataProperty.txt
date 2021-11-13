@@ -1,0 +1,3 @@
+hasAge Functional
+hasCode Functional
+hasID Functional

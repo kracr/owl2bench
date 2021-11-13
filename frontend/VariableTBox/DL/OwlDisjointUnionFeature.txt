@@ -1,0 +1,3 @@
+Article DisjointUnionOf ConferencePaper,JournalArticle,TechnicalReport
+Publication DisjointUnionOf Article,Book,Manual,Software,Specification,UnofficialPublication
+Course DisjointUnionOf ElectiveCourse,UGCourse

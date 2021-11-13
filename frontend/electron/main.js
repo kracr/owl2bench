@@ -1,12 +1,12 @@
-const { app, BrowserWindow, screen: electronScreen,ipcMain } = require('electron');
+const { app, BrowserWindow, screen: electronScreen,ipcMain,dialog } = require('electron');
 const path = require('path')
 const cp = require('child_process')
-
-
+let spawnedVTBox = false;
+let mainWindow;
 const createMainWindow = () => {
     console.log(__dirname)
 
-    let mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: electronScreen.getPrimaryDisplay().workArea.width,
         height: electronScreen.getPrimaryDisplay().workArea.height,
         show: false,
@@ -58,6 +58,39 @@ app.on('window-all-closed', () => {
     }
 });
 
+ipcMain.on('select-dirs', async (event, arg) => {
+    console.log("HIIIIIIIIIIIIIIII")
+    const result = await dialog.showOpenDialog(mainWindow, {
+      properties: ['openDirectory']
+    })
+    console.log('directories selected', result.filePaths)
+    event.sender.send('directorySelection', {'Path': result.filePaths});
+})
+
+ipcMain.on('start-VariableTBox' ,(event,arg) => {
+    console.log(event,arg);
+    if (!spawnedVTBox){
+        const jarPath = path.join(app.getAppPath(),"VariableTBox")
+        const jar = path.join(jarPath,"backend-0.0.1-SNAPSHOT.jar")
+        var child = cp.spawn( 'java', ['-jar', jar] ,{cwd:jarPath});
+        
+        spawnedVTBox=true;
+        
+        child.stdout.on('data', (data) => {
+            console.log(`stdout: ${data}`);
+        });
+
+        child.on('error' ,(code) => {
+            console.log(`child process errored with code ${code}`)
+            console.log()
+        })      
+    
+        child.on('exit', (code) => {
+            console.log(`child process VTBox exited with code ${code} and parameters`);
+            console.log(arg)
+        });
+    }        
+});
 // Event for Fixed TBox
 ipcMain.on('generate-FixedTbox', (event, arg) => {
     const jarPath = path.join(app.getAppPath(),"FixedTBox")

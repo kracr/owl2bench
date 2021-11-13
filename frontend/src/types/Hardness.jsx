@@ -13,8 +13,8 @@ class Hardness extends React.Component {
             <div className="container bg-light border border-info border-3 rounded mb-5">
               <div className="row m-5">
                 <div className="col">
-                  <input class="form-check-input big-checkbox" type="checkbox" value="time"/>
-                  <label class="form-check-label ml-4 mt-1 h4" >
+                  <input className="form-check-input big-checkbox" type="checkbox" value="time"/>
+                  <label className="form-check-label ml-4 mt-1 h4" >
                     Time
                   </label>
                 </div>
@@ -28,8 +28,8 @@ class Hardness extends React.Component {
               </div>
               <div className="row m-5">
                 <div className="col">
-                  <input class="form-check-input big-checkbox" type="checkbox" value="time"/>
-                  <label class="form-check-label ml-4 mt-1 h4" >
+                  <input className="form-check-input big-checkbox" type="checkbox" value="time"/>
+                  <label className="form-check-label ml-4 mt-1 h4" >
                     Memory
                   </label>
                 </div>

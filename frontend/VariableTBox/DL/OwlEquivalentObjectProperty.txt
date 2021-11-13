@@ -1,0 +1,7 @@
+hasDegreeFrom equivalent isAlumniOf
+registeredTo equivalent takesCourse
+advises equivalent isAdvisorOf
+hasAdvisor equivalent isAdvisedBy
+isPartOf equivalent isSubOrganizationOf
+isHeadOf equivalent leads
+hasPart equivalent hasSubOrganization

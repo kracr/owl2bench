@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <copy todir="/Users/b0218978/Desktop/owl2bench/target/classes/public">
-    <fileset dir="/Users/b0218978/Desktop/owl2bench/frontend/build"/>
-  </copy>
-</target>
-</project>

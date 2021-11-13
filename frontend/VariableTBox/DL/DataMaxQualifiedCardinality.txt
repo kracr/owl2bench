@@ -1,0 +1,1 @@
+Person hasTitle max 5 xsd:string 

@@ -1,0 +1,2 @@
+Person hasDegreeFrom only University 
+WomenCollege hasStudent only Woman 

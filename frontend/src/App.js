@@ -236,6 +236,7 @@ function App() {
       }
     }
     if (ifany == true) {
+      console.log(userInput);
       console.log(extra + " |" + format);
       axios
         .post("http://localhost:8080/api/send", {
@@ -374,19 +375,19 @@ function App() {
         <div className=" col-md-3"></div>
         <div className=" col-md-5">
           <div className="input-group-append">
-            <button class="btn btn-success m-2 mr-4 " onClick={selectAll}>
+            <button className="btn btn-success m-2 mr-4 " onClick={selectAll}>
               Select All
             </button>
             <input
               type="text"
-              class="col-md-3 m-2 rounded"
+              className="col-md-3 m-2 rounded"
               id="selectAllInput"
               placeholder="All Input"
             ></input>
           </div>
         </div>
         <div className=" col-md-4 input-group-append">
-          <button class="btn btn-secondary m-2" onClick={selectNone}>
+          <button className="btn btn-secondary m-2" onClick={selectNone}>
             Select None
           </button>
         </div>
@@ -505,14 +506,14 @@ function App() {
         </select>
         <div className="form-check">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             value={extra}
             id="flexCheckChecked"
             onChange={extraHierarchyDomainRange}
             // checked
           ></input>
-          <label class="form-check-label" for="flexCheckChecked">
+          <label className="form-check-label" for="flexCheckChecked">
             Extra Hierarchy, Domain And Range
           </label>
         </div>

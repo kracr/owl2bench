@@ -42,10 +42,10 @@
         <Class abbreviatedIRI=":CollegeDiscipline"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":loves"/>
+        <ObjectProperty abbreviatedIRI=":likes"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":likes"/>
+        <ObjectProperty abbreviatedIRI=":loves"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Student"/>
@@ -69,13 +69,7 @@
         <Class abbreviatedIRI=":Student_1"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_0"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":Student_0"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_1"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasResearchInterest"/>
@@ -93,13 +87,13 @@
         <DataProperty abbreviatedIRI=":hasCode_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Faculty"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Woman"/>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Woman"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Organization"/>
@@ -108,16 +102,13 @@
         <ObjectProperty abbreviatedIRI=":isDeanOf"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="person4_0"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_2"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasAge_3"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasDegreeFrom"/>
@@ -126,28 +117,16 @@
         <Class abbreviatedIRI=":SelfAwarePerson"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTitle_1"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":Department"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Course"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI=":hasTitle_1"/>
+        <NamedIndividual IRI="student_1_0"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
-    </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI=":hasTitle_0"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI=":hasTitle_0"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
@@ -180,40 +159,31 @@
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTenure"/>
-    </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI=":hasTenure_0"/>
-    </Declaration>
-    <Declaration>
         <DataProperty abbreviatedIRI=":hasAge"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI=":enrollFor_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Person"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTenure_0"/>
+        <Class abbreviatedIRI=":Man"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Mother"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Man"/>
-    </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI=":hasTenure"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":Human"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Sports"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="organization_13_0"/>
     </Declaration>
     <Declaration>
         <NamedIndividual abbreviatedIRI=":Soccer"/>
@@ -228,7 +198,7 @@
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="student_0"/>
+        <NamedIndividual IRI="person3_0"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Publication"/>
@@ -237,37 +207,34 @@
         <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_2"/>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI=":hasEmailAddress"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Program"/>
+        <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Person_2"/>
+        <Class abbreviatedIRI=":Program"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":takesCourse"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_3"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI=":Person_0"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PGProgram"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Person_1"/>
+        <Class abbreviatedIRI=":PGProgram"/>
     </Declaration>
     <EquivalentClasses>
         <Class abbreviatedIRI=":GovernmentOrganization"/>
@@ -464,14 +431,14 @@
         <Class abbreviatedIRI=":UGCourse"/>
     </DisjointUnion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
-        <NamedIndividual IRI="person4_0"/>
-        <NamedIndividual IRI="student_0"/>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <NamedIndividual IRI="person3_0"/>
+        <NamedIndividual IRI="organization_13_0"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI=":hasCode"/>
-        <NamedIndividual IRI="student_0"/>
-        <Literal>yZfipy</Literal>
+        <DataProperty abbreviatedIRI=":hasResearchInterest"/>
+        <NamedIndividual IRI="student_1_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">QqSxjr</Literal>
     </DataPropertyAssertion>
     <EquivalentObjectProperties>
         <ObjectProperty abbreviatedIRI=":advises"/>
@@ -490,6 +457,10 @@
         <ObjectProperty IRI="topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty abbreviatedIRI=":isCrazyAbout"/>
         <ObjectProperty abbreviatedIRI=":loves"/>
     </SubObjectPropertyOf>
@@ -498,8 +469,8 @@
         <ObjectProperty abbreviatedIRI=":likes"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <ObjectProperty abbreviatedIRI=":isAdvisorOf"/>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
@@ -514,13 +485,13 @@
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
     </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
     </TransitiveObjectProperty>
     <ReflexiveObjectProperty>
         <ObjectProperty abbreviatedIRI=":knows"/>
     </ReflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":advises"/>
@@ -528,11 +499,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollFor"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":enrollIn"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_0"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":hasCollaborationWith"/>
@@ -543,8 +514,8 @@
         <Class abbreviatedIRI=":Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <Class abbreviatedIRI=":Person"/>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
+        <Class abbreviatedIRI=":Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
@@ -560,7 +531,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isStudentOf"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_1"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
@@ -599,24 +570,24 @@
         <Class abbreviatedIRI=":University"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAdvisedBy"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
-        <Class abbreviatedIRI=":Organization"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
+        <ObjectProperty abbreviatedIRI=":hasSubOrganization"/>
         <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
+        <ObjectProperty abbreviatedIRI=":isAffiliatedOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isDeanOf"/>
         <Class abbreviatedIRI=":Organization_1"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <ObjectProperty abbreviatedIRI=":isStudentOf"/>
         <Class abbreviatedIRI=":Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":isSubOrganizationOf"/>
+        <Class abbreviatedIRI=":Organization_0"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":knows"/>
@@ -624,7 +595,7 @@
     </ObjectPropertyRange>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI=":advises"/>
-        <ObjectProperty abbreviatedIRI=":enrollFor_0"/>
+        <ObjectProperty abbreviatedIRI=":enrollFor"/>
     </DisjointObjectProperties>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
@@ -646,15 +617,11 @@
         <DataProperty IRI="topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
+        <DataProperty IRI="topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty abbreviatedIRI=":hasID"/>
-        <DataProperty IRI="topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI=":hasTenure"/>
-        <DataProperty IRI="topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI=":hasTenure_0"/>
         <DataProperty IRI="topDataProperty"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
@@ -662,27 +629,11 @@
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasAge"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_0"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_1"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_2"/>
-        <Class abbreviatedIRI=":Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasAge_3"/>
-        <Class abbreviatedIRI=":Person_0"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasEmailAddress"/>
-        <Class abbreviatedIRI=":Person"/>
+        <Class abbreviatedIRI=":Person_1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasName"/>
@@ -697,71 +648,31 @@
         <Class abbreviatedIRI=":Publication"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTenure"/>
-        <Class abbreviatedIRI=":Faculty"/>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+        <Class abbreviatedIRI=":Publication"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTenure_0"/>
-        <Class abbreviatedIRI=":Faculty"/>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
+        <Class abbreviatedIRI=":Publication"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTitle"/>
         <Class abbreviatedIRI=":Person_1"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_0"/>
-        <Class abbreviatedIRI=":Person_2"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTitle_1"/>
-        <Class abbreviatedIRI=":Person_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
-        <Class abbreviatedIRI=":Student_0"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
-        <Class abbreviatedIRI=":Student"/>
+        <Class abbreviatedIRI=":Student_2"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
-        <Class abbreviatedIRI=":Student_0"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_2"/>
-        <Class abbreviatedIRI=":Student"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_3"/>
-        <Class abbreviatedIRI=":Student_1"/>
+        <Class abbreviatedIRI=":Student_3"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasAge"/>
-        <DataComplementOf>
-            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
-        </DataComplementOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasAge_0"/>
-        <DataComplementOf>
-            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
-        </DataComplementOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasAge_1"/>
-        <DataComplementOf>
-            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
-        </DataComplementOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasAge_2"/>
-        <DataComplementOf>
-            <Datatype abbreviatedIRI="xsd:negativeInteger"/>
-        </DataComplementOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasAge_3"/>
         <DataComplementOf>
             <Datatype abbreviatedIRI="xsd:negativeInteger"/>
         </DataComplementOf>
@@ -781,6 +692,21 @@
         </DataUnionOf>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasCode_1"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasEmailAddress"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasName"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasPublicationDate"/>
         <DataUnionOf>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
@@ -789,6 +715,20 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasPublicationDate_0"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_1"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":hasPublicationDate_2"/>
         <DataUnionOf>
             <Datatype abbreviatedIRI="xsd:dateTime"/>
             <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
@@ -808,57 +748,28 @@
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs"/>
         <DataUnionOf>
-            <Datatype abbreviatedIRI="rdfs:Literal"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
             <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
         </DataUnionOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_0"/>
-        <DataIntersectionOf>
-            <Datatype abbreviatedIRI="xsd:integer"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:int"/>
             <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataIntersectionOf>
+        </DataUnionOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI=":hasTotalBacklogs_1"/>
-        <DataIntersectionOf>
-            <Datatype abbreviatedIRI="xsd:integer"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:int"/>
             <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataIntersectionOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_2"/>
-        <DataIntersectionOf>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataIntersectionOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI=":hasTotalBacklogs_3"/>
-        <DataIntersectionOf>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataIntersectionOf>
+        </DataUnionOf>
     </DataPropertyRange>
     <HasKey>
         <Class abbreviatedIRI=":Student"/>
         <DataProperty abbreviatedIRI=":hasID"/>
     </HasKey>
-    <DatatypeDefinition>
-        <Datatype abbreviatedIRI=":hasTenure"/>
-        <DataOneOf>
-            <Literal xml:lang="xsd:string">indefinite</Literal>
-            <Literal xml:lang="xsd:string">probationary</Literal>
-        </DataOneOf>
-    </DatatypeDefinition>
-    <DatatypeDefinition>
-        <Datatype abbreviatedIRI=":hasTenure_0"/>
-        <DataOneOf>
-            <Literal xml:lang="xsd:string">indefinite_0</Literal>
-            <Literal xml:lang="xsd:string">probationary_0</Literal>
-        </DataOneOf>
-    </DatatypeDefinition>
     <DatatypeDefinition>
         <Datatype abbreviatedIRI=":hasTitle"/>
         <DataOneOf>
@@ -866,24 +777,6 @@
             <Literal xml:lang="xsd:string">Miss.</Literal>
             <Literal xml:lang="xsd:string">Mr.</Literal>
             <Literal xml:lang="xsd:string">Prof.</Literal>
-        </DataOneOf>
-    </DatatypeDefinition>
-    <DatatypeDefinition>
-        <Datatype abbreviatedIRI=":hasTitle_0"/>
-        <DataOneOf>
-            <Literal xml:lang="xsd:string">Dr._0</Literal>
-            <Literal xml:lang="xsd:string">Miss._0</Literal>
-            <Literal xml:lang="xsd:string">Mr._0</Literal>
-            <Literal xml:lang="xsd:string">Prof._0</Literal>
-        </DataOneOf>
-    </DatatypeDefinition>
-    <DatatypeDefinition>
-        <Datatype abbreviatedIRI=":hasTitle_1"/>
-        <DataOneOf>
-            <Literal xml:lang="xsd:string">Dr._1</Literal>
-            <Literal xml:lang="xsd:string">Miss._1</Literal>
-            <Literal xml:lang="xsd:string">Mr._1</Literal>
-            <Literal xml:lang="xsd:string">Prof._1</Literal>
         </DataOneOf>
     </DatatypeDefinition>
 </Ontology>

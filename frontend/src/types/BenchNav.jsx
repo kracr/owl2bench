@@ -12,6 +12,10 @@ import { isElectron } from './utils';
 import Home from './Home';
 import App from '../App';
 import VersionPicker from './VersionPicker';
+
+const { ipcRenderer } = window.require('electron')
+
+
 // import About from './About'
 export const history = isElectron()
   ? createHashHistory()

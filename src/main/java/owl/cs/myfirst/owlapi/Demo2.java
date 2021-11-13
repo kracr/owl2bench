@@ -1,5 +1,6 @@
 package owl.cs.myfirst.owlapi;
 
+//import com.beust.jcommander.*;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -41,4 +42,14 @@ public class Demo2 {
 		app App = new app();
 		App.generate(userval,format,extraAxioms);
 	}
+	
+//	static MainCLIParameters mainArgs = new MainCLIParameters();
+//	
+//	public static void main(String[] args) {
+//		handleInputArgs(args);
+//	}
+//	
+//	public static void handleInputArgs(String[] args) {
+//		JCommander jCommander = new JCommander(mainArgs);
+//	}
 }

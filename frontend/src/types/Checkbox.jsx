@@ -25,7 +25,7 @@ const Checkbox = ({ label, isSelected, onCheckboxChange, heading }) => {
       <label className="col-3"></label>
       <label className="col-2 mb-0 ">
         <input
-          class="form-group form-control col-12 mr-5 rounded"
+          className="form-group form-control col-12 mr-5 rounded"
           // class="col-md-12"
           type="text"
           id={label + "Text"}
