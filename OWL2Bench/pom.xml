@@ -111,12 +111,22 @@
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-distribution</artifactId>
-            <version>5.0.1</version>
+            <version>5.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${sprint.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -131,6 +141,11 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
+        <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.28</version>
+    </dependency>
 
         
         <dependency>
@@ -215,7 +230,8 @@
             <artifactId>poi-excelant</artifactId>
             <version>4.1.0</version>
         </dependency>
-        
+ 
+
     </dependencies>
 
     <dependencyManagement>
@@ -228,6 +244,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+  
+ 
         </dependencies>
     </dependencyManagement>
 
