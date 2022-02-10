@@ -110,7 +110,7 @@ public class Generator {
  
    
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-    PrefixManager pm = new DefaultPrefixManager("http://benchmark/OWL2Bench");
+    PrefixManager pm = new DefaultPrefixManager("https://kracr.iiitd.edu.in/OWL2Bench");
     IRI ontologyIRI = IRI.create(pm.getDefaultPrefix());
     OWLOntology ontology = createOWLOntology(pm);
     File file2;
