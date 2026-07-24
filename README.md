@@ -71,7 +71,7 @@ The repository also consists of four different **TBox** for each OWL 2 Profiles 
 <a name="usage"></a>
 ## 3. Usage Instructions
 
-Requirements: The user must have *java and maven* installed in the system. 24 GB RAM for all the experiments. Operating System-Ubuntu
+Requirements: The user must have *Java 17 or later* and *Maven* installed in the system. 24 GB RAM for all the experiments. Operating System-Ubuntu
 
 The user needs to provide two inputs, *the number of universities* and *the OWL 2 profile* (EL, QL, RL, DL) of interest. The ABox axioms are generated using [OWL2Bench code](https://github.com/kracr/owl2bench/tree/master/OWL2Bench), complying with the schema defined in the TBox of the selected profile. The size of the ABox depends on the number of universities. The final dataset on which the reasoners are evaluated consists of both TBox and ABox axioms.
 
@@ -87,13 +87,13 @@ java -jar OWL2Bench.jar 10 EL 20 (where 10 is the number of universities,  EL is
 java -jar OWL2Bench.jar 1 DL (where 1 is the number of universities,  DL is OWL 2 profile and the default seed value)
          
 Number of universities makes the ABox scalable. By default, the number of ABox axioms for 1 university is approximately 50,000 that reaches upto 14,000,000 for 200 universities.      
-To execute **OWL2Bench.jar**, make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl) and excel file for random names RandomNames.xlsx is present in the same directory as jar file. RandomNames.xlsx is used to generate real like names for University and Person instances.
+To execute **OWL2Bench.jar**, make sure the TBox for all profiles (UNIV-BENCH-OWL2EL.owl, UNIV-BENCH-OWL2QL.owl, UNIV-BENCH-OWL2RL.owl, UNIV-BENCH-OWL2DL.owl), excel file for random names RandomNames.xlsx, and **config.properties** are present in the same directory as the jar file. RandomNames.xlsx is used to generate real like names for University and Person instances. config.properties supplies the min/max ranges the generator uses for every instance count (see [3.2](#code)); without it present, the jar will still run but silently produce a degenerate, effectively empty ABox instead of failing with an error, so don't skip it even though the jar runs "standalone".
 
 
 <a name="code"></a>
 ## 3.2. Using Source Code :
 
-We are also providing the java source code for ABox generation. Using the source code, user can also modify the default configurations (such as generated ontology Format, and density of each node in the generated dataset) in the config.properties file. In order to run the source code, user need download the project repository owl2bench-master. Extract it and save it in a folder. There is a maven project [OWL2Bench](https://github.com/kracr/owl2bench/tree/master/OWL2Bench) inside the owl2bench-master directory. Open command line and change to the directory that contains the pom.xml of this OWL2Bench project. Execute the maven command:
+We are also providing the java source code for ABox generation. Using the source code, user can also modify the default configurations (such as generated ontology Format, and density of each node in the generated dataset) in the config.properties file. In order to run the source code, user need download the project repository owl2bench-master. Extract it and save it in a folder. There is a maven project [OWL2Bench](https://github.com/kracr/owl2bench/tree/master/OWL2Bench) inside the owl2bench-master directory. Open command line and change to the directory that contains the pom.xml of this OWL2Bench project. Make sure `JAVA_HOME` points at a JDK 17 or later installation, then execute the maven command:
 
 mvn compile
 

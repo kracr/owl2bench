@@ -4,9 +4,6 @@
 
 package ABoxGen.InstanceGenerator;
 
-
-import org.apache.commons.collections4.Get;
-
 public class GetRandomPerson {
     String person,personCategory,advisor,profile;
     Generator gen;

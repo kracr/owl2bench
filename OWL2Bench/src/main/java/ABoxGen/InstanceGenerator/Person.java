@@ -7,9 +7,6 @@
 
 package ABoxGen.InstanceGenerator;
 
-
-import org.apache.tools.ant.types.resources.First;
-
 public class Person {
     Generator gen;
     int gender,narcissism;

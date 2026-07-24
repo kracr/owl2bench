@@ -112,11 +112,9 @@ public class Generator {
     OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
     PrefixManager pm = new DefaultPrefixManager("https://kracr.iiitd.edu.in/OWL2Bench");
     IRI ontologyIRI = IRI.create(pm.getDefaultPrefix());
-    OWLOntology ontology = createOWLOntology(pm);
     File file2;
     OWLOntology o;
     OWLDataFactory factory = manager.getOWLDataFactory();
-    OWLOntology ontology1;
     int univNum,publicationNum;
     String profile;
     University[] universities;
@@ -398,20 +396,6 @@ try {
             e.printStackTrace();
         }
         
-    }
-
-    public OWLOntology createOWLOntology(PrefixManager pm) {
-        if (pm.getDefaultPrefix() == null) {
-            throw new IllegalStateException("Default ontology prefix must not be null.");
-        }
-        try  {
-            ontology1= manager.createOntology(IRI.create(pm.getDefaultPrefix()));
-            // use the inputStream to read a file
-        } catch (OWLOntologyCreationException e) {
-            e.printStackTrace();
-        }
-        // Cast to a mutable ontology to pass OWLApi's strange checks
-        return ontology1;
     }
 
     public OWLOntology loadOWLOntology(File file2)
